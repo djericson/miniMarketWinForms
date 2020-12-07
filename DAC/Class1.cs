@@ -36,7 +36,7 @@ namespace DAC
         }
         public void eliminar(clsUsuario xobj)
         {
-
+            
 
         }
         public clsUsuario validar_usuario(string xusuario, string xclave)
