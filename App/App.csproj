@@ -53,16 +53,40 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="FrmRoles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmRoles.Designer.cs">
+      <DependentUpon>FrmRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUsr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUsr.Designer.cs">
+      <DependentUpon>FrmUsr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUsuariosVentanas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUsuariosVentanas.Designer.cs">
+      <DependentUpon>FrmUsuariosVentanas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVentanasMenus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVentanasMenus.Designer.cs">
+      <DependentUpon>FrmVentanasMenus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_usuariosRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_usuariosRoles.Designer.cs">
+      <DependentUpon>Frm_usuariosRoles.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FrmUsr.resx">
+      <DependentUpon>FrmUsr.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
