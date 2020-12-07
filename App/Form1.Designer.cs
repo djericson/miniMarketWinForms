@@ -167,7 +167,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnInsertar);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
