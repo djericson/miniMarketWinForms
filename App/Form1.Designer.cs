@@ -45,7 +45,7 @@
             // btnInsertar
             // 
             this.btnInsertar.Location = new System.Drawing.Point(241, 29);
-            this.btnInsertar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInsertar.Margin = new System.Windows.Forms.Padding(2);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(62, 25);
             this.btnInsertar.TabIndex = 0;
@@ -66,7 +66,7 @@
             // txtUsuario
             // 
             this.txtUsuario.Location = new System.Drawing.Point(98, 30);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(115, 20);
             this.txtUsuario.TabIndex = 2;
@@ -84,7 +84,7 @@
             // txtClave
             // 
             this.txtClave.Location = new System.Drawing.Point(98, 53);
-            this.txtClave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtClave.Margin = new System.Windows.Forms.Padding(2);
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(115, 20);
             this.txtClave.TabIndex = 2;
@@ -102,7 +102,7 @@
             // txtNombres
             // 
             this.txtNombres.Location = new System.Drawing.Point(98, 76);
-            this.txtNombres.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombres.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(115, 20);
             this.txtNombres.TabIndex = 2;
@@ -120,7 +120,7 @@
             // txtApellidos
             // 
             this.txtApellidos.Location = new System.Drawing.Point(98, 98);
-            this.txtApellidos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtApellidos.Margin = new System.Windows.Forms.Padding(2);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(115, 20);
             this.txtApellidos.TabIndex = 2;
@@ -137,8 +137,8 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(311, 119);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmail.Location = new System.Drawing.Point(450, 295);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(115, 20);
             this.txtEmail.TabIndex = 2;
@@ -168,7 +168,7 @@
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnInsertar);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
