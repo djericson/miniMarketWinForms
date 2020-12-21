@@ -386,7 +386,7 @@ namespace App
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(394, 23);
+            this.btnEliminar.Location = new System.Drawing.Point(342, 24);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 2;
