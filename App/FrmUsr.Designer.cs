@@ -137,7 +137,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(450, 295);
+            this.txtEmail.Location = new System.Drawing.Point(426, 220);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(115, 20);
@@ -151,8 +151,7 @@
             this.textBox1.Size = new System.Drawing.Size(115, 20);
             this.textBox1.TabIndex = 3;
             // 
-           
-            // Form1
+            // FrmUsr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -170,7 +169,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnInsertar);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Form1";
+            this.Name = "FrmUsr";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
