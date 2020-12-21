@@ -16,5 +16,10 @@ namespace App
         {
             InitializeComponent();
         }
+
+        private void buscar_producto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
