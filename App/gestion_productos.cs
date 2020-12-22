@@ -73,6 +73,10 @@ namespace App
             {
                 MessageBox.Show("edit");
             }
+            if (value.buttonResult == "delete")
+            {
+                MessageBox.Show("delete");
+            }
         }
 
         private void gestion_productos_Load(object sender, EventArgs e)
