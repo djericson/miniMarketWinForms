@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PracticaCalificada;
+using xDialog;
 
 namespace App
 {
@@ -60,6 +61,13 @@ namespace App
             finally
             {
                 con.Close();
+            }
+
+            DialogResult result = MsgBox.Show("edit product ?", "id: " + 323, MsgBox.Buttons.YesNo, MsgBox.Icon.Info, MsgBox.AnimateStyle.FadeIn);
+
+            if (result == DialogResult.Yes)
+            {
+                MessageBox.Show("Exiting now");
             }
         }
 
