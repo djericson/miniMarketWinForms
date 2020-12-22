@@ -63,11 +63,15 @@ namespace App
                 con.Close();
             }
 
-            DialogResult result = MsgBox.Show("edit product ?", "id: " + 323, MsgBox.Buttons.YesNo, MsgBox.Icon.Info, MsgBox.AnimateStyle.FadeIn);
+            DialogResult result = MsgBox.Show("edit product ?", "id: " + 323, MsgBox.Buttons.OK, MsgBox.Icon.Info, MsgBox.AnimateStyle.FadeIn);
 
             if (result == DialogResult.Yes)
             {
                 MessageBox.Show("Exiting now");
+            }
+            if (value.buttonResult == "edit")
+            {
+                MessageBox.Show("edit");
             }
         }
 
