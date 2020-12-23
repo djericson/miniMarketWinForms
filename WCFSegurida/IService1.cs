@@ -15,8 +15,12 @@ namespace WCFSegurida
     {
         [OperationContract]
         string GetData(int value);
+
+
         [OperationContract]
         void Insertar_Usuario(clsUsuario xobj);
+
+
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 

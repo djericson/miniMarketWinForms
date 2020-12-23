@@ -11,9 +11,9 @@ using Utilitarios;
 
 namespace App
 {
-    public partial class FrmUsr : Form
+    public partial class FrmUsrs : Form
     {
-        public FrmUsr()
+        public FrmUsrs()
         {
             InitializeComponent();
         }
@@ -22,7 +22,8 @@ namespace App
         {
             WCFSeguridad.Service1Client xwcf = new WCFSeguridad.Service1Client(); 
             //clsBLUsuario blusuario = new clsBLUsuario();
-            xwcf.Insertar_Usuario(new clsUsuario(txtUsuario.Text, txtClave.Text, txtNombres.Text, txtApellidos.Text, txtEmail.Text));
+            xwcf.Insertar_Usuario(new clsUsuario(txtUsuario.Text, txtClave.Text, txtNombres.Text, txtApellidos.Text, tb_email.Text));
         }
+
     }
 }
