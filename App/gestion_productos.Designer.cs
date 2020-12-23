@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.codigo_producto = new System.Windows.Forms.TextBox();
             this.BtnAyuda = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.id_product = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -44,17 +44,9 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "codigo producto";
             // 
-            // codigo_producto
-            // 
-            this.codigo_producto.Location = new System.Drawing.Point(36, 79);
-            this.codigo_producto.Name = "codigo_producto";
-            this.codigo_producto.Size = new System.Drawing.Size(100, 20);
-            this.codigo_producto.TabIndex = 1;
-            this.codigo_producto.Text = " ";
-            // 
             // BtnAyuda
             // 
-            this.BtnAyuda.Location = new System.Drawing.Point(142, 77);
+            this.BtnAyuda.Location = new System.Drawing.Point(142, 75);
             this.BtnAyuda.Name = "BtnAyuda";
             this.BtnAyuda.Size = new System.Drawing.Size(32, 23);
             this.BtnAyuda.TabIndex = 2;
@@ -64,27 +56,34 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(224, 300);
+            this.textBox1.Location = new System.Drawing.Point(36, 139);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 3;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(224, 353);
+            this.textBox2.Location = new System.Drawing.Point(36, 177);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 4;
+            // 
+            // id_product
+            // 
+            this.id_product.Location = new System.Drawing.Point(36, 77);
+            this.id_product.Name = "id_product";
+            this.id_product.Size = new System.Drawing.Size(100, 20);
+            this.id_product.TabIndex = 5;
             // 
             // gestion_productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.id_product);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.BtnAyuda);
-            this.Controls.Add(this.codigo_producto);
             this.Controls.Add(this.label1);
             this.Name = "gestion_productos";
             this.Text = "gestion_productos";
@@ -97,9 +96,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox codigo_producto;
         private System.Windows.Forms.Button BtnAyuda;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox id_product;
     }
 }
