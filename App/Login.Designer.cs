@@ -1,4 +1,4 @@
-﻿namespace LoginScreen
+﻿namespace App1
 {
     partial class login
     {
@@ -80,8 +80,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
+             // 
             // pictureBox2
             // 
             //this.pictureBox2.Image = global::LoginScreen.Properties.Resources.Sed_18_512;
@@ -91,8 +90,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
+             // 
             // pictureBox1
             // 
             //this.pictureBox1.Image = global::LoginScreen.Properties.Resources.Untitled_1;
@@ -128,8 +126,7 @@
             this.label2.Size = new System.Drawing.Size(92, 16);
             this.label2.TabIndex = 5;
             this.label2.Text = "Clear Fields";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
+             // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -140,8 +137,7 @@
             this.label3.Size = new System.Drawing.Size(33, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Exit";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
+             // 
             // txtUserName
             // 
             this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -183,12 +179,14 @@
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+
+            //this.Load += new System.EventHandler(this.login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

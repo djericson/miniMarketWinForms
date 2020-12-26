@@ -37,7 +37,7 @@ namespace App
                  
                 command = new SqlCommand("Ayuda_producto", connection);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@id_producto", id_product.Text);
+                command.Parameters.AddWithValue("@id_producto", richTextBox1.Text);
                 connection.Open();
                 loDataReader = command.ExecuteReader();
                 Busqueda objayuda = new Busqueda();
@@ -52,9 +52,10 @@ namespace App
                     loDataReader = command.ExecuteReader();
                     if (loDataReader.HasRows)
                     {
+                        MessageBox.Show("loDataReader");
                         loDataReader.Read();
-                        textBox1.Text = loDataReader.GetValue(loDataReader.GetOrdinal("id_prod")).ToString();
-                        textBox2.Text = loDataReader.GetValue(loDataReader.GetOrdinal("name_product")).ToString();
+                        //textBox1.Text = loDataReader.GetValue(loDataReader.GetOrdinal("id_prod")).ToString();
+                        //textBox2.Text = loDataReader.GetValue(loDataReader.GetOrdinal("name_product")).ToString();
                     }
                 }
                 connection.Close();

@@ -9,7 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LoginScreen
+
+namespace App1
 {
     public partial class login : Form
     {
@@ -18,10 +19,7 @@ namespace LoginScreen
             InitializeComponent();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -58,16 +56,6 @@ namespace LoginScreen
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-            txtUserName.Clear();
-            txtpassword.Clear();
-            txtUserName.Focus();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+         
     }
 }
