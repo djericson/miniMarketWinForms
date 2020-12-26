@@ -1,6 +1,6 @@
 ﻿namespace LoginScreen
 {
-    partial class Form1
+    partial class login
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -74,7 +73,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            //this.pictureBox3.Image = global::LoginScreen.Properties.Resources.lock_2;
             this.pictureBox3.Location = new System.Drawing.Point(29, 284);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(25, 25);
@@ -85,7 +84,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            //this.pictureBox2.Image = global::LoginScreen.Properties.Resources.Sed_18_512;
             this.pictureBox2.Location = new System.Drawing.Point(29, 212);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(25, 25);
@@ -96,7 +95,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            //this.pictureBox1.Image = global::LoginScreen.Properties.Resources.Untitled_1;
             this.pictureBox1.Location = new System.Drawing.Point(101, 54);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(87, 71);
@@ -129,6 +128,7 @@
             this.label2.Size = new System.Drawing.Size(92, 16);
             this.label2.TabIndex = 5;
             this.label2.Text = "Clear Fields";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 

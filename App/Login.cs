@@ -8,13 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using App;
 
 namespace LoginScreen
 {
-    public partial class Form1 : Form
+    public partial class login : Form
     {
-        public Form1()
+        public login()
         {
             InitializeComponent();
         }
@@ -26,11 +25,7 @@ namespace LoginScreen
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (txtUserName.Text == "" || txtpassword.Text == "")
-            {
-                MessageBox.Show("Please provide UserName and Password");
-                return;
-            }
+             
             try
             {
                 //Create SqlConnection
@@ -49,8 +44,8 @@ namespace LoginScreen
                 {
                     MessageBox.Show("Login Successful!");
                     this.Hide();
-                    gestion_productos fm = new gestion_productos();
-                    fm.Show();
+                    //   gestion_productos fm = new gestion_productos();
+                    // fm.Show();
                 }
                 else
                 {
@@ -63,11 +58,16 @@ namespace LoginScreen
             }
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+            txtUserName.Clear();
+            txtpassword.Clear();
+            txtUserName.Focus();
+        }
+
         private void label3_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
     }
-
-   
 }
