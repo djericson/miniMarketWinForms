@@ -107,13 +107,27 @@
     <Compile Include="gestion_productos.Designer.cs">
       <DependentUpon>gestion_productos.cs</DependentUpon>
     </Compile>
-    <Compile Include="login.cs" />
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="login.designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CustomMsgBox\MsgBox.cs" />
+    <Compile Include="Ventas-pagos\Pagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas-pagos\Pagos.Designer.cs">
+      <DependentUpon>Pagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas-pagos\Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas-pagos\Ventas.Designer.cs">
+      <DependentUpon>Ventas.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Busqueda.resx">
       <DependentUpon>Busqueda.cs</DependentUpon>
     </EmbeddedResource>
