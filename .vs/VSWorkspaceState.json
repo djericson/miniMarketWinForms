@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\App",
+    "\\App\\Connected Services"
   ],
-  "SelectedNode": "\\pruebawcf.sln",
+  "SelectedNode": "\\App\\FrmUsuariosVentanas.cs",
   "PreviewInSolutionExplorer": false
 }
