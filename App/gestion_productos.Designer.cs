@@ -34,7 +34,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.panel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.search_produ = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -68,7 +68,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.panel);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.search_produ);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -83,13 +83,14 @@
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(15, 56);
+            this.button4.Location = new System.Drawing.Point(12, 56);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(185, 54);
+            this.button4.Size = new System.Drawing.Size(185, 49);
             this.button4.TabIndex = 10;
             this.button4.Text = "       Home";
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // panel
             // 
@@ -99,23 +100,24 @@
             this.panel.Size = new System.Drawing.Size(10, 49);
             this.panel.TabIndex = 6;
             // 
-            // button1
+            // search_produ
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button1.Location = new System.Drawing.Point(21, 137);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(176, 46);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "  search product";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
+            this.search_produ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.search_produ.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.search_produ.FlatAppearance.BorderSize = 0;
+            this.search_produ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.search_produ.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search_produ.ForeColor = System.Drawing.Color.White;
+            this.search_produ.Image = ((System.Drawing.Image)(resources.GetObject("search_produ.Image")));
+            this.search_produ.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.search_produ.Location = new System.Drawing.Point(12, 111);
+            this.search_produ.Name = "search_produ";
+            this.search_produ.Size = new System.Drawing.Size(185, 51);
+            this.search_produ.TabIndex = 5;
+            this.search_produ.Text = "  search product";
+            this.search_produ.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.search_produ.UseVisualStyleBackColor = false;
+            this.search_produ.Click += new System.EventHandler(this.search_produ_Click);
             // 
             // richTextBox1
             // 
@@ -157,7 +159,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button search_produ;
         private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

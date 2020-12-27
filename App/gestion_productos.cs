@@ -15,16 +15,22 @@ namespace App
 {
     public partial class gestion_productos : Form
     {
-        SqlConnection con = new SqlConnection();
-        SqlCommand cmd = new SqlCommand();
+         
         SqlDataReader loDataReader;
 
         static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
         static SqlConnection connection = new SqlConnection();
-        static SqlCommand command = new SqlCommand(); 
+        static SqlCommand command = new SqlCommand();
+
+
+        SqlConnection cn = new SqlConnection("Data Source=srv-bd-sql-server.database.windows.net; User ID =edgar; Password =$E012345; Initial Catalog=miniMarket");
+
+        
         public gestion_productos()
         {
             InitializeComponent();
+            panel.Height = button4.Height;
+            panel.Top = button4.Top;
         }
 
         private void buscar_producto_Click(object sender, EventArgs e)
@@ -37,6 +43,7 @@ namespace App
                  
                 command = new SqlCommand("Ayuda_producto", connection);
                 command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Clear();
                 command.Parameters.AddWithValue("@id_producto", richTextBox1.Text);
                 connection.Open();
                 loDataReader = command.ExecuteReader();
@@ -58,7 +65,7 @@ namespace App
                         //textBox2.Text = loDataReader.GetValue(loDataReader.GetOrdinal("name_product")).ToString();
                     }
                 }
-                connection.Close();
+                 
 
             }
             catch (Exception ex)
@@ -67,7 +74,7 @@ namespace App
             }
             finally
             {
-                con.Close();
+                connection.Close();
             }
 
             DialogResult result = MsgBox.Show("edit product ?", "id: " + 323, MsgBox.Buttons.OK, MsgBox.Icon.Info, MsgBox.AnimateStyle.FadeIn);
@@ -101,6 +108,8 @@ namespace App
 
                 connection = new SqlConnection(builder.ConnectionString);
 
+
+
                 //command.Connection = connection;
 
               
@@ -131,11 +140,24 @@ namespace App
            
         }
 
-           // con.ConnectionString = "Server=EDGAR;DataBase=Pachacamac_;Integrated Security=SSPI;";
-           //
-           // cmd.CommandType = CommandType.StoredProcedure;
-           //
-           // cmd.Connection = con;
-        
+        private void search_produ_Click(object sender, EventArgs e)
+        {
+            panel.Height = search_produ.Height;
+            panel.Top = search_produ.Top;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            panel.Height = button4.Height;
+            panel.Top = button4.Top;
+
+        }
+
+        // con.ConnectionString = "Server=EDGAR;DataBase=Pachacamac_;Integrated Security=SSPI;";
+        //
+        // cmd.CommandType = CommandType.StoredProcedure;
+        //
+        // cmd.Connection = con;
+
     }
 }
