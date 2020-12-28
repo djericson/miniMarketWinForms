@@ -22,6 +22,14 @@ namespace WCFSegurida
 
 
         [OperationContract]
+
+        Boolean search_product(string valueRichTextBox1);
+        [OperationContract]
+
+        void search_produc2222t(string valueRichTextBox1);
+        [OperationContract]
+ 
+        void buscar(string valueRichTextBox1);
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: agregue aquí sus operaciones de servicio

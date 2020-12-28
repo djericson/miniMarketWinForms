@@ -1,4 +1,4 @@
-﻿namespace PracticaCalificada
+﻿namespace busqueda
 {
     partial class Busqueda
     {

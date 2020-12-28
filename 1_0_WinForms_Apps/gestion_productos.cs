@@ -8,16 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using PracticaCalificada;
+using busqueda;
 using xDialog;
+ 
+
 
 namespace App
 {
     public partial class gestion_productos : Form
     {
-         
+       
+        
         SqlDataReader loDataReader;
-
         static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
         static SqlConnection connection = new SqlConnection();
         static SqlCommand command = new SqlCommand();
@@ -35,62 +37,62 @@ namespace App
 
         private void buscar_producto_Click(object sender, EventArgs e)
         {
-
-
-            try
-            {
-
-                 
-                command = new SqlCommand("Ayuda_producto", connection);
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("@id_producto", richTextBox1.Text);
-                connection.Open();
-                loDataReader = command.ExecuteReader();
-                Busqueda objayuda = new Busqueda();
-                objayuda.objDR = loDataReader;
-                objayuda.ShowDialog(this);
-                if (objayuda.objRow != null)
-                {
-                    command = new SqlCommand("Seleccionar_UnProducto", connection);
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.Clear();
-                    command.Parameters.AddWithValue("@PROD_ID", objayuda.objRow.Cells[0].Value);
-                    loDataReader = command.ExecuteReader();
-                    if (loDataReader.HasRows)
-                    {
-                        MessageBox.Show("loDataReader");
-                        loDataReader.Read();
-                        //textBox1.Text = loDataReader.GetValue(loDataReader.GetOrdinal("id_prod")).ToString();
-                        //textBox2.Text = loDataReader.GetValue(loDataReader.GetOrdinal("name_product")).ToString();
-                    }
-                }
-                 
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-
-            DialogResult result = MsgBox.Show("edit product ?", "id: " + 323, MsgBox.Buttons.OK, MsgBox.Icon.Info, MsgBox.AnimateStyle.FadeIn);
-
-            if (result == DialogResult.Yes)
-            {
-                MessageBox.Show("Exiting now");
-            }
-            if (value.buttonResult == "edit")
-            {
-                MessageBox.Show("edit");
-            }
-            if (value.buttonResult == "delete")
-            {
-                MessageBox.Show("delete");
-            }
+            WCFSeguridad.Service1Client  xwcf = new WCFSeguridad.Service1Client();
+            xwcf.search_product(null);
+            //try
+            //{
+            //
+            //     
+            //    command = new SqlCommand("Ayuda_producto", connection);
+            //    command.CommandType = CommandType.StoredProcedure;
+            //    command.Parameters.Clear();
+            //    command.Parameters.AddWithValue("@id_producto", richTextBox1.Text);
+            //    connection.Open();
+            //    loDataReader = command.ExecuteReader();
+            //    Busqueda objayuda = new Busqueda();
+            //    objayuda.objDR = loDataReader;
+            //    objayuda.ShowDialog(this);
+            //    if (objayuda.objRow != null)
+            //    {
+            //        command = new SqlCommand("Seleccionar_UnProducto", connection);
+            //        command.CommandType = CommandType.StoredProcedure;
+            //        command.Parameters.Clear();
+            //        command.Parameters.AddWithValue("@PROD_ID", objayuda.objRow.Cells[0].Value);
+            //        loDataReader = command.ExecuteReader();
+            //        if (loDataReader.HasRows)
+            //        {
+            //            MessageBox.Show("loDataReader");
+            //            loDataReader.Read();
+            //            //textBox1.Text = loDataReader.GetValue(loDataReader.GetOrdinal("id_prod")).ToString();
+            //            //textBox2.Text = loDataReader.GetValue(loDataReader.GetOrdinal("name_product")).ToString();
+            //        }
+            //    }
+            //     
+            //
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            //finally
+            //{
+            //    connection.Close();
+            //}
+            //
+            //DialogResult result = MsgBox.Show("edit product ?", "id: " + 323, MsgBox.Buttons.OK, MsgBox.Icon.Info, MsgBox.AnimateStyle.FadeIn);
+            //
+            //if (result == DialogResult.Yes)
+            //{
+            //    MessageBox.Show("Exiting now");
+            //}
+            //if (value.buttonResult == "edit")
+            //{
+            //    MessageBox.Show("edit");
+            //}
+            //if (value.buttonResult == "delete")
+            //{
+            //    MessageBox.Show("delete");
+            //}
         }
 
         private void gestion_productos_Load(object sender, EventArgs e)
