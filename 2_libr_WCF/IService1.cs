@@ -18,7 +18,7 @@ namespace WCFSegurida
 
 
         [OperationContract]
-        void Insertar_Usuario(clsUsuario xobj);
+        void Insertar_Usuario(ClsUsuario xobj);
 
 
         [OperationContract]

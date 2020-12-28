@@ -16,13 +16,13 @@ namespace DAC
         SqlConnection cn = new SqlConnection("Data Source=srv-bd-sql-server.database.windows.net; User ID =edgar; Password =$E012345; Initial Catalog=miniMarket");
         SqlCommand cmd;
  
-        public List<clsUsuario> lista()
+        public List<ClsUsuario> lista()
         {
-            List<clsUsuario> x=new List<clsUsuario>();
+            List<ClsUsuario> x=new List<ClsUsuario>();
 
             return x;
         }
-        public void insertar(clsUsuario xobj )
+        public void insertar(ClsUsuario xobj )
         {
             cmd = new SqlCommand("[seguridad].[usuario_insert]", cn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -36,14 +36,14 @@ namespace DAC
             cmd.ExecuteNonQuery();
             cn.Close();
         }
-        public void eliminar(clsUsuario xobj)
+        public void eliminar(ClsUsuario xobj)
         {
             
 
         }
-        public clsUsuario validar_usuario(string xusuario, string xclave)
+        public ClsUsuario validar_usuario(string xusuario, string xclave)
         {
-            clsUsuario x = new clsUsuario();
+            ClsUsuario x = new ClsUsuario();
 
             return x;
         }

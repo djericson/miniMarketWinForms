@@ -30,7 +30,7 @@ namespace WCFSegurida
             return composite;
         }
 
-        public void Insertar_Usuario(clsUsuario xobj)
+        public void Insertar_Usuario(ClsUsuario xobj)
         {
             BL.clsBLUsuario x = new clsBLUsuario();
             x.insertar(xobj);

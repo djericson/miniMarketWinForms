@@ -11,7 +11,7 @@ namespace BL
     public class clsBLUsuario
     {
         clsDAUsario dausuario = new clsDAUsario();
-        public void insertar(clsUsuario xobj)
+        public void insertar(ClsUsuario xobj)
         {
             dausuario.insertar(xobj);
         }

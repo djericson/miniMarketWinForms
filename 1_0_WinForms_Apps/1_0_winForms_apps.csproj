@@ -88,12 +88,6 @@
     <Compile Include="FrmProveedores.Designer.cs">
       <DependentUpon>FrmProveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRoles.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WinForms_Usuarios\FrmRoles.Designer.cs">
-      <DependentUpon>FrmRoles.cs</DependentUpon>
-    </Compile>
     <Compile Include="WinForms_Usuarios\FrmUsr.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,7 +118,9 @@
     <Compile Include="gestion_productos.Designer.cs">
       <DependentUpon>gestion_productos.cs</DependentUpon>
     </Compile>
-    <Compile Include="login.cs" />
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="login.designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
@@ -139,9 +135,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProveedores.resx">
       <DependentUpon>FrmProveedores.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmUsr.resx">
-      <DependentUpon>FrmUsr.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gestion_productos.resx">
       <DependentUpon>gestion_productos.cs</DependentUpon>
