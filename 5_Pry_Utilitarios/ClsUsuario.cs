@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Utilitarios
 {
-    public class clsUsuario
+    public class ClsUsuario
     {
         public int id{ get; set; }
         public string Usuario { get; set; }
@@ -17,8 +17,8 @@ namespace Utilitarios
         public Boolean Activo { get; set; }
         public Boolean Bloqueado { get; set; }
         public int intentos_fallidos { get; set; }
-        public clsUsuario() { }
-        public clsUsuario(string _Usuario, string _clave, string _Nombres, string _Apellidos, string _Correo) 
+        public ClsUsuario() { }
+        public ClsUsuario(string _Usuario, string _clave, string _Nombres, string _Apellidos, string _Correo) 
         {
             Usuario = _Usuario;clave = _clave;Nombres = _Nombres;Apellidos = _Apellidos;Correo = _Correo;
         }

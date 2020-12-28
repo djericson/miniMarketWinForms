@@ -15,8 +15,12 @@ namespace WCFSegurida
     {
         [OperationContract]
         string GetData(int value);
+
+
         [OperationContract]
-        void Insertar_Usuario(clsUsuario xobj);
+        void Insertar_Usuario(ClsUsuario xobj);
+
+
         [OperationContract]
 
         Boolean search_product(string valueRichTextBox1);

@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Utilitarios;
+using U;
 
 namespace App
 {
-    public partial class FrmUsr : Form
+    public partial class FrmUsrs : Form
     {
-        public FrmUsr()
+        public FrmUsrs()
         {
             InitializeComponent();
         }
@@ -22,7 +22,8 @@ namespace App
         {
             WCFSeguridad.Service1Client xwcf = new WCFSeguridad.Service1Client(); 
             //clsBLUsuario blusuario = new clsBLUsuario();
-            xwcf.Insertar_Usuario(new clsUsuario(txtUsuario.Text, txtClave.Text, txtNombres.Text, txtApellidos.Text, txtEmail.Text));
+            xwcf.Insertar_Usuario(new ClsUsuario(txtUsuario.Text, txtClave.Text, txtNombres.Text, txtApellidos.Text, tb_email.Text));
         }
+
     }
 }

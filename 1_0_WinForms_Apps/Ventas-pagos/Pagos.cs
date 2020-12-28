@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace App
+namespace App.Ventas_pagos
 {
-    public partial class FrmRoles : Form
+    public partial class Pagos : Form
     {
-        public FrmRoles()
+        public Pagos()
         {
             InitializeComponent();
         }

@@ -85,10 +85,10 @@ namespace App.WCFSeguridad {
         System.Threading.Tasks.Task<string> GetDataAsync(int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Insertar_Usuario", ReplyAction="http://tempuri.org/IService1/Insertar_UsuarioResponse")]
-        void Insertar_Usuario(Utilitarios.clsUsuario xobj);
+        void Insertar_Usuario(Utilitarios.ClsUsuario xobj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Insertar_Usuario", ReplyAction="http://tempuri.org/IService1/Insertar_UsuarioResponse")]
-        System.Threading.Tasks.Task Insertar_UsuarioAsync(Utilitarios.clsUsuario xobj);
+        System.Threading.Tasks.Task Insertar_UsuarioAsync(Utilitarios.ClsUsuario xobj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
         App.WCFSeguridad.CompositeType GetDataUsingDataContract(App.WCFSeguridad.CompositeType composite);
@@ -132,11 +132,11 @@ namespace App.WCFSeguridad {
             return base.Channel.GetDataAsync(value);
         }
         
-        public void Insertar_Usuario(Utilitarios.clsUsuario xobj) {
+        public void Insertar_Usuario(Utilitarios.ClsUsuario xobj) {
             base.Channel.Insertar_Usuario(xobj);
         }
         
-        public System.Threading.Tasks.Task Insertar_UsuarioAsync(Utilitarios.clsUsuario xobj) {
+        public System.Threading.Tasks.Task Insertar_UsuarioAsync(Utilitarios.ClsUsuario xobj) {
             return base.Channel.Insertar_UsuarioAsync(xobj);
         }
         
