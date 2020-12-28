@@ -158,6 +158,9 @@
     <EmbeddedResource Include="CustomMsgBox\MsgBox.resx">
       <DependentUpon>MsgBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ventas-pagos\Ventas.resx">
+      <DependentUpon>Ventas.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Connected Services\WCFSeguridad\App.WCFSeguridad.CompositeType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
