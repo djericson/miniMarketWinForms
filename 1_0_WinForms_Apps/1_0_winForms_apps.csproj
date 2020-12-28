@@ -200,11 +200,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BL\BL.csproj">
+    <ProjectReference Include="..\3_Pry_BL\3_BL.csproj">
       <Project>{fd956780-5e92-435e-bb17-5ab90b7a9943}</Project>
       <Name>BL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Utilitarios\Utilitarios.csproj">
+    <ProjectReference Include="..\5_Pry_Utilitarios\5_pry_Utilitarios.csproj">
       <Project>{9a83c521-4221-4a77-90f6-15814d92b7fc}</Project>
       <Name>Utilitarios</Name>
     </ProjectReference>
