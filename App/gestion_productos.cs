@@ -15,13 +15,22 @@ namespace App
 {
     public partial class gestion_productos : Form
     {
-        SqlConnection con = new SqlConnection();
-        SqlCommand cmd = new SqlCommand();
+         
         SqlDataReader loDataReader;
-       
+
+        static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+        static SqlConnection connection = new SqlConnection();
+        static SqlCommand command = new SqlCommand();
+
+
+        SqlConnection cn = new SqlConnection("Data Source=srv-bd-sql-server.database.windows.net; User ID =edgar; Password =$E012345; Initial Catalog=miniMarket");
+
+        
         public gestion_productos()
         {
             InitializeComponent();
+            panel.Height = button4.Height;
+            panel.Top = button4.Top;
         }
 
         private void buscar_producto_Click(object sender, EventArgs e)
@@ -30,28 +39,33 @@ namespace App
 
             try
             {
-                cmd.CommandText = "Ayuda_producto";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@id_producto", codigo_producto.Text);
-                con.Open();
-                loDataReader = cmd.ExecuteReader();
+
+                 
+                command = new SqlCommand("Ayuda_producto", connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Clear();
+                command.Parameters.AddWithValue("@id_producto", richTextBox1.Text);
+                connection.Open();
+                loDataReader = command.ExecuteReader();
                 Busqueda objayuda = new Busqueda();
                 objayuda.objDR = loDataReader;
                 objayuda.ShowDialog(this);
                 if (objayuda.objRow != null)
                 {
-                    cmd.CommandText = "Seleccionar_UnProducto";
-                    cmd.Parameters.Clear();
-                    cmd.Parameters.AddWithValue("@PROD_ID", objayuda.objRow.Cells[0].Value);
-                    loDataReader = cmd.ExecuteReader();
+                    command = new SqlCommand("Seleccionar_UnProducto", connection);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.Clear();
+                    command.Parameters.AddWithValue("@PROD_ID", objayuda.objRow.Cells[0].Value);
+                    loDataReader = command.ExecuteReader();
                     if (loDataReader.HasRows)
                     {
+                        MessageBox.Show("loDataReader");
                         loDataReader.Read();
-                        textBox1.Text = loDataReader.GetValue(loDataReader.GetOrdinal("Id")).ToString();
-                        textBox2.Text = loDataReader.GetValue(loDataReader.GetOrdinal("NombreProducto")).ToString();
+                        //textBox1.Text = loDataReader.GetValue(loDataReader.GetOrdinal("id_prod")).ToString();
+                        //textBox2.Text = loDataReader.GetValue(loDataReader.GetOrdinal("name_product")).ToString();
                     }
                 }
-                con.Close();
+                 
 
             }
             catch (Exception ex)
@@ -60,7 +74,7 @@ namespace App
             }
             finally
             {
-                con.Close();
+                connection.Close();
             }
 
             DialogResult result = MsgBox.Show("edit product ?", "id: " + 323, MsgBox.Buttons.OK, MsgBox.Icon.Info, MsgBox.AnimateStyle.FadeIn);
@@ -81,13 +95,69 @@ namespace App
 
         private void gestion_productos_Load(object sender, EventArgs e)
         {
+            try
+            {
+                
+
+                builder.DataSource = "srv-bd-sql-server.database.windows.net";
+                builder.UserID = "edgar";
+                builder.Password = "$E012345";
+                builder.InitialCatalog = "miniMarket";
+                builder.ConnectTimeout = 30;
+                builder.Encrypt = true;
+
+                connection = new SqlConnection(builder.ConnectionString);
 
 
-            con.ConnectionString = "Server=EDGAR;DataBase=Pachacamac_;Integrated Security=SSPI;";
 
-            cmd.CommandType = CommandType.StoredProcedure;
+                //command.Connection = connection;
 
-            cmd.Connection = con;
+              
+                //   connection.Open();
+                //
+                //   String sql = "SELECT id_prod, name_product FROM producto";
+                //
+                //   using (command = new SqlCommand(sql, connection))
+                //   {
+                //       using (SqlDataReader reader = command.ExecuteReader())
+                //       {
+                //           if (reader.HasRows)
+                //           {
+                //               reader.Read();
+                //               textBox1.Text = reader.GetValue(reader.GetOrdinal("id_prod")).ToString();
+                //               textBox2.Text = reader.GetValue(reader.GetOrdinal("name_product")).ToString();
+                //           }
+                //       }
+                //   }
+                //
+                //   connection.Close();
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+           
         }
+
+        private void search_produ_Click(object sender, EventArgs e)
+        {
+            panel.Height = search_produ.Height;
+            panel.Top = search_produ.Top;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            panel.Height = button4.Height;
+            panel.Top = button4.Top;
+
+        }
+
+        // con.ConnectionString = "Server=EDGAR;DataBase=Pachacamac_;Integrated Security=SSPI;";
+        //
+        // cmd.CommandType = CommandType.StoredProcedure;
+        //
+        // cmd.Connection = con;
+
     }
 }
