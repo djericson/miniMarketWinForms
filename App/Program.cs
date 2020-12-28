@@ -16,7 +16,7 @@ namespace App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmUsrs());
+            Application.Run(new gestion_productos());
         }
     }
 }
