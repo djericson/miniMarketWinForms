@@ -15,5 +15,18 @@ namespace BL
         {
             dausuario.insertar(xobj);
         }
+        public Boolean search_product(string valueRichTextBox1)
+        {
+            
+            if(dausuario.search_product1(valueRichTextBox1) == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }

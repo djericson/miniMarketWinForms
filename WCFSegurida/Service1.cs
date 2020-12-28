@@ -6,10 +6,11 @@ using System.ServiceModel;
 using System.Text;
 using Utilitarios;
 using BL;
+
 namespace WCFSegurida
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código y en el archivo de configuración a la vez.
-    public class Service1 : IService1
+    public class service1 : IService1
 
     {
         public string GetData(int value)
@@ -34,6 +35,31 @@ namespace WCFSegurida
         {
             BL.clsBLUsuario x = new clsBLUsuario();
             x.insertar(xobj);
+        }
+        public Boolean search_product(string valueRichTextBox1)
+        {
+            BL.clsBLUsuario x = new clsBLUsuario();
+            
+            if (x.search_product(valueRichTextBox1) == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+     
+        public  void search_produc2222t(string valueRichTextBox1)
+        {
+            
+        }
+
+       
+
+        public void buscar(string valueRichTextBox1)
+        {
+           
         }
     }
 }
