@@ -6,6 +6,8 @@ using System.ServiceModel;
 using System.Text;
 using Utilitarios;
 using BL;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace WCFSegurida
 {
@@ -36,30 +38,25 @@ namespace WCFSegurida
             BL.ClsBL_usr x = new ClsBL_usr();
             x.insertar(xobj);
         }
-        public Boolean search_product(string valueRichTextBox1)
+        public SqlDataReader search_product(string valueRichTextBox1)
         {
             BL.ClsBL_usr x = new ClsBL_usr();
             
-            if (x.search_product(valueRichTextBox1) == true)
+            if (x.search_product(valueRichTextBox1) != null)
             {
-                return true;
+                 
+                var sqlDataReader = x.search_product(valueRichTextBox1);
+                return sqlDataReader;
             }
             else
             {
-                return false;
+                return null;
             }
-        }
-     
-        public  void search_produc2222t(string valueRichTextBox1)
-        {
+
+            
             
         }
-
+     
        
-
-        public void buscar(string valueRichTextBox1)
-        {
-           
-        }
     }
 }

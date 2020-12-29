@@ -71,7 +71,7 @@
     <Compile Include="Busqueda.designer.cs">
       <DependentUpon>Busqueda.cs</DependentUpon>
     </Compile>
-    <Compile Include="Connected Services\WCFSeguridad\Reference.cs">
+    <Compile Include="Connected Services\service_1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -170,20 +170,17 @@
     <EmbeddedResource Include="Ventas-pagos\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Connected Services\WCFSeguridad\App.WCFSeguridad.CompositeType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\WCFSeguridad\service.wsdl" />
-    <None Include="Connected Services\WCFSeguridad\service.xsd">
+    <None Include="Connected Services\service_1\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\WCFSeguridad\service1.xsd">
+    <None Include="Connected Services\service_1\service.wsdl" />
+    <None Include="Connected Services\service_1\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\WCFSeguridad\Utilitarios.xsd">
+    <None Include="Connected Services\service_1\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\WCFSeguridad\WCFSegurida.xsd">
+    <None Include="Connected Services\service_1\Utilitarios.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">
@@ -214,24 +211,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\WCFSeguridad\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\WCFSeguridad\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\WCFSeguridad\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\WCFSeguridad\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
@@ -242,6 +221,21 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\service_1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\service_1\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\service_1\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\service_1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

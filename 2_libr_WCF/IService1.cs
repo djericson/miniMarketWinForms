@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -23,13 +24,9 @@ namespace WCFSegurida
 
         [OperationContract]
 
-        Boolean search_product(string valueRichTextBox1);
-        [OperationContract]
+        SqlDataReader search_product(string valueRichTextBox1);
 
-        void search_produc2222t(string valueRichTextBox1);
-        [OperationContract]
- 
-        void buscar(string valueRichTextBox1);
+
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: agregue aquí sus operaciones de servicio
@@ -38,6 +35,7 @@ namespace WCFSegurida
     // Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.
     // Puede agregar archivos XSD al proyecto. Después de compilar el proyecto, puede usar directamente los tipos de datos definidos aquí, con el espacio de nombres "WCFSegurida.ContractType".
     [DataContract]
+     
     public class CompositeType
     {
         bool boolValue = true;

@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -37,8 +38,17 @@ namespace App
 
         private void buscar_producto_Click(object sender, EventArgs e)
         {
-            WCFSeguridad.Service1Client  xwcf = new WCFSeguridad.Service1Client();
-            xwcf.search_product(null);
+            System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+            service_1.Service1Client  xwcf = new service_1.Service1Client();
+            var sqlDataReader = xwcf.search_product(richTextBox1.Text);
+
+            if(sqlDataReader != null)
+            {
+                Busqueda objayuda = new Busqueda();
+                objayuda.objDR = loDataReader;
+                objayuda.ShowDialog(this);
+            }
+           
             //try
             //{
             //
