@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1_0_winForms_apps", "1_0_WinForms_Apps\1_0_winForms_apps.csproj", "{72FFE933-E97D-47B3-960C-4A709F925291}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6FDBB6D5-B9EE-4090-A0A9-199D132130B6} = {6FDBB6D5-B9EE-4090-A0A9-199D132130B6}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1_1_ASP.Net_WFC", "1_1_asp.net_WFC\1_1_ASP.Net_WFC.csproj", "{1752B2D6-6B68-4278-9C3A-7E815DA930B4}"
 EndProject

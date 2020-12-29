@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using Utilitarios;
- 
 using System.Data.Common;
+ 
 
 namespace DAC
 {
@@ -39,6 +39,32 @@ namespace DAC
         public void eliminar(ClsUsuario xobj)
         {
             
+
+        }
+
+        public SqlDataReader search_product(string richTextBox1)
+        {
+            if(richTextBox1 != "")
+            {
+                cmd = new SqlCommand("Ayuda_producto", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id_producto", richTextBox1);
+                cn.Open();
+                SqlDataReader loDataReader;
+                loDataReader = cmd.ExecuteReader();
+
+
+                //Busqueda objayuda = new Busqueda();
+                //objayuda.objDR = loDataReader;
+                //objayuda.ShowDialog(this);
+                cn.Close();
+                return loDataReader;
+
+            }
+            return null;
+             
+
 
         }
         public ClsUsuario validar_usuario(string xusuario, string xclave)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,16 +16,17 @@ namespace BL
         {
             dausuario.insertar(xobj);
         }
-        public Boolean search_product(string valueRichTextBox1)
+        public SqlDataReader search_product(string valueRichTextBox1)
         {
-            
-            if(dausuario.search_product1(valueRichTextBox1) == true)
+
+            if (dausuario.search_product(valueRichTextBox1) != null)
             {
-                return true;
+                var sqlDataReader = dausuario.search_product(valueRichTextBox1);
+                return sqlDataReader;
             }
             else
             {
-                return false;
+                return null;
             }
         }
 
