@@ -33,12 +33,12 @@ namespace WCFSegurida
 
         public void Insertar_Usuario(ClsUsuario xobj)
         {
-            BL.clsBLUsuario x = new clsBLUsuario();
+            BL.ClsBL_usr x = new ClsBL_usr();
             x.insertar(xobj);
         }
         public Boolean search_product(string valueRichTextBox1)
         {
-            BL.clsBLUsuario x = new clsBLUsuario();
+            BL.ClsBL_usr x = new ClsBL_usr();
             
             if (x.search_product(valueRichTextBox1) == true)
             {

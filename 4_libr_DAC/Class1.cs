@@ -11,7 +11,7 @@ using System.Data.Common;
 
 namespace DAC
 {
-    public class clsDAUsario
+    public class ClsDAC_Usuario
     {
         SqlConnection cn = new SqlConnection("Data Source=srv-bd-sql-server.database.windows.net; User ID =edgar; Password =$E012345; Initial Catalog=miniMarket");
         SqlCommand cmd;
@@ -50,7 +50,5 @@ namespace DAC
 
 
     }
-    public class clsDAAplicaciones
-    { }
 
 }

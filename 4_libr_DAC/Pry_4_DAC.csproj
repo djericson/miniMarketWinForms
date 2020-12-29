@@ -45,5 +45,11 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\5_Pry_Utilitarios\Pry_5_Utilitarios.csproj">
+      <Project>{9a83c521-4221-4a77-90f6-15814d92b7fc}</Project>
+      <Name>Pry_5_Utilitarios</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
