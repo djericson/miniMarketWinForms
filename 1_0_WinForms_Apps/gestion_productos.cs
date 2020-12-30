@@ -23,14 +23,14 @@ namespace App
     {
        
         
-        SqlDataReader loDataReader = null;
+         
         DataTable objTabla = new DataTable();
         static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
         static SqlConnection connection = new SqlConnection();
         static SqlCommand command = new SqlCommand();
 
 
-        SqlConnection cn = new SqlConnection("Data Source=srv-bd-sql-server.database.windows.net; User ID =edgar; Password =$E012345; Initial Catalog=miniMarket");
+        //SqlConnection cn = new SqlConnection("Data Source=srv-bd-sql-server.database.windows.net; User ID =edgar; Password =$E012345; Initial Catalog=miniMarket");
 
         
         public gestion_productos()
@@ -56,10 +56,10 @@ namespace App
                     string datarow = objayuda.objRow.Cells[0].Value.ToString();
                    
                     var _DataTable_2 = Deserialize(xwcf._GetData("", datarow), type);
-                    MessageBox.Show("_DataTable: "+ _DataTable_2.ToString());
+                    //MessageBox.Show("_DataTable2: "+ _DataTable_2.ToString());
                     foreach (DataRow row in _DataTable_2.Rows)
                     {
-                        string file = row.Field<string>(0);
+                        string file = row.Field<string>(1);
                         MessageBox.Show("_DataTable: " + file);
                     }
                 }

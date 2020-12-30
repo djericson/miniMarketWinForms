@@ -7,7 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using Utilitarios;
 using System.Data.Common;
- 
+using System.Windows.Forms;
 
 namespace DAC
 {
@@ -40,8 +40,37 @@ namespace DAC
         }
         public void eliminar(ClsUsuario xobj)
         {
-            
 
+        }
+        public int  Login(string user, string pasword)
+        {
+
+            
+                SqlCommand command = new SqlCommand("Select id_usr,rol_usr,usr_nom,usr_pass   from Usuario    where    usr_nom = '" + user + "' and usr_pass = '" + pasword + "'", cn);
+
+                cn.Open();
+                SqlDataAdapter adapt = new SqlDataAdapter(command);
+                DataSet ds = new DataSet();
+                adapt.Fill(ds);
+                cn.Close();
+                int count = ds.Tables[0].Rows.Count;
+
+            if (count == 1)
+            {
+
+              
+
+                var s = ds.Tables[0].Rows[0]["rol_usr"].ToString();
+                var f = ds.Tables[0].Rows[0]["usr_nom"].ToString();
+                MessageBox.Show("rol: "+s +" user: "+f);
+
+                int id_Rol = Int32.Parse(ds.Tables[0].Rows[0]["id_usr"].ToString());
+                id_Rol = id_Rol - 1;
+                return id_Rol;
+
+
+            }
+                return 0;
         }
 
         public DataTable search_product(string richTextBox1 , string _DataRow)

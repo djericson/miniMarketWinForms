@@ -26,5 +26,20 @@ namespace BL
             }
             return null;
         }
+        public int Login(string user, string pasword)
+        {
+            var Id_rol = dac_usuario.Login(user, pasword);
+
+
+
+            if (Id_rol == 1)
+            {
+                return Id_rol;
+            }
+            return 0;
+
+
+        }
+
     }
 }

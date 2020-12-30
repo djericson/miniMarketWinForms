@@ -33,6 +33,12 @@ namespace App.service_1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/_GetData", ReplyAction="http://tempuri.org/IService1/_GetDataResponse")]
         System.Threading.Tasks.Task<string> _GetDataAsync(string value, string _DataRow);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
+        int Login(string user, string pasword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
+        System.Threading.Tasks.Task<int> LoginAsync(string user, string pasword);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
         WCFSegurida.CompositeType GetDataUsingDataContract(WCFSegurida.CompositeType composite);
         
@@ -89,6 +95,14 @@ namespace App.service_1 {
         
         public System.Threading.Tasks.Task<string> _GetDataAsync(string value, string _DataRow) {
             return base.Channel._GetDataAsync(value, _DataRow);
+        }
+        
+        public int Login(string user, string pasword) {
+            return base.Channel.Login(user, pasword);
+        }
+        
+        public System.Threading.Tasks.Task<int> LoginAsync(string user, string pasword) {
+            return base.Channel.LoginAsync(user, pasword);
         }
         
         public WCFSegurida.CompositeType GetDataUsingDataContract(WCFSegurida.CompositeType composite) {

@@ -20,7 +20,7 @@ namespace WCFSegurida
     public class service1 : IService1
 
     {
-        
+        BL.ClsBL_usr objBL = new ClsBL_usr();
         public string GetData(int value)
         {
             return string.Format("You entered: {0}", value);
@@ -29,8 +29,8 @@ namespace WCFSegurida
         {
          
 
-            BL.ClsBL_usr x = new ClsBL_usr();
-            var _DataTable = x.search_product(value, _DataRow);
+           
+            var _DataTable = objBL.search_product(value, _DataRow);
             if (_DataTable != null)
             {
 
@@ -109,8 +109,22 @@ namespace WCFSegurida
             BL.ClsBL_usr x = new ClsBL_usr();
             x.insertar(xobj);
         }
-       
+        public int Login(string user, string pasword)
+        {
+          
+            var Id_rol = objBL.Login(user, pasword);
 
-        
+
+
+            if (Id_rol == 1)
+            {
+                return Id_rol;
+            }
+            return 0;
+
+
+        }
+
+         
     }
 }

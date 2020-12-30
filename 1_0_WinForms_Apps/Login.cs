@@ -9,53 +9,74 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-namespace App1
+namespace App
 {
     public partial class login : Form
     {
+        public static string Pasword = "";
+        public static int richTextlent = 1;
+      
+        static gestion_productos _adm = new gestion_productos();
+        //static alumno _alumno = new alumno();
+        List<Form> listForm = new List<Form>();
         public login()
         {
             InitializeComponent();
         }
 
-        
-
-        private void button1_Click(object sender, EventArgs e)
+        private void richTextBox2_TextChanged(object sender, EventArgs e)
         {
-             
+         
+            if(pasword.Text.Length == richTextlent)
+            {
+                Pasword += pasword.Text[0].ToString();
+                pasword.Text = pasword.Text.Remove(0, 1);
+                pasword.Text += "*";
+            }
+            else
+            {
+
+
+                Pasword = "";
+                pasword.Text = "";
+            }
+            richTextlent = pasword.Text.Length + 1;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
             try
             {
-                //Create SqlConnection
-                SqlConnection con = new SqlConnection("connection");
-                SqlCommand cmd = new SqlCommand("Select * from Usuario where usr_nom=@username and usr_pass=@password", con);
-                cmd.Parameters.AddWithValue("@username", txtUserName.Text);
-                cmd.Parameters.AddWithValue("@password", txtpassword.Text);
-                con.Open();
-                SqlDataAdapter adapt = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                adapt.Fill(ds);
-                con.Close();
-                int count = ds.Tables[0].Rows.Count;
-                //If count is equal to 1, than show frmMain form
-                if (count == 1)
-                {
-                    MessageBox.Show("Login Successful!");
-                    this.Hide();
-                    //   gestion_productos fm = new gestion_productos();
-                    // fm.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Login Failed!");
-                }
+                service_1.Service1Client xwcf = new service_1.Service1Client();
+             
+                this.Hide();
+                int id_Rol = xwcf.Login(user_name.Text, Pasword);
+                MessageBox.Show("Login Successful!");
+                for (int x= 0; x < listForm.Count(); x++)
+                    {
+                        if (x == id_Rol)
+                        {
+                            listForm[x].Show();
+                        }
+                    }
+                 
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Login Failed!");
                 MessageBox.Show(ex.Message);
             }
         }
 
-         
+        private void Form2_Load(object sender, EventArgs e)
+        {
+           
+            //listForm.Add(_adm);
+            //listForm.Add(_alumno);
+           
+
+
+
+        }
     }
 }
