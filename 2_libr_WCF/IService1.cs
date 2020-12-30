@@ -6,6 +6,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using BL;
+using Newtonsoft.Json;
 using Utilitarios;
 
 namespace WCFSegurida
@@ -21,10 +22,23 @@ namespace WCFSegurida
         [OperationContract]
         void Insertar_Usuario(ClsUsuario xobj);
 
+        [OperationContract]
+        string _GetData(string value, string _DataRow);
 
+        [DataContract]
+        public class MyDataContract
+        {
+            [DataMember]
+            public int Id { get; set; }
+
+            [DataMember]
+            public string Name { get; set; }
+            [DataMember]
+            public SqlDataReader _sqlDataReader { get; set; }
+        }
         [OperationContract]
 
-        SqlDataReader search_product(string valueRichTextBox1);
+         
 
 
         CompositeType GetDataUsingDataContract(CompositeType composite);

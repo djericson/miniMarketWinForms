@@ -8,11 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace App.service_1 {
+namespace App.service_2 {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="service_1.IService1")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="service_2.IService1")]
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
@@ -28,25 +28,27 @@ namespace App.service_1 {
         System.Threading.Tasks.Task Insertar_UsuarioAsync(Utilitarios.ClsUsuario xobj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/_GetData", ReplyAction="http://tempuri.org/IService1/_GetDataResponse")]
-        string _GetData(string value, string _DataRow);
+        string _GetData(string value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/_GetData", ReplyAction="http://tempuri.org/IService1/_GetDataResponse")]
-        System.Threading.Tasks.Task<string> _GetDataAsync(string value, string _DataRow);
+        System.Threading.Tasks.Task<string> _GetDataAsync(string value);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        WCFSegurida.CompositeType GetDataUsingDataContract(WCFSegurida.CompositeType composite);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/search_product", ReplyAction="http://tempuri.org/IService1/search_productResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Utilitarios.ClsUsuario))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        object[] search_product(string valueRichTextBox1);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        System.Threading.Tasks.Task<WCFSegurida.CompositeType> GetDataUsingDataContractAsync(WCFSegurida.CompositeType composite);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/search_product", ReplyAction="http://tempuri.org/IService1/search_productResponse")]
+        System.Threading.Tasks.Task<object[]> search_productAsync(string valueRichTextBox1);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IService1Channel : App.service_1.IService1, System.ServiceModel.IClientChannel {
+    public interface IService1Channel : App.service_2.IService1, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<App.service_1.IService1>, App.service_1.IService1 {
+    public partial class Service1Client : System.ServiceModel.ClientBase<App.service_2.IService1>, App.service_2.IService1 {
         
         public Service1Client() {
         }
@@ -83,20 +85,20 @@ namespace App.service_1 {
             return base.Channel.Insertar_UsuarioAsync(xobj);
         }
         
-        public string _GetData(string value, string _DataRow) {
-            return base.Channel._GetData(value, _DataRow);
+        public string _GetData(string value) {
+            return base.Channel._GetData(value);
         }
         
-        public System.Threading.Tasks.Task<string> _GetDataAsync(string value, string _DataRow) {
-            return base.Channel._GetDataAsync(value, _DataRow);
+        public System.Threading.Tasks.Task<string> _GetDataAsync(string value) {
+            return base.Channel._GetDataAsync(value);
         }
         
-        public WCFSegurida.CompositeType GetDataUsingDataContract(WCFSegurida.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContract(composite);
+        public object[] search_product(string valueRichTextBox1) {
+            return base.Channel.search_product(valueRichTextBox1);
         }
         
-        public System.Threading.Tasks.Task<WCFSegurida.CompositeType> GetDataUsingDataContractAsync(WCFSegurida.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContractAsync(composite);
+        public System.Threading.Tasks.Task<object[]> search_productAsync(string valueRichTextBox1) {
+            return base.Channel.search_productAsync(valueRichTextBox1);
         }
     }
 }

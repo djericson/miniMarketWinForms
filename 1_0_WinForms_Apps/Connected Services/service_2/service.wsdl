@@ -5,7 +5,7 @@
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/Utilitarios" />
-      <xsd:import namespace="http://schemas.datacontract.org/2004/07/WCFSegurida" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_GetData_InputMessage">
@@ -26,11 +26,11 @@
   <wsdl:message name="IService1__GetData_OutputMessage">
     <wsdl:part name="parameters" element="tns:_GetDataResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  <wsdl:message name="IService1_search_product_InputMessage">
+    <wsdl:part name="parameters" element="tns:search_product" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetDataUsingDataContract_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  <wsdl:message name="IService1_search_product_OutputMessage">
+    <wsdl:part name="parameters" element="tns:search_productResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
@@ -45,9 +45,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/_GetData" message="tns:IService1__GetData_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/_GetDataResponse" message="tns:IService1__GetData_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContractResponse" message="tns:IService1_GetDataUsingDataContract_OutputMessage" />
+    <wsdl:operation name="search_product">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/search_product" message="tns:IService1_search_product_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/search_productResponse" message="tns:IService1_search_product_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -79,8 +79,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetDataUsingDataContract" style="document" />
+    <wsdl:operation name="search_product">
+      <soap:operation soapAction="http://tempuri.org/IService1/search_product" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

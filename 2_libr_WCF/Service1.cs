@@ -8,6 +8,11 @@ using Utilitarios;
 using BL;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using static WCFSegurida.IService1;
+using Newtonsoft.Json;
+using System.Data;
+using System.IO;
+using Newtonsoft.Json.Converters;
 
 namespace WCFSegurida
 {
@@ -15,11 +20,77 @@ namespace WCFSegurida
     public class service1 : IService1
 
     {
+        
         public string GetData(int value)
         {
             return string.Format("You entered: {0}", value);
         }
+        public string _GetData(string value, string _DataRow)
+        {
+         
 
+            BL.ClsBL_usr x = new ClsBL_usr();
+            var _DataTable = x.search_product(value, _DataRow);
+            if (_DataTable != null)
+            {
+
+
+                Type type = _DataTable.GetType();
+                Newtonsoft.Json.JsonSerializer json = new Newtonsoft.Json.JsonSerializer();
+                json.NullValueHandling = NullValueHandling.Ignore;
+                json.ObjectCreationHandling = Newtonsoft.Json.ObjectCreationHandling.Replace;
+                json.MissingMemberHandling = Newtonsoft.Json.MissingMemberHandling.Ignore;
+                json.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                if (type == typeof(DataTable))
+                    json.Converters.Add(new DataTableConverter());
+                //if (type == typeof(DataRow))
+                //    json.Converters.Add(new DataRowConverter());
+                StringWriter sw = new StringWriter();
+                Newtonsoft.Json.JsonTextWriter writer = new JsonTextWriter(sw);
+                writer.Formatting = Formatting.Indented;
+                // writer.Formatting = Formatting.None;
+                writer.QuoteChar = '"';
+               
+                json.Serialize(writer, _DataTable);
+                string output = sw.ToString();
+                writer.Close();
+                sw.Close();
+
+                return output;
+
+                //MyDataContract myDataContract = new MyDataContract();
+                //myDataContract._sqlDataReader = sqlDataReader;
+                //string JsonResponse = string.Empty;
+                //JsonResponse = JsonConvert.SerializeObject(myDataContract._sqlDataReader);
+                //Type type = value.GetType();
+
+                //return JsonResponse;
+            }
+             
+                return null;
+            
+
+        }
+        public MyDataContract GetData()
+        {
+
+
+            //List<MyDataContract> list = new List<MyDataContract>();
+            ////your code
+            //BL.ClsBL_usr x = new ClsBL_usr();
+            //var sqlDataReader = x.search_product(null);
+            //if (sqlDataReader != null)
+            //{
+            //    //MyDataContract myDataContract = new MyDataContract();
+            //    //myDataContract._sqlDataReader = sqlDataReader;
+            //    //var value = myDataContract._sqlDataReader;
+
+            //    return null;
+            //}
+             
+            return null;
+
+        }
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
             if (composite == null)
@@ -38,25 +109,8 @@ namespace WCFSegurida
             BL.ClsBL_usr x = new ClsBL_usr();
             x.insertar(xobj);
         }
-        public SqlDataReader search_product(string valueRichTextBox1)
-        {
-            BL.ClsBL_usr x = new ClsBL_usr();
-            
-            if (x.search_product(valueRichTextBox1) != null)
-            {
-                 
-                var sqlDataReader = x.search_product(valueRichTextBox1);
-                return sqlDataReader;
-            }
-            else
-            {
-                return null;
-            }
-
-            
-            
-        }
-     
        
+
+        
     }
 }

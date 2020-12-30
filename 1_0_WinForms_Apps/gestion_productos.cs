@@ -4,12 +4,15 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using busqueda;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using xDialog;
  
 
@@ -20,7 +23,8 @@ namespace App
     {
        
         
-        SqlDataReader loDataReader;
+        SqlDataReader loDataReader = null;
+        DataTable objTabla = new DataTable();
         static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
         static SqlConnection connection = new SqlConnection();
         static SqlCommand command = new SqlCommand();
@@ -40,15 +44,44 @@ namespace App
         {
             System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
             service_1.Service1Client  xwcf = new service_1.Service1Client();
-            var sqlDataReader = xwcf.search_product(richTextBox1.Text);
-
-            if(sqlDataReader != null)
+            var _DataTable = xwcf._GetData(richTextBox1.Text , "");
+            Type type = objTabla.GetType();
+            if (_DataTable != null)
             {
                 Busqueda objayuda = new Busqueda();
-                objayuda.objDR = loDataReader;
+                objayuda.objTabla = Deserialize(_DataTable, type);
                 objayuda.ShowDialog(this);
+                if (objayuda.objRow != null)
+                {
+                    string datarow = objayuda.objRow.Cells[0].Value.ToString();
+                   
+                    var _DataTable_2 = Deserialize(xwcf._GetData("", datarow), type);
+                    MessageBox.Show("_DataTable: "+ _DataTable_2.ToString());
+                    foreach (DataRow row in _DataTable_2.Rows)
+                    {
+                        string file = row.Field<string>(0);
+                        MessageBox.Show("_DataTable: " + file);
+                    }
+                }
+
             }
-           
+            DataTable Deserialize(string _DataTable, Type type1)
+            {
+
+                Newtonsoft.Json.JsonSerializer json = new Newtonsoft.Json.JsonSerializer();
+                json.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
+                json.ObjectCreationHandling = Newtonsoft.Json.ObjectCreationHandling.Replace;
+                json.MissingMemberHandling = Newtonsoft.Json.MissingMemberHandling.Ignore;
+                json.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+
+                StringReader sr = new StringReader(_DataTable);
+                Newtonsoft.Json.JsonTextReader reader = new JsonTextReader(sr);
+                //object result = json.Deserialize(reader, valueType);
+                var result = json.Deserialize(reader, type1);
+                reader.Close();
+
+                return (DataTable)result;
+            }
             //try
             //{
             //

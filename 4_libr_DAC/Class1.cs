@@ -15,7 +15,9 @@ namespace DAC
     {
         SqlConnection cn = new SqlConnection("Data Source=srv-bd-sql-server.database.windows.net; User ID =edgar; Password =$E012345; Initial Catalog=miniMarket");
         SqlCommand cmd;
- 
+        SqlDataReader loDataReader;
+      
+        DataTable schemaTable = new DataTable();
         public List<ClsUsuario> lista()
         {
             List<ClsUsuario> x=new List<ClsUsuario>();
@@ -42,7 +44,7 @@ namespace DAC
 
         }
 
-        public SqlDataReader search_product(string richTextBox1)
+        public DataTable search_product(string richTextBox1 , string _DataRow)
         {
             if(richTextBox1 != "")
             {
@@ -51,15 +53,25 @@ namespace DAC
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@id_producto", richTextBox1);
                 cn.Open();
-                SqlDataReader loDataReader;
                 loDataReader = cmd.ExecuteReader();
-
-
-                //Busqueda objayuda = new Busqueda();
-                //objayuda.objDR = loDataReader;
-                //objayuda.ShowDialog(this);
+                schemaTable.Load(loDataReader, LoadOption.OverwriteChanges);
+                //DataTable schemaTable = loDataReader.GetSchemaTable();
                 cn.Close();
-                return loDataReader;
+                return schemaTable;
+
+            }
+            if (_DataRow != "")
+            {
+                cmd = new SqlCommand("Seleccionar_UnProducto", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@PROD_ID",  _DataRow);
+                cn.Open();
+                loDataReader = cmd.ExecuteReader();
+                schemaTable.Load(loDataReader, LoadOption.OverwriteChanges);
+                //DataTable schemaTable = loDataReader.GetSchemaTable();
+                cn.Close();
+                return schemaTable;
 
             }
             return null;
