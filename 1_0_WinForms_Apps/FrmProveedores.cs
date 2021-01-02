@@ -246,18 +246,17 @@ namespace App
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            object x = dgvListado.CurrentRow.Cells["1"].Value;
-
-            if (x == null)
+            if (! txtRazon_Social.Text.Equals(""))               
             {
-                this.MensajeError("Debe de seleccionar primero el registro a modificar");
+              IsEditar = true;
+              Botones();              
+              HabilitarTxt(true);                                     
             }
             else
             {
-                IsEditar = true;
-                Botones();
-                HabilitarTxt(true);
+                MensajeError("Debe de seleccionar primero el registro a modificar");
             }
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

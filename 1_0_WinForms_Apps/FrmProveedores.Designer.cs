@@ -155,7 +155,7 @@ namespace App
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Location = new System.Drawing.Point(3, 22);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(565, 312);
+            this.groupBox1.Size = new System.Drawing.Size(592, 312);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Proveedores";
@@ -175,7 +175,7 @@ namespace App
             this.txtRazon_Social.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRazon_Social.Location = new System.Drawing.Point(114, 33);
             this.txtRazon_Social.Name = "txtRazon_Social";
-            this.txtRazon_Social.Size = new System.Drawing.Size(237, 20);
+            this.txtRazon_Social.Size = new System.Drawing.Size(275, 20);
             this.txtRazon_Social.TabIndex = 4;
             // 
             // cbCategoria
@@ -184,7 +184,7 @@ namespace App
             this.cbCategoria.Items.AddRange(new object[] {
             "Salud",
             "Alimentos"});
-            this.cbCategoria.Location = new System.Drawing.Point(416, 29);
+            this.cbCategoria.Location = new System.Drawing.Point(454, 29);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(95, 21);
             this.cbCategoria.TabIndex = 3;
@@ -192,7 +192,7 @@ namespace App
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(416, 271);
+            this.btnCancelar.Location = new System.Drawing.Point(443, 271);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 2;
@@ -202,7 +202,7 @@ namespace App
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(299, 271);
+            this.btnEditar.Location = new System.Drawing.Point(325, 271);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 2;
@@ -212,7 +212,7 @@ namespace App
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(193, 271);
+            this.btnGuardar.Location = new System.Drawing.Point(208, 271);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 2;
@@ -298,7 +298,7 @@ namespace App
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(357, 32);
+            this.label7.Location = new System.Drawing.Point(395, 32);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 0;
