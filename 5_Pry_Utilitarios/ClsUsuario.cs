@@ -54,7 +54,8 @@ namespace Utilitarios
             Texto_buscar = texto_buscar;
         }
         public clsProveedores(string razon_social, string categoria,
-            string tipo_documento, string num_documento, string direccion, string telefono, string email, string pagina_web)
+            string tipo_documento, string num_documento, string direccion, 
+            string telefono, string email, string pagina_web)
         {
             Razon_social = razon_social;
             Categoria = categoria;

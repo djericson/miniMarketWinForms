@@ -115,9 +115,9 @@ namespace App
             HabilitarTxt(false);
             Botones();
         }
-
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+
             if (cbBuscar.Text.Equals("Razon Social"))
             {
                 BuscarRazon_Social();
@@ -127,7 +127,6 @@ namespace App
                 BuscarNum_Documento();
             }
         }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             try
@@ -163,19 +162,6 @@ namespace App
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
-
-        private void chkEliminar_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkEliminar.Checked)
-            {
-                dgvListado.Columns[0].Visible = true;
-            }
-            else
-            {
-                dgvListado.Columns[0].Visible = false;
-            }
-        }
-
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             IsNuevo = true;
@@ -185,13 +171,11 @@ namespace App
             HabilitarTxt(true);
             txtRazon_Social.Focus();
         }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
                 string rpta = "";
-                //EVALUACION DEL CAMPO QUE NO ESTE VACIO.
                 if (txtRazon_Social.Text == string.Empty || txtNum_Documento.Text == string.Empty
                     || this.txtDireccion.Text == string.Empty)
                 {
@@ -204,29 +188,29 @@ namespace App
                 }
                 else
                 {
-                    if (IsNuevo)//CUANDO SE QUIERE REGISTRAR UN ARTICULO
+                    if (IsNuevo)
                     {
                         rpta = clsBLProveedor.INSERTAR(txtRazon_Social.Text.Trim().ToUpper(), cbCategoria.Text, cbTipo_Documento.Text,
                         txtNum_Documento.Text, txtDireccion.Text, txtTelefono.Text, txtEmail.Text, txtUrl.Text);
                     }
-                    else//CUANDO ES EDITAR
+                    else
                     {
                         rpta = clsBLProveedor.EDITAR(Convert.ToInt32(dgvListado.CurrentRow.Cells["Id_Proveedor"].Value), txtRazon_Social.Text.Trim().ToUpper(), cbCategoria.Text, cbTipo_Documento.Text,
                         txtNum_Documento.Text, txtDireccion.Text, txtTelefono.Text, txtEmail.Text, txtUrl.Text);
                     }
-                    //EVALUACION DE LAS RESPUESTAS
-                    if (rpta.Equals("OK"))// EQUALS SE USA PARA COMPRAR UNA CADENA
-                    {//PARA DISTINGUIR SI ES EL OK DEL EDITAR O DEl INSERTAR
-                        if (IsNuevo)// SI ES VERDADERO QUIERE DECIR QUE SE HA INSERTADO
+                  
+                    if (rpta.Equals("OK"))
+                    {
+                        if (IsNuevo)
                         {
                             MensajeOk("Se inserto de forma correcta el registro");
                         }
-                        else//SI NO ES NUEVO ES EDITAR
+                        else
                         {
                             MensajeOk("Se Actualizo de forma correcta el registro");
                         }
                     }
-                    //PUEDE RECIBER UN MENSAJE BIEN LARGO.
+      
                     else
                     {
                         MensajeError(rpta);
@@ -243,22 +227,19 @@ namespace App
                 MessageBox.Show(ex.Message + ex.StackTrace); // Nos muestra el posible error.
             }
         }
-
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (! txtRazon_Social.Text.Equals(""))               
+            if (!txtRazon_Social.Text.Equals(""))
             {
-              IsEditar = true;
-              Botones();              
-              HabilitarTxt(true);                                     
+                IsEditar = true;
+                Botones();
+                HabilitarTxt(true);
             }
             else
             {
                 MensajeError("Debe de seleccionar primero el registro a modificar");
             }
-
         }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             IsNuevo = false;
@@ -267,7 +248,6 @@ namespace App
             Limpiar();
             HabilitarTxt(false);
         }
-
         private void dgvListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == dgvListado.Columns["Eliminar"].Index)
@@ -276,7 +256,6 @@ namespace App
                 chkEliminar.Value = !Convert.ToBoolean(chkEliminar.Value);
             }
         }
-
         private void dgvListado_DoubleClick(object sender, EventArgs e)
         {
             txtRazon_Social.Text = Convert.ToString(dgvListado.CurrentRow.Cells["Razon_Social"].Value);
@@ -287,6 +266,17 @@ namespace App
             txtTelefono.Text = Convert.ToString(dgvListado.CurrentRow.Cells["Telefono"].Value);
             txtEmail.Text = Convert.ToString(dgvListado.CurrentRow.Cells["Email"].Value);
             txtUrl.Text = Convert.ToString(dgvListado.CurrentRow.Cells["Pagina_Web"].Value);
+        }
+        private void chkEliminar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkEliminar.Checked)
+            {
+                dgvListado.Columns[0].Visible = true;
+            }
+            else
+            {
+                dgvListado.Columns[0].Visible = false;
+            }
         }
     }
 }

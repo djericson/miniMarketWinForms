@@ -192,6 +192,7 @@ namespace App
             this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEditar
             // 
@@ -201,6 +202,7 @@ namespace App
             this.btnEditar.TabIndex = 2;
             this.btnEditar.Text = "&Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -210,6 +212,7 @@ namespace App
             this.btnGuardar.TabIndex = 2;
             this.btnGuardar.Text = "&Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnNuevo
             // 
@@ -219,6 +222,7 @@ namespace App
             this.btnNuevo.TabIndex = 2;
             this.btnNuevo.Text = "&Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // txtDireccion
             // 
@@ -332,6 +336,7 @@ namespace App
             this.chkEliminar.TabIndex = 15;
             this.chkEliminar.Text = "Eliminar";
             this.chkEliminar.UseVisualStyleBackColor = true;
+            this.chkEliminar.CheckedChanged += new System.EventHandler(this.chkEliminar_CheckedChanged);
             // 
             // btnImprimir
             // 
@@ -358,6 +363,8 @@ namespace App
             this.dgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListado.Size = new System.Drawing.Size(837, 217);
             this.dgvListado.TabIndex = 16;
+            this.dgvListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListado_CellContentClick);
+            this.dgvListado.DoubleClick += new System.EventHandler(this.dgvListado_DoubleClick);
             // 
             // btnBuscar
             // 
@@ -367,6 +374,7 @@ namespace App
             this.btnBuscar.TabIndex = 13;
             this.btnBuscar.Text = "&Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnEliminar
             // 
@@ -376,6 +384,7 @@ namespace App
             this.btnEliminar.TabIndex = 14;
             this.btnEliminar.Text = "&Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // FrmProveedores
             // 
