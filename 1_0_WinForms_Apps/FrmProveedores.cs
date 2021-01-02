@@ -287,7 +287,6 @@ namespace App
             txtTelefono.Text = Convert.ToString(dgvListado.CurrentRow.Cells["Telefono"].Value);
             txtEmail.Text = Convert.ToString(dgvListado.CurrentRow.Cells["Email"].Value);
             txtUrl.Text = Convert.ToString(dgvListado.CurrentRow.Cells["Pagina_Web"].Value);
-            tabControl1.SelectedIndex = 1; 
         }
     }
 }
