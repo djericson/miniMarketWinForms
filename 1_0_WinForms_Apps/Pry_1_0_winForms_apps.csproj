@@ -99,9 +99,29 @@
     <Compile Include="FrmProveedores.Designer.cs">
       <DependentUpon>FrmProveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="login.cs" />
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="login.designer.cs">
       <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_to_gestion_productos\insert_product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_to_gestion_productos\insert_product.Designer.cs">
+      <DependentUpon>insert_product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_to_gestion_productos\Update_product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_to_gestion_productos\Update_product.Designer.cs">
+      <DependentUpon>Update_product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_to_gestion_productos\view_product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_to_gestion_productos\view_product.Designer.cs">
+      <DependentUpon>view_product.cs</DependentUpon>
     </Compile>
     <Compile Include="WinForms_Usuarios\FrmUsr.cs">
       <SubType>Form</SubType>
@@ -164,7 +184,7 @@
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -175,6 +195,12 @@
     </Compile>
     <EmbeddedResource Include="CustomMsgBox\MsgBox.resx">
       <DependentUpon>MsgBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_to_gestion_productos\Update_product.resx">
+      <DependentUpon>Update_product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_to_gestion_productos\view_product.resx">
+      <DependentUpon>view_product.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas-pagos\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
@@ -276,6 +302,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UserControl_to_gestion_productos\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Webp.net-resizeimage %2812%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

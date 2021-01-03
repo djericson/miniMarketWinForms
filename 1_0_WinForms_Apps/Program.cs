@@ -12,10 +12,10 @@ using System.Windows.Forms;
         /// </summary>
         [STAThread]
         static void Main()
-        {
+        ion{
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new login());
+            Application.Run(new gestion_productos());
         }
     }
 }
