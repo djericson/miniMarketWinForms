@@ -1,6 +1,6 @@
 ﻿namespace App
 {
-    partial class FrmUsr
+    partial class FrmUsrs
     {
         /// <summary>
         /// Variable del diseñador necesaria.

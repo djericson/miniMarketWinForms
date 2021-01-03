@@ -4,26 +4,33 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using PracticaCalificada;
+using busqueda;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using xDialog;
+ 
+
 
 namespace App
 {
     public partial class gestion_productos : Form
     {
+       
+        
          
-        SqlDataReader loDataReader;
-
+        DataTable objTabla = new DataTable();
         static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
         static SqlConnection connection = new SqlConnection();
         static SqlCommand command = new SqlCommand();
 
 
-        SqlConnection cn = new SqlConnection("Data Source=srv-bd-sql-server.database.windows.net; User ID =edgar; Password =$E012345; Initial Catalog=miniMarket");
+        //SqlConnection cn = new SqlConnection("Data Source=srv-bd-sql-server.database.windows.net; User ID =edgar; Password =$E012345; Initial Catalog=miniMarket");
 
         
         public gestion_productos()
@@ -35,62 +42,100 @@ namespace App
 
         private void buscar_producto_Click(object sender, EventArgs e)
         {
-
-
-            try
+            System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+            service_1.Service1Client  xwcf = new service_1.Service1Client();
+            var _DataTable = xwcf._GetData(richTextBox1.Text , "");
+            Type type = objTabla.GetType();
+            if (_DataTable != null)
             {
-
-                 
-                command = new SqlCommand("Ayuda_producto", connection);
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("@id_producto", richTextBox1.Text);
-                connection.Open();
-                loDataReader = command.ExecuteReader();
                 Busqueda objayuda = new Busqueda();
-                objayuda.objDR = loDataReader;
+                objayuda.objTabla = Deserialize(_DataTable, type);
                 objayuda.ShowDialog(this);
                 if (objayuda.objRow != null)
                 {
-                    command = new SqlCommand("Seleccionar_UnProducto", connection);
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.Clear();
-                    command.Parameters.AddWithValue("@PROD_ID", objayuda.objRow.Cells[0].Value);
-                    loDataReader = command.ExecuteReader();
-                    if (loDataReader.HasRows)
+                    string datarow = objayuda.objRow.Cells[0].Value.ToString();
+                   
+                    var _DataTable_2 = Deserialize(xwcf._GetData("", datarow), type);
+                    //MessageBox.Show("_DataTable2: "+ _DataTable_2.ToString());
+                    foreach (DataRow row in _DataTable_2.Rows)
                     {
-                        MessageBox.Show("loDataReader");
-                        loDataReader.Read();
-                        //textBox1.Text = loDataReader.GetValue(loDataReader.GetOrdinal("id_prod")).ToString();
-                        //textBox2.Text = loDataReader.GetValue(loDataReader.GetOrdinal("name_product")).ToString();
+                        string file = row.Field<string>(1);
+                        MessageBox.Show("_DataTable: " + file);
                     }
                 }
-                 
 
             }
-            catch (Exception ex)
+            DataTable Deserialize(string _DataTable, Type type1)
             {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
 
-            DialogResult result = MsgBox.Show("edit product ?", "id: " + 323, MsgBox.Buttons.OK, MsgBox.Icon.Info, MsgBox.AnimateStyle.FadeIn);
+                Newtonsoft.Json.JsonSerializer json = new Newtonsoft.Json.JsonSerializer();
+                json.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
+                json.ObjectCreationHandling = Newtonsoft.Json.ObjectCreationHandling.Replace;
+                json.MissingMemberHandling = Newtonsoft.Json.MissingMemberHandling.Ignore;
+                json.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
 
-            if (result == DialogResult.Yes)
-            {
-                MessageBox.Show("Exiting now");
+                StringReader sr = new StringReader(_DataTable);
+                Newtonsoft.Json.JsonTextReader reader = new JsonTextReader(sr);
+                //object result = json.Deserialize(reader, valueType);
+                var result = json.Deserialize(reader, type1);
+                reader.Close();
+
+                return (DataTable)result;
             }
-            if (value.buttonResult == "edit")
-            {
-                MessageBox.Show("edit");
-            }
-            if (value.buttonResult == "delete")
-            {
-                MessageBox.Show("delete");
-            }
+            //try
+            //{
+            //
+            //     
+            //    command = new SqlCommand("Ayuda_producto", connection);
+            //    command.CommandType = CommandType.StoredProcedure;
+            //    command.Parameters.Clear();
+            //    command.Parameters.AddWithValue("@id_producto", richTextBox1.Text);
+            //    connection.Open();
+            //    loDataReader = command.ExecuteReader();
+            //    Busqueda objayuda = new Busqueda();
+            //    objayuda.objDR = loDataReader;
+            //    objayuda.ShowDialog(this);
+            //    if (objayuda.objRow != null)
+            //    {
+            //        command = new SqlCommand("Seleccionar_UnProducto", connection);
+            //        command.CommandType = CommandType.StoredProcedure;
+            //        command.Parameters.Clear();
+            //        command.Parameters.AddWithValue("@PROD_ID", objayuda.objRow.Cells[0].Value);
+            //        loDataReader = command.ExecuteReader();
+            //        if (loDataReader.HasRows)
+            //        {
+            //            MessageBox.Show("loDataReader");
+            //            loDataReader.Read();
+            //            //textBox1.Text = loDataReader.GetValue(loDataReader.GetOrdinal("id_prod")).ToString();
+            //            //textBox2.Text = loDataReader.GetValue(loDataReader.GetOrdinal("name_product")).ToString();
+            //        }
+            //    }
+            //     
+            //
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            //finally
+            //{
+            //    connection.Close();
+            //}
+            //
+            //DialogResult result = MsgBox.Show("edit product ?", "id: " + 323, MsgBox.Buttons.OK, MsgBox.Icon.Info, MsgBox.AnimateStyle.FadeIn);
+            //
+            //if (result == DialogResult.Yes)
+            //{
+            //    MessageBox.Show("Exiting now");
+            //}
+            //if (value.buttonResult == "edit")
+            //{
+            //    MessageBox.Show("edit");
+            //}
+            //if (value.buttonResult == "delete")
+            //{
+            //    MessageBox.Show("delete");
+            //}
         }
 
         private void gestion_productos_Load(object sender, EventArgs e)

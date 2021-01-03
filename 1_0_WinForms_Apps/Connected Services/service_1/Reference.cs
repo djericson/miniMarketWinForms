@@ -8,74 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace App.WCFSeguridad {
-    using System.Runtime.Serialization;
-    using System;
+namespace App.service_1 {
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/WCFSegurida")]
-    [System.SerializableAttribute()]
-    public partial class CompositeType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool BoolValueField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StringValueField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool BoolValue {
-            get {
-                return this.BoolValueField;
-            }
-            set {
-                if ((this.BoolValueField.Equals(value) != true)) {
-                    this.BoolValueField = value;
-                    this.RaisePropertyChanged("BoolValue");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StringValue {
-            get {
-                return this.StringValueField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StringValueField, value) != true)) {
-                    this.StringValueField = value;
-                    this.RaisePropertyChanged("StringValue");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WCFSeguridad.IService1")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="service_1.IService1")]
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
@@ -90,20 +27,32 @@ namespace App.WCFSeguridad {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Insertar_Usuario", ReplyAction="http://tempuri.org/IService1/Insertar_UsuarioResponse")]
         System.Threading.Tasks.Task Insertar_UsuarioAsync(Utilitarios.ClsUsuario xobj);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        App.WCFSeguridad.CompositeType GetDataUsingDataContract(App.WCFSeguridad.CompositeType composite);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/_GetData", ReplyAction="http://tempuri.org/IService1/_GetDataResponse")]
+        string _GetData(string value, string _DataRow);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/_GetData", ReplyAction="http://tempuri.org/IService1/_GetDataResponse")]
+        System.Threading.Tasks.Task<string> _GetDataAsync(string value, string _DataRow);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
+        int Login(string user, string pasword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
+        System.Threading.Tasks.Task<int> LoginAsync(string user, string pasword);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        System.Threading.Tasks.Task<App.WCFSeguridad.CompositeType> GetDataUsingDataContractAsync(App.WCFSeguridad.CompositeType composite);
+        WCFSegurida.CompositeType GetDataUsingDataContract(WCFSegurida.CompositeType composite);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
+        System.Threading.Tasks.Task<WCFSegurida.CompositeType> GetDataUsingDataContractAsync(WCFSegurida.CompositeType composite);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IService1Channel : App.WCFSeguridad.IService1, System.ServiceModel.IClientChannel {
+    public interface IService1Channel : App.service_1.IService1, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<App.WCFSeguridad.IService1>, App.WCFSeguridad.IService1 {
+    public partial class Service1Client : System.ServiceModel.ClientBase<App.service_1.IService1>, App.service_1.IService1 {
         
         public Service1Client() {
         }
@@ -140,11 +89,27 @@ namespace App.WCFSeguridad {
             return base.Channel.Insertar_UsuarioAsync(xobj);
         }
         
-        public App.WCFSeguridad.CompositeType GetDataUsingDataContract(App.WCFSeguridad.CompositeType composite) {
+        public string _GetData(string value, string _DataRow) {
+            return base.Channel._GetData(value, _DataRow);
+        }
+        
+        public System.Threading.Tasks.Task<string> _GetDataAsync(string value, string _DataRow) {
+            return base.Channel._GetDataAsync(value, _DataRow);
+        }
+        
+        public int Login(string user, string pasword) {
+            return base.Channel.Login(user, pasword);
+        }
+        
+        public System.Threading.Tasks.Task<int> LoginAsync(string user, string pasword) {
+            return base.Channel.LoginAsync(user, pasword);
+        }
+        
+        public WCFSegurida.CompositeType GetDataUsingDataContract(WCFSegurida.CompositeType composite) {
             return base.Channel.GetDataUsingDataContract(composite);
         }
         
-        public System.Threading.Tasks.Task<App.WCFSeguridad.CompositeType> GetDataUsingDataContractAsync(App.WCFSeguridad.CompositeType composite) {
+        public System.Threading.Tasks.Task<WCFSegurida.CompositeType> GetDataUsingDataContractAsync(WCFSegurida.CompositeType composite) {
             return base.Channel.GetDataUsingDataContractAsync(composite);
         }
     }

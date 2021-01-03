@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using BL;
+using Newtonsoft.Json;
 using Utilitarios;
 
 namespace WCFSegurida
@@ -20,8 +22,27 @@ namespace WCFSegurida
         [OperationContract]
         void Insertar_Usuario(ClsUsuario xobj);
 
-
+        [OperationContract] 
+        string _GetData(string value, string _DataRow);
         [OperationContract]
+        int Login(string user, string pasword); 
+
+        [DataContract]
+        public class MyDataContract
+        {
+            [DataMember]
+            public int Id { get; set; }
+
+            [DataMember]
+            public string Name { get; set; }
+            [DataMember]
+            public SqlDataReader _sqlDataReader { get; set; }
+        }
+        [OperationContract]
+
+         
+
+
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: agregue aquí sus operaciones de servicio
@@ -30,6 +51,7 @@ namespace WCFSegurida
     // Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.
     // Puede agregar archivos XSD al proyecto. Después de compilar el proyecto, puede usar directamente los tipos de datos definidos aquí, con el espacio de nombres "WCFSegurida.ContractType".
     [DataContract]
+     
     public class CompositeType
     {
         bool boolValue = true;
