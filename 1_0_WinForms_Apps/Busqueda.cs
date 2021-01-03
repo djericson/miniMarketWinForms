@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace PracticaCalificada
+namespace E1_0_winFromsApp
 {
     public partial class Busqueda : Form
     {
