@@ -12,7 +12,8 @@ namespace BL
 {
     public class ClsBL_usr
     {
-        ClsDAC_Usuario dac_usuario = new ClsDAC_Usuario();
+        ClsDAC_Usuario dac_usuario
+            = new ClsDAC_Usuario();
         public void insertar(ClsUsuario xobj)
         {
             dac_usuario.insertar(xobj);

@@ -20,7 +20,8 @@ namespace Utilitarios
         public ClsUsuario() { }
         public ClsUsuario(string _Usuario, string _clave, string _Nombres, string _Apellidos, string _Correo) 
         {
-            Usuario = _Usuario;clave = _clave;Nombres = _Nombres;Apellidos = _Apellidos;Correo = _Correo;
+            Usuario = _Usuario;clave = _clave;Nombres = _Nombres;Apellidos = _Apellidos;
+            Correo = _Correo;
         }
 
     }

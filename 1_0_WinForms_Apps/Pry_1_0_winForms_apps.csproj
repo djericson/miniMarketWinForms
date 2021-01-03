@@ -181,6 +181,9 @@
     <EmbeddedResource Include="Ventas-pagos\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WinForms_Usuarios\FrmUsr.resx">
+      <DependentUpon>FrmUsr.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Connected Services\service_1\service.wsdl" />
     <None Include="Connected Services\service_1\service.xsd">
       <SubType>Designer</SubType>
