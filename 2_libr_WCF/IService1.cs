@@ -22,8 +22,10 @@ namespace WCFSegurida
         [OperationContract]
         void Insertar_Usuario(ClsUsuario xobj);
 
-        [OperationContract]
+        [OperationContract] 
         string _GetData(string value, string _DataRow);
+        [OperationContract]
+        int Login(string user, string pasword); 
 
         [DataContract]
         public class MyDataContract

@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using App1;
-namespace App
+ namespace App
 {
     static class Program
     {
@@ -16,7 +15,7 @@ namespace App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new gestion_productos());
+            Application.Run(new FrmProveedores());
         }
     }
 }
