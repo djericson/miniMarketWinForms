@@ -27,7 +27,7 @@ namespace E1_0_winFromsApp
             {
                 //DataTable objTabla = new DataTable();
                 //objTabla.Load(objDR, LoadOption.OverwriteChanges);
-                //dataGridView1.DataSource = objTabla;
+                dataGridView1.DataSource = objTabla;
             }
             catch (SqlException sqlex)
             {
