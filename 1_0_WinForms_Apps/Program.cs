@@ -15,7 +15,7 @@ using System.Windows.Forms;
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new gestion_productos());
+            Application.Run(new FrmProveedores());
         }
     }
 }

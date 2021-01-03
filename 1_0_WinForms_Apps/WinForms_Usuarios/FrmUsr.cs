@@ -23,7 +23,9 @@ namespace App
             //WCFSeguridad.Service1Client xwcf = new WCFSeguridad.Service1Client(); 
             ////clsBLUsuario blusuario = new clsBLUsuario();
             //xwcf.Insertar_Usuario(new ClsUsuario(txtUsuario.Text, txtClave.Text, txtNombres.Text, txtApellidos.Text, tb_email.Text));
+
         }
 
+       
     }
 }
