@@ -15,7 +15,7 @@ namespace E1_0_winFromsApp
     {
         public SqlDataReader objDR;
         public DataGridViewRow objRow;
-
+        public DataTable objTabla = new DataTable();
         public Busqueda()
         {
             InitializeComponent();
@@ -25,9 +25,9 @@ namespace E1_0_winFromsApp
         {
             try
             {
-                DataTable objTabla = new DataTable();
-                objTabla.Load(objDR, LoadOption.OverwriteChanges);
-                dataGridView1.DataSource = objTabla;
+                //DataTable objTabla = new DataTable();
+                //objTabla.Load(objDR, LoadOption.OverwriteChanges);
+                //dataGridView1.DataSource = objTabla;
             }
             catch (SqlException sqlex)
             {

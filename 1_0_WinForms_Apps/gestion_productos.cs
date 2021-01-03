@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using App.UserControl_to_gestion_productos;
-using busqueda;
+using E1_0_winFromsApp;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using xDialog;

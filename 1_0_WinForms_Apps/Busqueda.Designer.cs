@@ -1,4 +1,4 @@
-﻿namespace busqueda
+﻿namespace E1_0_winFromsApp
 {
     partial class Busqueda
     {
