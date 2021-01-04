@@ -15,7 +15,7 @@ namespace NS_Busqueda
     {
         public SqlDataReader objDR;
         public DataGridViewRow objRow;
-
+        public DataTable objTabla = new DataTable();
         public Busqueda()
         {
             InitializeComponent();
@@ -25,8 +25,8 @@ namespace NS_Busqueda
         {
             try
             {
-                DataTable objTabla = new DataTable();
-                objTabla.Load(objDR, LoadOption.OverwriteChanges);
+                //DataTable objTabla = new DataTable();
+                //objTabla.Load(objDR, LoadOption.OverwriteChanges);
                 dataGridView1.DataSource = objTabla;
             }
             catch (SqlException sqlex)
