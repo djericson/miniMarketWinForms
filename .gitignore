@@ -9,7 +9,7 @@
 *.user
 *.userosscache
 *.sln.docstates
-
+1_0_WinForms_Apps/Program.cs
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 

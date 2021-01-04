@@ -10,7 +10,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using busqueda;
+using NS_Busqueda;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using xDialog;
@@ -21,18 +21,13 @@ namespace App
 {
     public partial class gestion_productos : Form
     {
-       
-        
-         
         DataTable objTabla = new DataTable();
         static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
         static SqlConnection connection = new SqlConnection();
         static SqlCommand command = new SqlCommand();
 
-
         //SqlConnection cn = new SqlConnection("Data Source=srv-bd-sql-server.database.windows.net; User ID =edgar; Password =$E012345; Initial Catalog=miniMarket");
 
-        
         public gestion_productos()
         {
             InitializeComponent();
@@ -42,18 +37,22 @@ namespace App
 
         private void buscar_producto_Click(object sender, EventArgs e)
         {
-            System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
-            service_1.Service1Client  xwcf = new service_1.Service1Client();
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+            NS_WCF_Prods.Srv_wcf_Prods xwcf = new NS_WCF_Prods.Srv_wcf_Prods();
             var _DataTable = xwcf._GetData(richTextBox1.Text , "");
             Type type = objTabla.GetType();
-            if (_DataTable != null)
-            {
-                Busqueda objayuda = new Busqueda();
-                objayuda.objTabla = Deserialize(_DataTable, type);
-                objayuda.ShowDialog(this);
-                if (objayuda.objRow != null)
+            if (_DataTable != null) {
+                Busqueda obj_frm_ayuda = new Busqueda();
+                /*
+                temp_table = new SqlDataTable();
+                //DataTable temp_table = new DataTable();
+                temp_table = Deserialize(_DataTable, type);
+                obj_frm_ayuda.objDR = (SqlDataReader)temp_table.cr (); ;
+                */
+                obj_frm_ayuda.ShowDialog(this);
+                if (obj_frm_ayuda.objRow != null)
                 {
-                    string datarow = objayuda.objRow.Cells[0].Value.ToString();
+                    string datarow = obj_frm_ayuda.objRow.Cells[0].Value.ToString();
                    
                     var _DataTable_2 = Deserialize(xwcf._GetData("", datarow), type);
                     //MessageBox.Show("_DataTable2: "+ _DataTable_2.ToString());

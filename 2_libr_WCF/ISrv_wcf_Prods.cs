@@ -9,11 +9,12 @@ using BL;
 using Newtonsoft.Json;
 using Utilitarios;
 
-namespace WCFSegurida
+namespace NS_WCF_Prods
+
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de interfaz "IService1" en el código y en el archivo de configuración a la vez.
     [ServiceContract]
-    public interface IService1
+    public interface ISrv_wcf_Prods
     {
         [OperationContract]
         string GetData(int value);
@@ -39,9 +40,6 @@ namespace WCFSegurida
             public SqlDataReader _sqlDataReader { get; set; }
         }
         [OperationContract]
-
-         
-
 
         CompositeType GetDataUsingDataContract(CompositeType composite);
 

@@ -89,8 +89,7 @@ namespace DAC
                 return schemaTable;
 
             }
-            if (_DataRow != "")
-            {
+            if (_DataRow != "") {
                 cmd = new SqlCommand("Seleccionar_UnProducto", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Clear();
@@ -319,8 +318,7 @@ namespace DAC
         public DataTable Mostrar()
         {
             DataTable dtResultado = new DataTable("proveedor");
-            try
-            {
+            try {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cnn;
                 cmd.CommandText = "mostrar_proveedor";
@@ -329,8 +327,8 @@ namespace DAC
                 SqlDataAdapter dtAdapter = new SqlDataAdapter(cmd);
                 dtAdapter.Fill(dtResultado);
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
+                MessageBox.Show("Excepcion en Mostrar proveedor: ", ex.Message);
                 dtResultado = null;
             }
             return dtResultado;
@@ -340,8 +338,7 @@ namespace DAC
         public DataTable BuscarRazonSocial(clsProveedores Proveedor)
         {
             DataTable dtResultado = new DataTable("proveedor");
-            try
-            {
+            try {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cnn;
                 cmd.CommandText = "buscar_proveedor_razon";
@@ -357,8 +354,8 @@ namespace DAC
                 SqlDataAdapter datAdapter = new SqlDataAdapter(cmd);
                 datAdapter.Fill(dtResultado);
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
+                MessageBox.Show("Excepcion en BuscarRazonSocial proveedor: ", ex.Message);
                 dtResultado = null;
             }
 
@@ -369,8 +366,7 @@ namespace DAC
         public DataTable BuscarNum_Documento(clsProveedores Proveedor)
         {
             DataTable dtResultado = new DataTable("proveedor");
-            try
-            {
+            try {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cnn;
                 cmd.CommandText = "buscar_proveedor_num";
@@ -386,8 +382,8 @@ namespace DAC
                 SqlDataAdapter datAdapter = new SqlDataAdapter(cmd);
                 datAdapter.Fill(dtResultado);
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
+                MessageBox.Show("Excepcion en BuscarNum_Documento Proveedor: ", ex.Message);
                 dtResultado = null;
             }
             return dtResultado;

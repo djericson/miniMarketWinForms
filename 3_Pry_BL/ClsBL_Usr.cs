@@ -10,7 +10,7 @@ using Utilitarios;
 
 namespace BL
 {
-    public class ClsBL_usr
+    public class ClsBL_Usr
     {
         ClsDAC_Usuario dac_usuario
             = new ClsDAC_Usuario();

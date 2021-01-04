@@ -7,34 +7,27 @@ using System.Text;
 using Utilitarios;
 using BL;
 using System.Data.SqlClient;
-using System.Windows.Forms;
-using static WCFSegurida.IService1;
+
 using Newtonsoft.Json;
 using System.Data;
 using System.IO;
 using Newtonsoft.Json.Converters;
 
-namespace WCFSegurida
+namespace NS_WCF_AccesosRolesUsrs
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código y en el archivo de configuración a la vez.
-    public class service1 : IService1
-
+    public class Srv_wcf_AccesosRolesUsrs: ISrv_wcf_AccesosRolesUsrs
     {
-        BL.ClsBL_usr objBL = new ClsBL_usr();
+        ClsBL_Usr objBL = new ClsBL_Usr();
         public string GetData(int value)
         {
             return string.Format("You entered: {0}", value);
         }
+
         public string _GetData(string value, string _DataRow)
         {
-         
-
-           
             var _DataTable = objBL.search_product(value, _DataRow);
-            if (_DataTable != null)
-            {
-
-
+            if (_DataTable != null) {
                 Type type = _DataTable.GetType();
                 Newtonsoft.Json.JsonSerializer json = new Newtonsoft.Json.JsonSerializer();
                 json.NullValueHandling = NullValueHandling.Ignore;
@@ -66,15 +59,12 @@ namespace WCFSegurida
 
                 //return JsonResponse;
             }
-             
-                return null;
-            
+            return null;
 
         }
-        public MyDataContract GetData()
+
+        public ISrv_wcf_AccesosRolesUsrs.MyDataContract GetData()
         {
-
-
             //List<MyDataContract> list = new List<MyDataContract>();
             ////your code
             //BL.ClsBL_usr x = new ClsBL_usr();
@@ -84,21 +74,19 @@ namespace WCFSegurida
             //    //MyDataContract myDataContract = new MyDataContract();
             //    //myDataContract._sqlDataReader = sqlDataReader;
             //    //var value = myDataContract._sqlDataReader;
-
             //    return null;
             //}
              
             return null;
 
         }
+
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
-            if (composite == null)
-            {
+            if (composite == null) {
                 throw new ArgumentNullException("composite");
             }
-            if (composite.BoolValue)
-            {
+            if (composite.BoolValue) {
                 composite.StringValue += "Suffix";
             }
             return composite;
@@ -106,25 +94,16 @@ namespace WCFSegurida
 
         public void Insertar_Usuario(ClsUsuario xobj)
         {
-            BL.ClsBL_usr x = new ClsBL_usr();
+            ClsBL_Usr x = new ClsBL_Usr();
             x.insertar(xobj);
         }
         public int Login(string user, string pasword)
         {
-          
             var Id_rol = objBL.Login(user, pasword);
-
-
-
-            if (Id_rol == 1)
-            {
+            if (Id_rol == 1) {
                 return Id_rol;
             }
             return 0;
-
-
         }
-
-         
     }
 }

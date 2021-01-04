@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace E1_0_winFromsApp
+namespace NS_Busqueda
 {
     public partial class Busqueda : Form
     {
