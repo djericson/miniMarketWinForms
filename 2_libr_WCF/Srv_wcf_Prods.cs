@@ -17,7 +17,7 @@ namespace NS_WCF_Prods
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código y en el archivo de configuración a la vez.
     public class Srv_wcf_Prods: ISrv_wcf_Prods
     {
-        ClsBL_Usr objBL = new ClsBL_Usr();
+        ClsBL_Producto objBL = new ClsBL_Producto();
         public string GetData(int value)
         {
             return string.Format("You entered: {0}", value);
@@ -62,6 +62,11 @@ namespace NS_WCF_Prods
 
         }
 
+        public void Insert_(ClsProducto objProd)
+        {
+
+        }
+
         public ISrv_wcf_Prods.MyDataContract GetData()
         {
             //List<MyDataContract> list = new List<MyDataContract>();
@@ -91,18 +96,11 @@ namespace NS_WCF_Prods
             return composite;
         }
 
-        public void Insertar_Usuario(ClsUsuario xobj)
+        public void Insertar_(ClsProducto xobj)
         {
-            ClsBL_Usr x = new ClsBL_Usr();
-            x.insertar(xobj);
+            ClsBL_Producto x = new ClsBL_Producto();
+            //x.insertar(xobj);
         }
-        public int Login(string user, string pasword)
-        {
-            var Id_rol = objBL.Login(user, pasword);
-            if (Id_rol == 1) {
-                return Id_rol;
-            }
-            return 0;
-        }
+        
     }
 }

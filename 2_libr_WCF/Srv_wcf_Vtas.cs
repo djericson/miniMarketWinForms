@@ -17,15 +17,15 @@ namespace NS_WCF_Vtas
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código y en el archivo de configuración a la vez.
     public class Srv_wcf_Vtas: ISrv_wcf_Vtas
     {
-        ClsBL_Usr objBL = new ClsBL_Usr();
+        ClsBL_Vta objBL = new ClsBL_Vta();
         public string GetData(int value)
         {
             return string.Format("You entered: {0}", value);
         }
 
-        public string _GetData(string value, string _DataRow)
+        public string _GetData(string val)
         {
-            var _DataTable = objBL.search_product(value, _DataRow);
+            var _DataTable = objBL.search_(val);
             if (_DataTable != null) {
                 Type type = _DataTable.GetType();
                 Newtonsoft.Json.JsonSerializer json = new Newtonsoft.Json.JsonSerializer();
@@ -62,6 +62,12 @@ namespace NS_WCF_Vtas
 
         }
 
+        public void Insertar_(ClsVenta xobj)
+        {
+            ClsBL_Vta x = new ClsBL_Vta();
+            //x.insertar(xobj);
+        }
+
         public ISrv_wcf_Vtas.MyDataContract GetData()
         {
             //List<MyDataContract> list = new List<MyDataContract>();
@@ -91,18 +97,7 @@ namespace NS_WCF_Vtas
             return composite;
         }
 
-        public void Insertar_Usuario(ClsUsuario xobj)
-        {
-            ClsBL_Usr x = new ClsBL_Usr();
-            x.insertar(xobj);
-        }
-        public int Login(string user, string pasword)
-        {
-            var Id_rol = objBL.Login(user, pasword);
-            if (Id_rol == 1) {
-                return Id_rol;
-            }
-            return 0;
-        }
+        
+        
     }
 }

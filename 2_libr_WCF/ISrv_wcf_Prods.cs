@@ -21,12 +21,10 @@ namespace NS_WCF_Prods
 
 
         [OperationContract]
-        void Insertar_Usuario(ClsUsuario xobj);
+        void Insertar_(ClsProducto xobj);
 
         [OperationContract] 
         string _GetData(string value, string _DataRow);
-        [OperationContract]
-        int Login(string user, string pasword); 
 
         [DataContract]
         public class MyDataContract

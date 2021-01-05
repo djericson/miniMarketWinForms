@@ -6,16 +6,15 @@ using System.ServiceModel;
 using System.Text;
 using Utilitarios;
 using BL;
-using System.Data.SqlClient;
 using Newtonsoft.Json;
 using System.Data;
 using System.IO;
 using Newtonsoft.Json.Converters;
 
-namespace NS_WCF_Login
+namespace NS_WCF_RolesVentanasUsrs
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código y en el archivo de configuración a la vez.
-    public class Srv_wcf_Login: ISrv_wcf_Login
+    public class Srv_wcf_RolesVentanasUsrs : ISrv_wcf_RolesVentanasUsrs
     {
         ClsBL_Usr objBL = new ClsBL_Usr();
         public string GetData(int value)
@@ -62,7 +61,7 @@ namespace NS_WCF_Login
 
         }
 
-        public ISrv_wcf_Login.MyDataContract GetData()
+        public ISrv_wcf_RolesVentanasUsrs.MyDataContract GetData()
         {
             //List<MyDataContract> list = new List<MyDataContract>();
             ////your code
@@ -91,18 +90,11 @@ namespace NS_WCF_Login
             return composite;
         }
 
-        public void Insertar_Usuario(ClsUsuario xobj)
+        public void Insertar_(ClsUsuario xobj)
         {
             ClsBL_Usr x = new ClsBL_Usr();
-            x.insertUsr(xobj);
+            //x.insertar(xobj);
         }
-        public int Login(string user, string pasword)
-        {
-            var Id_rol = objBL.BL_Login(user, pasword);
-            if (Id_rol == 1) {
-                return Id_rol;
-            }
-            return 0;
-        }
+        
     }
 }

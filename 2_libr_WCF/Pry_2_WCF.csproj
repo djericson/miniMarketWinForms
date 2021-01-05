@@ -8,8 +8,8 @@
     <ProjectGuid>{6FDBB6D5-B9EE-4090-A0A9-199D132130B6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WCFSegurida</RootNamespace>
-    <AssemblyName>WCFSegurida</AssemblyName>
+    <RootNamespace>WCFSegUsrs</RootNamespace>
+    <AssemblyName>WCFSegUsrs</AssemblyName>
     <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
@@ -59,7 +59,8 @@
     <Compile Include="ISrv_wcf_Peds.cs" />
     <Compile Include="ISrv_wcf_Prods.cs" />
     <Compile Include="ISrv_wcf_Proveedores.cs" />
-    <Compile Include="ISrv_wcf_Usrs.cs" />
+    <Compile Include="WFC_Seg_Usrs\ISrv_wcf_RolesVentanasUsrs.cs" />
+    <Compile Include="WFC_Seg_Usrs\ISrv_wcf_Usrs.cs" />
     <Compile Include="ISrv_wcf_Vtas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Srv_wcf_Login.cs" />
@@ -67,8 +68,11 @@
     <Compile Include="Srv_wcf_Peds.cs" />
     <Compile Include="Srv_wcf_Prods.cs" />
     <Compile Include="Srv_wcf_Proveedores.cs" />
-    <Compile Include="Srv_wcf_Usrs.cs" />
+    <Compile Include="WFC_Seg_Usrs\ISrv_wcf_VentanasMenus.cs" />
+    <Compile Include="WFC_Seg_Usrs\Srv_wcf_RolesVentanasUsrs.cs" />
+    <Compile Include="WFC_Seg_Usrs\Srv_wcf_Usrs.cs" />
     <Compile Include="Srv_wcf_Vtas.cs" />
+    <Compile Include="WFC_Seg_Usrs\Srv_wcf_VentanasMenus.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

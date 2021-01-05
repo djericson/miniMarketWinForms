@@ -61,7 +61,7 @@ namespace App
                     MessageBox.Show("_DataTable.Count: " + datarow);
 
                    MessageBox.Show("_DataTable.Count: " + _DataTable_2.Rows.Count);  
-                   view_product view_Product = new view_product();
+                   //view_product view_Product = new view_product();
                     //view_product1.dataGridView1.DataSource = _DataTable_2;
                     tag_producto.Image = App.Properties.Resources.check;
                   

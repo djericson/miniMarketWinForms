@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Utilitarios
+namespace DAC
 {
-    class ClsVentas
+    public class ClsDAC_CatProds
     {
+
     }
 }

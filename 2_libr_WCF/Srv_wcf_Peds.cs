@@ -25,6 +25,7 @@ namespace NS_WCF_Peds
 
         public string _GetData(string value, string _DataRow)
         {
+            /*
             var _DataTable = objBL.search_product(value, _DataRow);
             if (_DataTable != null) {
                 Type type = _DataTable.GetType();
@@ -58,7 +59,11 @@ namespace NS_WCF_Peds
 
                 //return JsonResponse;
             }
+            */
             return null;
+        }
+        public void Insertar_(ClsPedido xobj)
+        {
 
         }
 
@@ -94,15 +99,8 @@ namespace NS_WCF_Peds
         public void Insertar_Usuario(ClsUsuario xobj)
         {
             ClsBL_Usr x = new ClsBL_Usr();
-            x.insertar(xobj);
+            //x.insertar(xobj);
         }
-        public int Login(string user, string pasword)
-        {
-            var Id_rol = objBL.Login(user, pasword);
-            if (Id_rol == 1) {
-                return Id_rol;
-            }
-            return 0;
-        }
+        
     }
 }

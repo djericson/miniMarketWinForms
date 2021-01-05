@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace App
 {
-    public partial class FrmUsuariosVentanas : Form
+    public partial class FrmRolesVentanasUsrs : Form
     {
-        public FrmUsuariosVentanas()
+        public FrmRolesVentanasUsrs()
         {
             InitializeComponent();
         }
