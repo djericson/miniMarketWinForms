@@ -47,7 +47,7 @@
     <Compile Include="ClsDAC_CatProds.cs" />
     <Compile Include="ClsDAC_MenuPrincipal.cs" />
     <Compile Include="ClsDAC_Pedidos.cs" />
-    <Compile Include="ClsDAC_Prods.cs" />
+    <Compile Include="ClsDAC_Productos.cs" />
     <Compile Include="ClsDAC_Proveedores.cs" />
     <Compile Include="ClsDAC_Usrs.cs" />
     <Compile Include="ClsDAC_Ventas.cs" />

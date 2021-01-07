@@ -21,20 +21,7 @@ namespace NS_WCF_Vtas
         [OperationContract]
         void Insertar_(ClsVenta xobj);
 
-        [OperationContract] 
-        string _GetData(string value);
-        
-        [DataContract]
-        public class MyDataContract
-        {
-            [DataMember]
-            public int Id { get; set; }
-
-            [DataMember]
-            public string Name { get; set; }
-            [DataMember]
-            public SqlDataReader _sqlDataReader { get; set; }
-        }
+         
         [OperationContract]
 
         CompositeType GetDataUsingDataContract(CompositeType composite);

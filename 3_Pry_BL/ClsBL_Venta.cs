@@ -17,14 +17,7 @@ namespace BL
         {
             dac_vta.insertar(xobj);
         }
-        public DataTable search_(string richTextBox1)
-        {
-            var _DataTable = dac_vta.search_(richTextBox1);
-            if (_DataTable != null) {
-                return _DataTable;
-            }
-            return null;
-        }
+       
 
     }
 

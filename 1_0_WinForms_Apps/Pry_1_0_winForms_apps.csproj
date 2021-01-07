@@ -218,9 +218,17 @@
       <Project>{fd956780-5e92-435e-bb17-5ab90b7a9943}</Project>
       <Name>Pry_3_BL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\4_libr_DAC\Pry_4_DAC.csproj">
+      <Project>{3a7a34fc-7461-467d-a153-9896e2cbf222}</Project>
+      <Name>Pry_4_DAC</Name>
+    </ProjectReference>
     <ProjectReference Include="..\5_Pry_Utilitarios\Pry_5_Utilitarios.csproj">
       <Project>{9a83c521-4221-4a77-90f6-15814d92b7fc}</Project>
       <Name>Pry_5_Utilitarios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WcfService\WcfService.csproj">
+      <Project>{aeab8b42-3a41-4d35-a2f7-d7d5b5fca275}</Project>
+      <Name>WcfService</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

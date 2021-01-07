@@ -15,9 +15,6 @@ namespace DAC
 
         }
 
-        public DataTable search_(string richTextBox1, string _DataRow)
-        {
-            return null;
-        }
+        
     }
 }

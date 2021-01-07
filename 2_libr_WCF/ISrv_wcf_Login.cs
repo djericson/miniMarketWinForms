@@ -21,24 +21,11 @@ namespace NS_WCF_Login
         [OperationContract]
         void Insertar_Usuario(ClsUsuario xobj);
 
-        [OperationContract] 
-        string _GetData(string value, string _DataRow);
-
+         
         [OperationContract]
-        int Login(string user, string pasword); 
+        string Login(string user, string pasword); 
 
-        [DataContract]
-        public class MyDataContract
-        {
-            [DataMember]
-            public int Id { get; set; }
-
-            [DataMember]
-            public string Name { get; set; }
-            [DataMember]
-            public SqlDataReader _sqlDataReader { get; set; }
-        }
-
+         
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 

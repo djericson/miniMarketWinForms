@@ -28,13 +28,13 @@ namespace BL
             return null;
         }
 
-        public int BL_Login(string user, string pasword)
+        public string BL_Login(string user, string pasword)
         {
-            var Id_rol = dac_usr.Login(user, pasword);
-            if (Id_rol == 1) {
-                return Id_rol;
+            var Rol_User = dac_usr.Login(user, pasword);
+            if (Rol_User != null) {
+                return Rol_User;
             }
-            return 0;
+            return null;
         }
 
     }

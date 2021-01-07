@@ -17,15 +17,6 @@ namespace BL
         {
             dac_pedido.insertar(xobj);
         }
-        public DataTable search_(string richTextBox1, string _DataRow)
-        {
-            var _DataTable = dac_pedido.search_(richTextBox1, _DataRow);
-            if (_DataTable != null)
-            {
-                return _DataTable;
-            }
-            return null;
-        }
-
+         
     }
 }

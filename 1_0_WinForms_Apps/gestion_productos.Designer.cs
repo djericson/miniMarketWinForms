@@ -196,7 +196,7 @@ namespace App
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.update_product1);
+            //this.panel2.Controls.Add(this.update_product1);
             this.panel2.Location = new System.Drawing.Point(247, 170);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(650, 363);

@@ -47,7 +47,7 @@ namespace DAC
         {
 
         }
-        public int  Login(string user, string pasword)
+        public string  Login(string user, string pasword)
         {
             SqlCommand command = new SqlCommand("Select id_usr,rol_usr,usr_nom,usr_pass   from Usuario    where    usr_nom = '" + user + "' and usr_pass = '" + pasword + "'", cn);
 
@@ -59,15 +59,13 @@ namespace DAC
             int count = ds.Tables[0].Rows.Count;
 
             if (count == 1) {
-                var s = ds.Tables[0].Rows[0]["rol_usr"].ToString();
-                var f = ds.Tables[0].Rows[0]["usr_nom"].ToString();
-                Console.WriteLine("rol: "+s +" user: "+f);
-
-                int id_Rol = Int32.Parse(ds.Tables[0].Rows[0]["id_usr"].ToString());
-                id_Rol = id_Rol - 1;
-                return id_Rol;
+                var Rol_User = ds.Tables[0].Rows[0]["rol_usr"].ToString();
+                //var f = ds.Tables[0].Rows[0]["usr_nom"].ToString();
+                //int id_Rol = Int32.Parse(ds.Tables[0].Rows[0]["id_usr"].ToString());
+                //id_Rol = id_Rol - 1;
+                return Rol_User;
             }
-            return 0;
+            return null;
         }
 
         

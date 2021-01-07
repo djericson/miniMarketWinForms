@@ -62,23 +62,7 @@ namespace NS_WCF_Login
 
         }
 
-        public ISrv_wcf_Login.MyDataContract GetData()
-        {
-            //List<MyDataContract> list = new List<MyDataContract>();
-            ////your code
-            //BL.ClsBL_usr x = new ClsBL_usr();
-            //var sqlDataReader = x.search_product(null);
-            //if (sqlDataReader != null)
-            //{
-            //    //MyDataContract myDataContract = new MyDataContract();
-            //    //myDataContract._sqlDataReader = sqlDataReader;
-            //    //var value = myDataContract._sqlDataReader;
-            //    return null;
-            //}
-             
-            return null;
-
-        }
+         
 
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
@@ -96,13 +80,15 @@ namespace NS_WCF_Login
             ClsBL_Usr x = new ClsBL_Usr();
             x.insertUsr(xobj);
         }
-        public int Login(string user, string pasword)
+
+        string ISrv_wcf_Login.Login(string user, string pasword)
         {
-            var Id_rol = objBL.BL_Login(user, pasword);
-            if (Id_rol == 1) {
-                return Id_rol;
+            var Rol_User = objBL.BL_Login(user, pasword);
+            if (Rol_User != null)
+            {
+                return Rol_User;
             }
-            return 0;
+            return null;
         }
     }
 }

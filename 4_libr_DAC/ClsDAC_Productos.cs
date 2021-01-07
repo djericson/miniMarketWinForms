@@ -9,7 +9,7 @@ using Utilitarios;
 
 namespace DAC
 {
-    public class ClsDAC_Prods
+    public class ClsDAC_Productos
     {
         SqlConnection cn = new SqlConnection("Data Source=srv-bd-sql-server.database.windows.net; User ID =edgar; Password =$E012345; Initial Catalog=miniMarket");
         SqlCommand cmd;

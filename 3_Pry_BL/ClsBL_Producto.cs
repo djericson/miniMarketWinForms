@@ -12,7 +12,7 @@ namespace BL
 {
     public class ClsBL_Producto
     {
-        ClsDAC_Prods dac_prods = new ClsDAC_Prods();
+        ClsDAC_Productos dac_prods = new ClsDAC_Productos();
         public void insertar(ClsProducto xobj)
         {
             dac_prods.insert_product(xobj);

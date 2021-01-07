@@ -21,20 +21,6 @@ namespace NS_WCF_MenuPrincipal
         [OperationContract]
         void Insertar_(ClsUsuario xobj);
 
-        [OperationContract] 
-        string _GetData(string value, string _DataRow);
-
-        [DataContract]
-        public class MyDataContract
-        {
-            [DataMember]
-            public int Id { get; set; }
-
-            [DataMember]
-            public string Name { get; set; }
-            [DataMember]
-            public SqlDataReader _sqlDataReader { get; set; }
-        }
 
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
