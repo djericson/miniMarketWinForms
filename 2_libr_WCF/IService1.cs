@@ -27,21 +27,8 @@ namespace WCFSegurida
         [OperationContract]
         int Login(string user, string pasword); 
 
-        [DataContract]
-        public class MyDataContract
-        {
-            [DataMember]
-            public int Id { get; set; }
-
-            [DataMember]
-            public string Name { get; set; }
-            [DataMember]
-            public SqlDataReader _sqlDataReader { get; set; }
-        }
+        
         [OperationContract]
-
-         
-
 
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
