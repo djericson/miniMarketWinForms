@@ -166,7 +166,7 @@ namespace App
             this.update.TabIndex = 11;
             this.update.Text = "update producto";
             this.update.UseVisualStyleBackColor = true;
-            this.update.Click += new System.EventHandler(this.update_Click);
+            //this.update.Click += new System.EventHandler(this.update_Click);
             // 
             // delete
             // 

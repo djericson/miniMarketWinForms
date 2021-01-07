@@ -207,10 +207,7 @@ namespace App
             panel.Top = button4.Top;
          }
 
-        private void update_Click(object sender, EventArgs e)
-        {
-        }
-
+        
         // con.ConnectionString = "Server=EDGAR;DataBase=Pachacamac_;Integrated Security=SSPI;";
         //
         // cmd.CommandType = CommandType.StoredProcedure;
