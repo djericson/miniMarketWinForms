@@ -194,7 +194,9 @@
     <EmbeddedResource Include="WinForms_Usuarios\FrmUsr.resx">
       <DependentUpon>FrmUsr.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\DataSources\WCFSegurida.CompositeType.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
