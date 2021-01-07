@@ -48,7 +48,7 @@ namespace App
                 NS_WCF_Login.Srv_wcf_Login xwcf = new NS_WCF_Login.Srv_wcf_Login();
                 this.Hide();
                 //string Rol_User = xwcf.Login(user_name.Text, Pasword);
-                MessageBox.Show("Login Successful!");
+                //MessageBox.Show("Login Successful!");
                 //for (int x= 0; x < listForm.Count(); x++)
                 //{
                 //    if (x == Rol_User)
