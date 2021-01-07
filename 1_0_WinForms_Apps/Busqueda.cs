@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace E1_0_winFromsApp
+namespace NS_Busqueda
 {
     public partial class Busqueda : Form
     {
         public SqlDataReader objDR;
         public DataGridViewRow objRow;
-
+        public DataTable objTabla = new DataTable();
         public Busqueda()
         {
             InitializeComponent();
@@ -25,8 +25,8 @@ namespace E1_0_winFromsApp
         {
             try
             {
-                DataTable objTabla = new DataTable();
-                objTabla.Load(objDR, LoadOption.OverwriteChanges);
+                //DataTable objTabla = new DataTable();
+                //objTabla.Load(objDR, LoadOption.OverwriteChanges);
                 dataGridView1.DataSource = objTabla;
             }
             catch (SqlException sqlex)

@@ -47,18 +47,17 @@ namespace App
         {
             try
             {
-                service_1.Service1Client xwcf = new service_1.Service1Client();
-             
+                NS_WCF_Login.Srv_wcf_Login xwcf = new NS_WCF_Login.Srv_wcf_Login();
                 this.Hide();
                 int id_Rol = xwcf.Login(user_name.Text, Pasword);
                 MessageBox.Show("Login Successful!");
                 for (int x= 0; x < listForm.Count(); x++)
+                {
+                    if (x == id_Rol)
                     {
-                        if (x == id_Rol)
-                        {
-                            listForm[x].Show();
-                        }
+                        listForm[x].Show();
                     }
+                }
                  
             }
             catch (Exception ex)

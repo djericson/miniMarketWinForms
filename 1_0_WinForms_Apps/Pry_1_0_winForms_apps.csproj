@@ -76,16 +76,6 @@
     <Compile Include="Busqueda.designer.cs">
       <DependentUpon>Busqueda.cs</DependentUpon>
     </Compile>
-    <Compile Include="Connected Services\service_1\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\service_2\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="FrmPedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,9 +88,29 @@
     <Compile Include="FrmProveedores.Designer.cs">
       <DependentUpon>FrmProveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="login.cs" />
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="login.designer.cs">
       <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_to_gestion_productos\insert_product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_to_gestion_productos\insert_product.Designer.cs">
+      <DependentUpon>insert_product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_to_gestion_productos\Update_product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_to_gestion_productos\Update_product.Designer.cs">
+      <DependentUpon>Update_product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_to_gestion_productos\view_product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_to_gestion_productos\view_product.Designer.cs">
+      <DependentUpon>view_product.cs</DependentUpon>
     </Compile>
     <Compile Include="WinForms_Usuarios\FrmUsr.cs">
       <SubType>Form</SubType>
@@ -108,23 +118,17 @@
     <Compile Include="WinForms_Usuarios\FrmUsr.Designer.cs">
       <DependentUpon>FrmUsr.cs</DependentUpon>
     </Compile>
-    <Compile Include="WinForms_Usuarios\FrmUsuariosVentanas.cs">
+    <Compile Include="WinForms_Usuarios\FrmRolesVentanasUsrs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WinForms_Usuarios\FrmUsuariosVentanas.Designer.cs">
-      <DependentUpon>FrmUsuariosVentanas.cs</DependentUpon>
+    <Compile Include="WinForms_Usuarios\FrmRolesVentanasUsrs.Designer.cs">
+      <DependentUpon>FrmRolesVentanasUsrs.cs</DependentUpon>
     </Compile>
     <Compile Include="WinForms_Usuarios\FrmVentanasMenus.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WinForms_Usuarios\FrmVentanasMenus.Designer.cs">
       <DependentUpon>FrmVentanasMenus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="WinForms_Usuarios\Frm_usuariosRoles.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WinForms_Usuarios\Frm_usuariosRoles.Designer.cs">
-      <DependentUpon>Frm_usuariosRoles.cs</DependentUpon>
     </Compile>
     <Compile Include="gestion_productos.cs">
       <SubType>Form</SubType>
@@ -163,7 +167,7 @@
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -175,38 +179,21 @@
     <EmbeddedResource Include="CustomMsgBox\MsgBox.resx">
       <DependentUpon>MsgBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_to_gestion_productos\Update_product.resx">
+      <DependentUpon>Update_product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_to_gestion_productos\view_product.resx">
+      <DependentUpon>view_product.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventas-pagos\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinForms_Usuarios\FrmRolesVentanasUsrs.resx">
+      <DependentUpon>FrmRolesVentanasUsrs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WinForms_Usuarios\FrmUsr.resx">
       <DependentUpon>FrmUsr.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Connected Services\service_1\service.wsdl" />
-    <None Include="Connected Services\service_1\service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\service_1\service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\service_1\Utilitarios.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\service_1\WCFSegurida.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\service_2\Arrays.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\service_2\service.wsdl" />
-    <None Include="Connected Services\service_2\service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\service_2\service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\service_2\Utilitarios.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\WCFSegurida.CompositeType.datasource" />
     <None Include="Properties\Settings.settings">
@@ -223,6 +210,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\2_libr_WCF\Pry_2_WCF.csproj">
+      <Project>{6fdbb6d5-b9ee-4090-a0a9-199d132130b6}</Project>
+      <Name>Pry_2_WCF</Name>
+    </ProjectReference>
     <ProjectReference Include="..\3_Pry_BL\Pry_3_BL.csproj">
       <Project>{fd956780-5e92-435e-bb17-5ab90b7a9943}</Project>
       <Name>Pry_3_BL</Name>
@@ -230,10 +221,6 @@
     <ProjectReference Include="..\5_Pry_Utilitarios\Pry_5_Utilitarios.csproj">
       <Project>{9a83c521-4221-4a77-90f6-15814d92b7fc}</Project>
       <Name>Pry_5_Utilitarios</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\2_libr_WCF\Pry_2_WCF.csproj">
-      <Project>{6fdbb6d5-b9ee-4090-a0a9-199d132130b6}</Project>
-      <Name>WCFSegurida</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -249,22 +236,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\service_1\" />
-    <WCFMetadataStorage Include="Connected Services\service_2\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\service_1\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\service_1\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\service_1\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
@@ -278,6 +249,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UserControl_to_gestion_productos\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Webp.net-resizeimage %2812%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

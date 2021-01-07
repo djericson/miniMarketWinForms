@@ -10,7 +10,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using busqueda;
+using NS_Busqueda;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using xDialog;
@@ -21,29 +21,24 @@ namespace App
 {
     public partial class gestion_productos : Form
     {
-       
-        
-         
         DataTable objTabla = new DataTable();
         static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
         static SqlConnection connection = new SqlConnection();
         static SqlCommand command = new SqlCommand();
 
-
         //SqlConnection cn = new SqlConnection("Data Source=srv-bd-sql-server.database.windows.net; User ID =edgar; Password =$E012345; Initial Catalog=miniMarket");
 
-        
         public gestion_productos()
         {
             InitializeComponent();
             panel.Height = button4.Height;
             panel.Top = button4.Top;
-        }
+         }
 
         private void buscar_producto_Click(object sender, EventArgs e)
         {
-            System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
-            service_1.Service1Client  xwcf = new service_1.Service1Client();
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+            NS_WCF_Prods.Srv_wcf_Prods xwcf = new NS_WCF_Prods.Srv_wcf_Prods();
             var _DataTable = xwcf._GetData(richTextBox1.Text , "");
             Type type = objTabla.GetType();
             if (_DataTable != null)
@@ -61,8 +56,23 @@ namespace App
                     {
                         string file = row.Field<string>(1);
                         MessageBox.Show("_DataTable: " + file);
+
                     }
+                    MessageBox.Show("_DataTable.Count: " + datarow);
+
+                   MessageBox.Show("_DataTable.Count: " + _DataTable_2.Rows.Count);  
+                   //view_product view_Product = new view_product();
+                    //view_product1.dataGridView1.DataSource = _DataTable_2;
+                    tag_producto.Image = App.Properties.Resources.check;
+                  
+
                 }
+                
+
+            }
+            else
+            {
+                tag_producto.Image = App.Properties.Resources.Webp_net_resizeimage__12_;
 
             }
             DataTable Deserialize(string _DataTable, Type type1)
@@ -195,7 +205,10 @@ namespace App
         {
             panel.Height = button4.Height;
             panel.Top = button4.Top;
+         }
 
+        private void update_Click(object sender, EventArgs e)
+        {
         }
 
         // con.ConnectionString = "Server=EDGAR;DataBase=Pachacamac_;Integrated Security=SSPI;";
