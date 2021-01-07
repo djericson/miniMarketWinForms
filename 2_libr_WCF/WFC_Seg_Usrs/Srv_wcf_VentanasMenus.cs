@@ -13,10 +13,10 @@ using System.Data;
 using System.IO;
 using Newtonsoft.Json.Converters;
 
-namespace NS_WCF_AccesosRolesUsrs
+namespace NS_WCF_VentanasMenus
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código y en el archivo de configuración a la vez.
-    public class Srv_wcf_AccesosRolesUsrs: ISrv_wcf_AccesosRolesUsrs
+    public class Srv_wcf_VentanasMenus : ISrv_wcf_VentanasMenus
     {
         ClsBL_Usr objBL = new ClsBL_Usr();
         public string GetData(int value)
@@ -26,7 +26,7 @@ namespace NS_WCF_AccesosRolesUsrs
 
         public string _GetData(string value, string _DataRow)
         {
-            var _DataTable = objBL.search_product(value, _DataRow);
+            var _DataTable = objBL.search_(value, _DataRow);
             if (_DataTable != null) {
                 Type type = _DataTable.GetType();
                 Newtonsoft.Json.JsonSerializer json = new Newtonsoft.Json.JsonSerializer();
@@ -63,7 +63,7 @@ namespace NS_WCF_AccesosRolesUsrs
 
         }
 
-        public ISrv_wcf_AccesosRolesUsrs.MyDataContract GetData()
+        public ISrv_wcf_VentanasMenus.MyDataContract GetData()
         {
             //List<MyDataContract> list = new List<MyDataContract>();
             ////your code
@@ -92,18 +92,11 @@ namespace NS_WCF_AccesosRolesUsrs
             return composite;
         }
 
-        public void Insertar_Usuario(ClsUsuario xobj)
+        public void Insertar_(ClsUsuario xobj)
         {
             ClsBL_Usr x = new ClsBL_Usr();
-            x.insertar(xobj);
+            //x.insertar(xobj);
         }
-        public int Login(string user, string pasword)
-        {
-            var Id_rol = objBL.Login(user, pasword);
-            if (Id_rol == 1) {
-                return Id_rol;
-            }
-            return 0;
-        }
+        
     }
 }

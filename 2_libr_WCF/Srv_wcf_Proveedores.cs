@@ -17,7 +17,7 @@ namespace NS_WCF_Proveedores
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código y en el archivo de configuración a la vez.
     public class Srv_wcf_Proveedores: ISrv_wcf_Proveedores
     {
-        ClsBL_Usr objBL = new ClsBL_Usr();
+        ClsBLProveedor objBL = new ClsBLProveedor();
         public string GetData(int value)
         {
             return string.Format("You entered: {0}", value);
@@ -25,7 +25,7 @@ namespace NS_WCF_Proveedores
 
         public string _GetData(string value, string _DataRow)
         {
-            var _DataTable = objBL.search_product(value, _DataRow);
+            var _DataTable = objBL.BUSCAR_RAZON_SOCIAL(value);
             if (_DataTable != null) {
                 Type type = _DataTable.GetType();
                 Newtonsoft.Json.JsonSerializer json = new Newtonsoft.Json.JsonSerializer();
@@ -62,6 +62,11 @@ namespace NS_WCF_Proveedores
 
         }
 
+        public void Insertar_(ClsProveedor xobj)
+        {
+
+        }
+
         public ISrv_wcf_Proveedores.MyDataContract GetData()
         {
             //List<MyDataContract> list = new List<MyDataContract>();
@@ -91,18 +96,11 @@ namespace NS_WCF_Proveedores
             return composite;
         }
 
-        public void Insertar_Usuario(ClsUsuario xobj)
+        public void Insertar_(ClsUsuario xobj)
         {
             ClsBL_Usr x = new ClsBL_Usr();
-            x.insertar(xobj);
+            //x.insertar(xobj);
         }
-        public int Login(string user, string pasword)
-        {
-            var Id_rol = objBL.Login(user, pasword);
-            if (Id_rol == 1) {
-                return Id_rol;
-            }
-            return 0;
-        }
+
     }
 }

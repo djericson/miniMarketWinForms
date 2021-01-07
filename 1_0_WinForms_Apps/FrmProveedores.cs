@@ -16,6 +16,8 @@ namespace App
     {
         private bool IsNuevo = false;
         private bool IsEditar = false;
+        ClsBLProveedor obj_BL_Proveedor = new ClsBLProveedor();
+
         public FrmProveedores()
         {
             InitializeComponent();
@@ -87,21 +89,21 @@ namespace App
         #region MOSTRAR TODOS LOS REGISTROS DE CATEGORIA
         private void Mostrar()
         {
-            dgvListado.DataSource = clsBLProveedor.MOSTRAR();
+            dgvListado.DataSource = ClsBLProveedor.MOSTRAR();
             OcularColumnas();
         }
         #endregion
         #region METODO BUSCAR POR RAZON SOCIAL
         private void BuscarRazon_Social()
         {
-            dgvListado.DataSource = clsBLProveedor.BUSCAR_RAZON_SOCIAL(txtBuscar.Text);
+            dgvListado.DataSource = obj_BL_Proveedor.BUSCAR_RAZON_SOCIAL(txtBuscar.Text);
             OcularColumnas();
         }
         #endregion
         #region METODO BUSCAR POR NUMERO DE DOCUMENTO
         private void BuscarNum_Documento()
         {
-            dgvListado.DataSource = clsBLProveedor.BUSCAR_NUM_DOCUMENTO(txtBuscar.Text);
+            dgvListado.DataSource = obj_BL_Proveedor.BUSCAR_NUM_DOCUMENTO(txtBuscar.Text);
             OcularColumnas();
 
         }
@@ -142,7 +144,7 @@ namespace App
                         if (Convert.ToBoolean(row.Cells[0].Value))
                         {
                             Codigo = Convert.ToString(row.Cells[1].Value);
-                            Rpta = clsBLProveedor.ELIMINAR(Convert.ToInt32(Codigo));
+                            Rpta = ClsBLProveedor.ELIMINAR(Convert.ToInt32(Codigo));
 
                             if (Rpta.Equals("OK"))
                             {
@@ -190,12 +192,12 @@ namespace App
                 {
                     if (IsNuevo)
                     {
-                        rpta = clsBLProveedor.INSERTAR(txtRazon_Social.Text.Trim().ToUpper(), cbCategoria.Text, cbTipo_Documento.Text,
+                        rpta = ClsBLProveedor.INSERTAR(txtRazon_Social.Text.Trim().ToUpper(), cbCategoria.Text, cbTipo_Documento.Text,
                         txtNum_Documento.Text, txtDireccion.Text, txtTelefono.Text, txtEmail.Text, txtUrl.Text);
                     }
                     else
                     {
-                        rpta = clsBLProveedor.EDITAR(Convert.ToInt32(dgvListado.CurrentRow.Cells["Id_Proveedor"].Value), txtRazon_Social.Text.Trim().ToUpper(), cbCategoria.Text, cbTipo_Documento.Text,
+                        rpta = ClsBLProveedor.EDITAR(Convert.ToInt32(dgvListado.CurrentRow.Cells["Id_Proveedor"].Value), txtRazon_Social.Text.Trim().ToUpper(), cbCategoria.Text, cbTipo_Documento.Text,
                         txtNum_Documento.Text, txtDireccion.Text, txtTelefono.Text, txtEmail.Text, txtUrl.Text);
                     }
                   

@@ -43,7 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClsBL_MenuPrincipal.cs" />
+    <Compile Include="ClsBL_Pedido.cs" />
+    <Compile Include="ClsBL_Producto.cs" />
+    <Compile Include="ClsBL_Proveedor.cs" />
     <Compile Include="ClsBL_Usr.cs" />
+    <Compile Include="ClsBL_Venta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

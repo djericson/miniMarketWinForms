@@ -18,15 +18,12 @@ namespace NS_WCF_Vtas
         [OperationContract]
         string GetData(int value);
 
-
         [OperationContract]
-        void Insertar_Usuario(ClsUsuario xobj);
+        void Insertar_(ClsVenta xobj);
 
         [OperationContract] 
-        string _GetData(string value, string _DataRow);
-        [OperationContract]
-        int Login(string user, string pasword); 
-
+        string _GetData(string value);
+        
         [DataContract]
         public class MyDataContract
         {

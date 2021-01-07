@@ -19,13 +19,10 @@ namespace NS_WCF_Peds
         string GetData(int value);
 
         [OperationContract]
-        void Insertar_Usuario(ClsUsuario xobj);
+        void Insertar_(ClsPedido xobj);
 
         [OperationContract] 
         string _GetData(string value, string _DataRow);
-
-        [OperationContract]
-        int Login(string user, string pasword); 
 
         [DataContract]
         public class MyDataContract

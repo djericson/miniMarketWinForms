@@ -9,24 +9,22 @@ using BL;
 using Newtonsoft.Json;
 using Utilitarios;
 
-namespace NS_WCF_AccesosRolesUsrs
+namespace NS_WCF_VentanasMenus
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de interfaz "IService1" en el código y en el archivo de configuración a la vez.
     [ServiceContract]
-    public interface ISrv_wcf_AccesosRolesUsrs
+    public interface ISrv_wcf_VentanasMenus
     {
         [OperationContract]
         string GetData(int value);
 
 
         [OperationContract]
-        void Insertar_Usuario(ClsUsuario xobj);
+        void Insertar_(ClsUsuario xobj);
 
         [OperationContract] 
         string _GetData(string value, string _DataRow);
-        [OperationContract]
-        int Login(string user, string pasword); 
-
+        
         [DataContract]
         public class MyDataContract
         {

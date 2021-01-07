@@ -8,17 +8,16 @@ using Utilitarios;
 
 namespace DAC
 {
-    public class ClsDAC_Ventas
+    public class ClsDAC_Pedidos
     {
-        public void insertar(ClsVenta xobj)
+        public void insertar(ClsPedido xobj)
         {
 
         }
 
-        public DataTable search_(string val) 
+        public DataTable search_(string richTextBox1, string _DataRow)
         {
             return null;
         }
-
     }
 }
