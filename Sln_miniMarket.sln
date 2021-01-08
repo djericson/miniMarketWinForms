@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pry_5_Utilitarios", "5_Pry_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pry_1_0_winForms_apps", "1_0_WinForms_Apps\Pry_1_0_winForms_apps.csproj", "{72FFE933-E97D-47B3-960C-4A709F925291}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfServiceLibrary1", "WcfServiceLibrary1\WcfServiceLibrary1.csproj", "{9BC6752F-F62D-4B8F-8B44-059E844BA108}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{72FFE933-E97D-47B3-960C-4A709F925291}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72FFE933-E97D-47B3-960C-4A709F925291}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72FFE933-E97D-47B3-960C-4A709F925291}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BC6752F-F62D-4B8F-8B44-059E844BA108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BC6752F-F62D-4B8F-8B44-059E844BA108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BC6752F-F62D-4B8F-8B44-059E844BA108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BC6752F-F62D-4B8F-8B44-059E844BA108}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
