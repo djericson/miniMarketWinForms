@@ -45,7 +45,7 @@ namespace App
         {
             try
             {
-                NS_WCF_Login.Srv_wcf_Login xwcf = new NS_WCF_Login.Srv_wcf_Login();
+                //NS_WCF_Login.Srv_wcf_Login xwcf = new NS_WCF_Login.Srv_wcf_Login();
                 this.Hide();
                 //string Rol_User = xwcf.Login(user_name.Text, Pasword);
                 //MessageBox.Show("Login Successful!");

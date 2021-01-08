@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Utilitarios;
 using BL;
-using NS_WCF_AccesosRolesUsrs;
+//using NS_WCF_AccesosRolesUsrs;
 
 namespace App
 {
@@ -23,9 +23,9 @@ namespace App
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-            NS_WCF_AccesosRolesUsrs.Srv_wcf_AccesosRolesUsrs xwcf = new NS_WCF_AccesosRolesUsrs.Srv_wcf_AccesosRolesUsrs();
+            //NS_WCF_AccesosRolesUsrs.Srv_wcf_AccesosRolesUsrs xwcf = new NS_WCF_AccesosRolesUsrs.Srv_wcf_AccesosRolesUsrs();
             
-            xwcf.Insertar_Usr(new ClsUsuario(txtUsuario.Text, txtClave.Text, txtNombres.Text, txtApellidos.Text,"_"));
+            //xwcf.Insertar_Usr(new ClsUsuario(txtUsuario.Text, txtClave.Text, txtNombres.Text, txtApellidos.Text,"_"));
 
         }
 
