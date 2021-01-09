@@ -1,32 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using BL;
+using Newtonsoft.Json;
+using Utilitarios;
 
-namespace WcfServiceLibrary1
+namespace NS_WCF_Vtas
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
+    // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de interfaz "IService1" en el código y en el archivo de configuración a la vez.
     [ServiceContract]
-    public interface IService1: Interface1
+    public interface ISrv_wcf_Vtas
     {
         [OperationContract]
         string GetData(int value);
-        [OperationContract]
-        string _GetData(int value);
-
-
 
         [OperationContract]
+        void Insertar_(ClsVenta xobj);
+
+         
+        [OperationContract]
+
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
-        // TODO: Add your service operations here
+        // TODO: agregue aquí sus operaciones de servicio
     }
 
-    // Use a data contract as illustrated in the sample below to add composite types to service operations.
-    // You can add XSD files into the project. After building the project, you can directly use the data types defined there, with the namespace "WcfServiceLibrary1.ContractType".
+    // Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.
+    // Puede agregar archivos XSD al proyecto. Después de compilar el proyecto, puede usar directamente los tipos de datos definidos aquí, con el espacio de nombres "WCFSegurida.ContractType".
     [DataContract]
+     
     public class CompositeType
     {
         bool boolValue = true;

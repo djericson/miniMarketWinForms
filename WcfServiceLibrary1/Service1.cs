@@ -15,7 +15,7 @@ namespace WcfServiceLibrary1
             return string.Format("You entered: {0}", value);
         }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
             if (composite == null)
             {
