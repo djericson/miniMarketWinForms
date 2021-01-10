@@ -63,9 +63,9 @@ namespace App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap check {
+        public static System.Drawing.Bitmap Webp_net_resizeimage__12_ {
             get {
-                object obj = ResourceManager.GetObject("check", resourceCulture);
+                object obj = ResourceManager.GetObject("Webp_net_resizeimage__12_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Webp_net_resizeimage__12_ {
+        public static System.Drawing.Bitmap Webp_net_resizeimage__13_ {
             get {
-                object obj = ResourceManager.GetObject("Webp_net_resizeimage__12_", resourceCulture);
+                object obj = ResourceManager.GetObject("Webp_net_resizeimage__13_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

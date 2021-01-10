@@ -37,61 +37,63 @@ namespace App
 
         private void buscar_producto_Click(object sender, EventArgs e)
         {
-            //ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
-            //NS_WCF_Prods.Srv_wcf_Prods xwcf = new NS_WCF_Prods.Srv_wcf_Prods();
-            //var _DataTable = xwcf._GetData(richTextBox1.Text , "");
-            //Type type = objTabla.GetType();
-            //if (_DataTable != null)
-            //{
-            //    Busqueda objayuda = new Busqueda();
-            //    objayuda.objTabla = Deserialize(_DataTable, type);
-            //    objayuda.ShowDialog(this);
-            //    if (objayuda.objRow != null)
-            //    {
-            //        string datarow = objayuda.objRow.Cells[0].Value.ToString();
-                   
-            //        var _DataTable_2 = Deserialize(xwcf._GetData("", datarow), type);
-            //        //MessageBox.Show("_DataTable2: "+ _DataTable_2.ToString());
-            //        foreach (DataRow row in _DataTable_2.Rows)
-            //        {
-            //            string file = row.Field<string>(1);
-            //            MessageBox.Show("_DataTable: " + file);
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+            NS_WCF_Prods.Srv_wcf_Prods xwcf = new NS_WCF_Prods.Srv_wcf_Prods();
+            var _DataTable = xwcf._GetData(richTextBox1.Text, "");
+            Type type = objTabla.GetType();
+            if (_DataTable != null)
+            {
+                Busqueda objayuda = new Busqueda();
+                objayuda.objTabla = Deserialize(_DataTable, type);
+                objayuda.ShowDialog(this);
+                if (objayuda.objRow != null)
+                {
+                    string datarow = objayuda.objRow.Cells[0].Value.ToString();
 
-            //        }
-            //        MessageBox.Show("_DataTable.Count: " + datarow);
+                    var _DataTable_2 = Deserialize(xwcf._GetData("", datarow), type);
+                    //MessageBox.Show("_DataTable2: "+ _DataTable_2.ToString());
+                    foreach (DataRow row in _DataTable_2.Rows)
+                    {
+                        string file = row.Field<string>(1);
+                        MessageBox.Show("_DataTable: " + file);
 
-            //       MessageBox.Show("_DataTable.Count: " + _DataTable_2.Rows.Count);  
-            //       //view_product view_Product = new view_product();
-            //        //view_product1.dataGridView1.DataSource = _DataTable_2;
-            //        tag_producto.Image = App.Properties.Resources.check;
-                  
+                    }
+                    MessageBox.Show("_DataTable.Count: " + datarow);
 
-            //    }
-                
+                    MessageBox.Show("_DataTable.Count: " + _DataTable_2.Rows.Count);
+                    //view_product view_Product = new view_product();
+                    //view_product1.dataGridView1.DataSource = _DataTable_2;
+                    tag_producto.Image = App.Properties.Resources.Webp_net_resizeimage__13_;
 
-            //}
-            //else
-            //{
-            //    tag_producto.Image = App.Properties.Resources.Webp_net_resizeimage__12_;
 
-            //}
-            //DataTable Deserialize(string _DataTable, Type type1)
-            //{
+                }
 
-            //    Newtonsoft.Json.JsonSerializer json = new Newtonsoft.Json.JsonSerializer();
-            //    json.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
-            //    json.ObjectCreationHandling = Newtonsoft.Json.ObjectCreationHandling.Replace;
-            //    json.MissingMemberHandling = Newtonsoft.Json.MissingMemberHandling.Ignore;
-            //    json.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
 
-            //    StringReader sr = new StringReader(_DataTable);
-            //    Newtonsoft.Json.JsonTextReader reader = new JsonTextReader(sr);
-            //    //object result = json.Deserialize(reader, valueType);
-            //    var result = json.Deserialize(reader, type1);
-            //    reader.Close();
+            }
+            else
+            {
+                tag_producto.Image = App.Properties.Resources.Webp_net_resizeimage__12_;
 
-            //    return (DataTable)result;
-            //}
+            }
+            DataTable Deserialize(string _DataTable, Type type1)
+            {
+
+                Newtonsoft.Json.JsonSerializer json = new Newtonsoft.Json.JsonSerializer();
+                json.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
+                json.ObjectCreationHandling = Newtonsoft.Json.ObjectCreationHandling.Replace;
+                json.MissingMemberHandling = Newtonsoft.Json.MissingMemberHandling.Ignore;
+                json.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+
+                StringReader sr = new StringReader(_DataTable);
+                Newtonsoft.Json.JsonTextReader reader = new JsonTextReader(sr);
+                //object result = json.Deserialize(reader, valueType);
+                var result = json.Deserialize(reader, type1);
+                reader.Close();
+
+                return (DataTable)result;
+            }
+
+
             //try
             //{
             //
@@ -154,14 +156,14 @@ namespace App
             {
                 
 
-                builder.DataSource = "srv-bd-sql-server.database.windows.net";
-                builder.UserID = "edgar";
-                builder.Password = "$E012345";
-                builder.InitialCatalog = "miniMarket";
-                builder.ConnectTimeout = 30;
-                builder.Encrypt = true;
+                //builder.DataSource = "srv-bd-sql-server.database.windows.net";
+                //builder.UserID = "edgar";
+                //builder.Password = "$E012345";
+                //builder.InitialCatalog = "miniMarket";
+                //builder.ConnectTimeout = 30;
+                //builder.Encrypt = true;
 
-                connection = new SqlConnection(builder.ConnectionString);
+                //connection = new SqlConnection(builder.ConnectionString);
 
 
 
@@ -207,7 +209,7 @@ namespace App
             panel.Top = button4.Top;
          }
 
-        
+
         // con.ConnectionString = "Server=EDGAR;DataBase=Pachacamac_;Integrated Security=SSPI;";
         //
         // cmd.CommandType = CommandType.StoredProcedure;

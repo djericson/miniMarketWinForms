@@ -58,6 +58,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
@@ -95,22 +96,27 @@
     <Compile Include="login.designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl_to_gestion_productos\insert_product.cs">
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_for_gestion_productos\insert_product.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl_to_gestion_productos\insert_product.Designer.cs">
+    <Compile Include="UserControl_for_gestion_productos\insert_product.Designer.cs">
       <DependentUpon>insert_product.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl_to_gestion_productos\Update_product.cs">
+    <Compile Include="UserControl_for_gestion_productos\Update_product.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl_to_gestion_productos\Update_product.Designer.cs">
+    <Compile Include="UserControl_for_gestion_productos\Update_product.Designer.cs">
       <DependentUpon>Update_product.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl_to_gestion_productos\view_product.cs">
+    <Compile Include="UserControl_for_gestion_productos\view_product.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl_to_gestion_productos\view_product.Designer.cs">
+    <Compile Include="UserControl_for_gestion_productos\view_product.Designer.cs">
       <DependentUpon>view_product.cs</DependentUpon>
     </Compile>
     <Compile Include="WinForms_Usuarios\FrmUsr.cs">
@@ -169,21 +175,19 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="CustomMsgBox\MsgBox.resx">
       <DependentUpon>MsgBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl_to_gestion_productos\Update_product.resx">
+    <EmbeddedResource Include="UserControl_for_gestion_productos\insert_product.resx">
+      <DependentUpon>insert_product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_for_gestion_productos\Update_product.resx">
       <DependentUpon>Update_product.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl_to_gestion_productos\view_product.resx">
+    <EmbeddedResource Include="UserControl_for_gestion_productos\view_product.resx">
       <DependentUpon>view_product.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas-pagos\Ventas.resx">
@@ -211,6 +215,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\2_libr_WCF\Pry_2_WCF.csproj">
+      <Project>{6fdbb6d5-b9ee-4090-a0a9-199d132130b6}</Project>
+      <Name>Pry_2_WCF</Name>
+    </ProjectReference>
     <ProjectReference Include="..\3_Pry_BL\Pry_3_BL.csproj">
       <Project>{fd956780-5e92-435e-bb17-5ab90b7a9943}</Project>
       <Name>Pry_3_BL</Name>
@@ -244,10 +252,13 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="UserControl_to_gestion_productos\check.png" />
+    <None Include="UserControl_for_gestion_productos\check.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Webp.net-resizeimage %2812%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Webp.net-resizeimage %2813%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
