@@ -4,31 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{72FFE933-E97D-47B3-960C-4A709F925291}</ProjectGuid>
+    <ProjectGuid>{7E335682-3DDA-46DB-9FE0-8B7B99D13003}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>App</RootNamespace>
-    <AssemblyName>App</AssemblyName>
+    <RootNamespace>FormsApp</RootNamespace>
+    <AssemblyName>FormsApp</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
-    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -39,8 +22,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
-    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -50,7 +31,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -58,7 +38,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Messaging" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
@@ -78,10 +57,26 @@
     <Compile Include="Busqueda.designer.cs">
       <DependentUpon>Busqueda.cs</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\WCF_Productos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\WCF_Service\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPedido.Designer.cs">
+    <Compile Include="FrmPedido.designer.cs">
       <DependentUpon>FrmPedido.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmProveedores.cs">
@@ -90,17 +85,21 @@
     <Compile Include="FrmProveedores.Designer.cs">
       <DependentUpon>FrmProveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="login.cs">
+    <Compile Include="gestion_productos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="login.designer.cs">
-      <DependentUpon>login.cs</DependentUpon>
+    <Compile Include="gestion_productos.Designer.cs">
+      <DependentUpon>gestion_productos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
     </Compile>
+    <Compile Include="login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserControl_for_gestion_productos\insert_product.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -119,33 +118,6 @@
     <Compile Include="UserControl_for_gestion_productos\view_product.Designer.cs">
       <DependentUpon>view_product.cs</DependentUpon>
     </Compile>
-    <Compile Include="WinForms_Usuarios\FrmUsr.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WinForms_Usuarios\FrmUsr.Designer.cs">
-      <DependentUpon>FrmUsr.cs</DependentUpon>
-    </Compile>
-    <Compile Include="WinForms_Usuarios\FrmRolesVentanasUsrs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WinForms_Usuarios\FrmRolesVentanasUsrs.Designer.cs">
-      <DependentUpon>FrmRolesVentanasUsrs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="WinForms_Usuarios\FrmVentanasMenus.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WinForms_Usuarios\FrmVentanasMenus.Designer.cs">
-      <DependentUpon>FrmVentanasMenus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="gestion_productos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="gestion_productos.Designer.cs">
-      <DependentUpon>gestion_productos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CustomMsgBox\MsgBox.cs" />
     <Compile Include="Ventas-pagos\Pagos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +129,24 @@
     </Compile>
     <Compile Include="Ventas-pagos\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinForms_Usuarios\FrmRolesVentanasUsrs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForms_Usuarios\FrmRolesVentanasUsrs.Designer.cs">
+      <DependentUpon>FrmRolesVentanasUsrs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinForms_Usuarios\FrmUsr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForms_Usuarios\FrmUsr.Designer.cs">
+      <DependentUpon>FrmUsr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinForms_Usuarios\FrmVentanasMenus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForms_Usuarios\FrmVentanasMenus.Designer.cs">
+      <DependentUpon>FrmVentanasMenus.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Busqueda.resx">
       <DependentUpon>Busqueda.cs</DependentUpon>
@@ -171,16 +161,18 @@
       <DependentUpon>gestion_productos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
-      <DependentUpon>login.cs</DependentUpon>
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomMsgBox\MsgBox.resx">
-      <DependentUpon>MsgBox.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <EmbeddedResource Include="UserControl_for_gestion_productos\insert_product.resx">
       <DependentUpon>insert_product.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,8 +191,32 @@
     <EmbeddedResource Include="WinForms_Usuarios\FrmUsr.resx">
       <DependentUpon>FrmUsr.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Connected Services\WCF_Productos\service.wsdl" />
+    <None Include="Connected Services\WCF_Productos\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_Productos\Service_Productos.wsdl" />
+    <None Include="Connected Services\WCF_Productos\Service_Productos.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_Service\FormsApp.WCF_Service.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WCF_Service\service.wsdl" />
+    <None Include="Connected Services\WCF_Service\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_Service\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_Service\WcfService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="obj\Debug\build.force" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\WCFSegurida.CompositeType.datasource" />
+    <None Include="Properties\DataSources\WcfService.CompositeType.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -215,28 +231,46 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="UserControl_for_gestion_productos\check.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="Connected Services\WCF_Service\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\WCF_Service\configuration.svcinfo" />
+    <None Include="Connected Services\WCF_Service\configuration91.svcinfo" />
+    <None Include="Connected Services\WCF_Productos\configuration91.svcinfo" />
+    <None Include="Connected Services\WCF_Productos\configuration.svcinfo" />
+    <None Include="Connected Services\WCF_Productos\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="obj\Debug\TempPE\Connected Services.ServiceReference1.Reference.cs.dll" />
     <None Include="Resources\Webp.net-resizeimage %2812%29.png" />
+    <None Include="Resources\Webp.net-resizeimage %2813%29.png" />
+    <Content Include="UserControl_for_gestion_productos\check.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Webp.net-resizeimage %2813%29.png" />
+    <Folder Include="bin\Debug\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\WCF_Productos\" />
+    <WCFMetadataStorage Include="Connected Services\WCF_Service\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\3_Pry_BL\Pry_3_BL.csproj">
+      <Project>{fd956780-5e92-435e-bb17-5ab90b7a9943}</Project>
+      <Name>Pry_3_BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\4_libr_DAC\Pry_4_DAC.csproj">
+      <Project>{3a7a34fc-7461-467d-a153-9896e2cbf222}</Project>
+      <Name>Pry_4_DAC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\5_Pry_Utilitarios\Pry_5_Utilitarios.csproj">
+      <Project>{9a83c521-4221-4a77-90f6-15814d92b7fc}</Project>
+      <Name>Pry_5_Utilitarios</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
