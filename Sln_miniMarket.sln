@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pry_4_DAC", "4_libr_DAC\Pry
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pry_5_Utilitarios", "5_Pry_Utilitarios\Pry_5_Utilitarios.csproj", "{9A83C521-4221-4A77-90F6-15814D92B7FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pry_1_0_winForms_apps", "1_0_WinForms_Apps\Pry_1_0_winForms_apps.csproj", "{72FFE933-E97D-47B3-960C-4A709F925291}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfService", "WcfService\WcfService.csproj", "{E6F65ADC-A8FE-4C2F-9D61-CCE4627A26F8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsApp", "WindowsFormsApp1\FormsApp.csproj", "{7E335682-3DDA-46DB-9FE0-8B7B99D13003}"
@@ -36,10 +34,6 @@ Global
 		{9A83C521-4221-4A77-90F6-15814D92B7FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A83C521-4221-4A77-90F6-15814D92B7FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A83C521-4221-4A77-90F6-15814D92B7FC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{72FFE933-E97D-47B3-960C-4A709F925291}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{72FFE933-E97D-47B3-960C-4A709F925291}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{72FFE933-E97D-47B3-960C-4A709F925291}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{72FFE933-E97D-47B3-960C-4A709F925291}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E6F65ADC-A8FE-4C2F-9D61-CCE4627A26F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E6F65ADC-A8FE-4C2F-9D61-CCE4627A26F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6F65ADC-A8FE-4C2F-9D61-CCE4627A26F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
