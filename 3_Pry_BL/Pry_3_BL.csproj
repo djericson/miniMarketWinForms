@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClsBL_Categoria.cs" />
     <Compile Include="ClsBL_MenuPrincipal.cs" />
     <Compile Include="ClsBL_Pedido.cs" />
     <Compile Include="ClsBL_Producto.cs" />

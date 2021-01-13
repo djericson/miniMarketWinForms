@@ -197,7 +197,7 @@ namespace App
                     }
                     else
                     {
-                        rpta = ClsBLProveedor.EDITAR(Convert.ToInt32(dgvListado.CurrentRow.Cells["Id_Proveedor"].Value), txtRazon_Social.Text.Trim().ToUpper(), cbCategoria.Text, cbTipo_Documento.Text,
+                        rpta = ClsBLProveedor.EDITAR(Convert.ToInt32(dgvListado.CurrentRow.Cells["id_Proveedor"].Value), txtRazon_Social.Text.Trim().ToUpper(), cbCategoria.Text, cbTipo_Documento.Text,
                         txtNum_Documento.Text, txtDireccion.Text, txtTelefono.Text, txtEmail.Text, txtUrl.Text);
                     }
                   
