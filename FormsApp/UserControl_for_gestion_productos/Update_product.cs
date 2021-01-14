@@ -16,5 +16,10 @@ namespace App.UserControl_to_gestion_productos
         {
             InitializeComponent();
         }
+
+        private void categoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+             
+        }
     }
 }

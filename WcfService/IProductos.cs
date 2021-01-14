@@ -4,6 +4,7 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using Utilitarios;
 
 namespace WcfService
 {
@@ -13,5 +14,12 @@ namespace WcfService
     {
         [OperationContract]
         string _GetData(string value, string _DataRow);
+
+        [OperationContract]
+        object _GetData2(string value, string _DataRow);
+
+        [OperationContract]
+        void update_producto(ClsProducto objProducto);
+        void delete_producto(int id_producto);
     }
 }

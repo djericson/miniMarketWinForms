@@ -18,13 +18,17 @@ namespace BL
             dac_prods.insert_product(xobj);
         }
 
-        public DataTable search_product(string richTextBox1, string _DataRow)
+        public DataSet search_product(string richTextBox1, string _DataRow)
         {
-            var _DataTable = dac_prods.search_product(richTextBox1, _DataRow);
-            if (_DataTable != null) {
-                return _DataTable;
+            var _DataSet = dac_prods.search_product(richTextBox1, _DataRow);
+            if (_DataSet != null) {
+                return _DataSet;
             }
             return null;
+        }
+        public void update_producto(ClsProducto objProducto )
+        {
+            dac_prods.update_producto(objProducto);
         }
 
     }

@@ -13,5 +13,23 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="_GetData2">
+      <soap:operation soapAction="http://localhost:8733/WcfService/Service_Productos/IProductos/_GetData2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_producto">
+      <soap:operation soapAction="http://localhost:8733/WcfService/Service_Productos/IProductos/update_producto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
 </wsdl:definitions>

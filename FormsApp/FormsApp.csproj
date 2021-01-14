@@ -49,6 +49,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Utilitarios, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Busqueda.cs">
@@ -100,23 +101,11 @@
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControl_for_gestion_productos\insert_product.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl_for_gestion_productos\insert_product.Designer.cs">
-      <DependentUpon>insert_product.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControl_for_gestion_productos\Update_product.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControl_for_gestion_productos\Update_product.Designer.cs">
       <DependentUpon>Update_product.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl_for_gestion_productos\view_product.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl_for_gestion_productos\view_product.Designer.cs">
-      <DependentUpon>view_product.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventas-pagos\Pagos.cs">
       <SubType>Form</SubType>
@@ -173,14 +162,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserControl_for_gestion_productos\insert_product.resx">
-      <DependentUpon>insert_product.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControl_for_gestion_productos\Update_product.resx">
       <DependentUpon>Update_product.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControl_for_gestion_productos\view_product.resx">
-      <DependentUpon>view_product.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas-pagos\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
@@ -197,6 +180,9 @@
     </None>
     <None Include="Connected Services\WCF_Productos\Service_Productos.wsdl" />
     <None Include="Connected Services\WCF_Productos\Service_Productos.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCF_Productos\Utilitarios.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\WCF_Service\FormsApp.WCF_Service.CompositeType.datasource">
@@ -249,6 +235,7 @@
     <Content Include="obj\Debug\TempPE\Connected Services.ServiceReference1.Reference.cs.dll" />
     <None Include="Resources\Webp.net-resizeimage %2812%29.png" />
     <None Include="Resources\Webp.net-resizeimage %2813%29.png" />
+    <None Include="Resources\Webp.net-resizeimage %2814%29.png" />
     <Content Include="UserControl_for_gestion_productos\check.png" />
   </ItemGroup>
   <ItemGroup>
@@ -266,10 +253,6 @@
     <ProjectReference Include="..\4_libr_DAC\Pry_4_DAC.csproj">
       <Project>{3a7a34fc-7461-467d-a153-9896e2cbf222}</Project>
       <Name>Pry_4_DAC</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\5_Pry_Utilitarios\Pry_5_Utilitarios.csproj">
-      <Project>{9a83c521-4221-4a77-90f6-15814d92b7fc}</Project>
-      <Name>Pry_5_Utilitarios</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

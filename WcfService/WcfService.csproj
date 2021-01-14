@@ -68,6 +68,10 @@
       <Project>{3a7a34fc-7461-467d-a153-9896e2cbf222}</Project>
       <Name>Pry_4_DAC</Name>
     </ProjectReference>
+    <ProjectReference Include="..\5_Pry_Utilitarios\Pry_5_Utilitarios.csproj">
+      <Project>{9A83C521-4221-4A77-90F6-15814D92B7FC}</Project>
+      <Name>Pry_5_Utilitarios</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
