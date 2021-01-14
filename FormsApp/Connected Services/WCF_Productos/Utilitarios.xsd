@@ -12,8 +12,8 @@
       <xs:element minOccurs="0" name="id_producto_detalle" type="xs:int" />
       <xs:element minOccurs="0" name="marca" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="presio_prome" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="presio_prome_detalle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="presio_prome" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="presio_prome_detalle" nillable="true" type="xs:anyType" />
       <xs:element minOccurs="0" name="stock_entry_date" type="xs:dateTime" />
       <xs:element minOccurs="0" name="unida_product" nillable="true" type="xs:string" />
     </xs:sequence>

@@ -30,18 +30,19 @@ namespace App
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.delete = new System.Windows.Forms.Button();
             this.add_producto = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.update_product2 = new App.UserControl_to_gestion_productos.Update_product();
+            this.product_det1 = new FormsApp.UserControl_for_gestion_productos.product_det();
             this.tag_producto = new System.Windows.Forms.Button();
             this.BtnAyuda = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.update = new System.Windows.Forms.Button();
-            this.update_product3 = new App.UserControl_to_gestion_productos.Update_product();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -63,35 +64,52 @@ namespace App
             this.delete.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delete.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.delete.Location = new System.Drawing.Point(394, 124);
+            this.delete.Location = new System.Drawing.Point(372, 124);
             this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(109, 28);
+            this.delete.Size = new System.Drawing.Size(83, 28);
             this.delete.TabIndex = 13;
             this.delete.Text = "delete";
             this.delete.UseVisualStyleBackColor = true;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
             // add_producto
             // 
             this.add_producto.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.add_producto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_producto.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.add_producto.Location = new System.Drawing.Point(177, 124);
+            this.add_producto.Location = new System.Drawing.Point(207, 124);
             this.add_producto.Name = "add_producto";
-            this.add_producto.Size = new System.Drawing.Size(119, 28);
+            this.add_producto.Size = new System.Drawing.Size(89, 28);
             this.add_producto.TabIndex = 15;
-            this.add_producto.Text = "add producto";
+            this.add_producto.Text = "add ";
             this.add_producto.UseVisualStyleBackColor = true;
+            this.add_producto.Click += new System.EventHandler(this.add_producto_Click);
             // 
             // panel2
             // 
             this.panel2.AutoScroll = true;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.update_product3);
-            this.panel2.Location = new System.Drawing.Point(29, 181);
+            this.panel2.Controls.Add(this.update_product2);
+            this.panel2.Controls.Add(this.product_det1);
+            this.panel2.Location = new System.Drawing.Point(29, 225);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(370, 386);
             this.panel2.TabIndex = 17;
+            // 
+            // update_product2
+            // 
+            this.update_product2.Location = new System.Drawing.Point(11, 3);
+            this.update_product2.Name = "update_product2";
+            this.update_product2.Size = new System.Drawing.Size(337, 500);
+            this.update_product2.TabIndex = 0;
+            // 
+            // product_det1
+            // 
+            this.product_det1.Location = new System.Drawing.Point(3, 3);
+            this.product_det1.Name = "product_det1";
+            this.product_det1.Size = new System.Drawing.Size(345, 370);
+            this.product_det1.TabIndex = 25;
             // 
             // tag_producto
             // 
@@ -144,22 +162,22 @@ namespace App
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle2.NullValue = null;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.NullValue = null;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView1.Location = new System.Drawing.Point(405, 181);
+            this.dataGridView1.Location = new System.Drawing.Point(405, 225);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 30;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(479, 386);
+            this.dataGridView1.Size = new System.Drawing.Size(477, 386);
             this.dataGridView1.TabIndex = 20;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -183,24 +201,17 @@ namespace App
             this.update.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.update.Location = new System.Drawing.Point(290, 124);
             this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(109, 28);
+            this.update.Size = new System.Drawing.Size(88, 28);
             this.update.TabIndex = 22;
             this.update.Text = "update";
             this.update.UseVisualStyleBackColor = true;
             this.update.Click += new System.EventHandler(this.update_Click);
             // 
-            // update_product3
-            // 
-            this.update_product3.Location = new System.Drawing.Point(3, -1);
-            this.update_product3.Name = "update_product3";
-            this.update_product3.Size = new System.Drawing.Size(337, 500);
-            this.update_product3.TabIndex = 0;
-            // 
             // gestion_productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(908, 596);
+            this.ClientSize = new System.Drawing.Size(906, 640);
             this.Controls.Add(this.update);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
@@ -235,8 +246,9 @@ namespace App
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
-        private Update_product update_product2;
+        private Update_product update_Product;
         private System.Windows.Forms.Button update;
-        private Update_product update_product3;
+        private Update_product update_product2;
+        private FormsApp.UserControl_for_gestion_productos.product_det product_det1;
     }
 }

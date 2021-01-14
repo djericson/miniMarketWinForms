@@ -35,7 +35,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.name_producto = new System.Windows.Forms.RichTextBox();
             this.cantida_total = new System.Windows.Forms.RichTextBox();
-            this.presio_promdio = new System.Windows.Forms.RichTextBox();
             this.marca = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,7 +43,6 @@
             this.presio_prome = new System.Windows.Forms.Label();
             this.unidad_produc = new System.Windows.Forms.RichTextBox();
             this.descripcion = new System.Windows.Forms.RichTextBox();
-            this.presio_promed_dpt = new System.Windows.Forms.RichTextBox();
             this.cantida_produ_venta = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -52,6 +50,10 @@
             this.fecha_ingreso_stock = new System.Windows.Forms.DateTimePicker();
             this.fecha_fabricacion = new System.Windows.Forms.DateTimePicker();
             this.fecha_vencimiento = new System.Windows.Forms.DateTimePicker();
+            this.presio_promdio = new System.Windows.Forms.NumericUpDown();
+            this.presio_promed_dpt = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.presio_promdio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presio_promed_dpt)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -81,7 +83,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(19, 390);
+            this.label4.Location = new System.Drawing.Point(16, 390);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(148, 17);
             this.label4.TabIndex = 4;
@@ -132,17 +134,6 @@
             this.cantida_total.TabIndex = 22;
             this.cantida_total.Text = "";
             // 
-            // presio_promdio
-            // 
-            this.presio_promdio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.presio_promdio.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.presio_promdio.Location = new System.Drawing.Point(194, 140);
-            this.presio_promdio.Multiline = false;
-            this.presio_promdio.Name = "presio_promdio";
-            this.presio_promdio.Size = new System.Drawing.Size(132, 27);
-            this.presio_promdio.TabIndex = 25;
-            this.presio_promdio.Text = "";
-            // 
             // marca
             // 
             this.marca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -159,7 +150,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(20, 429);
+            this.label5.Location = new System.Drawing.Point(16, 429);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(149, 17);
             this.label5.TabIndex = 3;
@@ -231,17 +222,6 @@
             this.descripcion.TabIndex = 24;
             this.descripcion.Text = "";
             // 
-            // presio_promed_dpt
-            // 
-            this.presio_promed_dpt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.presio_promed_dpt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.presio_promed_dpt.Location = new System.Drawing.Point(194, 306);
-            this.presio_promed_dpt.Multiline = false;
-            this.presio_promed_dpt.Name = "presio_promed_dpt";
-            this.presio_promed_dpt.Size = new System.Drawing.Size(132, 27);
-            this.presio_promed_dpt.TabIndex = 29;
-            this.presio_promed_dpt.Text = "";
-            // 
             // cantida_produ_venta
             // 
             this.cantida_produ_venta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -269,7 +249,7 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(16, 140);
+            this.label12.Location = new System.Drawing.Point(19, 143);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(132, 17);
             this.label12.TabIndex = 38;
@@ -278,6 +258,7 @@
             // categoria
             // 
             this.categoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.categoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.categoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.categoria.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categoria.FormattingEnabled = true;
@@ -314,10 +295,42 @@
             this.fecha_vencimiento.Size = new System.Drawing.Size(132, 21);
             this.fecha_vencimiento.TabIndex = 43;
             // 
+            // presio_promdio
+            // 
+            this.presio_promdio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.presio_promdio.DecimalPlaces = 2;
+            this.presio_promdio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.presio_promdio.Location = new System.Drawing.Point(194, 137);
+            this.presio_promdio.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.presio_promdio.Name = "presio_promdio";
+            this.presio_promdio.Size = new System.Drawing.Size(128, 27);
+            this.presio_promdio.TabIndex = 44;
+            // 
+            // presio_promed_dpt
+            // 
+            this.presio_promed_dpt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.presio_promed_dpt.DecimalPlaces = 2;
+            this.presio_promed_dpt.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.presio_promed_dpt.Location = new System.Drawing.Point(194, 309);
+            this.presio_promed_dpt.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.presio_promed_dpt.Name = "presio_promed_dpt";
+            this.presio_promed_dpt.Size = new System.Drawing.Size(128, 27);
+            this.presio_promed_dpt.TabIndex = 45;
+            // 
             // Update_product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.presio_promed_dpt);
+            this.Controls.Add(this.presio_promdio);
             this.Controls.Add(this.fecha_vencimiento);
             this.Controls.Add(this.fecha_fabricacion);
             this.Controls.Add(this.fecha_ingreso_stock);
@@ -325,9 +338,7 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cantida_produ_venta);
-            this.Controls.Add(this.presio_promed_dpt);
             this.Controls.Add(this.marca);
-            this.Controls.Add(this.presio_promdio);
             this.Controls.Add(this.descripcion);
             this.Controls.Add(this.unidad_produc);
             this.Controls.Add(this.cantida_total);
@@ -344,6 +355,8 @@
             this.Controls.Add(this.label1);
             this.Name = "Update_product";
             this.Size = new System.Drawing.Size(337, 500);
+            ((System.ComponentModel.ISupportInitialize)(this.presio_promdio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presio_promed_dpt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,7 +371,6 @@
         private System.Windows.Forms.Label label11;
         public System.Windows.Forms.RichTextBox name_producto;
         public System.Windows.Forms.RichTextBox cantida_total;
-        public System.Windows.Forms.RichTextBox presio_promdio;
         public System.Windows.Forms.RichTextBox marca;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
@@ -367,7 +379,6 @@
         private System.Windows.Forms.Label presio_prome;
         public System.Windows.Forms.RichTextBox unidad_produc;
         public System.Windows.Forms.RichTextBox descripcion;
-        public System.Windows.Forms.RichTextBox presio_promed_dpt;
         public System.Windows.Forms.RichTextBox cantida_produ_venta;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label12;
@@ -375,5 +386,7 @@
         public System.Windows.Forms.DateTimePicker fecha_ingreso_stock;
         public System.Windows.Forms.DateTimePicker fecha_fabricacion;
         public System.Windows.Forms.DateTimePicker fecha_vencimiento;
+        public System.Windows.Forms.NumericUpDown presio_promdio;
+        public System.Windows.Forms.NumericUpDown presio_promed_dpt;
     }
 }

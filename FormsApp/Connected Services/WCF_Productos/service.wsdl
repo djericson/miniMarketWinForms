@@ -22,8 +22,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="insert_producto">
+      <soap:operation soapAction="http://localhost:8733/WcfService/Service_Productos/IProductos/insert_producto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="update_producto">
       <soap:operation soapAction="http://localhost:8733/WcfService/Service_Productos/IProductos/update_producto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete_producto">
+      <soap:operation soapAction="http://localhost:8733/WcfService/Service_Productos/IProductos/delete_producto" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

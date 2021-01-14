@@ -31,14 +31,40 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="update_producto">
+  <xs:element name="insert_producto">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Utilitarios" minOccurs="0" name="objProducto" nillable="true" type="q1:ClsProducto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="insert_productoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insert_productoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="update_producto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Utilitarios" minOccurs="0" name="objProducto" nillable="true" type="q2:ClsProducto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="update_productoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delete_producto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Utilitarios" minOccurs="0" name="objProducto" nillable="true" type="q3:ClsProducto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delete_productoResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

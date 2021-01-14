@@ -19,15 +19,23 @@ namespace WcfService
     {
         ClsBL_Producto objBL = new ClsBL_Producto();
 
-        public void delete_producto(int id_producto)
+
+        public int insert_producto(ClsProducto objProducto)
         {
-            throw new NotImplementedException();
+             int out_id = objBL.insert_producto(objProducto);
+            return out_id;
         }
 
         public void update_producto(ClsProducto objProducto)
         {
             objBL.update_producto(objProducto);
         }
+        public void delete_producto(ClsProducto objProducto)
+        {
+            objBL.delete_producto(objProducto);
+        }
+
+       
 
         public string _GetData(string value, string _DataRow)
         {

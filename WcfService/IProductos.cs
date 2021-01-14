@@ -19,7 +19,11 @@ namespace WcfService
         object _GetData2(string value, string _DataRow);
 
         [OperationContract]
+        int insert_producto(ClsProducto objProducto);
+        [OperationContract]
         void update_producto(ClsProducto objProducto);
-        void delete_producto(int id_producto);
+        [OperationContract]
+        void delete_producto(ClsProducto objProducto);
+         
     }
 }

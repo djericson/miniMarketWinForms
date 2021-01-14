@@ -15,7 +15,7 @@ namespace BL
         ClsDAC_Productos dac_prods = new ClsDAC_Productos();
         public void insertar(ClsProducto xobj)
         {
-            dac_prods.insert_product(xobj);
+            //dac_prods.insert_product(xobj);
         }
 
         public DataSet search_product(string richTextBox1, string _DataRow)
@@ -26,9 +26,18 @@ namespace BL
             }
             return null;
         }
-        public void update_producto(ClsProducto objProducto )
+        public int insert_producto(ClsProducto objProducto )
+        {
+            int out_id = dac_prods.insert_producto(objProducto);
+            return out_id;
+        }
+        public void update_producto(ClsProducto objProducto)
         {
             dac_prods.update_producto(objProducto);
+        }
+        public void delete_producto(ClsProducto objProducto)
+        {
+            dac_prods.delete_producto(objProducto);
         }
 
     }

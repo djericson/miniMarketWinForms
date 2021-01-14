@@ -14,7 +14,7 @@ namespace DAC
     {
         SqlConnection cn = new SqlConnection("Data Source=srv-bd-sql-server.database.windows.net; User ID =edgar; Password =$E012345; Initial Catalog=miniMarket");
         SqlCommand cmd;
-        SqlDataReader loDataReader;
+     
         DataTable schemaTable = new DataTable();
 
         public List<ClsUsuario> lista()

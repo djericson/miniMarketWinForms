@@ -20,11 +20,23 @@
   <wsdl:message name="IProductos__GetData2_OutputMessage">
     <wsdl:part name="parameters" element="tns:_GetData2Response" />
   </wsdl:message>
+  <wsdl:message name="IProductos_insert_producto_InputMessage">
+    <wsdl:part name="parameters" element="tns:insert_producto" />
+  </wsdl:message>
+  <wsdl:message name="IProductos_insert_producto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insert_productoResponse" />
+  </wsdl:message>
   <wsdl:message name="IProductos_update_producto_InputMessage">
     <wsdl:part name="parameters" element="tns:update_producto" />
   </wsdl:message>
   <wsdl:message name="IProductos_update_producto_OutputMessage">
     <wsdl:part name="parameters" element="tns:update_productoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductos_delete_producto_InputMessage">
+    <wsdl:part name="parameters" element="tns:delete_producto" />
+  </wsdl:message>
+  <wsdl:message name="IProductos_delete_producto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:delete_productoResponse" />
   </wsdl:message>
   <wsdl:portType name="IProductos">
     <wsdl:operation name="_GetData">
@@ -35,9 +47,17 @@
       <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_Productos/IProductos/_GetData2" message="tns:IProductos__GetData2_InputMessage" />
       <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_Productos/IProductos/_GetData2Response" message="tns:IProductos__GetData2_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="insert_producto">
+      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_Productos/IProductos/insert_producto" message="tns:IProductos_insert_producto_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_Productos/IProductos/insert_productoResponse" message="tns:IProductos_insert_producto_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="update_producto">
       <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_Productos/IProductos/update_producto" message="tns:IProductos_update_producto_InputMessage" />
       <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_Productos/IProductos/update_productoResponse" message="tns:IProductos_update_producto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delete_producto">
+      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_Productos/IProductos/delete_producto" message="tns:IProductos_delete_producto_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_Productos/IProductos/delete_productoResponse" message="tns:IProductos_delete_producto_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:service name="Service_Productos">
