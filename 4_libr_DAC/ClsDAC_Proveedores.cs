@@ -206,8 +206,9 @@ namespace DAC
         #region METODO MOSTRAR
         public DataTable Mostrar()
         {
+
             DataTable dtResultado = new DataTable("proveedor");
-            try {
+            try {                
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cnn;
                 cmd.CommandText = "mostrar_proveedor";
