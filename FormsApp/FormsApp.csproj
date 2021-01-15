@@ -57,6 +57,11 @@
     <Compile Include="Busqueda.designer.cs">
       <DependentUpon>Busqueda.cs</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\Service_User_Rol\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\WCF_Productos\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -125,11 +130,23 @@
     <Compile Include="Ventas-pagos\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
-    <Compile Include="WinForms_Usuarios\FrmRolesVentanasUsrs.cs">
-      <SubType>Form</SubType>
+    <Compile Include="WinForms_Usuarios\Asignacion_Rol.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="WinForms_Usuarios\FrmRolesVentanasUsrs.Designer.cs">
-      <DependentUpon>FrmRolesVentanasUsrs.cs</DependentUpon>
+    <Compile Include="WinForms_Usuarios\Asignacion_Rol.Designer.cs">
+      <DependentUpon>Asignacion_Rol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinForms_Usuarios\Creacion_Rol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WinForms_Usuarios\Creacion_Rol.Designer.cs">
+      <DependentUpon>Creacion_Rol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinForms_Usuarios\Forms_Rol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WinForms_Usuarios\Forms_Rol.Designer.cs">
+      <DependentUpon>Forms_Rol.cs</DependentUpon>
     </Compile>
     <Compile Include="WinForms_Usuarios\FrmUsr.cs">
       <SubType>Form</SubType>
@@ -142,6 +159,18 @@
     </Compile>
     <Compile Include="WinForms_Usuarios\FrmVentanasMenus.Designer.cs">
       <DependentUpon>FrmVentanasMenus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinForms_Usuarios\Roles_Forms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForms_Usuarios\Roles_Forms.Designer.cs">
+      <DependentUpon>Roles_Forms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinForms_Usuarios\Rol_Usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForms_Usuarios\Rol_Usuario.Designer.cs">
+      <DependentUpon>Rol_Usuario.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Busqueda.resx">
       <DependentUpon>Busqueda.cs</DependentUpon>
@@ -180,12 +209,29 @@
     <EmbeddedResource Include="Ventas-pagos\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WinForms_Usuarios\FrmRolesVentanasUsrs.resx">
-      <DependentUpon>FrmRolesVentanasUsrs.cs</DependentUpon>
+    <EmbeddedResource Include="WinForms_Usuarios\Asignacion_Rol.resx">
+      <DependentUpon>Asignacion_Rol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinForms_Usuarios\Creacion_Rol.resx">
+      <DependentUpon>Creacion_Rol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinForms_Usuarios\Forms_Rol.resx">
+      <DependentUpon>Forms_Rol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WinForms_Usuarios\FrmUsr.resx">
       <DependentUpon>FrmUsr.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WinForms_Usuarios\Rol_Usuario.resx">
+      <DependentUpon>Rol_Usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Connected Services\Service_User_Rol\service.wsdl" />
+    <None Include="Connected Services\Service_User_Rol\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Service_User_Rol\Service_User_Rol.wsdl" />
+    <None Include="Connected Services\Service_User_Rol\Service_User_Rol.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\WCF_Productos\service.wsdl" />
     <None Include="Connected Services\WCF_Productos\service.xsd">
       <SubType>Designer</SubType>
@@ -225,6 +271,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\Service_User_Rol\configuration91.svcinfo" />
+    <None Include="Connected Services\Service_User_Rol\configuration.svcinfo" />
+    <None Include="Connected Services\Service_User_Rol\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="obj\Debug\TempPE\Connected Services.ServiceReference1.Reference.cs.dll" />
     <None Include="Resources\Webp.net-resizeimage %2812%29.png" />
     <None Include="Resources\Webp.net-resizeimage %2813%29.png" />
@@ -245,6 +297,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\Service_User_Rol\" />
     <WCFMetadataStorage Include="Connected Services\WCF_Productos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

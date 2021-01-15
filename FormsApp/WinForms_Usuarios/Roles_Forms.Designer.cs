@@ -1,7 +1,6 @@
-﻿
-namespace App
+﻿namespace FormsApp.WinForms_Usuarios
 {
-    partial class FrmRolesVentanasUsrs
+    partial class Roles_Forms
     {
         /// <summary>
         /// Required designer variable.
@@ -29,17 +28,10 @@ namespace App
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // FrmRolesVentanasUsrs
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "FrmRolesVentanasUsrs";
-            this.Text = "Roles&Ventanas de Usuarios";
-            this.ResumeLayout(false);
-
+            this.Text = "Rol_Usuarios";
         }
 
         #endregion

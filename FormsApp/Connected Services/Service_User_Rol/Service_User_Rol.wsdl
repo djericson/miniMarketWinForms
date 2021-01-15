@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://localhost:8733/WcfService/Service_User_Rol" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://tempuri.org/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service_User_Rol" targetNamespace="http://localhost:8733/WcfService/Service_User_Rol" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://localhost:8733/WcfService/Service_User_Rol/Imports">
+      <xsd:import namespace="http://localhost:8733/WcfService/Service_User_Rol" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IGestion_User_Rol_List_Forms_rol_InputMessage">
+    <wsdl:part name="parameters" element="tns:List_Forms_rol" />
+  </wsdl:message>
+  <wsdl:message name="IGestion_User_Rol_List_Forms_rol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:List_Forms_rolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestion_User_Rol_List_User_rol_InputMessage">
+    <wsdl:part name="parameters" element="tns:List_User_rol" />
+  </wsdl:message>
+  <wsdl:message name="IGestion_User_Rol_List_User_rol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:List_User_rolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestion_User_Rol_insert_InputMessage">
+    <wsdl:part name="parameters" element="tns:insert" />
+  </wsdl:message>
+  <wsdl:message name="IGestion_User_Rol_insert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestion_User_Rol_update_InputMessage">
+    <wsdl:part name="parameters" element="tns:update" />
+  </wsdl:message>
+  <wsdl:message name="IGestion_User_Rol_update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestion_User_Rol_delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:delete" />
+  </wsdl:message>
+  <wsdl:message name="IGestion_User_Rol_delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestion_User_Rol_insert_rol_user_InputMessage">
+    <wsdl:part name="parameters" element="tns:insert_rol_user" />
+  </wsdl:message>
+  <wsdl:message name="IGestion_User_Rol_insert_rol_user_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insert_rol_userResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestion_User_Rol_delete_rol_user_InputMessage">
+    <wsdl:part name="parameters" element="tns:delete_rol_user" />
+  </wsdl:message>
+  <wsdl:message name="IGestion_User_Rol_delete_rol_user_OutputMessage">
+    <wsdl:part name="parameters" element="tns:delete_rol_userResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestion_User_Rol_get_id_rol_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_id_rol" />
+  </wsdl:message>
+  <wsdl:message name="IGestion_User_Rol_get_id_rol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_id_rolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestion_User_Rol_insert_Forms_rol_InputMessage">
+    <wsdl:part name="parameters" element="tns:insert_Forms_rol" />
+  </wsdl:message>
+  <wsdl:message name="IGestion_User_Rol_insert_Forms_rol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insert_Forms_rolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestion_User_Rol_delete_Forms_rol_InputMessage">
+    <wsdl:part name="parameters" element="tns:delete_Forms_rol" />
+  </wsdl:message>
+  <wsdl:message name="IGestion_User_Rol_delete_Forms_rol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:delete_Forms_rolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestion_User_Rol_get_id_form_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_id_form" />
+  </wsdl:message>
+  <wsdl:message name="IGestion_User_Rol_get_id_form_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_id_formResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IGestion_User_Rol">
+    <wsdl:operation name="List_Forms_rol">
+      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/List_Forms_rol" message="tns:IGestion_User_Rol_List_Forms_rol_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/List_Forms_rolResponse" message="tns:IGestion_User_Rol_List_Forms_rol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="List_User_rol">
+      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/List_User_rol" message="tns:IGestion_User_Rol_List_User_rol_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/List_User_rolResponse" message="tns:IGestion_User_Rol_List_User_rol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insert">
+      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/insert" message="tns:IGestion_User_Rol_insert_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/insertResponse" message="tns:IGestion_User_Rol_insert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/update" message="tns:IGestion_User_Rol_update_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/updateResponse" message="tns:IGestion_User_Rol_update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/delete" message="tns:IGestion_User_Rol_delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/deleteResponse" message="tns:IGestion_User_Rol_delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insert_rol_user">
+      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/insert_rol_user" message="tns:IGestion_User_Rol_insert_rol_user_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/insert_rol_userResponse" message="tns:IGestion_User_Rol_insert_rol_user_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delete_rol_user">
+      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/delete_rol_user" message="tns:IGestion_User_Rol_delete_rol_user_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/delete_rol_userResponse" message="tns:IGestion_User_Rol_delete_rol_user_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_id_rol">
+      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/get_id_rol" message="tns:IGestion_User_Rol_get_id_rol_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/get_id_rolResponse" message="tns:IGestion_User_Rol_get_id_rol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insert_Forms_rol">
+      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/insert_Forms_rol" message="tns:IGestion_User_Rol_insert_Forms_rol_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/insert_Forms_rolResponse" message="tns:IGestion_User_Rol_insert_Forms_rol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delete_Forms_rol">
+      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/delete_Forms_rol" message="tns:IGestion_User_Rol_delete_Forms_rol_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/delete_Forms_rolResponse" message="tns:IGestion_User_Rol_delete_Forms_rol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_id_form">
+      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/get_id_form" message="tns:IGestion_User_Rol_get_id_form_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/get_id_formResponse" message="tns:IGestion_User_Rol_get_id_form_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="Service_User_Rol">
+    <wsdl:port name="BasicHttpBinding_IGestion_User_Rol" binding="i0:BasicHttpBinding_IGestion_User_Rol">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/WcfService/Service_User_Rol/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

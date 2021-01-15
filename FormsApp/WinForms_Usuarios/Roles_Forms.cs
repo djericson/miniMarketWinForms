@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace App
+namespace FormsApp.WinForms_Usuarios
 {
-    public partial class FrmRolesVentanasUsrs : Form
+    public partial class Roles_Forms : Form
     {
-        public FrmRolesVentanasUsrs()
+        public Roles_Forms()
         {
             InitializeComponent();
         }

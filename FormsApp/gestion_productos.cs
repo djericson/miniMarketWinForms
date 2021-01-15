@@ -29,68 +29,9 @@ namespace App
 
         }
 
-        private void buscar_producto_Click(object sender, EventArgs e)
-        {
+       
 
-
-            
-            }
-
-
-            //try
-            //{
-            //
-            //     
-            //    command = new SqlCommand("Ayuda_producto", connection);
-            //    command.CommandType = CommandType.StoredProcedure;
-            //    command.Parameters.Clear();
-            //    command.Parameters.AddWithValue("@id_producto", richTextBox1.Text);
-            //    connection.Open();
-            //    loDataReader = command.ExecuteReader();
-            //    Busqueda objayuda = new Busqueda();
-            //    objayuda.objDR = loDataReader;
-            //    objayuda.ShowDialog(this);
-            //    if (objayuda.objRow != null)
-            //    {
-            //        command = new SqlCommand("Seleccionar_UnProducto", connection);
-            //        command.CommandType = CommandType.StoredProcedure;
-            //        command.Parameters.Clear();
-            //        command.Parameters.AddWithValue("@PROD_ID", objayuda.objRow.Cells[0].Value);
-            //        loDataReader = command.ExecuteReader();
-            //        if (loDataReader.HasRows)
-            //        {
-            //            MessageBox.Show("loDataReader");
-            //            loDataReader.Read();
-            //            //textBox1.Text = loDataReader.GetValue(loDataReader.GetOrdinal("id_prod")).ToString();
-            //            //textBox2.Text = loDataReader.GetValue(loDataReader.GetOrdinal("name_product")).ToString();
-            //        }
-            //    }
-            //     
-            //
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-            //finally
-            //{
-            //    connection.Close();
-            //}
-            //
-            //DialogResult result = MsgBox.Show("edit product ?", "id: " + 323, MsgBox.Buttons.OK, MsgBox.Icon.Info, MsgBox.AnimateStyle.FadeIn);
-            //
-            //if (result == DialogResult.Yes)
-            //{
-            //    MessageBox.Show("Exiting now");
-            //}
-            //if (value.buttonResult == "edit")
-            //{
-            //    MessageBox.Show("edit");
-            //}
-            //if (value.buttonResult == "delete")
-            //{
-            //    MessageBox.Show("delete");
-            //}
+         
          
 
         private void gestion_productos_Load(object sender, EventArgs e)
@@ -172,7 +113,8 @@ namespace App
                     datarow = objayuda.objRow.Cells[0].Value.ToString();
 
                     var DataSet_2 = Deserialize(objwcf._GetData("", datarow), type);
-                    dataGridView1.DataSource = DataSet_2.Tables["producto"];
+                    var dataTable = DataSet_2.Tables["producto"];
+                    dataGridView1.DataSource = dataTable;
 
                     //double value = double.Parse(dataGridView1.Rows[0].Cells[4].Value.ToString());
                     //dataGridView1.Rows[0].Cells[4].Value = value;
@@ -183,11 +125,29 @@ namespace App
 
                     //dataGridView1.Rows[0].DefaultCellStyle.Format = "N2";
 
+                    //string.IsNullOrEmpty(dt.Rows[x][i].ToString();
 
+                    //var col = dataGridView1.Columns.Count;
+                    //foreach (DataGridViewRow i in dataGridView1.Rows)
+                    //{
+                    //    for(int x = 0; x < col; x++)
+                    //    {
+                    //        if(string.IsNullOrEmpty(i.Cells[x].ToString()))
+                    //        {
+                    //            i.Cells[x].Value = "blank";
+                    //            MessageBox.Show("_DataTable.Count: ");
+                    //        }
+                    //        MessageBox.Show("_DataTable.Count: ");
+                    //        //string.IsNullOrEmpty((string)i.Field<object>("sd"));
+                    //        //dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
+                    //    }
+                    //}
+
+                     
 
                     //dataGridView1.Columns[4].DefaultCellStyle.Font = new Font(dataGridView1.Font, FontStyle.Underline);
                     dataGridView1.DefaultCellStyle.Font = new Font("Century Gothic", 10);
- 
+                    //dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
 
                     //dataGridView1.Columns[4].DefaultCellStyle.Format = "N2";
                     //dataGridView1.Columns[8].DefaultCellStyle.Format = "N2";

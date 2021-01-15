@@ -50,6 +50,7 @@
     <Compile Include="ClsBL_Proveedor.cs" />
     <Compile Include="ClsBL_Usr.cs" />
     <Compile Include="ClsBL_Venta.cs" />
+    <Compile Include="Gestion_User_Rol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

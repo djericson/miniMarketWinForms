@@ -24,6 +24,7 @@ namespace WcfService
         void update_producto(ClsProducto objProducto);
         [OperationContract]
         void delete_producto(ClsProducto objProducto);
+
          
     }
 }
