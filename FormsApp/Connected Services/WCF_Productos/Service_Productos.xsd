@@ -35,6 +35,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Utilitarios" minOccurs="0" name="objProducto" nillable="true" type="q1:ClsProducto" />
+        <xs:element minOccurs="0" name="XmlPut" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -49,6 +50,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Utilitarios" minOccurs="0" name="objProducto" nillable="true" type="q2:ClsProducto" />
+        <xs:element minOccurs="0" name="XmlPut" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -160,12 +160,6 @@
     <Compile Include="WinForms_Usuarios\FrmVentanasMenus.Designer.cs">
       <DependentUpon>FrmVentanasMenus.cs</DependentUpon>
     </Compile>
-    <Compile Include="WinForms_Usuarios\Roles_Forms.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WinForms_Usuarios\Roles_Forms.Designer.cs">
-      <DependentUpon>Roles_Forms.cs</DependentUpon>
-    </Compile>
     <Compile Include="WinForms_Usuarios\Rol_Usuario.cs">
       <SubType>Form</SubType>
     </Compile>

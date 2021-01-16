@@ -19,9 +19,9 @@ namespace WcfService
         object _GetData2(string value, string _DataRow);
 
         [OperationContract]
-        int insert_producto(ClsProducto objProducto);
+        int insert_producto(ClsProducto objProducto, string XmlPut);
         [OperationContract]
-        void update_producto(ClsProducto objProducto);
+        void update_producto(ClsProducto objProducto, string XmlPut);
         [OperationContract]
         void delete_producto(ClsProducto objProducto);
 

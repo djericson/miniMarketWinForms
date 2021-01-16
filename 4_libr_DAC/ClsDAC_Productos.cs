@@ -50,7 +50,7 @@ namespace DAC
                 cmd.Parameters.AddWithValue("@PROD_ID", _DataRow);
                 cn.Open();
                 loDataReader = cmd.ExecuteReader();
-                dataSet.Load(loDataReader, LoadOption.PreserveChanges, new string[] { "producto", "categorias" });
+                dataSet.Load(loDataReader, LoadOption.PreserveChanges, new string[] { "producto", "categorias", "producto_det" });
                 cn.Close();
                 return dataSet;
 
@@ -60,7 +60,7 @@ namespace DAC
 
         
 
-        public void update_producto(ClsProducto objProducto)
+        public void update_producto(ClsProducto objProducto, string XmlPut)
         {
             cmd = new SqlCommand("update_producto", cn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -73,23 +73,17 @@ namespace DAC
             cmd.Parameters.AddWithValue("@cantida_total", objProducto.cantida_total);
             cmd.Parameters.AddWithValue("@descripcion", objProducto.descripcion);
             cmd.Parameters.AddWithValue("@unida_product", objProducto.unida_product);
-            cmd.Parameters.AddWithValue("@id_producto_detalle", objProducto.id_producto_detalle);
-            cmd.Parameters.AddWithValue("@presio_prome_detalle", objProducto.presio_prome_detalle);
-            cmd.Parameters.AddWithValue("@cantidad_producto_venta", objProducto.cantidad_producto_venta);
-            cmd.Parameters.AddWithValue("@stock_entry_date", objProducto.stock_entry_date);
-            cmd.Parameters.AddWithValue("@fabrication_date", objProducto.fabrication_date);
-            cmd.Parameters.AddWithValue("@expiration_date", objProducto.expiration_date);
+            cmd.Parameters.AddWithValue("@XMLPut", XmlPut);
             cn.Open();
             cmd.ExecuteNonQuery();
             cn.Close();
           
         }
-        public int insert_producto(ClsProducto objProducto)
+        public int insert_producto(ClsProducto objProducto ,string XmlPut)
         {
             cmd = new SqlCommand("insert_producto", cn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Clear();
-            //cmd.Parameters.AddWithValue("@id", objProducto.id);
             cmd.Parameters.AddWithValue("@name_product", objProducto.name);
             cmd.Parameters.AddWithValue("@id_categoria", objProducto.id_categoria);
             cmd.Parameters.AddWithValue("@marca", objProducto.marca);
@@ -97,24 +91,14 @@ namespace DAC
             cmd.Parameters.AddWithValue("@cantida_total", objProducto.cantida_total);
             cmd.Parameters.AddWithValue("@descripcion", objProducto.descripcion);
             cmd.Parameters.AddWithValue("@unida_product", objProducto.unida_product);
-            cmd.Parameters.AddWithValue("@presio_prome_detalle", objProducto.presio_prome_detalle);
-            cmd.Parameters.AddWithValue("@cantidad_producto_venta", objProducto.cantidad_producto_venta);
-            cmd.Parameters.AddWithValue("@stock_entry_date", objProducto.stock_entry_date);
-            cmd.Parameters.AddWithValue("@fabrication_date", objProducto.fabrication_date);
-            cmd.Parameters.AddWithValue("@expiration_date", objProducto.expiration_date);
+            cmd.Parameters.AddWithValue("@XMLPut", XmlPut);
             cn.Open();
-
-
-            SqlParameter product_id = new SqlParameter("@id", SqlDbType.Int);
-            product_id.Direction = ParameterDirection.Output;
-            cmd.Parameters.Add(product_id);
             cmd.ExecuteNonQuery();
-            int out_id = Convert.ToInt32(cmd.Parameters["@id"].Value);
             cn.Close();
 
 
 
-            return out_id;
+            return 0;
 
         }
 
@@ -124,7 +108,6 @@ namespace DAC
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@id", objProducto.id);
-            cmd.Parameters.AddWithValue("@id_producto_detalle", objProducto.id_producto_detalle);
             cn.Open();
             cmd.ExecuteNonQuery();
             cn.Close();

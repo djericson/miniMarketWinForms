@@ -26,14 +26,14 @@ namespace BL
             }
             return null;
         }
-        public int insert_producto(ClsProducto objProducto )
+        public int insert_producto(ClsProducto objProducto , string XmlPut )
         {
-            int out_id = dac_prods.insert_producto(objProducto);
+            int out_id = dac_prods.insert_producto(objProducto, XmlPut);
             return out_id;
         }
-        public void update_producto(ClsProducto objProducto)
+        public void update_producto(ClsProducto objProducto, string XmlPut)
         {
-            dac_prods.update_producto(objProducto);
+            dac_prods.update_producto(objProducto, XmlPut);
         }
         public void delete_producto(ClsProducto objProducto)
         {

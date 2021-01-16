@@ -285,19 +285,19 @@ namespace FormsApp.WCF_Productos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Productos/IProductos/insert_producto", ReplyAction="http://localhost:8733/WcfService/Service_Productos/IProductos/insert_productoResp" +
             "onse")]
-        int insert_producto(FormsApp.WCF_Productos.ClsProducto objProducto);
+        int insert_producto(FormsApp.WCF_Productos.ClsProducto objProducto, string XmlPut);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Productos/IProductos/insert_producto", ReplyAction="http://localhost:8733/WcfService/Service_Productos/IProductos/insert_productoResp" +
             "onse")]
-        System.Threading.Tasks.Task<int> insert_productoAsync(FormsApp.WCF_Productos.ClsProducto objProducto);
+        System.Threading.Tasks.Task<int> insert_productoAsync(FormsApp.WCF_Productos.ClsProducto objProducto, string XmlPut);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Productos/IProductos/update_producto", ReplyAction="http://localhost:8733/WcfService/Service_Productos/IProductos/update_productoResp" +
             "onse")]
-        void update_producto(FormsApp.WCF_Productos.ClsProducto objProducto);
+        void update_producto(FormsApp.WCF_Productos.ClsProducto objProducto, string XmlPut);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Productos/IProductos/update_producto", ReplyAction="http://localhost:8733/WcfService/Service_Productos/IProductos/update_productoResp" +
             "onse")]
-        System.Threading.Tasks.Task update_productoAsync(FormsApp.WCF_Productos.ClsProducto objProducto);
+        System.Threading.Tasks.Task update_productoAsync(FormsApp.WCF_Productos.ClsProducto objProducto, string XmlPut);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Productos/IProductos/delete_producto", ReplyAction="http://localhost:8733/WcfService/Service_Productos/IProductos/delete_productoResp" +
             "onse")]
@@ -351,20 +351,20 @@ namespace FormsApp.WCF_Productos {
             return base.Channel._GetData2Async(value, _DataRow);
         }
         
-        public int insert_producto(FormsApp.WCF_Productos.ClsProducto objProducto) {
-            return base.Channel.insert_producto(objProducto);
+        public int insert_producto(FormsApp.WCF_Productos.ClsProducto objProducto, string XmlPut) {
+            return base.Channel.insert_producto(objProducto, XmlPut);
         }
         
-        public System.Threading.Tasks.Task<int> insert_productoAsync(FormsApp.WCF_Productos.ClsProducto objProducto) {
-            return base.Channel.insert_productoAsync(objProducto);
+        public System.Threading.Tasks.Task<int> insert_productoAsync(FormsApp.WCF_Productos.ClsProducto objProducto, string XmlPut) {
+            return base.Channel.insert_productoAsync(objProducto, XmlPut);
         }
         
-        public void update_producto(FormsApp.WCF_Productos.ClsProducto objProducto) {
-            base.Channel.update_producto(objProducto);
+        public void update_producto(FormsApp.WCF_Productos.ClsProducto objProducto, string XmlPut) {
+            base.Channel.update_producto(objProducto, XmlPut);
         }
         
-        public System.Threading.Tasks.Task update_productoAsync(FormsApp.WCF_Productos.ClsProducto objProducto) {
-            return base.Channel.update_productoAsync(objProducto);
+        public System.Threading.Tasks.Task update_productoAsync(FormsApp.WCF_Productos.ClsProducto objProducto, string XmlPut) {
+            return base.Channel.update_productoAsync(objProducto, XmlPut);
         }
         
         public void delete_producto(FormsApp.WCF_Productos.ClsProducto objProducto) {

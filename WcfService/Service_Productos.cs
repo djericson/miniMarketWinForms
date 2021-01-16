@@ -20,15 +20,15 @@ namespace WcfService
         ClsBL_Producto objBL = new ClsBL_Producto();
 
 
-        public int insert_producto(ClsProducto objProducto)
+        public int insert_producto(ClsProducto objProducto, string XmlPut)
         {
-             int out_id = objBL.insert_producto(objProducto);
+             int out_id = objBL.insert_producto(objProducto, XmlPut);
             return out_id;
         }
 
-        public void update_producto(ClsProducto objProducto)
+        public void update_producto(ClsProducto objProducto, string XmlPut)
         {
-            objBL.update_producto(objProducto);
+            objBL.update_producto(objProducto, XmlPut);
         }
         public void delete_producto(ClsProducto objProducto)
         {
