@@ -62,6 +62,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\SrvRefProveedor\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\WCF_Productos\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -229,6 +234,14 @@
     <None Include="Connected Services\Service_User_Rol\Service_User_Rol.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\SrvRefProveedor\service.wsdl" />
+    <None Include="Connected Services\SrvRefProveedor\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SrvRefProveedor\ServiceProveedor.wsdl" />
+    <None Include="Connected Services\SrvRefProveedor\ServiceProveedor.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\WCF_Productos\service.wsdl" />
     <None Include="Connected Services\WCF_Productos\service.xsd">
       <SubType>Designer</SubType>
@@ -274,6 +287,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\SrvRefProveedor\configuration91.svcinfo" />
+    <None Include="Connected Services\SrvRefProveedor\configuration.svcinfo" />
+    <None Include="Connected Services\SrvRefProveedor\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="obj\Debug\TempPE\Connected Services.ServiceReference1.Reference.cs.dll" />
     <None Include="Resources\Webp.net-resizeimage %2812%29.png" />
     <None Include="Resources\Webp.net-resizeimage %2813%29.png" />
@@ -295,6 +314,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\Service_User_Rol\" />
+    <WCFMetadataStorage Include="Connected Services\SrvRefProveedor\" />
     <WCFMetadataStorage Include="Connected Services\WCF_Productos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -32,40 +32,40 @@
             this.lbl_dni = new System.Windows.Forms.Label();
             this.txt_usrNick = new System.Windows.Forms.TextBox();
             this.lbl_pass = new System.Windows.Forms.Label();
-            this.txtClave = new System.Windows.Forms.TextBox();
+            this.txt_dni = new System.Windows.Forms.TextBox();
             this.lbl_nomUsr = new System.Windows.Forms.Label();
-            this.txtNombres = new System.Windows.Forms.TextBox();
+            this.txt_usrNom = new System.Windows.Forms.TextBox();
             this.lbl_apPat = new System.Windows.Forms.Label();
-            this.txtApellidos = new System.Windows.Forms.TextBox();
+            this.txt_usrApePat = new System.Windows.Forms.TextBox();
             this.lbl_email = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_usrEmail = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txt_confirmPass = new System.Windows.Forms.TextBox();
             this.lbl_confirmarPass = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_ruc = new System.Windows.Forms.TextBox();
             this.lbl_ruc = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_pass = new System.Windows.Forms.TextBox();
+            this.txt_usrApeMat = new System.Windows.Forms.TextBox();
             this.lbl_nickUsr = new System.Windows.Forms.Label();
             this.lbl_apMat = new System.Windows.Forms.Label();
             this.cb_verRolesUsr = new System.Windows.Forms.ComboBox();
             this.lbl_VerRolUsr = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.dgv_listaUsrs = new System.Windows.Forms.DataGridView();
+            this.txt_usrTlf = new System.Windows.Forms.TextBox();
             this.lbl_tlf = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txt_usrDir = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_updUsr = new System.Windows.Forms.Button();
             this.btn_borrarUsr = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_limpiarCampos = new System.Windows.Forms.Button();
+            this.lbl_findByNickDniNoms = new System.Windows.Forms.Label();
+            this.txt_findByNickDniNoms = new System.Windows.Forms.TextBox();
+            this.btn_findByNickDniNoms = new System.Windows.Forms.Button();
+            this.btn_borrarFiltroBusqueda = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_listaUsrs)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,13 +108,13 @@
             this.lbl_pass.TabIndex = 1;
             this.lbl_pass.Text = "Clave:";
             // 
-            // txtClave
+            // txt_dni
             // 
-            this.txtClave.Location = new System.Drawing.Point(114, 116);
-            this.txtClave.Margin = new System.Windows.Forms.Padding(2);
-            this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(115, 20);
-            this.txtClave.TabIndex = 2;
+            this.txt_dni.Location = new System.Drawing.Point(114, 116);
+            this.txt_dni.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_dni.Name = "txt_dni";
+            this.txt_dni.Size = new System.Drawing.Size(115, 20);
+            this.txt_dni.TabIndex = 2;
             // 
             // lbl_nomUsr
             // 
@@ -126,13 +126,13 @@
             this.lbl_nomUsr.TabIndex = 1;
             this.lbl_nomUsr.Text = "Nombres:";
             // 
-            // txtNombres
+            // txt_usrNom
             // 
-            this.txtNombres.Location = new System.Drawing.Point(322, 17);
-            this.txtNombres.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(263, 20);
-            this.txtNombres.TabIndex = 2;
+            this.txt_usrNom.Location = new System.Drawing.Point(322, 17);
+            this.txt_usrNom.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_usrNom.Name = "txt_usrNom";
+            this.txt_usrNom.Size = new System.Drawing.Size(263, 20);
+            this.txt_usrNom.TabIndex = 2;
             // 
             // lbl_apPat
             // 
@@ -144,13 +144,13 @@
             this.lbl_apPat.TabIndex = 1;
             this.lbl_apPat.Text = "Ap. Paterno:";
             // 
-            // txtApellidos
+            // txt_usrApePat
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(322, 43);
-            this.txtApellidos.Margin = new System.Windows.Forms.Padding(2);
-            this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(263, 20);
-            this.txtApellidos.TabIndex = 2;
+            this.txt_usrApePat.Location = new System.Drawing.Point(322, 43);
+            this.txt_usrApePat.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_usrApePat.Name = "txt_usrApePat";
+            this.txt_usrApePat.Size = new System.Drawing.Size(263, 20);
+            this.txt_usrApePat.TabIndex = 2;
             // 
             // lbl_email
             // 
@@ -162,39 +162,39 @@
             this.lbl_email.TabIndex = 1;
             this.lbl_email.Text = "Email:";
             // 
-            // textBox1
+            // txt_usrEmail
             // 
-            this.textBox1.Location = new System.Drawing.Point(322, 92);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(263, 20);
-            this.textBox1.TabIndex = 3;
+            this.txt_usrEmail.Location = new System.Drawing.Point(322, 92);
+            this.txt_usrEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_usrEmail.Name = "txt_usrEmail";
+            this.txt_usrEmail.Size = new System.Drawing.Size(263, 20);
+            this.txt_usrEmail.TabIndex = 3;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.txt_usrDir);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.txt_usrTlf);
             this.groupBox1.Controls.Add(this.lbl_tlf);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.txt_confirmPass);
             this.groupBox1.Controls.Add(this.lbl_confirmarPass);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txt_ruc);
             this.groupBox1.Controls.Add(this.lbl_ruc);
             this.groupBox1.Controls.Add(this.lbl_dni);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txt_pass);
+            this.groupBox1.Controls.Add(this.txt_usrApeMat);
             this.groupBox1.Controls.Add(this.lbl_nickUsr);
             this.groupBox1.Controls.Add(this.txt_usrNick);
             this.groupBox1.Controls.Add(this.lbl_apMat);
             this.groupBox1.Controls.Add(this.cb_verRolesUsr);
             this.groupBox1.Controls.Add(this.lbl_VerRolUsr);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txt_usrEmail);
             this.groupBox1.Controls.Add(this.lbl_pass);
-            this.groupBox1.Controls.Add(this.txtClave);
+            this.groupBox1.Controls.Add(this.txt_dni);
             this.groupBox1.Controls.Add(this.lbl_nomUsr);
             this.groupBox1.Controls.Add(this.lbl_email);
-            this.groupBox1.Controls.Add(this.txtNombres);
-            this.groupBox1.Controls.Add(this.txtApellidos);
+            this.groupBox1.Controls.Add(this.txt_usrNom);
+            this.groupBox1.Controls.Add(this.txt_usrApePat);
             this.groupBox1.Controls.Add(this.lbl_apPat);
             this.groupBox1.Location = new System.Drawing.Point(5, 6);
             this.groupBox1.Name = "groupBox1";
@@ -203,13 +203,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Usuario";
             // 
-            // textBox5
+            // txt_confirmPass
             // 
-            this.textBox5.Location = new System.Drawing.Point(114, 92);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(115, 20);
-            this.textBox5.TabIndex = 11;
+            this.txt_confirmPass.Location = new System.Drawing.Point(114, 92);
+            this.txt_confirmPass.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_confirmPass.Name = "txt_confirmPass";
+            this.txt_confirmPass.Size = new System.Drawing.Size(115, 20);
+            this.txt_confirmPass.TabIndex = 11;
             // 
             // lbl_confirmarPass
             // 
@@ -221,13 +221,13 @@
             this.lbl_confirmarPass.TabIndex = 10;
             this.lbl_confirmarPass.Text = "Confirmar Clave:";
             // 
-            // textBox4
+            // txt_ruc
             // 
-            this.textBox4.Location = new System.Drawing.Point(114, 140);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(115, 20);
-            this.textBox4.TabIndex = 9;
+            this.txt_ruc.Location = new System.Drawing.Point(114, 140);
+            this.txt_ruc.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_ruc.Name = "txt_ruc";
+            this.txt_ruc.Size = new System.Drawing.Size(115, 20);
+            this.txt_ruc.TabIndex = 9;
             // 
             // lbl_ruc
             // 
@@ -239,21 +239,21 @@
             this.lbl_ruc.TabIndex = 8;
             this.lbl_ruc.Text = "RUC:";
             // 
-            // textBox3
+            // txt_pass
             // 
-            this.textBox3.Location = new System.Drawing.Point(114, 68);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(115, 20);
-            this.textBox3.TabIndex = 6;
+            this.txt_pass.Location = new System.Drawing.Point(114, 68);
+            this.txt_pass.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_pass.Name = "txt_pass";
+            this.txt_pass.Size = new System.Drawing.Size(115, 20);
+            this.txt_pass.TabIndex = 6;
             // 
-            // textBox2
+            // txt_usrApeMat
             // 
-            this.textBox2.Location = new System.Drawing.Point(322, 68);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(263, 20);
-            this.textBox2.TabIndex = 7;
+            this.txt_usrApeMat.Location = new System.Drawing.Point(322, 68);
+            this.txt_usrApeMat.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_usrApeMat.Name = "txt_usrApeMat";
+            this.txt_usrApeMat.Size = new System.Drawing.Size(263, 20);
+            this.txt_usrApeMat.TabIndex = 7;
             // 
             // lbl_nickUsr
             // 
@@ -293,21 +293,21 @@
             this.lbl_VerRolUsr.TabIndex = 4;
             this.lbl_VerRolUsr.Text = "Ver Rol(es) Usuario:";
             // 
-            // dataGridView1
+            // dgv_listaUsrs
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 50);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(567, 137);
-            this.dataGridView1.TabIndex = 5;
+            this.dgv_listaUsrs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_listaUsrs.Location = new System.Drawing.Point(11, 50);
+            this.dgv_listaUsrs.Name = "dgv_listaUsrs";
+            this.dgv_listaUsrs.Size = new System.Drawing.Size(575, 137);
+            this.dgv_listaUsrs.TabIndex = 5;
             // 
-            // textBox6
+            // txt_usrTlf
             // 
-            this.textBox6.Location = new System.Drawing.Point(322, 116);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(263, 20);
-            this.textBox6.TabIndex = 13;
+            this.txt_usrTlf.Location = new System.Drawing.Point(322, 116);
+            this.txt_usrTlf.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_usrTlf.Name = "txt_usrTlf";
+            this.txt_usrTlf.Size = new System.Drawing.Size(263, 20);
+            this.txt_usrTlf.TabIndex = 13;
             // 
             // lbl_tlf
             // 
@@ -319,13 +319,15 @@
             this.lbl_tlf.TabIndex = 12;
             this.lbl_tlf.Text = "Teléfono:";
             // 
-            // textBox7
+            // txt_usrDir
             // 
-            this.textBox7.Location = new System.Drawing.Point(322, 140);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(263, 20);
-            this.textBox7.TabIndex = 15;
+            this.txt_usrDir.Location = new System.Drawing.Point(322, 140);
+            this.txt_usrDir.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_usrDir.Multiline = true;
+            this.txt_usrDir.Name = "txt_usrDir";
+            this.txt_usrDir.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txt_usrDir.Size = new System.Drawing.Size(263, 24);
+            this.txt_usrDir.TabIndex = 15;
             // 
             // label1
             // 
@@ -339,15 +341,15 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.textBox8);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btn_borrarFiltroBusqueda);
+            this.groupBox2.Controls.Add(this.btn_findByNickDniNoms);
+            this.groupBox2.Controls.Add(this.txt_findByNickDniNoms);
+            this.groupBox2.Controls.Add(this.lbl_findByNickDniNoms);
+            this.groupBox2.Controls.Add(this.btn_limpiarCampos);
             this.groupBox2.Controls.Add(this.btn_borrarUsr);
             this.groupBox2.Controls.Add(this.btn_updUsr);
             this.groupBox2.Controls.Add(this.btn_insUsr);
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dgv_listaUsrs);
             this.groupBox2.Location = new System.Drawing.Point(5, 181);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(592, 220);
@@ -375,56 +377,56 @@
             this.btn_borrarUsr.Text = "Eliminar";
             this.btn_borrarUsr.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btn_limpiarCampos
             // 
-            this.button1.Location = new System.Drawing.Point(39, 192);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 25);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Nuevo";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_limpiarCampos.Location = new System.Drawing.Point(39, 192);
+            this.btn_limpiarCampos.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_limpiarCampos.Name = "btn_limpiarCampos";
+            this.btn_limpiarCampos.Size = new System.Drawing.Size(86, 25);
+            this.btn_limpiarCampos.TabIndex = 7;
+            this.btn_limpiarCampos.Text = "Nuevo";
+            this.btn_limpiarCampos.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // lbl_findByNickDniNoms
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 25);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(198, 13);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Buscar Usuario por nick, dni, o nombres:";
+            this.lbl_findByNickDniNoms.AutoSize = true;
+            this.lbl_findByNickDniNoms.Location = new System.Drawing.Point(8, 25);
+            this.lbl_findByNickDniNoms.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_findByNickDniNoms.Name = "lbl_findByNickDniNoms";
+            this.lbl_findByNickDniNoms.Size = new System.Drawing.Size(198, 13);
+            this.lbl_findByNickDniNoms.TabIndex = 16;
+            this.lbl_findByNickDniNoms.Text = "Buscar Usuario por nick, dni, o nombres:";
             // 
-            // textBox8
+            // txt_findByNickDniNoms
             // 
-            this.textBox8.AccessibleDescription = "df";
-            this.textBox8.AccessibleName = "ssd";
-            this.textBox8.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.textBox8.Location = new System.Drawing.Point(210, 25);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(219, 20);
-            this.textBox8.TabIndex = 16;
+            this.txt_findByNickDniNoms.AccessibleDescription = "df";
+            this.txt_findByNickDniNoms.AccessibleName = "ssd";
+            this.txt_findByNickDniNoms.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
+            this.txt_findByNickDniNoms.Location = new System.Drawing.Point(210, 25);
+            this.txt_findByNickDniNoms.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_findByNickDniNoms.Name = "txt_findByNickDniNoms";
+            this.txt_findByNickDniNoms.Size = new System.Drawing.Size(219, 20);
+            this.txt_findByNickDniNoms.TabIndex = 16;
             // 
-            // button2
+            // btn_findByNickDniNoms
             // 
-            this.button2.Location = new System.Drawing.Point(446, 22);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(53, 25);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Buscar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_findByNickDniNoms.Location = new System.Drawing.Point(446, 22);
+            this.btn_findByNickDniNoms.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_findByNickDniNoms.Name = "btn_findByNickDniNoms";
+            this.btn_findByNickDniNoms.Size = new System.Drawing.Size(53, 25);
+            this.btn_findByNickDniNoms.TabIndex = 17;
+            this.btn_findByNickDniNoms.Text = "Buscar";
+            this.btn_findByNickDniNoms.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btn_borrarFiltroBusqueda
             // 
-            this.button3.Location = new System.Drawing.Point(512, 22);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(73, 25);
-            this.button3.TabIndex = 18;
-            this.button3.Text = "Borrar Filtro";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_borrarFiltroBusqueda.Location = new System.Drawing.Point(512, 22);
+            this.btn_borrarFiltroBusqueda.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_borrarFiltroBusqueda.Name = "btn_borrarFiltroBusqueda";
+            this.btn_borrarFiltroBusqueda.Size = new System.Drawing.Size(73, 25);
+            this.btn_borrarFiltroBusqueda.TabIndex = 18;
+            this.btn_borrarFiltroBusqueda.Text = "Borrar Filtro";
+            this.btn_borrarFiltroBusqueda.UseVisualStyleBackColor = true;
             // 
             // FrmUsrs
             // 
@@ -438,7 +440,7 @@
             this.Text = "Gestion de Usuarios";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_listaUsrs)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -451,38 +453,38 @@
         private System.Windows.Forms.Label lbl_dni;
         private System.Windows.Forms.TextBox txt_usrNick;
         private System.Windows.Forms.Label lbl_pass;
-        private System.Windows.Forms.TextBox txtClave;
+        private System.Windows.Forms.TextBox txt_dni;
         private System.Windows.Forms.Label lbl_nomUsr;
-        private System.Windows.Forms.TextBox txtNombres;
+        private System.Windows.Forms.TextBox txt_usrNom;
         private System.Windows.Forms.Label lbl_apPat;
-        private System.Windows.Forms.TextBox txtApellidos;
+        private System.Windows.Forms.TextBox txt_usrApePat;
         private System.Windows.Forms.Label lbl_email;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_usrEmail;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txt_confirmPass;
         private System.Windows.Forms.Label lbl_confirmarPass;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txt_ruc;
         private System.Windows.Forms.Label lbl_ruc;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_pass;
+        private System.Windows.Forms.TextBox txt_usrApeMat;
         private System.Windows.Forms.Label lbl_nickUsr;
         private System.Windows.Forms.Label lbl_apMat;
         private System.Windows.Forms.ComboBox cb_verRolesUsr;
         private System.Windows.Forms.Label lbl_VerRolUsr;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.DataGridView dgv_listaUsrs;
+        private System.Windows.Forms.TextBox txt_usrDir;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txt_usrTlf;
         private System.Windows.Forms.Label lbl_tlf;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btn_borrarUsr;
         private System.Windows.Forms.Button btn_updUsr;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txt_findByNickDniNoms;
+        private System.Windows.Forms.Label lbl_findByNickDniNoms;
+        private System.Windows.Forms.Button btn_limpiarCampos;
+        private System.Windows.Forms.Button btn_findByNickDniNoms;
+        private System.Windows.Forms.Button btn_borrarFiltroBusqueda;
     }
 }
 
