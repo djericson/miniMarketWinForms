@@ -62,16 +62,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\SrvRefProveedor\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\WCF_Productos\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="FrmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmMenuPrincipal.Designer.cs">
+      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmCategoria.cs">
       <SubType>Form</SubType>
@@ -175,6 +180,9 @@
     <EmbeddedResource Include="FrmPedido.resx">
       <DependentUpon>FrmPedido.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmMenuPrincipal.resx">
+      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmProveedores.resx">
       <DependentUpon>FrmProveedores.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,6 +234,14 @@
     <None Include="Connected Services\Service_User_Rol\Service_User_Rol.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\SrvRefProveedor\service.wsdl" />
+    <None Include="Connected Services\SrvRefProveedor\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SrvRefProveedor\ServiceProveedor.wsdl" />
+    <None Include="Connected Services\SrvRefProveedor\ServiceProveedor.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\WCF_Productos\service.wsdl" />
     <None Include="Connected Services\WCF_Productos\service.xsd">
       <SubType>Designer</SubType>
@@ -271,6 +287,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\SrvRefProveedor\configuration91.svcinfo" />
+    <None Include="Connected Services\SrvRefProveedor\configuration.svcinfo" />
+    <None Include="Connected Services\SrvRefProveedor\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="obj\Debug\TempPE\Connected Services.ServiceReference1.Reference.cs.dll" />
     <None Include="Resources\Webp.net-resizeimage %2812%29.png" />
     <None Include="Resources\Webp.net-resizeimage %2813%29.png" />
@@ -292,6 +314,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\Service_User_Rol\" />
+    <WCFMetadataStorage Include="Connected Services\SrvRefProveedor\" />
     <WCFMetadataStorage Include="Connected Services\WCF_Productos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -51,9 +51,11 @@
     <Compile Include="IProductos.cs" />
     <Compile Include="IService1.cs" />
     <Compile Include="IService2.cs" />
+    <Compile Include="IServiceProveedor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service1.cs" />
     <Compile Include="Service2.cs" />
+    <Compile Include="ServiceProveedor.cs" />
     <Compile Include="Service_Productos.cs" />
     <Compile Include="Service_User_Rol.cs" />
   </ItemGroup>
