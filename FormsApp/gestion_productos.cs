@@ -128,12 +128,24 @@ namespace App
                     descripcion.Text = Table_producto.Rows[0]["descripcion"].ToString();
                     unidad_produc.Text = Table_producto.Rows[0]["und_prod"].ToString();
  
-
-
-                    foreach (DataRow dataRow in Table_detalle.Rows)
+                     
+                    try
                     {
-                        list_productos.Rows.Add(dataRow["id_det_prod"], dataRow["precio_prod"], dataRow["cant_prods_vta"], dataRow["fch_ingr_stock"], dataRow["fch_fab_prod"], dataRow["fch_Vec_prod"]);
+                        foreach (DataRow dataRow in Table_detalle.Rows)
+                        {
+                            if (dataRow != null)
+                            {
+                                list_productos.Rows.Add(dataRow["id_det_prod"], dataRow["precio_prod"], dataRow["cant_prods_vta"], dataRow["fch_ingr_stock"], dataRow["fch_fab_prod"], dataRow["fch_Vec_prod"]);
+
+                            }
+                        }
                     }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+
+                    }
+                    
 
                     ////double value = double.Parse(dataGridView1.Rows[0].Cells[4].Value.ToString());
                     ////dataGridView1.Rows[0].Cells[4].Value = value;
@@ -308,9 +320,9 @@ namespace App
 
                 XmlPut = XmlPut + "<row precio_prod=\"" + DataRow.Cells["precio_prod"].Value +
                                   "\" cant_prods_vta=\"" + DataRow.Cells["cant_prods_vta"].Value +
-                                  "\" fch_ingr_stock=\"" + Convert.ToDateTime(DataRow.Cells["fch_ingr_stock"].Value).ToShortDateString() +
-                                  "\" fch_fab_prod=\"" + Convert.ToDateTime(DataRow.Cells["fch_fab_prod"].Value).ToString("dd/M/yyyy", CultureInfo.InvariantCulture) +
-                                  "\" fch_Vec_prod=\"" + Convert.ToDateTime(DataRow.Cells["fch_Vec_prod"].Value).ToString("dd/M/yyyy", CultureInfo.InvariantCulture) + "\"></row>\n";
+                                  "\" fch_ingr_stock=\"" + Convert.ToDateTime(DataRow.Cells["fch_ingr_stock"].Value).ToString("yyyy-M-dd hh:mm:ss") +
+                                  "\" fch_fab_prod=\"" + Convert.ToDateTime(DataRow.Cells["fch_fab_prod"].Value).ToString("yyyy-M-dd hh:mm:ss") +
+                                  "\" fch_Vec_prod=\"" + Convert.ToDateTime(DataRow.Cells["fch_Vec_prod"].Value).ToString("yyyy-M-dd hh:mm:ss") + "\"></row>\n";
 
             }
 
@@ -348,9 +360,9 @@ namespace App
                
                 XmlPut = XmlPut + "<row precio_prod=\"" + DataRow.Cells["precio_prod"].Value +
                                   "\" cant_prods_vta=\"" + DataRow.Cells["cant_prods_vta"].Value +
-                                  "\" fch_ingr_stock=\"" + Convert.ToDateTime(DataRow.Cells["fch_ingr_stock"].Value.ToString()) +
-                                  "\" fch_fab_prod=\"" + Convert.ToDateTime(DataRow.Cells["fch_fab_prod"].Value.ToString())+
-                                  "\" fch_Vec_prod=\"" + Convert.ToDateTime(DataRow.Cells["fch_Vec_prod"].Value.ToString())+ "\"></row>\n";
+                                  "\" fch_ingr_stock=\"" + Convert.ToDateTime(DataRow.Cells["fch_ingr_stock"].Value.ToString()).ToString("yyyy-M-dd hh:mm:ss") +
+                                  "\" fch_fab_prod=\"" + Convert.ToDateTime(DataRow.Cells["fch_fab_prod"].Value.ToString()).ToString("yyyy-M-dd hh:mm:ss") +
+                                  "\" fch_Vec_prod=\"" + Convert.ToDateTime(DataRow.Cells["fch_Vec_prod"].Value.ToString()).ToString("yyyy-M-dd hh:mm:ss") + "\"></row>\n";
               
             }
 
@@ -407,7 +419,7 @@ namespace App
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            MessageBox.Show("stock_entry_datessss: " + DateTime.Parse(list_productos.CurrentRow.Cells["fch_ingr_stock"].Value.ToString()).ToShortDateString());
+            MessageBox.Show("stock_entry_datessss: " + DateTime.Parse(list_productos.CurrentRow.Cells["fch_ingr_stock"].Value.ToString()).ToString("yyyy-M-dd hh:mm:ss"));
             MessageBox.Show("stock_entry_date: " + Convert.ToDateTime(list_productos.CurrentRow.Cells["fch_ingr_stock"].Value).ToString("dd/M/yyyy", CultureInfo.InvariantCulture));
             MessageBox.Show("stock_entry_date: " + Convert.ToDateTime(list_productos.CurrentRow.Cells["fch_ingr_stock"].Value).ToShortDateString());
         }
