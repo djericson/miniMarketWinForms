@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using Utilitarios;
 using System.Data.Common;
+using System.Windows.Forms;
 
 namespace DAC
 {
@@ -14,9 +15,12 @@ namespace DAC
     {
         SqlConnection cn = new SqlConnection("Data Source=srv-bd-sql-server.database.windows.net; User ID =edgar; Password =$E012345; Initial Catalog=miniMarket");
         SqlCommand cmd;
-     
+        SqlDataReader loDataReader;
         DataTable schemaTable = new DataTable();
-
+        DataSet dataSet = new DataSet();
+        //List<string> DatosUsuario = new List<string>();
+        List<List<string>> DatosUsuario = new List<List<string>>();
+        //public static string[] DatosUsuario = new string[10];
         public List<ClsUsuario> lista()
         {
             List<ClsUsuario> x=new List<ClsUsuario>();
@@ -47,25 +51,38 @@ namespace DAC
         {
 
         }
-        public string  Login(string user, string pasword)
+        public List<List<string>> Login(string user, string pasword)
         {
-            SqlCommand command = new SqlCommand("Select id_usr,rol_usr,usr_nom,usr_pass   from Usuario    where    usr_nom = '" + user + "' and usr_pass = '" + pasword + "'", cn);
-
+            DatosUsuario.Clear();
+            cmd = new SqlCommand("Login", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@Usuario", user);
+            cmd.Parameters.AddWithValue("@Pasword", pasword);
             cn.Open();
-            SqlDataAdapter adapt = new SqlDataAdapter(command);
-            DataSet ds = new DataSet();
-            adapt.Fill(ds);
-            cn.Close();
-            int count = ds.Tables[0].Rows.Count;
+            loDataReader = cmd.ExecuteReader();
+            dataSet.Load(loDataReader, LoadOption.PreserveChanges, new string[] { "Usuario", "roles_user" });
+            if (dataSet.Tables["Usuario"].Rows.Count == 1)
+            {
+                var ID_User = dataSet.Tables[0].Rows[0]["id_usr"].ToString();
+                var Name_User = dataSet.Tables[0].Rows[0]["usr_nom"].ToString();
+                DatosUsuario.Add(new List<string> { ID_User, Name_User });
+                if (dataSet.Tables["roles_user"].Rows.Count >= 1)
+                {
+                    
+                    foreach (DataRow dataRow in dataSet.Tables["roles_user"].Rows)
+                    {
 
-            if (count == 1) {
-                var Rol_User = ds.Tables[0].Rows[0]["rol_usr"].ToString();
-                //var f = ds.Tables[0].Rows[0]["usr_nom"].ToString();
-                //int id_Rol = Int32.Parse(ds.Tables[0].Rows[0]["id_usr"].ToString());
-                //id_Rol = id_Rol - 1;
-                return Rol_User;
+                        DatosUsuario.Add(new List<string> { dataRow["id_rol"].ToString(), dataRow["Nombre"].ToString() });
+                        
+                    }
+                }
             }
-            return null;
+
+
+            cn.Close();
+
+            return DatosUsuario;
         }
 
         
@@ -75,6 +92,27 @@ namespace DAC
 
             return x;
         }
+        public DataTable Forms_For_User(int ID_Rol)
+        {
+            cmd = new SqlCommand("Forms_For_User", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@ID_Rol", ID_Rol);
+            cn.Open();
+            loDataReader = cmd.ExecuteReader();
+            schemaTable.Load(loDataReader, LoadOption.OverwriteChanges);
+            if (schemaTable.Rows.Count == 0)
+            {
+                cn.Close();
+                return null;
+            }
+
+
+            cn.Close();
+
+            return schemaTable;
+        }
+
 
 
     }

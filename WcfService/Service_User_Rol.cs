@@ -112,5 +112,35 @@ namespace WcfService
 
             return output;
         }
+
+        public List<List<string>> Login(string user, string pasword)
+        {
+
+            ClsBL_Usr BL = new ClsBL_Usr();
+            var data = BL.Login(user, pasword);
+            return data;
+        }
+
+        public string Forms_For_User(int ID_Rol)
+        {
+            ClsBL_Usr BL = new ClsBL_Usr();
+            var data_Table = BL.Forms_For_User(ID_Rol);
+            Newtonsoft.Json.JsonSerializer json = new Newtonsoft.Json.JsonSerializer();
+            json.NullValueHandling = NullValueHandling.Ignore;
+            json.ObjectCreationHandling = Newtonsoft.Json.ObjectCreationHandling.Replace;
+            json.MissingMemberHandling = Newtonsoft.Json.MissingMemberHandling.Ignore;
+            json.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            //if (type == typeof(DataSet))
+            json.Converters.Add(new DataTableConverter());
+            StringWriter sw = new StringWriter();
+            Newtonsoft.Json.JsonTextWriter writer = new JsonTextWriter(sw);
+            writer.Formatting = Formatting.Indented;
+            writer.QuoteChar = '"';
+            json.Serialize(writer, data_Table);
+            string output = sw.ToString();
+            writer.Close();
+            sw.Close();
+            return output;
+        }
     }
 }

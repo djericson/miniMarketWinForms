@@ -72,6 +72,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,12 @@
     </Compile>
     <Compile Include="login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasDeUnRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasDeUnRol.Designer.cs">
+      <DependentUpon>MasDeUnRol.cs</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
@@ -174,6 +186,9 @@
     <EmbeddedResource Include="Busqueda.resx">
       <DependentUpon>Busqueda.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCategoria.resx">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasDeUnRol.resx">
+      <DependentUpon>MasDeUnRol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -226,6 +244,9 @@
     <EmbeddedResource Include="WinForms_Usuarios\Rol_Usuario.resx">
       <DependentUpon>Rol_Usuario.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Connected Services\Service_User_Rol\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\Service_User_Rol\service.wsdl" />
     <None Include="Connected Services\Service_User_Rol\service.xsd">
       <SubType>Designer</SubType>
@@ -281,15 +302,15 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Connected Services\Service_User_Rol\configuration91.svcinfo" />
-    <None Include="Connected Services\Service_User_Rol\configuration.svcinfo" />
-    <None Include="Connected Services\Service_User_Rol\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Connected Services\SrvRefProveedor\configuration91.svcinfo" />
     <None Include="Connected Services\SrvRefProveedor\configuration.svcinfo" />
     <None Include="Connected Services\SrvRefProveedor\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\Service_User_Rol\configuration91.svcinfo" />
+    <None Include="Connected Services\Service_User_Rol\configuration.svcinfo" />
+    <None Include="Connected Services\Service_User_Rol\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -297,6 +318,7 @@
     <None Include="Resources\Webp.net-resizeimage %2812%29.png" />
     <None Include="Resources\Webp.net-resizeimage %2813%29.png" />
     <None Include="Resources\Webp.net-resizeimage %2814%29.png" />
+    <None Include="Resources\Webp.net-resizeimage %2815%29.png" />
     <Content Include="UserControl_for_gestion_productos\check.png" />
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
@@ -32,7 +33,11 @@ namespace WcfService
         [OperationContract]
         void delete_Forms_rol(int rol, int form);
         [OperationContract]
-        int get_id_form(string form);
+        int get_id_form(string form); 
+        [OperationContract]
+        List<List<string>> Login(string user,string pasword); 
+        [OperationContract]
+        string Forms_For_User(int ID_Rol);
 
 
     }

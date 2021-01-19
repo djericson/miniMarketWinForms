@@ -31,5 +31,9 @@ namespace App
 
         public void _GetDatoss() { }
 
+        private void FrmUsrs_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

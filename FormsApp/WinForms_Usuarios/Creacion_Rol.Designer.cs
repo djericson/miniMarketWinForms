@@ -35,6 +35,7 @@
             this.dataGrid_Roles = new System.Windows.Forms.DataGridView();
             this.add_Rol = new System.Windows.Forms.Button();
             this.delete_rol = new System.Windows.Forms.Button();
+            this.Atras = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Roles)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,7 +103,7 @@
             this.dataGrid_Roles.RowHeadersWidth = 30;
             this.dataGrid_Roles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGrid_Roles.ShowEditingIcon = false;
-            this.dataGrid_Roles.Size = new System.Drawing.Size(213, 136);
+            this.dataGrid_Roles.Size = new System.Drawing.Size(198, 114);
             this.dataGrid_Roles.TabIndex = 21;
             this.dataGrid_Roles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_Roles_CellClick);
             // 
@@ -132,10 +133,24 @@
             this.delete_rol.UseVisualStyleBackColor = true;
             this.delete_rol.Click += new System.EventHandler(this.delete_rol_Click);
             // 
+            // Atras
+            // 
+            this.Atras.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.Atras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Atras.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Atras.Image = global::FormsApp.Properties.Resources.Webp_net_resizeimage__15_;
+            this.Atras.Location = new System.Drawing.Point(43, 321);
+            this.Atras.Name = "Atras";
+            this.Atras.Size = new System.Drawing.Size(76, 37);
+            this.Atras.TabIndex = 82;
+            this.Atras.UseVisualStyleBackColor = true;
+            this.Atras.Click += new System.EventHandler(this.Atras_Click);
+            // 
             // Creacion_Rol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Atras);
             this.Controls.Add(this.delete_rol);
             this.Controls.Add(this.add_Rol);
             this.Controls.Add(this.dataGrid_Roles);
@@ -158,5 +173,6 @@
         public System.Windows.Forms.RichTextBox name_rol;
         public System.Windows.Forms.DataGridView dataGrid_Roles;
         public System.Windows.Forms.Button add_Rol;
+        private System.Windows.Forms.Button Atras;
     }
 }

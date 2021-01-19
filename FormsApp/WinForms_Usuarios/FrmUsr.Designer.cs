@@ -40,6 +40,10 @@
             this.lbl_email = new System.Windows.Forms.Label();
             this.txt_usrEmail = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_usrDir = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_usrTlf = new System.Windows.Forms.TextBox();
+            this.lbl_tlf = new System.Windows.Forms.Label();
             this.txt_confirmPass = new System.Windows.Forms.TextBox();
             this.lbl_confirmarPass = new System.Windows.Forms.Label();
             this.txt_ruc = new System.Windows.Forms.TextBox();
@@ -52,18 +56,14 @@
             this.lbl_VerRolUsr = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.dgv_listaUsrs = new System.Windows.Forms.DataGridView();
-            this.txt_usrTlf = new System.Windows.Forms.TextBox();
-            this.lbl_tlf = new System.Windows.Forms.Label();
-            this.txt_usrDir = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btn_updUsr = new System.Windows.Forms.Button();
-            this.btn_borrarUsr = new System.Windows.Forms.Button();
-            this.btn_limpiarCampos = new System.Windows.Forms.Button();
-            this.lbl_findByNickDniNoms = new System.Windows.Forms.Label();
-            this.txt_findByNickDniNoms = new System.Windows.Forms.TextBox();
-            this.btn_findByNickDniNoms = new System.Windows.Forms.Button();
             this.btn_borrarFiltroBusqueda = new System.Windows.Forms.Button();
+            this.btn_findByNickDniNoms = new System.Windows.Forms.Button();
+            this.txt_findByNickDniNoms = new System.Windows.Forms.TextBox();
+            this.lbl_findByNickDniNoms = new System.Windows.Forms.Label();
+            this.btn_limpiarCampos = new System.Windows.Forms.Button();
+            this.btn_borrarUsr = new System.Windows.Forms.Button();
+            this.btn_updUsr = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaUsrs)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -203,6 +203,44 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Usuario";
             // 
+            // txt_usrDir
+            // 
+            this.txt_usrDir.Location = new System.Drawing.Point(322, 140);
+            this.txt_usrDir.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_usrDir.Multiline = true;
+            this.txt_usrDir.Name = "txt_usrDir";
+            this.txt_usrDir.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txt_usrDir.Size = new System.Drawing.Size(263, 24);
+            this.txt_usrDir.TabIndex = 15;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(242, 143);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Dirección:";
+            // 
+            // txt_usrTlf
+            // 
+            this.txt_usrTlf.Location = new System.Drawing.Point(322, 116);
+            this.txt_usrTlf.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_usrTlf.Name = "txt_usrTlf";
+            this.txt_usrTlf.Size = new System.Drawing.Size(263, 20);
+            this.txt_usrTlf.TabIndex = 13;
+            // 
+            // lbl_tlf
+            // 
+            this.lbl_tlf.AutoSize = true;
+            this.lbl_tlf.Location = new System.Drawing.Point(242, 119);
+            this.lbl_tlf.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_tlf.Name = "lbl_tlf";
+            this.lbl_tlf.Size = new System.Drawing.Size(52, 13);
+            this.lbl_tlf.TabIndex = 12;
+            this.lbl_tlf.Text = "Teléfono:";
+            // 
             // txt_confirmPass
             // 
             this.txt_confirmPass.Location = new System.Drawing.Point(114, 92);
@@ -301,44 +339,6 @@
             this.dgv_listaUsrs.Size = new System.Drawing.Size(575, 137);
             this.dgv_listaUsrs.TabIndex = 5;
             // 
-            // txt_usrTlf
-            // 
-            this.txt_usrTlf.Location = new System.Drawing.Point(322, 116);
-            this.txt_usrTlf.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_usrTlf.Name = "txt_usrTlf";
-            this.txt_usrTlf.Size = new System.Drawing.Size(263, 20);
-            this.txt_usrTlf.TabIndex = 13;
-            // 
-            // lbl_tlf
-            // 
-            this.lbl_tlf.AutoSize = true;
-            this.lbl_tlf.Location = new System.Drawing.Point(242, 119);
-            this.lbl_tlf.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_tlf.Name = "lbl_tlf";
-            this.lbl_tlf.Size = new System.Drawing.Size(52, 13);
-            this.lbl_tlf.TabIndex = 12;
-            this.lbl_tlf.Text = "Teléfono:";
-            // 
-            // txt_usrDir
-            // 
-            this.txt_usrDir.Location = new System.Drawing.Point(322, 140);
-            this.txt_usrDir.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_usrDir.Multiline = true;
-            this.txt_usrDir.Name = "txt_usrDir";
-            this.txt_usrDir.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_usrDir.Size = new System.Drawing.Size(263, 24);
-            this.txt_usrDir.TabIndex = 15;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(242, 143);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Dirección:";
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btn_borrarFiltroBusqueda);
@@ -357,45 +357,25 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lista de Usuarios";
             // 
-            // btn_updUsr
+            // btn_borrarFiltroBusqueda
             // 
-            this.btn_updUsr.Location = new System.Drawing.Point(308, 192);
-            this.btn_updUsr.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_updUsr.Name = "btn_updUsr";
-            this.btn_updUsr.Size = new System.Drawing.Size(81, 25);
-            this.btn_updUsr.TabIndex = 1;
-            this.btn_updUsr.Text = "Actualizar";
-            this.btn_updUsr.UseVisualStyleBackColor = true;
+            this.btn_borrarFiltroBusqueda.Location = new System.Drawing.Point(512, 22);
+            this.btn_borrarFiltroBusqueda.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_borrarFiltroBusqueda.Name = "btn_borrarFiltroBusqueda";
+            this.btn_borrarFiltroBusqueda.Size = new System.Drawing.Size(73, 25);
+            this.btn_borrarFiltroBusqueda.TabIndex = 18;
+            this.btn_borrarFiltroBusqueda.Text = "Borrar Filtro";
+            this.btn_borrarFiltroBusqueda.UseVisualStyleBackColor = true;
             // 
-            // btn_borrarUsr
+            // btn_findByNickDniNoms
             // 
-            this.btn_borrarUsr.Location = new System.Drawing.Point(455, 192);
-            this.btn_borrarUsr.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_borrarUsr.Name = "btn_borrarUsr";
-            this.btn_borrarUsr.Size = new System.Drawing.Size(86, 25);
-            this.btn_borrarUsr.TabIndex = 6;
-            this.btn_borrarUsr.Text = "Eliminar";
-            this.btn_borrarUsr.UseVisualStyleBackColor = true;
-            // 
-            // btn_limpiarCampos
-            // 
-            this.btn_limpiarCampos.Location = new System.Drawing.Point(39, 192);
-            this.btn_limpiarCampos.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_limpiarCampos.Name = "btn_limpiarCampos";
-            this.btn_limpiarCampos.Size = new System.Drawing.Size(86, 25);
-            this.btn_limpiarCampos.TabIndex = 7;
-            this.btn_limpiarCampos.Text = "Nuevo";
-            this.btn_limpiarCampos.UseVisualStyleBackColor = true;
-            // 
-            // lbl_findByNickDniNoms
-            // 
-            this.lbl_findByNickDniNoms.AutoSize = true;
-            this.lbl_findByNickDniNoms.Location = new System.Drawing.Point(8, 25);
-            this.lbl_findByNickDniNoms.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_findByNickDniNoms.Name = "lbl_findByNickDniNoms";
-            this.lbl_findByNickDniNoms.Size = new System.Drawing.Size(198, 13);
-            this.lbl_findByNickDniNoms.TabIndex = 16;
-            this.lbl_findByNickDniNoms.Text = "Buscar Usuario por nick, dni, o nombres:";
+            this.btn_findByNickDniNoms.Location = new System.Drawing.Point(446, 22);
+            this.btn_findByNickDniNoms.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_findByNickDniNoms.Name = "btn_findByNickDniNoms";
+            this.btn_findByNickDniNoms.Size = new System.Drawing.Size(53, 25);
+            this.btn_findByNickDniNoms.TabIndex = 17;
+            this.btn_findByNickDniNoms.Text = "Buscar";
+            this.btn_findByNickDniNoms.UseVisualStyleBackColor = true;
             // 
             // txt_findByNickDniNoms
             // 
@@ -408,25 +388,45 @@
             this.txt_findByNickDniNoms.Size = new System.Drawing.Size(219, 20);
             this.txt_findByNickDniNoms.TabIndex = 16;
             // 
-            // btn_findByNickDniNoms
+            // lbl_findByNickDniNoms
             // 
-            this.btn_findByNickDniNoms.Location = new System.Drawing.Point(446, 22);
-            this.btn_findByNickDniNoms.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_findByNickDniNoms.Name = "btn_findByNickDniNoms";
-            this.btn_findByNickDniNoms.Size = new System.Drawing.Size(53, 25);
-            this.btn_findByNickDniNoms.TabIndex = 17;
-            this.btn_findByNickDniNoms.Text = "Buscar";
-            this.btn_findByNickDniNoms.UseVisualStyleBackColor = true;
+            this.lbl_findByNickDniNoms.AutoSize = true;
+            this.lbl_findByNickDniNoms.Location = new System.Drawing.Point(8, 25);
+            this.lbl_findByNickDniNoms.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_findByNickDniNoms.Name = "lbl_findByNickDniNoms";
+            this.lbl_findByNickDniNoms.Size = new System.Drawing.Size(198, 13);
+            this.lbl_findByNickDniNoms.TabIndex = 16;
+            this.lbl_findByNickDniNoms.Text = "Buscar Usuario por nick, dni, o nombres:";
             // 
-            // btn_borrarFiltroBusqueda
+            // btn_limpiarCampos
             // 
-            this.btn_borrarFiltroBusqueda.Location = new System.Drawing.Point(512, 22);
-            this.btn_borrarFiltroBusqueda.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_borrarFiltroBusqueda.Name = "btn_borrarFiltroBusqueda";
-            this.btn_borrarFiltroBusqueda.Size = new System.Drawing.Size(73, 25);
-            this.btn_borrarFiltroBusqueda.TabIndex = 18;
-            this.btn_borrarFiltroBusqueda.Text = "Borrar Filtro";
-            this.btn_borrarFiltroBusqueda.UseVisualStyleBackColor = true;
+            this.btn_limpiarCampos.Location = new System.Drawing.Point(39, 192);
+            this.btn_limpiarCampos.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_limpiarCampos.Name = "btn_limpiarCampos";
+            this.btn_limpiarCampos.Size = new System.Drawing.Size(86, 25);
+            this.btn_limpiarCampos.TabIndex = 7;
+            this.btn_limpiarCampos.Text = "Nuevo";
+            this.btn_limpiarCampos.UseVisualStyleBackColor = true;
+            // 
+            // btn_borrarUsr
+            // 
+            this.btn_borrarUsr.Location = new System.Drawing.Point(455, 192);
+            this.btn_borrarUsr.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_borrarUsr.Name = "btn_borrarUsr";
+            this.btn_borrarUsr.Size = new System.Drawing.Size(86, 25);
+            this.btn_borrarUsr.TabIndex = 6;
+            this.btn_borrarUsr.Text = "Eliminar";
+            this.btn_borrarUsr.UseVisualStyleBackColor = true;
+            // 
+            // btn_updUsr
+            // 
+            this.btn_updUsr.Location = new System.Drawing.Point(308, 192);
+            this.btn_updUsr.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_updUsr.Name = "btn_updUsr";
+            this.btn_updUsr.Size = new System.Drawing.Size(81, 25);
+            this.btn_updUsr.TabIndex = 1;
+            this.btn_updUsr.Text = "Actualizar";
+            this.btn_updUsr.UseVisualStyleBackColor = true;
             // 
             // FrmUsrs
             // 
@@ -438,6 +438,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmUsrs";
             this.Text = "Gestion de Usuarios";
+            this.Load += new System.EventHandler(this.FrmUsrs_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaUsrs)).EndInit();

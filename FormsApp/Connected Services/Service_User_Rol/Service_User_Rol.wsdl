@@ -5,6 +5,7 @@
     <xsd:schema targetNamespace="http://localhost:8733/WcfService/Service_User_Rol/Imports">
       <xsd:import namespace="http://localhost:8733/WcfService/Service_User_Rol" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IGestion_User_Rol_List_Forms_rol_InputMessage">
@@ -73,6 +74,18 @@
   <wsdl:message name="IGestion_User_Rol_get_id_form_OutputMessage">
     <wsdl:part name="parameters" element="tns:get_id_formResponse" />
   </wsdl:message>
+  <wsdl:message name="IGestion_User_Rol_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IGestion_User_Rol_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestion_User_Rol_Forms_For_User_InputMessage">
+    <wsdl:part name="parameters" element="tns:Forms_For_User" />
+  </wsdl:message>
+  <wsdl:message name="IGestion_User_Rol_Forms_For_User_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Forms_For_UserResponse" />
+  </wsdl:message>
   <wsdl:portType name="IGestion_User_Rol">
     <wsdl:operation name="List_Forms_rol">
       <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/List_Forms_rol" message="tns:IGestion_User_Rol_List_Forms_rol_InputMessage" />
@@ -117,6 +130,14 @@
     <wsdl:operation name="get_id_form">
       <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/get_id_form" message="tns:IGestion_User_Rol_get_id_form_InputMessage" />
       <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/get_id_formResponse" message="tns:IGestion_User_Rol_get_id_form_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/Login" message="tns:IGestion_User_Rol_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/LoginResponse" message="tns:IGestion_User_Rol_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Forms_For_User">
+      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/Forms_For_User" message="tns:IGestion_User_Rol_Forms_For_User_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/Forms_For_UserResponse" message="tns:IGestion_User_Rol_Forms_For_User_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:service name="Service_User_Rol">
