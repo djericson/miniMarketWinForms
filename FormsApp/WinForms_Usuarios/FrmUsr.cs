@@ -15,6 +15,8 @@ namespace App
 {
     public partial class FrmUsrs : Form
     {
+        public Tipo_documento Enum_tipoDoc { get; set; }
+
         ClsBL_Usr obj_BLusr = new ClsBL_Usr();
         public FrmUsrs()
         {
@@ -32,4 +34,12 @@ namespace App
         public void _GetDatoss() { }
 
     }
+
+    //enum tipo documento:
+    public enum Tipo_documento
+    {
+        dni,
+        pasaporte
+    }
+
 }
