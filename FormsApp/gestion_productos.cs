@@ -7,6 +7,7 @@ using System.IO;
 using System.Net;
 using System.Windows.Forms;
 using App.UserControl_to_gestion_productos;
+using FormsApp;
 using FormsApp.WCF_Productos;
 using Newtonsoft.Json;
 using NS_Busqueda;
@@ -21,6 +22,8 @@ namespace App
         static SqlCommand command = new SqlCommand();
         static string datarow;
         FormsApp.WCF_Productos.ProductosClient objwcf = new FormsApp.WCF_Productos.ProductosClient();
+
+        
 
         public gestion_productos()
         {
@@ -422,6 +425,13 @@ namespace App
             MessageBox.Show("stock_entry_datessss: " + DateTime.Parse(list_productos.CurrentRow.Cells["fch_ingr_stock"].Value.ToString()).ToString("yyyy-M-dd hh:mm:ss"));
             MessageBox.Show("stock_entry_date: " + Convert.ToDateTime(list_productos.CurrentRow.Cells["fch_ingr_stock"].Value).ToString("dd/M/yyyy", CultureInfo.InvariantCulture));
             MessageBox.Show("stock_entry_date: " + Convert.ToDateTime(list_productos.CurrentRow.Cells["fch_ingr_stock"].Value).ToShortDateString());
+        }
+
+        private void Atras_Click(object sender, EventArgs e)
+        {
+            FormMain FormMain = new FormMain();
+            FormMain.Show();
+            this.Hide();
         }
 
 

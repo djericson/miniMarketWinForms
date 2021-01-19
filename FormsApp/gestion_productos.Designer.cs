@@ -33,7 +33,6 @@ namespace App
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.delete = new System.Windows.Forms.Button();
             this.add_producto = new System.Windows.Forms.Button();
-            this.BtnAyuda = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.update = new System.Windows.Forms.Button();
             this.list_productos = new System.Windows.Forms.DataGridView();
@@ -65,6 +64,8 @@ namespace App
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.numero_producto = new System.Windows.Forms.RichTextBox();
+            this.BtnAyuda = new System.Windows.Forms.Button();
+            this.Atras = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.list_productos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presio_promed_dpt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presio_promdio)).BeginInit();
@@ -95,19 +96,6 @@ namespace App
             this.add_producto.Text = "Insert";
             this.add_producto.UseVisualStyleBackColor = true;
             this.add_producto.Click += new System.EventHandler(this.add_producto_Click);
-            // 
-            // BtnAyuda
-            // 
-            this.BtnAyuda.BackColor = System.Drawing.Color.White;
-            this.BtnAyuda.FlatAppearance.BorderSize = 0;
-            this.BtnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAyuda.Image = global::FormsApp.Properties.Resources.Webp_net_resizeimage__14_;
-            this.BtnAyuda.Location = new System.Drawing.Point(314, 81);
-            this.BtnAyuda.Name = "BtnAyuda";
-            this.BtnAyuda.Size = new System.Drawing.Size(30, 26);
-            this.BtnAyuda.TabIndex = 19;
-            this.BtnAyuda.UseVisualStyleBackColor = false;
-            this.BtnAyuda.Click += new System.EventHandler(this.BtnAyuda_Click);
             // 
             // richTextBox1
             // 
@@ -482,11 +470,38 @@ namespace App
             this.numero_producto.TabIndex = 96;
             this.numero_producto.Text = "";
             // 
+            // BtnAyuda
+            // 
+            this.BtnAyuda.BackColor = System.Drawing.Color.White;
+            this.BtnAyuda.FlatAppearance.BorderSize = 0;
+            this.BtnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAyuda.Image = global::FormsApp.Properties.Resources.Webp_net_resizeimage__14_;
+            this.BtnAyuda.Location = new System.Drawing.Point(314, 81);
+            this.BtnAyuda.Name = "BtnAyuda";
+            this.BtnAyuda.Size = new System.Drawing.Size(30, 26);
+            this.BtnAyuda.TabIndex = 19;
+            this.BtnAyuda.UseVisualStyleBackColor = false;
+            this.BtnAyuda.Click += new System.EventHandler(this.BtnAyuda_Click);
+            // 
+            // Atras
+            // 
+            this.Atras.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.Atras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Atras.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Atras.Image = global::FormsApp.Properties.Resources.Webp_net_resizeimage__15_;
+            this.Atras.Location = new System.Drawing.Point(553, 563);
+            this.Atras.Name = "Atras";
+            this.Atras.Size = new System.Drawing.Size(100, 41);
+            this.Atras.TabIndex = 97;
+            this.Atras.UseVisualStyleBackColor = true;
+            this.Atras.Click += new System.EventHandler(this.Atras_Click);
+            // 
             // gestion_productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 609);
+            this.Controls.Add(this.Atras);
             this.Controls.Add(this.numero_producto);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.presio_promdio);
@@ -571,5 +586,6 @@ namespace App
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox numero_producto;
+        private System.Windows.Forms.Button Atras;
     }
 }
