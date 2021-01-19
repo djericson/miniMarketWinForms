@@ -20,7 +20,7 @@ namespace DAC
         public DataSet list_Forms_Rol()
         {
             dataSet.Clear();
-            cmd = new SqlCommand("select id as codigo, nombre from forms  select r.id as codigo_rol,r.Nombre Name_Rol,f.Nombre as Name_Form,rf.Fecha_Asignacion   from roles r full join Roles_Forms rf on r.id = rf.id_rol full join Forms f on f.id = rf.id_Form", cn);
+            cmd = new SqlCommand("select id as codigo, nombre from forms  select r.id as codigo_rol,r.Nombre Name_Rol,f.Nombre as Name_Form,rf.Fecha_Asignacion   from roles r left join Roles_Forms rf on r.id = rf.id_rol left join Forms f on f.id = rf.id_Form", cn);
             cn.Open();
             loDataReader = cmd.ExecuteReader();
             dataSet.Load(loDataReader, LoadOption.PreserveChanges, new string[] { "list_forms", "list_Roles_forms" });
@@ -30,7 +30,7 @@ namespace DAC
         public DataSet List_User_rol()
         {
                 dataSet.Clear();
-                cmd = new SqlCommand("select id as codigo , nombre  from roles select u.id_usr as codigo_User ,u.usr_nom as Usuario,ro.Nombre as Rol_name,ru.fecha_activa as Fecha_Asignacion from Usuario u full join Roles_Usuarios ru on u.id_usr = ru.id_usuario full join roles ro on ro.id = ru.id_rol", cn);
+                cmd = new SqlCommand("select id as codigo , nombre  from roles select u.id_usr as codigo_User ,u.usr_nom as Usuario,ro.Nombre as Rol_name,ru.fecha_activa as Fecha_Asignacion from Usuario u left join Roles_Usuarios ru on u.id_usr = ru.id_usuario left join roles ro on ro.id = ru.id_rol", cn);
                 //cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Clear();
                 cn.Open();
@@ -75,15 +75,22 @@ namespace DAC
 
         public void insert_Rol_user(int rol, int user)
         {
+            try
+            {
+                cmd = new SqlCommand("insert_rol_user", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id_rol", rol);
+                cmd.Parameters.AddWithValue("@id_user", user);
+                cn.Open();
+                cmd.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
             
-            cmd = new SqlCommand("insert_rol_user", cn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Clear();
-            cmd.Parameters.AddWithValue("@id_rol", rol);
-            cmd.Parameters.AddWithValue("@id_user", user);
-            cn.Open();
-            cmd.ExecuteNonQuery();
-            cn.Close();
         }
         public void delete_Rol_user(int rol, int user)
         {
@@ -113,14 +120,21 @@ namespace DAC
         public void insert_Forms_rol(int rol, int form)
         {
 
-            cmd = new SqlCommand("insert_Forms_rol", cn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Clear();
-            cmd.Parameters.AddWithValue("@id_rol", rol);
-            cmd.Parameters.AddWithValue("@id_Form", form);
-            cn.Open();
-            cmd.ExecuteNonQuery();
-            cn.Close();
+            try
+            {
+                cmd = new SqlCommand("insert_Forms_rol", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id_rol", rol);
+                cmd.Parameters.AddWithValue("@id_Form", form);
+                cn.Open();
+                cmd.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
         public void delete_Forms_rol(int rol, int form)
         {

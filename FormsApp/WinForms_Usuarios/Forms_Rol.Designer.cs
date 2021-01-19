@@ -93,7 +93,7 @@
             this.list_Form_rol.RowHeadersWidth = 30;
             this.list_Form_rol.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.list_Form_rol.ShowEditingIcon = false;
-            this.list_Form_rol.Size = new System.Drawing.Size(266, 194);
+            this.list_Form_rol.Size = new System.Drawing.Size(314, 194);
             this.list_Form_rol.TabIndex = 43;
             this.list_Form_rol.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.list_user_rol_CellClick);
             // 
@@ -144,7 +144,7 @@
             this.Controls.Add(this.list_Form_rol);
             this.Controls.Add(this.label2);
             this.Name = "Forms_Rol";
-            this.Size = new System.Drawing.Size(348, 446);
+            this.Size = new System.Drawing.Size(396, 446);
             this.Load += new System.EventHandler(this.Forms_Rol_Load);
             ((System.ComponentModel.ISupportInitialize)(this.list_Form_rol)).EndInit();
             this.ResumeLayout(false);

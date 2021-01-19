@@ -22,6 +22,7 @@ namespace FormsApp.WinForms_Usuarios
 
         private void creacion_rol_Click(object sender, EventArgs e)
         {
+            creacion_rol.Text = "Creacion Rol";
             SidePanel.Height = creacion_rol.Height;
             SidePanel.Top = creacion_rol.Top;
             creacion_Rol1.BringToFront();
@@ -30,6 +31,7 @@ namespace FormsApp.WinForms_Usuarios
 
         private void Rol_user_Click(object sender, EventArgs e)
         {
+            Rol_user.Text = "Rol Usuario ";
             SidePanel.Height = Rol_user.Height;
             SidePanel.Top = Rol_user.Top;
             asignacion_Rol1.BringToFront();
@@ -38,11 +40,14 @@ namespace FormsApp.WinForms_Usuarios
 
         private void Rol_Usuario_Load(object sender, EventArgs e)
         {
-
+            Rol_user.Text = "Rol Usuario ";
+            creacion_rol.Text = "Creacion Rol";
+            Forms_rol.Text = "Forms Rol ";
         }
 
         private void Forms_rol_Click(object sender, EventArgs e)
         {
+            Forms_rol.Text = "Forms Rol ";
             SidePanel.Height = Forms_rol.Height;
             SidePanel.Top = Forms_rol.Top;
             forms_Rol1.BringToFront();
