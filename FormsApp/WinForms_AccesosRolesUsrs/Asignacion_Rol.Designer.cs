@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.update_rol_user = new System.Windows.Forms.Button();
             this.add_Rol = new System.Windows.Forms.Button();
             this.list_user_rol = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.roles = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.Atras = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.list_user_rol)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,15 +78,15 @@
             this.list_user_rol.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.list_user_rol.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.list_user_rol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.NullValue = null;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.list_user_rol.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.NullValue = null;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.list_user_rol.DefaultCellStyle = dataGridViewCellStyle3;
             this.list_user_rol.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.list_user_rol.Location = new System.Drawing.Point(21, 270);
             this.list_user_rol.Name = "list_user_rol";
@@ -93,7 +94,7 @@
             this.list_user_rol.RowHeadersWidth = 30;
             this.list_user_rol.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.list_user_rol.ShowEditingIcon = false;
-            this.list_user_rol.Size = new System.Drawing.Size(263, 248);
+            this.list_user_rol.Size = new System.Drawing.Size(317, 248);
             this.list_user_rol.TabIndex = 27;
             this.list_user_rol.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.list_user_rol_CellClick);
             // 
@@ -135,10 +136,24 @@
             this.label3.TabIndex = 43;
             this.label3.Text = "Roles";
             // 
+            // Atras
+            // 
+            this.Atras.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.Atras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Atras.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Atras.Image = global::FormsApp.Properties.Resources.Webp_net_resizeimage__15_;
+            this.Atras.Location = new System.Drawing.Point(236, 56);
+            this.Atras.Name = "Atras";
+            this.Atras.Size = new System.Drawing.Size(54, 41);
+            this.Atras.TabIndex = 83;
+            this.Atras.UseVisualStyleBackColor = true;
+            this.Atras.Click += new System.EventHandler(this.Atras_Click);
+            // 
             // Asignacion_Rol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Atras);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.roles);
             this.Controls.Add(this.update_rol_user);
@@ -146,7 +161,7 @@
             this.Controls.Add(this.list_user_rol);
             this.Controls.Add(this.label2);
             this.Name = "Asignacion_Rol";
-            this.Size = new System.Drawing.Size(328, 546);
+            this.Size = new System.Drawing.Size(382, 546);
             this.Load += new System.EventHandler(this.Asignacion_Rol_Load);
             ((System.ComponentModel.ISupportInitialize)(this.list_user_rol)).EndInit();
             this.ResumeLayout(false);
@@ -162,5 +177,6 @@
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.ComboBox roles;
         public System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button Atras;
     }
 }

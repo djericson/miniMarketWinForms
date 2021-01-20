@@ -114,6 +114,24 @@ namespace FormsApp.SrvRef_UsrRol {
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/get_id_form", ReplyAction="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/get_id_formRe" +
             "sponse")]
         System.Threading.Tasks.Task<int> get_id_formAsync(string form);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/Login", ReplyAction="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/LoginResponse" +
+            "")]
+        string[][] Login(string user, string pasword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/Login", ReplyAction="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/LoginResponse" +
+            "")]
+        System.Threading.Tasks.Task<string[][]> LoginAsync(string user, string pasword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/Forms_For_Use" +
+            "r", ReplyAction="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/Forms_For_Use" +
+            "rResponse")]
+        string Forms_For_User(int ID_Rol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/Forms_For_Use" +
+            "r", ReplyAction="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/Forms_For_Use" +
+            "rResponse")]
+        System.Threading.Tasks.Task<string> Forms_For_UserAsync(int ID_Rol);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -229,6 +247,22 @@ namespace FormsApp.SrvRef_UsrRol {
         
         public System.Threading.Tasks.Task<int> get_id_formAsync(string form) {
             return base.Channel.get_id_formAsync(form);
+        }
+        
+        public string[][] Login(string user, string pasword) {
+            return base.Channel.Login(user, pasword);
+        }
+        
+        public System.Threading.Tasks.Task<string[][]> LoginAsync(string user, string pasword) {
+            return base.Channel.LoginAsync(user, pasword);
+        }
+        
+        public string Forms_For_User(int ID_Rol) {
+            return base.Channel.Forms_For_User(ID_Rol);
+        }
+        
+        public System.Threading.Tasks.Task<string> Forms_For_UserAsync(int ID_Rol) {
+            return base.Channel.Forms_For_UserAsync(ID_Rol);
         }
     }
 }

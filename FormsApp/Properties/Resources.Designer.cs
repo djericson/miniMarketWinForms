@@ -89,5 +89,15 @@ namespace NS_WinFormsApps.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Webp_net_resizeimage__15_ {
+            get {
+                object obj = ResourceManager.GetObject("Webp_net_resizeimage__15_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

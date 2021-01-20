@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.delete_Forms_rol = new System.Windows.Forms.Button();
             this.add_Forms_Rol = new System.Windows.Forms.Button();
             this.list_Form_rol = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Forms = new System.Windows.Forms.ComboBox();
+            this.Atras = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.list_Form_rol)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,15 +78,15 @@
             this.list_Form_rol.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.list_Form_rol.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.list_Form_rol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.NullValue = null;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.list_Form_rol.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.NullValue = null;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.list_Form_rol.DefaultCellStyle = dataGridViewCellStyle3;
             this.list_Form_rol.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.list_Form_rol.Location = new System.Drawing.Point(38, 249);
             this.list_Form_rol.Name = "list_Form_rol";
@@ -133,10 +134,24 @@
             this.Forms.Size = new System.Drawing.Size(132, 25);
             this.Forms.TabIndex = 46;
             // 
+            // Atras
+            // 
+            this.Atras.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.Atras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Atras.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Atras.Image = global::FormsApp.Properties.Resources.Webp_net_resizeimage__15_;
+            this.Atras.Location = new System.Drawing.Point(281, 19);
+            this.Atras.Name = "Atras";
+            this.Atras.Size = new System.Drawing.Size(71, 41);
+            this.Atras.TabIndex = 83;
+            this.Atras.UseVisualStyleBackColor = true;
+            this.Atras.Click += new System.EventHandler(this.Atras_Click);
+            // 
             // Forms_Rol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Atras);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Forms);
             this.Controls.Add(this.delete_Forms_rol);
@@ -160,5 +175,6 @@
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.ComboBox Forms;
+        private System.Windows.Forms.Button Atras;
     }
 }

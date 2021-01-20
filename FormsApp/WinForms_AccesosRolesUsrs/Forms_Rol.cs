@@ -87,5 +87,14 @@ namespace NS_WinFormsApps.WinForms_AccesosRolesUsrs
             }
 
         }
+
+        private void Atras_Click(object sender, EventArgs e)
+        {
+
+            FormMain FormMain = new FormMain();
+            FormMain.Show();
+            Rol_Usuario rol_Usuario = new Rol_Usuario();
+            rol_Usuario.Hide();
+        }
     }
 }

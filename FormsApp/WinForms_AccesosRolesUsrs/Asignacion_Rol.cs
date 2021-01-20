@@ -132,5 +132,14 @@ namespace NS_WinFormsApps.WinForms_AccesosRolesUsrs
             //int codigo = (int)((DataRowView)roles.Items[roles.SelectedIndex])["codigo"];
 
         }
+
+        private void Atras_Click(object sender, EventArgs e)
+        {
+
+            FormMain FormMain = new FormMain();
+            FormMain.Show();
+            Rol_Usuario rol_Usuario = new Rol_Usuario();
+            rol_Usuario.Hide();
+        }
     }
 }

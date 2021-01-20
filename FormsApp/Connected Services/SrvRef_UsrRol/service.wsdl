@@ -103,5 +103,23 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Forms_For_User">
+      <soap:operation soapAction="http://localhost:8733/WcfService/Service_User_Rol/IGestion_User_Rol/Forms_For_User" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
 </wsdl:definitions>

@@ -28,11 +28,20 @@ namespace BL
             return null;
         }
 
-        public string BL_Login(string user, string pasword)
+        public List<List<string>> Login(string user, string pasword)
         {
             var Rol_User = dac_usr.Login(user, pasword);
             if (Rol_User != null) {
                 return Rol_User;
+            }
+            return null;
+        }
+        public DataTable Forms_For_User(int ID_Rol)
+        {
+            var _DataTable = dac_usr.Forms_For_User(ID_Rol);
+            if (_DataTable != null)
+            {
+                return _DataTable;
             }
             return null;
         }
