@@ -42,7 +42,7 @@ namespace WcfService
             BL.delete_Rol_user(rol, user);
         }
 
-        string IGestion_User_Rol.List_User_rol()
+        public string List_User_rol()
         {
              var data = BL.List_User_rol();
              Type type = data.GetType();
@@ -65,10 +65,7 @@ namespace WcfService
              return output;
           
         }
-
-
-
-        int IGestion_User_Rol.get_id_rol(string rol)
+        public int get_id_rol(string rol)
         {
             var data = BL.get_id_rol(rol);
             return data;

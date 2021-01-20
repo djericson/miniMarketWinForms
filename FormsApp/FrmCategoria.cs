@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
  using BL;
 
-namespace FormsApp
+namespace NS_WinFormsApps
 {
     public partial class FrmCategoria : Form
     {

@@ -6,13 +6,13 @@ using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Windows.Forms;
-using App.UserControl_to_gestion_productos;
-using FormsApp;
+
+//using App.UserControl_to_gestion_productos;
 using FormsApp.WCF_Productos;
 using Newtonsoft.Json;
 using NS_Busqueda;
 
-namespace App
+namespace NS_WinFormsApps
 {
     public partial class gestion_productos : Form
     {
@@ -23,8 +23,6 @@ namespace App
         static string datarow;
         FormsApp.WCF_Productos.ProductosClient objwcf = new FormsApp.WCF_Productos.ProductosClient();
 
-        
-
         public gestion_productos()
         {
             InitializeComponent();
@@ -32,11 +30,6 @@ namespace App
             //update_product2.BringToFront();
 
         }
-
-       
-
-         
-         
 
         private void gestion_productos_Load(object sender, EventArgs e)
         {
@@ -427,13 +420,6 @@ namespace App
             MessageBox.Show("stock_entry_date: " + Convert.ToDateTime(list_productos.CurrentRow.Cells["fch_ingr_stock"].Value).ToShortDateString());
         }
 
-        private void Atras_Click(object sender, EventArgs e)
-        {
-            FormMain FormMain = new FormMain();
-            FormMain.Show();
-            this.Hide();
-        }
-
 
         //private void producto_Click(object sender, EventArgs e)
         //{
@@ -445,5 +431,8 @@ namespace App
         //    product_det1.BringToFront();
         //}
     }
+
+
+
 }
  

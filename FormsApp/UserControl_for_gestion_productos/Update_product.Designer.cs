@@ -1,4 +1,4 @@
-﻿namespace App.UserControl_to_gestion_productos
+﻿namespace NS_WinFormsApps.UserControl_to_gestion_productos
 {
     partial class Update_product
     {

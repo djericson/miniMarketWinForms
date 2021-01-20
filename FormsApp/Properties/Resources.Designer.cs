@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FormsApp.Properties {
+namespace NS_WinFormsApps.Properties {
     using System;
     
     

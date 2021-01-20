@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FormsApp.UserControl_for_gestion_productos
+namespace NS_WinFormsApps.UserControl_for_gestion_productos
 {
     public partial class product_det : UserControl
     {

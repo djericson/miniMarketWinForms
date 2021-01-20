@@ -1,5 +1,5 @@
 ﻿
-namespace App
+namespace NS_WinFormsApps
 {
     partial class FrmPedido
     {

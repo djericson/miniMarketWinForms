@@ -1,5 +1,5 @@
 ﻿
-namespace FormsApp
+namespace NS_WinFormsApps
 {
     partial class FrmCategoria
     {
