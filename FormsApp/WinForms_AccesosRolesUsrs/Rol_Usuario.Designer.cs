@@ -68,7 +68,7 @@
             this.update_rol_user.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.update_rol_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.update_rol_user.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.update_rol_user.Location = new System.Drawing.Point(246, 184);
+            this.update_rol_user.Location = new System.Drawing.Point(236, 184);
             this.update_rol_user.Name = "update_rol_user";
             this.update_rol_user.Size = new System.Drawing.Size(89, 28);
             this.update_rol_user.TabIndex = 47;
@@ -118,7 +118,7 @@
             this.list_user_rol.RowHeadersWidth = 30;
             this.list_user_rol.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.list_user_rol.ShowEditingIcon = false;
-            this.list_user_rol.Size = new System.Drawing.Size(275, 183);
+            this.list_user_rol.Size = new System.Drawing.Size(420, 183);
             this.list_user_rol.TabIndex = 45;
             this.list_user_rol.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.list_user_rol_CellClick);
             // 
@@ -151,7 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(360, 548);
+            this.ClientSize = new System.Drawing.Size(478, 548);
             this.Controls.Add(this.Atras);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.roles);
