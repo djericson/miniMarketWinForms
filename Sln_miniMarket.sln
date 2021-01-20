@@ -12,9 +12,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfService", "WcfService\WcfService.csproj", "{E6F65ADC-A8FE-4C2F-9D61-CCE4627A26F8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsApp", "FormsApp\FormsApp.csproj", "{7E335682-3DDA-46DB-9FE0-8B7B99D13003}"
-	ProjectSection(ProjectDependencies) = postProject
-		{E6F65ADC-A8FE-4C2F-9D61-CCE4627A26F8} = {E6F65ADC-A8FE-4C2F-9D61-CCE4627A26F8}
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

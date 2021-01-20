@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using FormsApp;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,13 +11,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using FormsApp.SrvRef_UsrRol;
+ 
 
 namespace NS_WinFormsApps.WinForms_AccesosRolesUsrs
 {
     public partial class Forms_Rol : Form
     {
-        Service_User_Rol.Gestion_User_RolClient objwcf = new Service_User_Rol.Gestion_User_RolClient();
+
+        FormsApp.SrvRef_UsrRol.Gestion_User_RolClient objWcf = new FormsApp.SrvRef_UsrRol.Gestion_User_RolClient();
         DataSet dataSet = new DataSet();
 
         public Forms_Rol()
@@ -32,26 +34,36 @@ namespace NS_WinFormsApps.WinForms_AccesosRolesUsrs
             {
                 var id_form = Convert.ToInt32(Forms.SelectedValue.ToString());
                 var id_rol = Convert.ToInt32(list_Form_rol.CurrentRow.Cells[0].Value.ToString());
-                objwcf.insert_Forms_rol(id_rol, id_form);
+                objWcf.insert_Forms_rol(id_rol, id_form);
                 load_forms_rol();
             }
         }
 
         public void load_forms_rol()
         {
-            //var data = objwcf.List_Forms_rol();
+            var data = objWcf.List_Forms_rol();
             Type type = dataSet.GetType();
             var dataset = Deserialize(data, type);
             Forms.DataSource = dataset.Tables["list_forms"];
-            Forms.DisplayMember = "nombre"; 
+            Forms.DisplayMember = "nombre";
             Forms.ValueMember = "codigo";
 
             list_Form_rol.DataSource = dataset.Tables["list_Roles_forms"];
-            if(list_Form_rol.Columns.Count != 0)
+            if (list_Form_rol.Columns.Count != 0)
             {
-                list_Form_rol.Columns[0].Visible = false;
-                list_Form_rol.CurrentCell = list_Form_rol.Rows[0].Cells[1];
 
+                //var dataset = Deserialize(data, type);
+                //Forms.DataSource = dataset.Tables["list_forms"];
+                Forms.DisplayMember = "nombre";
+                Forms.ValueMember = "codigo";
+
+                //list_Form_rol.DataSource = dataset.Tables["list_Roles_forms"];
+                if (list_Form_rol.Columns.Count != 0)
+                {
+                    list_Form_rol.Columns[0].Visible = false;
+                    list_Form_rol.CurrentCell = list_Form_rol.Rows[0].Cells[1];
+
+                }
             }
         }
         DataSet Deserialize(string DataTable, Type type1)
@@ -69,11 +81,14 @@ namespace NS_WinFormsApps.WinForms_AccesosRolesUsrs
         }
         private void Atras_Click(object sender, EventArgs e)
         {
-            if(list_Form_rol.Columns.Count != 0 && Forms.Items.Count != 0)
-            {
+            Gestion_Roles_User _Gestion_Roles_User = new Gestion_Roles_User();
+            _Gestion_Roles_User.Show();
+            this.Hide();
+ 
+            if(list_Form_rol.Columns.Count != 0 && Forms.Items.Count != 0) {
                 var id_form = Convert.ToInt32(Forms.SelectedValue.ToString());
                 var id_rol = Convert.ToInt32(list_Form_rol.CurrentRow.Cells[0].Value.ToString());
-                objwcf.insert_Forms_rol(id_rol, id_form);
+                //objwcf.insert_Forms_rol(id_rol, id_form);
                 load_forms_rol();
             }
            
@@ -87,8 +102,6 @@ namespace NS_WinFormsApps.WinForms_AccesosRolesUsrs
                 //objwcf.delete_Forms_rol(id_rol, id_form);
                 load_forms_rol();
             }
-
-                
         }
 
         private void Forms_Rol_Load(object sender, EventArgs e)
@@ -98,13 +111,15 @@ namespace NS_WinFormsApps.WinForms_AccesosRolesUsrs
 
         private void list_Form_rol_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
             if (list_Form_rol.Columns.Count > 2 && Forms.Items.Count != 0)
             {
 
+            }
+            if (list_Form_rol.Columns.Count > 2 && Forms.Items.Count != 0) {
                 var data = list_Form_rol.CurrentRow.Cells[2].Value.ToString();
                 Forms.Text = data;
             }
         }
     }
+            
 }

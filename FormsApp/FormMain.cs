@@ -1,6 +1,8 @@
-﻿using App;
+﻿ 
 
 using Newtonsoft.Json;
+using NS_WinFormsApps;
+using NS_WinFormsApps.WinForms_AccesosRolesUsrs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WcfService;
 
 namespace FormsApp
 {
@@ -24,7 +27,7 @@ namespace FormsApp
 
 
         public static DataTable dataTable = new DataTable();
-        Service_User_Rol.Gestion_User_RolClient objwcf = new Service_User_Rol.Gestion_User_RolClient();
+        SrvRef_UsrRol.Gestion_User_RolClient objwcf = new SrvRef_UsrRol.Gestion_User_RolClient();
         public FormMain()
         {
             InitializeComponent();
@@ -50,6 +53,7 @@ namespace FormsApp
         {
             ID_usuario.Text = login.ID_Usuario.ToString();
             Usuario.Text = login.Usuario;
+            //MessageBox.Show(""+ MasDeUnRol.Name_Rol);
             Rol.Text = MasDeUnRol.Name_Rol;
             Rol.Text = login.Rol;
             //Type type = dataTable.GetType();

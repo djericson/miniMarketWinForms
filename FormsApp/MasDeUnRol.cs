@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WcfService;
 
 namespace FormsApp
 {
@@ -22,7 +23,7 @@ namespace FormsApp
         public static int ID_ROL = 0;
         public static string Name_Rol = "";
 
-        Service_User_Rol.Gestion_User_RolClient objwcf = new Service_User_Rol.Gestion_User_RolClient();
+        SrvRef_UsrRol.Gestion_User_RolClient objwcf = new SrvRef_UsrRol.Gestion_User_RolClient();
         public static DataTable dataTable2 = new DataTable();
         public MasDeUnRol()
         {

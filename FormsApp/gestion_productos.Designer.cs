@@ -101,7 +101,7 @@ namespace NS_WinFormsApps
             this.BtnAyuda.BackColor = System.Drawing.Color.White;
             this.BtnAyuda.FlatAppearance.BorderSize = 0;
             this.BtnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAyuda.Image = global::NS_WinFormsApps.Properties.Resources.Webp_net_resizeimage__14_;
+            //this.BtnAyuda.Image = global::NS_WinFormsApps.Properties.Resources.Webp_net_resizeimage__14_;
             this.BtnAyuda.Location = new System.Drawing.Point(314, 81);
             this.BtnAyuda.Name = "BtnAyuda";
             this.BtnAyuda.Size = new System.Drawing.Size(30, 26);

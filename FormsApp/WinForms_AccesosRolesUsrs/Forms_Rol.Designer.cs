@@ -74,7 +74,7 @@
             this.delete_Forms_rol.TabIndex = 51;
             this.delete_Forms_rol.Text = "delete";
             this.delete_Forms_rol.UseVisualStyleBackColor = true;
-            this.delete_Forms_rol.Click += new System.EventHandler(this.delete_Forms_rol_Click);
+            //this.delete_Forms_rol.Click += new System.EventHandler(this.delete_Forms_rol_Click);
             // 
             // add_Forms_Rol
             // 
@@ -120,7 +120,7 @@
             this.list_Form_rol.ShowEditingIcon = false;
             this.list_Form_rol.Size = new System.Drawing.Size(308, 179);
             this.list_Form_rol.TabIndex = 49;
-            this.list_Form_rol.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.list_Form_rol_CellClick);
+            //this.list_Form_rol.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.list_Form_rol_CellClick);
             // 
             // label2
             // 
@@ -139,13 +139,13 @@
             this.Atras.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.Atras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Atras.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Atras.Image = global::FormsApp.Properties.Resources.Webp_net_resizeimage__15_;
+            //this.Atras.Image = global::FormsApp.Properties.Resources.Webp_net_resizeimage__15_;
             this.Atras.Location = new System.Drawing.Point(34, 465);
             this.Atras.Name = "Atras";
             this.Atras.Size = new System.Drawing.Size(76, 37);
             this.Atras.TabIndex = 84;
             this.Atras.UseVisualStyleBackColor = true;
-            this.Atras.Click += new System.EventHandler(this.Atras_Click);
+            //this.Atras.Click += new System.EventHandler(this.Atras_Click);
             // 
             // Forms_Rol
             // 
@@ -163,7 +163,7 @@
             this.Name = "Forms_Rol";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Creacion_Rol";
-            this.Load += new System.EventHandler(this.Forms_Rol_Load);
+            //this.Load += new System.EventHandler(this.Forms_Rol_Load);
             ((System.ComponentModel.ISupportInitialize)(this.list_Form_rol)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,4 +1,4 @@
-﻿namespace NS_WinFormsApps.WinForms_AccesosRolesUsrs
+﻿namespace FormsApp
 {
     partial class Creacion_Rol
     {
@@ -50,7 +50,7 @@
             this.delete_rol.TabIndex = 30;
             this.delete_rol.Text = "delete";
             this.delete_rol.UseVisualStyleBackColor = true;
-            this.delete_rol.Click += new System.EventHandler(this.delete_rol_Click);
+            this.delete_rol.Click += new System.EventHandler(this.delete_rol_Click_1);
             // 
             // add_Rol
             // 
@@ -96,7 +96,7 @@
             this.dataGrid_Roles.ShowEditingIcon = false;
             this.dataGrid_Roles.Size = new System.Drawing.Size(213, 181);
             this.dataGrid_Roles.TabIndex = 28;
-            this.dataGrid_Roles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_Roles_CellClick);
+            this.dataGrid_Roles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_Roles_CellClick_1);
             // 
             // name_rol
             // 
@@ -144,7 +144,7 @@
             this.Atras.Size = new System.Drawing.Size(76, 37);
             this.Atras.TabIndex = 83;
             this.Atras.UseVisualStyleBackColor = true;
-            this.Atras.Click += new System.EventHandler(this.Atras_Click);
+            this.Atras.Click += new System.EventHandler(this.Atras_Click_1);
             // 
             // Creacion_Rol
             // 
@@ -162,7 +162,7 @@
             this.Name = "Creacion_Rol";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Creacion_Rol";
-            this.Load += new System.EventHandler(this.Creacion_Rol_Load);
+            this.Load += new System.EventHandler(this.Creacion_Rol_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Roles)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

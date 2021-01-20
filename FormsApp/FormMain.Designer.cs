@@ -160,7 +160,7 @@
             this.Atras.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.Atras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Atras.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Atras.Image = global::FormsApp.Properties.Resources.Webp_net_resizeimage__15_;
+            //this.Atras.Image = global::FormsApp.Properties.Resources.Webp_net_resizeimage__15_;
             this.Atras.Location = new System.Drawing.Point(185, 426);
             this.Atras.Name = "Atras";
             this.Atras.Size = new System.Drawing.Size(93, 41);

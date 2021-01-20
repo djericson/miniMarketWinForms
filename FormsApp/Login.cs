@@ -1,6 +1,6 @@
-﻿using App;
-using FormsApp;
+﻿using FormsApp;
 using Newtonsoft.Json;
+using NS_WinFormsApps;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +20,7 @@ namespace FormsApp
         public static string Pasword = "";
         public static int richTextlent = 1;
 
-        Service_User_Rol.Gestion_User_RolClient objwcf = new Service_User_Rol.Gestion_User_RolClient();
+        SrvRef_UsrRol.Gestion_User_RolClient objwcf = new SrvRef_UsrRol.Gestion_User_RolClient();
         gestion_productos _gestion_productos = new gestion_productos();
          FormMain _FormMain = new FormMain();
 

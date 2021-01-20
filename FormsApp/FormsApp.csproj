@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -77,6 +92,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="FormMain.cs" />
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,9 +132,23 @@
     <Compile Include="login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="MasDeUnRol.cs" />
+    <Compile Include="MasDeUnRol.Designer.cs">
+      <DependentUpon>MasDeUnRol.cs</DependentUpon>
+    </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Include="UserControl_for_gestion_productos\Update_product.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -140,22 +173,14 @@
     <Compile Include="Ventas-pagos\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
-    <Compile Include="WinForms_AccesosRolesUsrs\Asignacion_Rol.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="WinForms_AccesosRolesUsrs\Asignacion_Rol.Designer.cs">
-      <DependentUpon>Asignacion_Rol.cs</DependentUpon>
-    </Compile>
     <Compile Include="WinForms_AccesosRolesUsrs\Creacion_Rol.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WinForms_AccesosRolesUsrs\Creacion_Rol.Designer.cs">
+    <Compile Include="WinForms_AccesosRolesUsrs\Creacion_Rol.designer.cs">
       <DependentUpon>Creacion_Rol.cs</DependentUpon>
     </Compile>
-    <Compile Include="WinForms_AccesosRolesUsrs\Forms_Rol.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="WinForms_AccesosRolesUsrs\Forms_Rol.Designer.cs">
+    <Compile Include="WinForms_AccesosRolesUsrs\Forms_Rol.cs" />
+    <Compile Include="WinForms_AccesosRolesUsrs\Forms_Rol.designer.cs">
       <DependentUpon>Forms_Rol.cs</DependentUpon>
     </Compile>
     <Compile Include="WinForms_AccesosRolesUsrs\FrmUsr.cs">
@@ -170,14 +195,23 @@
     <Compile Include="WinForms_AccesosRolesUsrs\FrmVentanasMenus.Designer.cs">
       <DependentUpon>FrmVentanasMenus.cs</DependentUpon>
     </Compile>
+    <Compile Include="WinForms_AccesosRolesUsrs\Gestion_Roles_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForms_AccesosRolesUsrs\Gestion_Roles_User.designer.cs">
+      <DependentUpon>Gestion_Roles_User.cs</DependentUpon>
+    </Compile>
     <Compile Include="WinForms_AccesosRolesUsrs\Rol_Usuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WinForms_AccesosRolesUsrs\Rol_Usuario.Designer.cs">
+    <Compile Include="WinForms_AccesosRolesUsrs\Rol_Usuario.designer.cs">
       <DependentUpon>Rol_Usuario.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Busqueda.resx">
       <DependentUpon>Busqueda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCategoria.resx">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
@@ -197,16 +231,14 @@
     <EmbeddedResource Include="login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="MasDeUnRol.resx">
+      <DependentUpon>MasDeUnRol.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl_for_gestion_productos\Update_product.resx">
       <DependentUpon>Update_product.cs</DependentUpon>
     </EmbeddedResource>
@@ -216,9 +248,6 @@
     <EmbeddedResource Include="Ventas-pagos\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WinForms_AccesosRolesUsrs\Asignacion_Rol.resx">
-      <DependentUpon>Asignacion_Rol.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="WinForms_AccesosRolesUsrs\Creacion_Rol.resx">
       <DependentUpon>Creacion_Rol.cs</DependentUpon>
     </EmbeddedResource>
@@ -227,6 +256,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WinForms_AccesosRolesUsrs\FrmUsr.resx">
       <DependentUpon>FrmUsr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinForms_AccesosRolesUsrs\Gestion_Roles_User.resx">
+      <DependentUpon>Gestion_Roles_User.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WinForms_AccesosRolesUsrs\Rol_Usuario.resx">
       <DependentUpon>Rol_Usuario.cs</DependentUpon>
@@ -270,15 +302,6 @@
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\WcfService.CompositeType.datasource" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -311,6 +334,10 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Resources\Webp.net-resizeimage %2812%29.png" />
     <None Include="Resources\Webp.net-resizeimage %2813%29.png" />
     <None Include="Resources\Webp.net-resizeimage %2814%29.png" />
@@ -339,6 +366,18 @@
     <WCFMetadataStorage Include="Connected Services\SrvRef_UsrRol\" />
     <WCFMetadataStorage Include="Connected Services\SrvRef_Usr\" />
     <WCFMetadataStorage Include="Connected Services\WCF_Productos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

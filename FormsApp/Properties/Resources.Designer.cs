@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NS_WinFormsApps.Properties {
+namespace FormsApp.Properties {
     using System;
     
     
@@ -22,7 +22,7 @@ namespace NS_WinFormsApps.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace NS_WinFormsApps.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FormsApp.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace NS_WinFormsApps.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace NS_WinFormsApps.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Webp_net_resizeimage__12_ {
+        public static System.Drawing.Bitmap Webp_net_resizeimage__12_ {
             get {
                 object obj = ResourceManager.GetObject("Webp_net_resizeimage__12_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +73,7 @@ namespace NS_WinFormsApps.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Webp_net_resizeimage__13_ {
+        public static System.Drawing.Bitmap Webp_net_resizeimage__13_ {
             get {
                 object obj = ResourceManager.GetObject("Webp_net_resizeimage__13_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +83,7 @@ namespace NS_WinFormsApps.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Webp_net_resizeimage__14_ {
+        public static System.Drawing.Bitmap Webp_net_resizeimage__14_ {
             get {
                 object obj = ResourceManager.GetObject("Webp_net_resizeimage__14_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +93,7 @@ namespace NS_WinFormsApps.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Webp_net_resizeimage__15_ {
+        public static System.Drawing.Bitmap Webp_net_resizeimage__15_ {
             get {
                 object obj = ResourceManager.GetObject("Webp_net_resizeimage__15_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
