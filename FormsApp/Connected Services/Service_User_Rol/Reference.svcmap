@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ca56a526-d3d4-4ab1-a1e1-dee394353fb8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c74fca31-6b58-4f71-ae3d-dddb6c45ff0e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/WcfService/Service_User_Rol/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Service_User_Rol.wsdl" MetadataType="Wsdl" ID="9c1ad9ad-ecc0-479c-b770-ac538a87cb2a" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfService/Service_User_Rol/mex" />
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="923a64b7-efc7-4219-8516-1338ed4c0485" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfService/Service_User_Rol/mex" />
-    <MetadataFile FileName="Service_User_Rol.xsd" MetadataType="Schema" ID="bebece89-925a-4eef-adfb-5be5070fd3e3" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfService/Service_User_Rol/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="90dc9b00-5b84-41c3-b90f-42ccb16c7112" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfService/Service_User_Rol/mex" />
-    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="70e16142-4055-4136-9eda-8bc136875078" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfService/Service_User_Rol/mex" />
+    <MetadataFile FileName="Service_User_Rol.wsdl" MetadataType="Wsdl" ID="bccb7e86-b037-4244-97db-87e5e5509dff" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfService/Service_User_Rol/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="c71b570d-5423-4a40-9f5b-34cc4935619a" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfService/Service_User_Rol/mex" />
+    <MetadataFile FileName="Service_User_Rol.xsd" MetadataType="Schema" ID="b05b7a05-7210-4166-b93d-aeeb9fcea582" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfService/Service_User_Rol/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="53f44a88-7a16-4fe3-b289-bb776a49e2f1" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfService/Service_User_Rol/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="8fb766b2-c4a4-4a33-a760-fa94989192cb" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfService/Service_User_Rol/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

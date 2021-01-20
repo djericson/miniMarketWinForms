@@ -53,32 +53,39 @@ namespace DAC
         }
         public List<List<string>> Login(string user, string pasword)
         {
-            DatosUsuario.Clear();
-            cmd = new SqlCommand("Login", cn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Clear();
-            cmd.Parameters.AddWithValue("@Usuario", user);
-            cmd.Parameters.AddWithValue("@Pasword", pasword);
-            cn.Open();
-            loDataReader = cmd.ExecuteReader();
-            dataSet.Load(loDataReader, LoadOption.PreserveChanges, new string[] { "Usuario", "roles_user" });
-            if (dataSet.Tables["Usuario"].Rows.Count == 1)
+            try
             {
-                var ID_User = dataSet.Tables[0].Rows[0]["id_usr"].ToString();
-                var Name_User = dataSet.Tables[0].Rows[0]["usr_nom"].ToString();
-                DatosUsuario.Add(new List<string> { ID_User, Name_User });
-                if (dataSet.Tables["roles_user"].Rows.Count >= 1)
+                DatosUsuario.Clear();
+                cmd = new SqlCommand("Login", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@Usuario", user);
+                cmd.Parameters.AddWithValue("@Pasword", pasword);
+                cn.Open();
+                loDataReader = cmd.ExecuteReader();
+                dataSet.Load(loDataReader, LoadOption.PreserveChanges, new string[] { "Usuario", "roles_user" });
+                if (dataSet.Tables["Usuario"].Rows.Count == 1)
                 {
-                    
-                    foreach (DataRow dataRow in dataSet.Tables["roles_user"].Rows)
+                    var ID_User = dataSet.Tables[0].Rows[0]["id_usr"].ToString();
+                    var Name_User = dataSet.Tables[0].Rows[0]["usr_nom"].ToString();
+                    DatosUsuario.Add(new List<string> { ID_User, Name_User });
+                    if (dataSet.Tables["roles_user"].Rows.Count >= 1)
                     {
 
-                        DatosUsuario.Add(new List<string> { dataRow["id_rol"].ToString(), dataRow["Nombre"].ToString() });
-                        
+                        foreach (DataRow dataRow in dataSet.Tables["roles_user"].Rows)
+                        {
+
+                            DatosUsuario.Add(new List<string> { dataRow["id_rol"].ToString(), dataRow["Nombre"].ToString() });
+
+                        }
                     }
                 }
             }
-
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+             
 
             cn.Close();
 

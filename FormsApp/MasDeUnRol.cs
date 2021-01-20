@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,15 +16,36 @@ namespace FormsApp
     {
         public static List<Button> listbutton = new List<Button>();
         public int Index = 0;
-        public static int x = 70;
+        public static int x = 50;
         public static int y = 25;
         public static int index_rol = 1;
         public static int ID_ROL = 0;
         public static string Name_Rol = "";
+
+        Service_User_Rol.Gestion_User_RolClient objwcf = new Service_User_Rol.Gestion_User_RolClient();
+        public static DataTable dataTable2 = new DataTable();
         public MasDeUnRol()
         {
             InitializeComponent();
         }
+        public DataTable Deserialize(string DataTable, Type type1)
+        {
+
+            Newtonsoft.Json.JsonSerializer json = new Newtonsoft.Json.JsonSerializer();
+            json.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
+            json.ObjectCreationHandling = Newtonsoft.Json.ObjectCreationHandling.Replace;
+            json.MissingMemberHandling = Newtonsoft.Json.MissingMemberHandling.Ignore;
+            json.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+
+            StringReader sr = new StringReader(DataTable);
+            Newtonsoft.Json.JsonTextReader reader = new JsonTextReader(sr);
+            //object result = json.Deserialize(reader, valueType);
+            var result = json.Deserialize(reader, type1);
+            reader.Close();
+
+            return (DataTable)result;
+        }
+
         public void create_richtexbox(string data, int xPosition, int yPosition)
         {
             Button richTB = new Button();
@@ -51,9 +74,24 @@ namespace FormsApp
                 {
                     ID_ROL = Convert.ToInt32(listbutton[q].Name.ToString());
                     Name_Rol = listbutton[q].Text.ToString();
-                    FormMain formMain = new FormMain();
-                    formMain.Show();
-                    this.Hide();
+                    //FormMain formMain = new FormMain();
+                    //formMain.Show();
+                    //this.Hide();
+
+                    Type type = dataTable2.GetType();
+                    var data = objwcf.Forms_For_User(ID_ROL);
+                    FormMain.dataTable = Deserialize(data, type);
+                    if (FormMain.dataTable != null)
+                    {
+                        FormMain formMain = new FormMain();
+                        formMain.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Rol no tiene Forms");
+                    }
+
                     //MessageBox.Show("data" + ID_ROL);
                     break;
                 }

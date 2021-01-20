@@ -1,11 +1,13 @@
 ﻿using App;
 using FormsApp;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,8 +29,11 @@ namespace FormsApp
         List<Form> listForm = new List<Form>();
         public static string[][] DatosUsuario = new string[10][];
         public static string Usuario = "";
+        public static int ID_Usuario = 0;
         public static string Rol = "";
-
+        public static int ic_Rol = 0;
+        DataTable Datatable = new DataTable();
+        
         public login()
         {
             InitializeComponent();
@@ -57,21 +62,26 @@ namespace FormsApp
             {
                   DatosUsuario = objwcf.Login(user_name.Text, Pasword);
                   Usuario = DatosUsuario[0][1].ToString();
+                  ID_Usuario = Convert.ToInt32(DatosUsuario[0][0].ToString());
                 //MessageBox.Show("userID:" + DatosUsuario[0][0].ToString() + "name" + DatosUsuario[0][1].ToString());
-
-                if (DatosUsuario.Count() > 0)
+                //MessageBox.Show("DatosUsuario.Count(): "+DatosUsuario.Count());
+                if (DatosUsuario.Count() > 0 )
                 {
 
-                    if (DatosUsuario.Count() >= 1)
+                    if (DatosUsuario.Count() >= 2)
                     {
                          
-                        if (DatosUsuario.Count() == 1)
+                        if (DatosUsuario.Count() == 2)
                         {
 
-                            var id_rol = DatosUsuario[1][0].ToString();
-                            var name_rol = DatosUsuario[1][1].ToString();
-
+                            //var id_rol = DatosUsuario[1][0].ToString();
+                             Rol = DatosUsuario[1][1].ToString();
+                             ic_Rol = Convert.ToInt32(DatosUsuario[1][0].ToString());
                             //MessageBox.Show("userID:" + DatosUsuario[0][0].ToString() + "name" + DatosUsuario[0][1].ToString());
+
+                            Type type = Datatable.GetType();
+                            var data = objwcf.Forms_For_User(ic_Rol);
+                            FormMain.dataTable = Deserialize(data, type);
                             FormMain formMain = new FormMain();
                             formMain.Show();
                             this.Hide();
@@ -95,7 +105,7 @@ namespace FormsApp
                     }
                     else
                     {
-                        MessageBox.Show("El Usuario no tiene asociado Roles");
+                        MessageBox.Show("El Usuario no tiene Roles");
                     }
                     //MessageBox.Show("DatosUsuario.Count(): " + DatosUsuario.Count());
                    
@@ -130,12 +140,28 @@ namespace FormsApp
         private void Form2_Load(object sender, EventArgs e)
         {
             Usuario = "";
-
+            ic_Rol = 0;
 
 
 
         }
+        public DataTable Deserialize(string DataTable, Type type1)
+        {
 
+            Newtonsoft.Json.JsonSerializer json = new Newtonsoft.Json.JsonSerializer();
+            json.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
+            json.ObjectCreationHandling = Newtonsoft.Json.ObjectCreationHandling.Replace;
+            json.MissingMemberHandling = Newtonsoft.Json.MissingMemberHandling.Ignore;
+            json.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+
+            StringReader sr = new StringReader(DataTable);
+            Newtonsoft.Json.JsonTextReader reader = new JsonTextReader(sr);
+            //object result = json.Deserialize(reader, valueType);
+            var result = json.Deserialize(reader, type1);
+            reader.Close();
+
+            return (DataTable)result;
+        }
         private void Atras_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -41,6 +41,7 @@
             this.exit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.ID_usuario = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -202,11 +203,21 @@
             this.label2.TabIndex = 83;
             this.label2.Text = "Rol:";
             // 
+            // ID_usuario
+            // 
+            this.ID_usuario.AutoSize = true;
+            this.ID_usuario.Location = new System.Drawing.Point(368, 71);
+            this.ID_usuario.Name = "ID_usuario";
+            this.ID_usuario.Size = new System.Drawing.Size(35, 13);
+            this.ID_usuario.TabIndex = 84;
+            this.ID_usuario.Text = "label3";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 517);
+            this.Controls.Add(this.ID_usuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.exit);
@@ -240,5 +251,6 @@
         private System.Windows.Forms.Button exit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label ID_usuario;
     }
 }
