@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d0380e1e-5b66-4efb-8d0b-082a737c5853" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Ventas/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Service_Ventas.wsdl" MetadataType="Wsdl" ID="1d750537-49e1-4cc0-91ee-be6c50733dd6" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Ventas/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="b0b271ee-4326-426f-b768-679a4e8fb262" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Ventas/mex" />
+    <MetadataFile FileName="Service_Ventas.xsd" MetadataType="Schema" ID="11529cc6-4a04-4ee1-94ab-53c1d7b670e0" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Ventas/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="c9b90f0b-775d-409e-8851-b78d4d6e48a8" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Ventas/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

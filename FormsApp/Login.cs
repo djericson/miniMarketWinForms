@@ -20,9 +20,9 @@ namespace FormsApp
         public static string Pasword = "";
         public static int richTextlent = 1;
 
-        SrvRef_UsrRol.Gestion_User_RolClient objwcf = new SrvRef_UsrRol.Gestion_User_RolClient();
-        gestion_productos _gestion_productos = new gestion_productos();
-         FormMain _FormMain = new FormMain();
+        SrvRef_UsrRol.Gestion_User_RolClient objwcf;
+        //gestion_productos _gestion_productos = new gestion_productos();
+         //FormMain _FormMain = new FormMain();
 
 
          
@@ -58,6 +58,8 @@ namespace FormsApp
 
         private void button3_Click(object sender, EventArgs e)
         {
+
+            objwcf = new SrvRef_UsrRol.Gestion_User_RolClient();
             FormMain.dataTable.Clear();
             try
             {

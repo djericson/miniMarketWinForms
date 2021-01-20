@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5ecd1ccb-6a4b-4a52-9c73-4a0889aec98c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Pedidos/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Service_Pedidos.wsdl" MetadataType="Wsdl" ID="38ae836a-17f9-4a37-9596-71d8242c724f" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Pedidos/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="777569fa-2ffa-4d64-ac33-4bce425d3e44" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Pedidos/mex" />
+    <MetadataFile FileName="Service_Pedidos.xsd" MetadataType="Schema" ID="d2c9b527-6104-413c-8e41-189d79773b36" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Pedidos/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="680eee62-b6ba-41df-baed-bb8212c71e25" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Pedidos/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -77,12 +77,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\SrvRef_Ofertas\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SrvRef_Pedidos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\SrvRef_UsrRol\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\SrvRef_Usr\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SrvRef_Ventas\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -272,6 +287,22 @@
     <None Include="Connected Services\SrvRefProveedor\ServiceProveedor.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\SrvRef_Ofertas\service.wsdl" />
+    <None Include="Connected Services\SrvRef_Ofertas\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SrvRef_Ofertas\Service_Ofertas.wsdl" />
+    <None Include="Connected Services\SrvRef_Ofertas\Service_Ofertas.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SrvRef_Pedidos\service.wsdl" />
+    <None Include="Connected Services\SrvRef_Pedidos\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SrvRef_Pedidos\Service_Pedidos.wsdl" />
+    <None Include="Connected Services\SrvRef_Pedidos\Service_Pedidos.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\SrvRef_UsrRol\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -289,6 +320,14 @@
     </None>
     <None Include="Connected Services\SrvRef_Usr\Service_Usr.wsdl" />
     <None Include="Connected Services\SrvRef_Usr\Service_Usr.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SrvRef_Ventas\service.wsdl" />
+    <None Include="Connected Services\SrvRef_Ventas\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SrvRef_Ventas\Service_Ventas.wsdl" />
+    <None Include="Connected Services\SrvRef_Ventas\Service_Ventas.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\WCF_Productos\service.wsdl" />
@@ -343,6 +382,24 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\SrvRef_Pedidos\configuration91.svcinfo" />
+    <None Include="Connected Services\SrvRef_Pedidos\configuration.svcinfo" />
+    <None Include="Connected Services\SrvRef_Pedidos\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\SrvRef_Ofertas\configuration91.svcinfo" />
+    <None Include="Connected Services\SrvRef_Ofertas\configuration.svcinfo" />
+    <None Include="Connected Services\SrvRef_Ofertas\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\SrvRef_Ventas\configuration91.svcinfo" />
+    <None Include="Connected Services\SrvRef_Ventas\configuration.svcinfo" />
+    <None Include="Connected Services\SrvRef_Ventas\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="UserControl_for_gestion_productos\check.png" />
   </ItemGroup>
   <ItemGroup />
@@ -362,8 +419,11 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\SrvRefProveedor\" />
+    <WCFMetadataStorage Include="Connected Services\SrvRef_Ofertas\" />
+    <WCFMetadataStorage Include="Connected Services\SrvRef_Pedidos\" />
     <WCFMetadataStorage Include="Connected Services\SrvRef_UsrRol\" />
     <WCFMetadataStorage Include="Connected Services\SrvRef_Usr\" />
+    <WCFMetadataStorage Include="Connected Services\SrvRef_Ventas\" />
     <WCFMetadataStorage Include="Connected Services\WCF_Productos\" />
   </ItemGroup>
   <ItemGroup>
