@@ -1,4 +1,4 @@
-﻿namespace FormsApp.WinForms_Usuarios
+﻿namespace NS_WinFormsApps.WinForms_AccesosRolesUsrs
 {
     partial class Rol_Usuario
     {
@@ -34,9 +34,9 @@
             this.SidePanel = new System.Windows.Forms.Panel();
             this.button14 = new System.Windows.Forms.Button();
             this.Rol_user = new System.Windows.Forms.Button();
-            this.creacion_Rol1 = new FormsApp.WinForms_Usuarios.Creacion_Rol();
-            this.asignacion_Rol1 = new FormsApp.WinForms_Usuarios.Asignacion_Rol();
-            this.forms_Rol1 = new FormsApp.WinForms_Usuarios.Forms_Rol();
+            this.creacion_Rol1 = new NS_WinFormsApps.WinForms_AccesosRolesUsrs.Creacion_Rol();
+            this.asignacion_Rol1 = new NS_WinFormsApps.WinForms_AccesosRolesUsrs.Asignacion_Rol();
+            this.forms_Rol1 = new NS_WinFormsApps.WinForms_AccesosRolesUsrs.Forms_Rol();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +71,8 @@
             this.Forms_rol.Click += new System.EventHandler(this.Forms_rol_Click);
             // 
             // creacion_rol
-            // 
+            //
+
             this.creacion_rol.FlatAppearance.BorderSize = 0;
             this.creacion_rol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.creacion_rol.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -125,6 +126,7 @@
             this.Rol_user.UseVisualStyleBackColor = true;
             this.Rol_user.Click += new System.EventHandler(this.Rol_user_Click);
             // 
+            
             // creacion_Rol1
             // 
             this.creacion_Rol1.Location = new System.Drawing.Point(183, 12);
@@ -138,6 +140,7 @@
             this.asignacion_Rol1.Name = "asignacion_Rol1";
             this.asignacion_Rol1.Size = new System.Drawing.Size(348, 517);
             this.asignacion_Rol1.TabIndex = 3;
+            
             // 
             // forms_Rol1
             // 
@@ -145,6 +148,8 @@
             this.forms_Rol1.Name = "forms_Rol1";
             this.forms_Rol1.Size = new System.Drawing.Size(344, 466);
             this.forms_Rol1.TabIndex = 2;
+            
+
             // 
             // Rol_Usuario
             // 

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace App.Ventas_pagos
+namespace NS_WinFormsApps.Ventas_pagos
 {
     public partial class Pagos : Form
     {

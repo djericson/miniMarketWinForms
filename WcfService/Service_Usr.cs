@@ -12,8 +12,8 @@ using System.Threading.Tasks;
 
 namespace WcfService
 {
-    [ServiceBehavior(Namespace = "http://localhost:8733/WcfService/Service_User_Rol")]
-    public class Service_User_Rol: IGestion_User_Rol
+    [ServiceBehavior(Namespace = "http://localhost:8733/WcfService/Service_Usr")]
+    public class Service_Usr : IService_Usr
     {
         Gestion_User_Rol BL = new Gestion_User_Rol();
 
@@ -22,9 +22,9 @@ namespace WcfService
             BL.delete_rol(id);
         }
 
-        public void insert(string name)
+        public void insUsr(object objUsr)
         {
-            BL.insert_rol(name);
+            //BL.insert_rol(name);
         }
         public void update(int id, string name)
         {
@@ -42,30 +42,9 @@ namespace WcfService
             BL.delete_Rol_user(rol, user);
         }
 
-        public string List_User_rol()
-        {
-             var data = BL.List_User_rol();
-             Type type = data.GetType();
-             Newtonsoft.Json.JsonSerializer json = new Newtonsoft.Json.JsonSerializer();
-             json.NullValueHandling = NullValueHandling.Ignore;
-             json.ObjectCreationHandling = Newtonsoft.Json.ObjectCreationHandling.Replace;
-             json.MissingMemberHandling = Newtonsoft.Json.MissingMemberHandling.Ignore;
-             json.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-             if (type == typeof(DataSet))
-                 json.Converters.Add(new DataSetConverter());
-             StringWriter sw = new StringWriter();
-             Newtonsoft.Json.JsonTextWriter writer = new JsonTextWriter(sw);
-             writer.Formatting = Formatting.Indented;
-             writer.QuoteChar = '"';
-             json.Serialize(writer, data);
-             string output = sw.ToString();
-             writer.Close();
-             sw.Close();
-            
-             return output;
-          
-        }
-        public int get_id_rol(string rol)
+
+
+        int IService_Usr.get_id_rol(string rol)
         {
             var data = BL.get_id_rol(rol);
             return data;

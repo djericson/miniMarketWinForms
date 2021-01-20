@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FormsApp.WinForms_Usuarios
+namespace NS_WinFormsApps.WinForms_AccesosRolesUsrs
 {
     public partial class Rol_Usuario : Form
     {

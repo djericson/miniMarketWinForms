@@ -10,13 +10,13 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 using System.IO;
 
-namespace FormsApp.WinForms_Usuarios
+using FormsApp.SrvRef_UsrRol;
+
+namespace NS_WinFormsApps.WinForms_AccesosRolesUsrs
 {
     public partial class Asignacion_Rol : UserControl
     {
-
-
-        Service_User_Rol.Gestion_User_RolClient objwcf = new Service_User_Rol.Gestion_User_RolClient();
+        //FormsApp.SrvRef_UsrRol.Gestion_User_RolClient objwcf = new FormsApp.SrvRef_UsrRol.Gestion_User_RolClient();
         DataSet dataSet = new DataSet();
         static int column = 0;
         public Asignacion_Rol()
@@ -38,78 +38,61 @@ namespace FormsApp.WinForms_Usuarios
         }
         public void loadlist_Roles_user()
         {
-            var data = objwcf.List_User_rol();
+            //var data = objwcf.List_User_rol();
             Type type = dataSet.GetType();
+
+            /*
             var dataset = Deserialize(data, type);
-            if(dataset.Tables["list_roles"].Rows.Count != 0)
-            {
+            if(dataset.Tables["list_roles"].Rows.Count != 0) {
                 roles.DataSource = dataset.Tables["list_roles"];
                 roles.DisplayMember = "nombre";
                 roles.ValueMember = "codigo";
             }
-            else
-            {
+            else {
                 roles.DataSource = null;
             }
-           
-            
             list_user_rol.DataSource = dataset.Tables["list_User"];
+            */
+
             column = list_user_rol.Columns.Count;
             //list_user_rol.Columns[0].Visible = false;
         }
+
         private void Asignacion_Rol_Load(object sender, EventArgs e)
         {
-
-            
 
         }
 
         private void add_Rol_Click(object sender, EventArgs e)
         {
-
-            if (column > 1)
-            {
-
-                if (roles.Items.Count != 0)
-                {
-
+            if (column > 1) {
+                if (roles.Items.Count != 0) {
                     var id_rol = Convert.ToInt32(roles.SelectedValue.ToString());
                     var id_user = Convert.ToInt32(list_user_rol.CurrentRow.Cells[0].Value.ToString());
-                    objwcf.insert_rol_user(id_rol, id_user);
+                    //objwcf.insert_rol_user(id_rol, id_user);
                     loadlist_Roles_user();
                 }
-                
-                
+
                 //var id_rol = Convert.ToInt32(roles.SelectedValue.ToString());
                 //var id_user = Convert.ToInt32(list_user_rol.CurrentRow.Cells[0].Value.ToString());
                 //objwcf.insert_rol_user(id_rol, id_user);
-                //loadlist_Roles_user();
+                loadlist_Roles_user();
 
             }
             //MessageBox.Show(list_user_rol.CurrentRow.Cells[0].Value.ToString());
 
-
         }
-
-        
 
         private void delete_user_rol_Click(object sender, EventArgs e)
         {
-
-
-            if (column > 1)
-            {
-
-                if (roles.Items.Count != 0)
-                {
+            if (column > 1) {
+                if (roles.Items.Count != 0) {
                     var id_rol = Convert.ToInt32(roles.SelectedValue.ToString());
                     var id_user = Convert.ToInt32(list_user_rol.CurrentRow.Cells[0].Value);
-                    objwcf.delete_rol_user(id_rol, id_user);
+                    //objwcf.delete_rol_user(id_rol, id_user);
                     loadlist_Roles_user();
-                }
-               
+                } 
             }
-           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -128,13 +111,13 @@ namespace FormsApp.WinForms_Usuarios
 
         private void roles_SelectedIndexChanged(object sender, EventArgs e)
         {
+
         }
 
         private void list_user_rol_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //list_temas_rece.CurrentRow.Cells[4].Value != DBNull.Value
-            if(list_user_rol.Columns.Count > 3)
-            {
+            if(list_user_rol.Columns.Count > 3) {
                 var _roles = list_user_rol.CurrentRow.Cells[2].Value.ToString();
                 roles.Text = _roles;
             }

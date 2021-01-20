@@ -1,6 +1,6 @@
-﻿using App.UserControl_to_gestion_productos;
+﻿//using App.UserControl_to_gestion_productos;
 
-namespace App
+namespace NS_WinFormsApps
 {
     partial class gestion_productos
     {
@@ -101,7 +101,7 @@ namespace App
             this.BtnAyuda.BackColor = System.Drawing.Color.White;
             this.BtnAyuda.FlatAppearance.BorderSize = 0;
             this.BtnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAyuda.Image = global::FormsApp.Properties.Resources.Webp_net_resizeimage__14_;
+            this.BtnAyuda.Image = global::NS_WinFormsApps.Properties.Resources.Webp_net_resizeimage__14_;
             this.BtnAyuda.Location = new System.Drawing.Point(314, 81);
             this.BtnAyuda.Name = "BtnAyuda";
             this.BtnAyuda.Size = new System.Drawing.Size(30, 26);
@@ -537,10 +537,10 @@ namespace App
         #endregion
         private System.Windows.Forms.Button delete;
         private System.Windows.Forms.Button add_producto;
-        private Update_product update_product1;
+        //private Update_product update_product1;
         private System.Windows.Forms.Button BtnAyuda;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private Update_product update_Product;
+        //private Update_product update_Product;
         private System.Windows.Forms.Button update;
         public System.Windows.Forms.DataGridView list_productos;
         private System.Windows.Forms.Button agregar_datagridview;

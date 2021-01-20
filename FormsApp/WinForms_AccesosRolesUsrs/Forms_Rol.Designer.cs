@@ -1,4 +1,4 @@
-﻿namespace FormsApp.WinForms_Usuarios
+﻿namespace NS_WinFormsApps.WinForms_AccesosRolesUsrs
 {
     partial class Forms_Rol
     {

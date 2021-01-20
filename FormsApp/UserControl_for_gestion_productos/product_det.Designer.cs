@@ -1,4 +1,4 @@
-﻿namespace FormsApp.UserControl_for_gestion_productos
+﻿namespace NS_WinFormsApps.UserControl_for_gestion_productos
 {
     partial class product_det
     {

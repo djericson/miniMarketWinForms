@@ -1,4 +1,4 @@
-﻿namespace App.Ventas_pagos
+﻿namespace NS_WinFormsApps.Ventas_pagos
 {
     partial class Ventas
     {

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace App.UserControl_to_gestion_productos
+namespace NS_WinFormsApps.UserControl_to_gestion_productos
 {
     public partial class Update_product : UserControl
     {

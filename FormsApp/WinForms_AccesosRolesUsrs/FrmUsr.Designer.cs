@@ -1,4 +1,4 @@
-﻿namespace App
+﻿namespace NS_WinFormsApps.WinForms_AccesosRolesUsrs
 {
     partial class FrmUsrs
     {

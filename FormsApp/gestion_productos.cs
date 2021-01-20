@@ -6,12 +6,13 @@ using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Windows.Forms;
-using App.UserControl_to_gestion_productos;
+
+//using App.UserControl_to_gestion_productos;
 using FormsApp.WCF_Productos;
 using Newtonsoft.Json;
 using NS_Busqueda;
 
-namespace App
+namespace NS_WinFormsApps
 {
     public partial class gestion_productos : Form
     {
@@ -29,11 +30,6 @@ namespace App
             //update_product2.BringToFront();
 
         }
-
-       
-
-         
-         
 
         private void gestion_productos_Load(object sender, EventArgs e)
         {
@@ -435,5 +431,8 @@ namespace App
         //    product_det1.BringToFront();
         //}
     }
+
+
+
 }
  

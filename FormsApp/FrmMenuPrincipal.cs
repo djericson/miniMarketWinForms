@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace App
+namespace NS_WinFormsApps
 {
     public partial class FrmPrincipal : Form
     {
