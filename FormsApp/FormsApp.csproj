@@ -179,8 +179,10 @@
     <Compile Include="WinForms_AccesosRolesUsrs\Creacion_Rol.designer.cs">
       <DependentUpon>Creacion_Rol.cs</DependentUpon>
     </Compile>
-    <Compile Include="WinForms_AccesosRolesUsrs\Forms_Rol.cs" />
-    <Compile Include="WinForms_AccesosRolesUsrs\Forms_Rol.designer.cs">
+    <Compile Include="WinForms_AccesosRolesUsrs\Forms_Rol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForms_AccesosRolesUsrs\Forms_Rol.Designer.cs">
       <DependentUpon>Forms_Rol.cs</DependentUpon>
     </Compile>
     <Compile Include="WinForms_AccesosRolesUsrs\FrmUsr.cs">

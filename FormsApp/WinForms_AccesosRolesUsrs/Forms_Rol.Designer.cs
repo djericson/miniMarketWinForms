@@ -1,4 +1,4 @@
-﻿namespace NS_WinFormsApps.WinForms_AccesosRolesUsrs
+﻿namespace FormsApp.WinForms_AccesosRolesUsrs
 {
     partial class Forms_Rol
     {
@@ -45,10 +45,10 @@
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(30, 130);
+            this.label3.Location = new System.Drawing.Point(47, 118);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 21);
-            this.label3.TabIndex = 53;
+            this.label3.TabIndex = 90;
             this.label3.Text = "Forms";
             // 
             // Forms
@@ -58,33 +58,33 @@
             this.Forms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Forms.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Forms.FormattingEnabled = true;
-            this.Forms.Location = new System.Drawing.Point(97, 130);
+            this.Forms.Location = new System.Drawing.Point(114, 118);
             this.Forms.Name = "Forms";
             this.Forms.Size = new System.Drawing.Size(132, 25);
-            this.Forms.TabIndex = 52;
+            this.Forms.TabIndex = 89;
             // 
             // delete_Forms_rol
             // 
             this.delete_Forms_rol.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.delete_Forms_rol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delete_Forms_rol.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.delete_Forms_rol.Location = new System.Drawing.Point(253, 216);
+            this.delete_Forms_rol.Location = new System.Drawing.Point(233, 204);
             this.delete_Forms_rol.Name = "delete_Forms_rol";
             this.delete_Forms_rol.Size = new System.Drawing.Size(89, 28);
-            this.delete_Forms_rol.TabIndex = 51;
+            this.delete_Forms_rol.TabIndex = 88;
             this.delete_Forms_rol.Text = "delete";
             this.delete_Forms_rol.UseVisualStyleBackColor = true;
-            //this.delete_Forms_rol.Click += new System.EventHandler(this.delete_Forms_rol_Click);
+            this.delete_Forms_rol.Click += new System.EventHandler(this.delete_Forms_rol_Click);
             // 
             // add_Forms_Rol
             // 
             this.add_Forms_Rol.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.add_Forms_Rol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_Forms_Rol.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.add_Forms_Rol.Location = new System.Drawing.Point(34, 216);
+            this.add_Forms_Rol.Location = new System.Drawing.Point(51, 204);
             this.add_Forms_Rol.Name = "add_Forms_Rol";
             this.add_Forms_Rol.Size = new System.Drawing.Size(89, 28);
-            this.add_Forms_Rol.TabIndex = 50;
+            this.add_Forms_Rol.TabIndex = 87;
             this.add_Forms_Rol.Text = "add ";
             this.add_Forms_Rol.UseVisualStyleBackColor = true;
             this.add_Forms_Rol.Click += new System.EventHandler(this.add_Forms_Rol_Click);
@@ -112,15 +112,15 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.list_Form_rol.DefaultCellStyle = dataGridViewCellStyle1;
             this.list_Form_rol.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.list_Form_rol.Location = new System.Drawing.Point(34, 266);
+            this.list_Form_rol.Location = new System.Drawing.Point(51, 254);
             this.list_Form_rol.Name = "list_Form_rol";
             this.list_Form_rol.ReadOnly = true;
             this.list_Form_rol.RowHeadersWidth = 30;
             this.list_Form_rol.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.list_Form_rol.ShowEditingIcon = false;
-            this.list_Form_rol.Size = new System.Drawing.Size(308, 179);
-            this.list_Form_rol.TabIndex = 49;
-            //this.list_Form_rol.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.list_Form_rol_CellClick);
+            this.list_Form_rol.Size = new System.Drawing.Size(357, 179);
+            this.list_Form_rol.TabIndex = 86;
+            this.list_Form_rol.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.list_Form_rol_CellClick);
             // 
             // label2
             // 
@@ -128,10 +128,10 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(93, 36);
+            this.label2.Location = new System.Drawing.Point(110, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 21);
-            this.label2.TabIndex = 48;
+            this.label2.TabIndex = 85;
             this.label2.Text = "Forms Roles";
             // 
             // Atras
@@ -139,19 +139,19 @@
             this.Atras.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.Atras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Atras.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //this.Atras.Image = global::FormsApp.Properties.Resources.Webp_net_resizeimage__15_;
-            this.Atras.Location = new System.Drawing.Point(34, 465);
+            this.Atras.Image = global::FormsApp.Properties.Resources.Webp_net_resizeimage__15_;
+            this.Atras.Location = new System.Drawing.Point(51, 453);
             this.Atras.Name = "Atras";
             this.Atras.Size = new System.Drawing.Size(76, 37);
-            this.Atras.TabIndex = 84;
+            this.Atras.TabIndex = 91;
             this.Atras.UseVisualStyleBackColor = true;
-            //this.Atras.Click += new System.EventHandler(this.Atras_Click);
+            this.Atras.Click += new System.EventHandler(this.Atras_Click);
             // 
-            // Forms_Rol
+            // Forms_Rol2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(422, 556);
+            this.ClientSize = new System.Drawing.Size(472, 555);
             this.Controls.Add(this.Atras);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Forms);
@@ -160,10 +160,10 @@
             this.Controls.Add(this.list_Form_rol);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Forms_Rol";
+            this.Name = "Forms_Rol2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Creacion_Rol";
-            //this.Load += new System.EventHandler(this.Forms_Rol_Load);
+            this.Text = "Forms_Rol2";
+            this.Load += new System.EventHandler(this.Forms_Rol2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.list_Form_rol)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -172,12 +172,12 @@
 
         #endregion
 
+        private System.Windows.Forms.Button Atras;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.ComboBox Forms;
         public System.Windows.Forms.Button delete_Forms_rol;
         public System.Windows.Forms.Button add_Forms_Rol;
         public System.Windows.Forms.DataGridView list_Form_rol;
         public System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button Atras;
     }
 }

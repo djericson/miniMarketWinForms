@@ -1,5 +1,4 @@
-﻿using FormsApp;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,34 +10,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
- 
-
-namespace NS_WinFormsApps.WinForms_AccesosRolesUsrs
+namespace FormsApp.WinForms_AccesosRolesUsrs
 {
     public partial class Forms_Rol : Form
     {
-
         FormsApp.SrvRef_UsrRol.Gestion_User_RolClient objWcf = new FormsApp.SrvRef_UsrRol.Gestion_User_RolClient();
         DataSet dataSet = new DataSet();
-
         public Forms_Rol()
         {
             InitializeComponent();
         }
 
-       
-
-        private void add_Forms_Rol_Click(object sender, EventArgs e)
+        private void Forms_Rol2_Load(object sender, EventArgs e)
         {
-            if (list_Form_rol.Columns.Count != 0 && Forms.Items.Count != 0)
-            {
-                var id_form = Convert.ToInt32(Forms.SelectedValue.ToString());
-                var id_rol = Convert.ToInt32(list_Form_rol.CurrentRow.Cells[0].Value.ToString());
-                objWcf.insert_Forms_rol(id_rol, id_form);
-                load_forms_rol();
-            }
+            load_forms_rol();
         }
-
         public void load_forms_rol()
         {
             var data = objWcf.List_Forms_rol();
@@ -79,34 +65,26 @@ namespace NS_WinFormsApps.WinForms_AccesosRolesUsrs
             reader.Close();
             return (DataSet)result;
         }
-        private void Atras_Click(object sender, EventArgs e)
+        private void add_Forms_Rol_Click(object sender, EventArgs e)
         {
-            Gestion_Roles_User _Gestion_Roles_User = new Gestion_Roles_User();
-            _Gestion_Roles_User.Show();
-            this.Hide();
- 
-            if(list_Form_rol.Columns.Count != 0 && Forms.Items.Count != 0) {
+            if (list_Form_rol.Columns.Count != 0 && Forms.Items.Count != 0)
+            {
                 var id_form = Convert.ToInt32(Forms.SelectedValue.ToString());
                 var id_rol = Convert.ToInt32(list_Form_rol.CurrentRow.Cells[0].Value.ToString());
-                //objwcf.insert_Forms_rol(id_rol, id_form);
+                objWcf.insert_Forms_rol(id_rol, id_form);
                 load_forms_rol();
             }
-           
         }
 
         private void delete_Forms_rol_Click(object sender, EventArgs e)
         {
-            if (list_Form_rol.Columns.Count != 0 && Forms.Items.Count != 0) {
+            if (list_Form_rol.Columns.Count != 0 && Forms.Items.Count != 0)
+            {
                 var id_form = Convert.ToInt32(Forms.SelectedValue.ToString());
                 var id_rol = Convert.ToInt32(list_Form_rol.CurrentRow.Cells[0].Value);
-                //objwcf.delete_Forms_rol(id_rol, id_form);
+                objWcf.delete_Forms_rol(id_rol, id_form);
                 load_forms_rol();
             }
-        }
-
-        private void Forms_Rol_Load(object sender, EventArgs e)
-        {
-            load_forms_rol();
         }
 
         private void list_Form_rol_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -115,11 +93,18 @@ namespace NS_WinFormsApps.WinForms_AccesosRolesUsrs
             {
 
             }
-            if (list_Form_rol.Columns.Count > 2 && Forms.Items.Count != 0) {
+            if (list_Form_rol.Columns.Count > 2 && Forms.Items.Count != 0)
+            {
                 var data = list_Form_rol.CurrentRow.Cells[2].Value.ToString();
                 Forms.Text = data;
             }
         }
+
+        private void Atras_Click(object sender, EventArgs e)
+        {
+            Gestion_Roles_User _Gestion_Roles_User = new Gestion_Roles_User();
+            _Gestion_Roles_User.Show();
+            this.Close();
+        }
     }
-            
 }

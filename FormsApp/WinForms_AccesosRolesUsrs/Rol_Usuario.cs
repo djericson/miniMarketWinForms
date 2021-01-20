@@ -117,7 +117,7 @@ namespace NS_WinFormsApps.WinForms_AccesosRolesUsrs
         {
             Gestion_Roles_User _Gestion_Roles_User = new Gestion_Roles_User();
             _Gestion_Roles_User.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

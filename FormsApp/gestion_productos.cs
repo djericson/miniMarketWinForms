@@ -6,6 +6,7 @@ using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Windows.Forms;
+using FormsApp;
 
 //using App.UserControl_to_gestion_productos;
 using FormsApp.WCF_Productos;
@@ -418,6 +419,13 @@ namespace NS_WinFormsApps
             MessageBox.Show("stock_entry_datessss: " + DateTime.Parse(list_productos.CurrentRow.Cells["fch_ingr_stock"].Value.ToString()).ToString("yyyy-M-dd hh:mm:ss"));
             MessageBox.Show("stock_entry_date: " + Convert.ToDateTime(list_productos.CurrentRow.Cells["fch_ingr_stock"].Value).ToString("dd/M/yyyy", CultureInfo.InvariantCulture));
             MessageBox.Show("stock_entry_date: " + Convert.ToDateTime(list_productos.CurrentRow.Cells["fch_ingr_stock"].Value).ToShortDateString());
+        }
+
+        private void Atras_Click(object sender, EventArgs e)
+        {
+            FormMain formMain = new FormMain();
+            formMain.Show();
+            this.Close();
         }
 
 

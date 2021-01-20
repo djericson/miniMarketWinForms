@@ -135,7 +135,7 @@ namespace FormsApp
         {
             Gestion_Roles_User _Gestion_Roles_User = new Gestion_Roles_User();
             _Gestion_Roles_User.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void dataGrid_Roles_CellClick_1(object sender, DataGridViewCellEventArgs e)

@@ -53,11 +53,19 @@ namespace FormsApp
         {
             ID_usuario.Text = login.ID_Usuario.ToString();
             Usuario.Text = login.Usuario;
-            //MessageBox.Show(""+ MasDeUnRol.Name_Rol);
-            Rol.Text = MasDeUnRol.Name_Rol;
-            Rol.Text = login.Rol;
+            if (login.Rol != "")
+            {
+                Rol.Text = login.Rol;
+            }
+            else
+            {
+                Rol.Text = MasDeUnRol.Name_Rol;
+
+            }
+            //MessageBox.Show("" + Rol.Text);
+
             //Type type = dataTable.GetType();
-            
+
 
             //var data = objwcf.Forms_For_User(login.Rol);
 
@@ -65,18 +73,6 @@ namespace FormsApp
             //dataTable = Deserialize(data, type);
 
 
-
-            //if(dataTable == null )
-            //{
-            //    MessageBox.Show("");
-            //    MasDeUnRol masDeUnRol = new MasDeUnRol();
-            //    masDeUnRol.Show();
-            //    this.Close();
-            //}
-
-            //MessageBox.Show(productos.Name.ToString());
-
-            //var ID_User = dataTable.Rows[0]["Nombre"].ToString();
         }
 
 
@@ -99,8 +95,7 @@ namespace FormsApp
 
             foreach (DataRow dataRow in dataTable.Rows)
             {
-                string Form = dataRow["Nombre"].ToString();
-                if (Butto_Form == Form)
+                if (Butto_Form == dataRow["Nombre"].ToString())
                 {
                     return true;
                 }
@@ -111,8 +106,10 @@ namespace FormsApp
         {
             if(Acceso(Provedores.Name.ToString()))
             {
-                _FrmProveedores.Show();
-                this.Hide();
+                MessageBox.Show("Form provedores");
+
+                //_FrmProveedores.Show();
+                //this.Hide();
             }
             else
             {
@@ -123,14 +120,15 @@ namespace FormsApp
         private void Atras_Click(object sender, EventArgs e)
         {
             dataTable.Clear();
-            login gestion_cursos = new login();
-            gestion_cursos.Show();
-            this.Hide();
+            login _login = new login();
+            _login.Show();
+            this.Close();
         }
 
         private void exit_Click(object sender, EventArgs e)
         {
-            this.Close();
+
+            Application.Exit();
         }
 
         private void ventas_Click(object sender, EventArgs e)
@@ -138,6 +136,7 @@ namespace FormsApp
 
             if (Acceso(Ventas.Name.ToString()))
             {
+                MessageBox.Show("Form ventas");
                 //_gestion_Productos.Show();
                 //this.Hide();
             }
@@ -153,6 +152,7 @@ namespace FormsApp
         {
             if (Acceso(pedidos.Name.ToString()))
             {
+                MessageBox.Show("Form pedidos");
                 //_gestion_Productos.Show();
                 //this.Hide();
             }
@@ -167,8 +167,10 @@ namespace FormsApp
             
             if (Acceso(Usuarios.Name.ToString()))
             {
-                frmUsrs.Show();
-                this.Hide();
+                MessageBox.Show("Form Usuarios");
+
+                //frmUsrs.Show();
+                //this.Hide();
             }
             else
             {

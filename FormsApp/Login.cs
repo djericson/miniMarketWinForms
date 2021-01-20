@@ -58,6 +58,7 @@ namespace FormsApp
 
         private void button3_Click(object sender, EventArgs e)
         {
+            FormMain.dataTable.Clear();
             try
             {
                   DatosUsuario = objwcf.Login(user_name.Text, Pasword);
@@ -164,7 +165,7 @@ namespace FormsApp
         }
         private void Atras_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
     }
 }
