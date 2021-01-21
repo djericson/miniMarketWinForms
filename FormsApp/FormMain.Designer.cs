@@ -33,7 +33,7 @@
             this.Provedores = new System.Windows.Forms.Button();
             this.Rol = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Roles_Usuario = new System.Windows.Forms.Button();
+            this.GestionRolesUser = new System.Windows.Forms.Button();
             this.Usuarios = new System.Windows.Forms.Button();
             this.pedidos = new System.Windows.Forms.Button();
             this.Ventas = new System.Windows.Forms.Button();
@@ -91,7 +91,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.Roles_Usuario);
+            this.groupBox1.Controls.Add(this.GestionRolesUser);
             this.groupBox1.Controls.Add(this.Usuarios);
             this.groupBox1.Controls.Add(this.pedidos);
             this.groupBox1.Controls.Add(this.Ventas);
@@ -105,17 +105,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Forms";
             // 
-            // Roles_Usuario
+            // GestionRolesUser
             // 
-            this.Roles_Usuario.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.Roles_Usuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Roles_Usuario.Location = new System.Drawing.Point(440, 135);
-            this.Roles_Usuario.Name = "Roles_Usuario";
-            this.Roles_Usuario.Size = new System.Drawing.Size(172, 56);
-            this.Roles_Usuario.TabIndex = 7;
-            this.Roles_Usuario.Text = "Roles_Usuario";
-            this.Roles_Usuario.UseVisualStyleBackColor = true;
-            this.Roles_Usuario.Click += new System.EventHandler(this.Roles_Usuario_Click);
+            this.GestionRolesUser.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.GestionRolesUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GestionRolesUser.Location = new System.Drawing.Point(440, 135);
+            this.GestionRolesUser.Name = "GestionRolesUser";
+            this.GestionRolesUser.Size = new System.Drawing.Size(172, 56);
+            this.GestionRolesUser.TabIndex = 7;
+            this.GestionRolesUser.Text = "GestionRolesUser";
+            this.GestionRolesUser.UseVisualStyleBackColor = true;
+            this.GestionRolesUser.Click += new System.EventHandler(this.Roles_Usuario_Click);
             // 
             // Usuarios
             // 
@@ -243,7 +243,7 @@
         private System.Windows.Forms.Button Ventas;
         private System.Windows.Forms.Button pedidos;
         private System.Windows.Forms.Button Atras;
-        private System.Windows.Forms.Button Roles_Usuario;
+        private System.Windows.Forms.Button GestionRolesUser;
         private System.Windows.Forms.Button Usuarios;
         private System.Windows.Forms.Button exit;
         private System.Windows.Forms.Label label1;

@@ -84,9 +84,7 @@ namespace FormsApp
 
         public Boolean  Acceso(string Butto_Form)
         {
-            try
-            {
-                MessageBox.Show("datatable.count: "+dataTable.Rows.Count.ToString());
+             
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
                     if (Butto_Form == dataRow["Nombre"].ToString())
@@ -95,12 +93,8 @@ namespace FormsApp
                     }
                 }
                 return false;
-            }
-            catch(Exception ex )
-            {
-                MessageBox.Show(ex.ToString());
-                return false;
-            }
+            
+            
         }
         private void Provedores_Click(object sender, EventArgs e)
         {
@@ -181,9 +175,9 @@ namespace FormsApp
 
         private void Roles_Usuario_Click(object sender, EventArgs e)
         {
-            if (Acceso(Roles_Usuario.Name.ToString()))
+            if (Acceso(GestionRolesUser.Name.ToString()))
             {
-                Form_For_Adm = Roles_Usuario.Name.ToString();
+                Form_For_Adm = GestionRolesUser.Name.ToString();
 
                 Gestion_Roles_User gestion_Roles_User = new Gestion_Roles_User();
                 gestion_Roles_User.Show();
