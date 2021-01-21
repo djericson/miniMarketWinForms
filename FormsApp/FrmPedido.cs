@@ -7,14 +7,406 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BL;
+using DAC;
+using FormsApp;
 
-namespace NS_WinFormsApps
+namespace FormsApp
 {
     public partial class FrmPedido : Form
     {
+        ClsBL_Pedido oBlPedido = new ClsBL_Pedido();
+        ClsDAC_Pedidos oDacPedido = new ClsDAC_Pedidos();
+
+        public int IdTrabajador = 1;
+        private bool IsNuevo;
+        private DataTable dtDetallePedido;
+        private decimal totalPagado = 0; 
+        #region OBJETO QUE ME HACE REFERENCIA  A LA CLASE FRMPEDIDO        1
+        private static FrmPedido _instancia;
+        #endregion
+        #region METODO PARA CREAR INSTANCIA A FRMINGRESO                   2
+        public static FrmPedido GetInstancia()
+        {
+            if (_instancia == null)
+            {
+                _instancia = new FrmPedido();
+            }
+            return _instancia;
+        }
+        #endregion
         public FrmPedido()
         {
             InitializeComponent();
+            InitializeComponent();
+            ttMensaje.SetToolTip(txtNombreProveedor, "SELECCIONE EL PROVEEDOR");
+            ttMensaje.SetToolTip(txtStock, "INGRESE LA CANTIDAD");
+            ttMensaje.SetToolTip(txtNombreProducto, "SELECCION EL PRODUCTO");
+            txtId_proveedor.Visible = false;
+            txtId_producto.Visible = false;
+            txtNombreProveedor.ReadOnly = true;
+            txtNombreProducto.ReadOnly = true;
+        }
+
+        private void FrmPedido_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _instancia = null; 
+        }
+        #region ESTABLECER VALORES DESDE VISTA PROVEEDOR Y VISTA PRODUCTO 4
+        public void ControlesProveedor(string idproveedor, string nombre, string categoria, string paginaweb)
+
+        {
+            txtId_proveedor.Text = idproveedor;
+            txtNombreProveedor.Text = nombre;
+            txtCategoria.Text = categoria;
+            txtPaginaWeb.Text = paginaweb;
+        }
+
+        public void ControlesProducto(string idproducto, string nombre, string precio, string unidad, string stock,
+            string categoria)
+        {
+            this.txtId_producto.Text = idproducto;
+            this.txtNombreProducto.Text = nombre;
+            this.txtPrecioCompra.Text = precio;
+            this.txtProdUnidad.Text = unidad;
+            this.txtStock.Text = stock;
+            this.txtCategoria.Text = categoria;
+        }
+        #endregion
+        #region region METODO PARA MOSTRAR MENSAJE DE CONFIRMACION
+        private void MensajeOk(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Sistema de ventas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        #endregion
+        #region METODO PARA MOSTRAR MENSAJE DE ERROR
+        private void MensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Sistema de ventas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        #endregion
+        #region METODO LIMPIAR TODOS LOS CONTROLES DEL FORMULARIO
+        private void Limpiar()
+        {
+            txtIdPedido.Text = string.Empty;
+            txtId_proveedor.Text = string.Empty;
+            txtPaginaWeb.Text = string.Empty;
+            lblTotal_pagado.Text = "0,0";
+
+            CrearTabla();
+        }
+        #endregion
+        #region LIMPIAR CONTROLES DEL DETALLE //EDITADO
+        private void limpiarDetalle()
+        {
+            txtId_producto.Text = string.Empty;
+            txtNombreProducto.Text = string.Empty;
+            txtStock.Text = string.Empty;
+            txtPrecioCompra.Text = string.Empty;
+        }
+        #endregion
+
+        private void HabilitarTxt(bool valor)
+        {
+            txtIdPedido.ReadOnly = !valor;
+            dtFecha.Enabled = valor;
+            txtStock.ReadOnly = !valor;
+            txtPrecioCompra.ReadOnly = !valor;
+
+            
+            btnBuscar_producto.Enabled = valor;
+            btnBuscar_proveedor.Enabled = valor;
+            btnAgregar.Enabled = valor;
+            btnQuitar.Enabled = valor;
+        }
+        #region METODO HABILITAR LOS BOTONES//EDITADO
+        private void Botones()
+        {
+            if (IsNuevo)
+            {
+                HabilitarTxt(true);
+                btnNuevo.Enabled = false;
+                btnGuardar.Enabled = true;
+                btnCancelar.Enabled = true;
+            }
+            else
+            {
+                HabilitarTxt(false);
+                btnNuevo.Enabled = true;
+                btnGuardar.Enabled = false;
+                btnCancelar.Enabled = false;
+            }
+        }
+        #endregion
+        #region METODO OCULTAR COLUMAS
+        private void OcularColumnas()
+        {
+            dgvListado.Columns[0].Visible = false;//COLUMNA ELIMINAR(CHECBOX)
+            dgvListado.Columns[1].Visible = false;//COLUMNA ID DE PEDIDO
+        }
+        #endregion
+        #region MOSTRAR TODOS LOS REGISTROS DE CATEGORIA
+        private void Mostrar()
+        {
+            dgvListado.DataSource = ClsBL_Pedido.MOSTRAR();
+            OcularColumnas();
+            lblTotal.Text = "Total de registros: " + Convert.ToString(dgvListado.Rows.Count);
+        }
+        #endregion
+        #region METODO BUSCAR POR FECHA //NUEVO
+        private void BuscarFechas()
+        {
+            dgvListado.DataSource = oDacPedido.Buscar_fechas(dtFechaA.Value.ToString("dd/MM/yyyy"), dtFechaB.Value.ToString("dd/MM/yyyy"));
+            OcularColumnas();
+            lblTotal.Text = "Total de registros " + Convert.ToString(dgvListado.Rows.Count);
+        }
+        #endregion
+
+        #region METODO MOSTRAR DETALLE
+        private void MostrarDetalle()
+        {
+            dgvListado_detalle.DataSource = ClsBL_Pedido.MOSTRAR_DETALLE(txtIdPedido.Text);
+        }
+        #endregion
+
+        private void FrmPedido_Load(object sender, EventArgs e)
+        {
+            Top = 0;
+            Left = 0;
+            Mostrar();
+            HabilitarTxt(true);
+            Botones();
+            CrearTabla();
+        }
+
+        private void btnBuscar_proveedor_Click(object sender, EventArgs e)
+        {
+            FrmVistaProveedor obj = new FrmVistaProveedor();
+            obj.ShowDialog();
+        }
+
+        private void btnBuscar_producto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            BuscarFechas();
+
+        }
+
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult Opcion;
+                Opcion = MessageBox.Show("Realmente desea Anular el pedido", "Sistema de ventas", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (Opcion == DialogResult.OK)
+                {
+                    string Codigo;
+                    string Rpta = "";
+
+                    foreach (DataGridViewRow row in dgvListado.Rows)
+                    {
+                        if (Convert.ToBoolean(row.Cells[0].Value))
+                        {
+                            Codigo = Convert.ToString(row.Cells[1].Value);
+                            Rpta = ClsBL_Pedido.ANULAR(Convert.ToInt32(Codigo));
+                            ClsBL_Pedido o = new ClsBL_Pedido();
+
+
+
+                            if (Rpta.Equals("OK"))
+                            {
+                                MensajeOk("SE ANULO CORRECTAMENTE EL ´PEDIDO");
+                            }
+                            else
+                            {
+                                MensajeError(Rpta);
+                            }
+                        }
+                    }
+                }
+                chkGestion.Checked = false;
+                Mostrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+
+        }
+
+        private void chkGestion_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkGestion.Checked)
+            {
+                dgvListado.Columns[0].Visible = true;
+            }
+            else
+            {
+                dgvListado.Columns[0].Visible = false;
+            }
+        }
+
+        private void dgvListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+            if (e.ColumnIndex == dgvListado.Columns["Eliminar"].Index)
+            {
+                DataGridViewCheckBoxCell chkGestion = (DataGridViewCheckBoxCell)dgvListado.Rows[e.RowIndex].Cells["Eliminar"];
+                chkGestion.Value = !Convert.ToBoolean(chkGestion.Value);
+            }
+        }
+        #region CREAR TABLA   USO: PARA CUANDO AGREGE UN PRODUCTO SE AGREGE  AL GRIDVIEW DETALLES
+        private void CrearTabla()
+        {
+            dtDetallePedido = new DataTable("Detalle");
+            dtDetallePedido.Columns.Add("idproducto", System.Type.GetType("System.Int32"));
+            dtDetallePedido.Columns.Add("producto", System.Type.GetType("System.String"));
+            dtDetallePedido.Columns.Add("precio_compra", System.Type.GetType("System.Decimal"));
+            dtDetallePedido.Columns.Add("cantidad", System.Type.GetType("System.Int32"));
+            dtDetallePedido.Columns.Add("subtotal", System.Type.GetType("System.Decimal"));
+            dgvListado_detalle.DataSource = dtDetallePedido;
+        }
+        #endregion
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            IsNuevo = true;
+            Botones();
+            Limpiar();
+            HabilitarTxt(true); //TODO
+            limpiarDetalle();           
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            IsNuevo = false;
+            Botones();
+            Limpiar();
+            HabilitarTxt(false);
+            limpiarDetalle();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string rpta = "";
+                
+                if (txtId_proveedor.Text == string.Empty)
+                {
+                    MensajeError("Falta ingresar algunos datos");
+                    errorIcono.SetError(txtId_proveedor, "Ingrese un Valor");
+
+                }
+                else
+                {
+                    if (IsNuevo)
+                    {
+                        rpta = ClsBL_Pedido.INSERTAR(Convert.ToInt32(txtId_proveedor), IdTrabajador, dtFecha.Value, "EMITIDO",
+                            dtDetallePedido);
+                    }
+
+                    if (rpta.Equals("OK"))
+                    {
+                        if (IsNuevo)
+                        {
+                            MensajeOk("Se inserto de forma correcta el registro");
+                        }
+                    }
+
+                    else
+                    {
+                        MensajeError(rpta);
+                    }
+                    IsNuevo = false;
+                    Botones();
+                    Limpiar();
+                    limpiarDetalle();
+                    Mostrar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace); 
+            }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                if (txtId_producto.Text == string.Empty || txtStock.Text == string.Empty || txtPrecioCompra.Text == string.Empty)
+                {
+                    MensajeError("Falta ingresar algunos datos, seran remarcados");
+                    errorIcono.SetError(txtId_proveedor, "Ingrese un Valor");
+                    errorIcono.SetError(txtStock, "Ingrese un Valor");
+                }
+                else
+                {
+                    bool registrar = true;
+                    foreach (DataRow row in dtDetallePedido.Rows)
+                    {
+                        if (Convert.ToInt32(row["idproducto"]) == Convert.ToInt32(txtId_producto.Text))
+                        {
+                            registrar = false;
+                            MensajeError("Este producto ya fue agregado a la lista");
+                        }
+                    }
+                    if (registrar)
+                    {
+                        decimal subtotal = Convert.ToDecimal(txtStock.Text) * Convert.ToDecimal(txtPrecioCompra.Text);
+                        totalPagado = totalPagado + subtotal;
+                        lblTotal_pagado.Text = Convert.ToString(totalPagado);
+                        
+                        DataRow row = dtDetallePedido.NewRow();
+                        row["idproducto"] = Convert.ToInt32(txtId_producto.Text);
+                        row["producto"] = txtNombreProducto.Text;
+                        row["precio_compra"] = Convert.ToDecimal(txtPrecioCompra.Text);
+                        row["cantidad"] = Convert.ToDecimal(txtStock.Text);
+                        row["subtotal"] = Convert.ToDecimal(subtotal);
+                        dtDetallePedido.Rows.Add(row);
+                        limpiarDetalle();
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace); // Nos muestra el posible error.
+            }
+
+        }
+
+        private void btnQuitar_Click(object sender, EventArgs e)
+        {
+            try
+            {   
+                int indiceFila = dgvListado_detalle.CurrentCell.RowIndex; 
+                DataRow row = dtDetallePedido.Rows[indiceFila];
+              
+                totalPagado = totalPagado - (Convert.ToDecimal(row["subtotal"].ToString()));
+                lblTotal_pagado.Text = Convert.ToString(totalPagado);
+                                                                    
+                dtDetallePedido.Rows.Remove(row);
+            }
+            catch (Exception)
+            {
+                MensajeError("No hay fila para remover");
+            }
+        }
+
+        private void dgvListado_detalle_DoubleClick(object sender, EventArgs e)
+        {
+            txtIdPedido.Text = Convert.ToString(dgvListado.CurrentRow.Cells["id_pedido"].Value);
+            txtNombreProveedor.Text = Convert.ToString(dgvListado.CurrentRow.Cells["proveedor"].Value);
+            dtFecha.Value = Convert.ToDateTime(dgvListado.CurrentRow.Cells["fecha pedido"].Value);
+            lblTotal_pagado.Text = Convert.ToString(dgvListado.CurrentRow.Cells["total"].Value);
+            MostrarDetalle();
         }
     }
 }
