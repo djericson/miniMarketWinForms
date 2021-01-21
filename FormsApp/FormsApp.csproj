@@ -77,6 +77,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\SrvRef_Ofertas\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SrvRef_Pedidos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\SrvRef_UsrRol\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -87,14 +97,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\SrvRef_Ventas\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\WCF_Productos\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="FormMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormMain.cs" />
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
@@ -134,13 +147,10 @@
     <Compile Include="login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="MasDeUnRol.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="MasDeUnRol.cs" />
     <Compile Include="MasDeUnRol.Designer.cs">
       <DependentUpon>MasDeUnRol.cs</DependentUpon>
     </Compile>
-    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -152,6 +162,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="UserControl_for_gestion_productos\Update_product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_for_gestion_productos\Update_product.Designer.cs">
+      <DependentUpon>Update_product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_for_gestion_productos\product_det.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_for_gestion_productos\product_det.Designer.cs">
+      <DependentUpon>product_det.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventas-pagos\Pagos.cs">
       <SubType>Form</SubType>
@@ -165,16 +187,16 @@
     <Compile Include="Ventas-pagos\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gestion_Roles_User.cs\Creacion_Rol.cs">
+    <Compile Include="WinForms_AccesosRolesUsrs\Creacion_Rol.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gestion_Roles_User.cs\Creacion_Rol.designer.cs">
+    <Compile Include="WinForms_AccesosRolesUsrs\Creacion_Rol.designer.cs">
       <DependentUpon>Creacion_Rol.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gestion_Roles_User.cs\Forms_Rol.cs">
+    <Compile Include="WinForms_AccesosRolesUsrs\Forms_Rol.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gestion_Roles_User.cs\Forms_Rol.Designer.cs">
+    <Compile Include="WinForms_AccesosRolesUsrs\Forms_Rol.Designer.cs">
       <DependentUpon>Forms_Rol.cs</DependentUpon>
     </Compile>
     <Compile Include="WinForms_AccesosRolesUsrs\FrmUsr.cs">
@@ -189,16 +211,16 @@
     <Compile Include="WinForms_AccesosRolesUsrs\FrmVentanasMenus.Designer.cs">
       <DependentUpon>FrmVentanasMenus.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gestion_Roles_User.cs\Gestion_Roles_User.cs">
+    <Compile Include="WinForms_AccesosRolesUsrs\Gestion_Roles_User.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gestion_Roles_User.cs\Gestion_Roles_User.designer.cs">
+    <Compile Include="WinForms_AccesosRolesUsrs\Gestion_Roles_User.designer.cs">
       <DependentUpon>Gestion_Roles_User.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gestion_Roles_User.cs\Rol_Usuario.cs">
+    <Compile Include="WinForms_AccesosRolesUsrs\Rol_Usuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gestion_Roles_User.cs\Rol_Usuario.designer.cs">
+    <Compile Include="WinForms_AccesosRolesUsrs\Rol_Usuario.designer.cs">
       <DependentUpon>Rol_Usuario.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Busqueda.resx">
@@ -233,22 +255,28 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_for_gestion_productos\Update_product.resx">
+      <DependentUpon>Update_product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_for_gestion_productos\product_det.resx">
+      <DependentUpon>product_det.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventas-pagos\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gestion_Roles_User.cs\Creacion_Rol.resx">
+    <EmbeddedResource Include="WinForms_AccesosRolesUsrs\Creacion_Rol.resx">
       <DependentUpon>Creacion_Rol.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gestion_Roles_User.cs\Forms_Rol.resx">
+    <EmbeddedResource Include="WinForms_AccesosRolesUsrs\Forms_Rol.resx">
       <DependentUpon>Forms_Rol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WinForms_AccesosRolesUsrs\FrmUsr.resx">
       <DependentUpon>FrmUsr.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gestion_Roles_User.cs\Gestion_Roles_User.resx">
+    <EmbeddedResource Include="WinForms_AccesosRolesUsrs\Gestion_Roles_User.resx">
       <DependentUpon>Gestion_Roles_User.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gestion_Roles_User.cs\Rol_Usuario.resx">
+    <EmbeddedResource Include="WinForms_AccesosRolesUsrs\Rol_Usuario.resx">
       <DependentUpon>Rol_Usuario.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Connected Services\SrvRefProveedor\service.wsdl" />
@@ -257,6 +285,22 @@
     </None>
     <None Include="Connected Services\SrvRefProveedor\ServiceProveedor.wsdl" />
     <None Include="Connected Services\SrvRefProveedor\ServiceProveedor.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SrvRef_Ofertas\service.wsdl" />
+    <None Include="Connected Services\SrvRef_Ofertas\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SrvRef_Ofertas\Service_Ofertas.wsdl" />
+    <None Include="Connected Services\SrvRef_Ofertas\Service_Ofertas.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SrvRef_Pedidos\service.wsdl" />
+    <None Include="Connected Services\SrvRef_Pedidos\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SrvRef_Pedidos\Service_Pedidos.wsdl" />
+    <None Include="Connected Services\SrvRef_Pedidos\Service_Pedidos.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\SrvRef_UsrRol\Arrays.xsd">
@@ -278,6 +322,14 @@
     <None Include="Connected Services\SrvRef_Usr\Service_Usr.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\SrvRef_Ventas\service.wsdl" />
+    <None Include="Connected Services\SrvRef_Ventas\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SrvRef_Ventas\Service_Ventas.wsdl" />
+    <None Include="Connected Services\SrvRef_Ventas\Service_Ventas.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\WCF_Productos\service.wsdl" />
     <None Include="Connected Services\WCF_Productos\service.xsd">
       <SubType>Designer</SubType>
@@ -289,8 +341,6 @@
     <None Include="Connected Services\WCF_Productos\Utilitarios.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\WcfService.CompositeType.datasource" />
   </ItemGroup>
@@ -332,11 +382,27 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\SrvRef_Pedidos\configuration91.svcinfo" />
+    <None Include="Connected Services\SrvRef_Pedidos\configuration.svcinfo" />
+    <None Include="Connected Services\SrvRef_Pedidos\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\SrvRef_Ofertas\configuration91.svcinfo" />
+    <None Include="Connected Services\SrvRef_Ofertas\configuration.svcinfo" />
+    <None Include="Connected Services\SrvRef_Ofertas\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\SrvRef_Ventas\configuration91.svcinfo" />
+    <None Include="Connected Services\SrvRef_Ventas\configuration.svcinfo" />
+    <None Include="Connected Services\SrvRef_Ventas\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="UserControl_for_gestion_productos\check.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\Debug\" />
-    <Folder Include="obj\Debug\TempPE\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\3_Pry_BL\Pry_3_BL.csproj">
       <Project>{fd956780-5e92-435e-bb17-5ab90b7a9943}</Project>
@@ -353,8 +419,11 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\SrvRefProveedor\" />
+    <WCFMetadataStorage Include="Connected Services\SrvRef_Ofertas\" />
+    <WCFMetadataStorage Include="Connected Services\SrvRef_Pedidos\" />
     <WCFMetadataStorage Include="Connected Services\SrvRef_UsrRol\" />
     <WCFMetadataStorage Include="Connected Services\SrvRef_Usr\" />
+    <WCFMetadataStorage Include="Connected Services\SrvRef_Ventas\" />
     <WCFMetadataStorage Include="Connected Services\WCF_Productos\" />
   </ItemGroup>
   <ItemGroup>

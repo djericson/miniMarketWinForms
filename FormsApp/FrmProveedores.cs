@@ -50,7 +50,6 @@ namespace NS_WinFormsApps
             txtRazon_Social.ReadOnly = !valor;
             txtDireccion.ReadOnly = !valor;
             cbCategoria.Enabled = valor;
-            cbTipo_Documento.Enabled = valor;
             txtNum_Documento.ReadOnly = !valor;
             txtTelefono.ReadOnly = !valor;
             txtUrl.ReadOnly = !valor;
@@ -191,12 +190,12 @@ namespace NS_WinFormsApps
                 {
                     if (IsNuevo)
                     {
-                        rpta = ClsBLProveedor.INSERTAR(txtRazon_Social.Text.Trim().ToUpper(), cbCategoria.Text, cbTipo_Documento.Text,
+                        rpta = ClsBLProveedor.INSERTAR(txtRazon_Social.Text.Trim().ToUpper(), cbCategoria.Text, ""/*cbTipo_Documento.Text*/,
                         txtNum_Documento.Text, txtDireccion.Text, txtTelefono.Text, txtEmail.Text, txtUrl.Text);
                     }
                     else
                     {
-                        rpta = ClsBLProveedor.EDITAR(Convert.ToInt32(dgvListado.CurrentRow.Cells["id_Proveedor"].Value), txtRazon_Social.Text.Trim().ToUpper(), cbCategoria.Text, cbTipo_Documento.Text,
+                        rpta = ClsBLProveedor.EDITAR(Convert.ToInt32(dgvListado.CurrentRow.Cells["id_Proveedor"].Value), txtRazon_Social.Text.Trim().ToUpper(), cbCategoria.Text, ""/*cbTipo_Documento.Text*/,
                         txtNum_Documento.Text, txtDireccion.Text, txtTelefono.Text, txtEmail.Text, txtUrl.Text);
                     }
                   
@@ -261,7 +260,6 @@ namespace NS_WinFormsApps
         {
             txtRazon_Social.Text = Convert.ToString(dgvListado.CurrentRow.Cells["Razon_Social"].Value);
             cbCategoria.Text = Convert.ToString(dgvListado.CurrentRow.Cells["Categoria"].Value);
-            cbTipo_Documento.Text = Convert.ToString(dgvListado.CurrentRow.Cells["Tipo_Documento"].Value);
             txtNum_Documento.Text = Convert.ToString(dgvListado.CurrentRow.Cells["Num_Documento"].Value);
             txtDireccion.Text = Convert.ToString(dgvListado.CurrentRow.Cells["Direccion"].Value);
             txtTelefono.Text = Convert.ToString(dgvListado.CurrentRow.Cells["Telefono"].Value);
@@ -278,6 +276,11 @@ namespace NS_WinFormsApps
             {
                 dgvListado.Columns[0].Visible = false;
             }
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -32,12 +32,14 @@ namespace NS_WinFormsApps
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
-            this.cbTipo_Documento = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.txtRazon_Social = new System.Windows.Forms.TextBox();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -60,10 +62,6 @@ namespace NS_WinFormsApps
             this.btnImprimir = new System.Windows.Forms.Button();
             this.dgvListado = new System.Windows.Forms.DataGridView();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
@@ -82,18 +80,6 @@ namespace NS_WinFormsApps
             this.label1.TabIndex = 19;
             this.label1.Text = "PROVEEDORES";
             // 
-            // cbTipo_Documento
-            // 
-            this.cbTipo_Documento.FormattingEnabled = true;
-            this.cbTipo_Documento.Items.AddRange(new object[] {
-            "RUC",
-            "RUS"});
-            this.cbTipo_Documento.Location = new System.Drawing.Point(114, 55);
-            this.cbTipo_Documento.Name = "cbTipo_Documento";
-            this.cbTipo_Documento.Size = new System.Drawing.Size(59, 21);
-            this.cbTipo_Documento.TabIndex = 6;
-            this.cbTipo_Documento.Text = "RUC";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -103,23 +89,14 @@ namespace NS_WinFormsApps
             this.label9.TabIndex = 5;
             this.label9.Text = "Telefono:";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 58);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Tipo Régimen:";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 13);
+            this.label2.Size = new System.Drawing.Size(73, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Nombre Proveedor";
+            this.label2.Text = "Razón Social:";
             // 
             // txtTelefono
             // 
@@ -135,10 +112,8 @@ namespace NS_WinFormsApps
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.cbTipo_Documento);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.btnEliminar);
-            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtTelefono);
             this.groupBox1.Controls.Add(this.txtRazon_Social);
@@ -162,13 +137,51 @@ namespace NS_WinFormsApps
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Proveedor";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 57);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Nro. RUC:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.DarkGray;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Location = new System.Drawing.Point(112, 85);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(450, 20);
+            this.textBox1.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 87);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(96, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Nombre Comercial:";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(587, 127);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 14;
+            this.btnEliminar.Text = "&Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // txtRazon_Social
             // 
             this.txtRazon_Social.BackColor = System.Drawing.Color.DarkGray;
             this.txtRazon_Social.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtRazon_Social.Location = new System.Drawing.Point(114, 25);
+            this.txtRazon_Social.Location = new System.Drawing.Point(112, 25);
             this.txtRazon_Social.Name = "txtRazon_Social";
-            this.txtRazon_Social.Size = new System.Drawing.Size(237, 20);
+            this.txtRazon_Social.ReadOnly = true;
+            this.txtRazon_Social.Size = new System.Drawing.Size(450, 20);
             this.txtRazon_Social.TabIndex = 4;
             // 
             // cbCategoria
@@ -178,7 +191,7 @@ namespace NS_WinFormsApps
             "Alimentos",
             "Golosinas",
             "Salud"});
-            this.cbCategoria.Location = new System.Drawing.Point(416, 24);
+            this.cbCategoria.Location = new System.Drawing.Point(416, 55);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(146, 21);
             this.cbCategoria.TabIndex = 3;
@@ -257,7 +270,7 @@ namespace NS_WinFormsApps
             // 
             this.txtNum_Documento.BackColor = System.Drawing.Color.DarkGray;
             this.txtNum_Documento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNum_Documento.Location = new System.Drawing.Point(241, 55);
+            this.txtNum_Documento.Location = new System.Drawing.Point(112, 55);
             this.txtNum_Documento.Name = "txtNum_Documento";
             this.txtNum_Documento.Size = new System.Drawing.Size(123, 20);
             this.txtNum_Documento.TabIndex = 1;
@@ -292,11 +305,11 @@ namespace NS_WinFormsApps
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(357, 27);
+            this.label7.Location = new System.Drawing.Point(296, 60);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 13);
+            this.label7.Size = new System.Drawing.Size(55, 13);
             this.label7.TabIndex = 0;
-            this.label7.Text = "Categoria";
+            this.label7.Text = "Categoria:";
             // 
             // errorIcono
             // 
@@ -346,6 +359,7 @@ namespace NS_WinFormsApps
             this.btnImprimir.TabIndex = 12;
             this.btnImprimir.Text = "&Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // dgvListado
             // 
@@ -375,43 +389,6 @@ namespace NS_WinFormsApps
             this.btnBuscar.Text = "&Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(587, 127);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 14;
-            this.btnEliminar.Text = "&Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 87);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Nombre Comercial:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.DarkGray;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(112, 85);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(334, 20);
-            this.textBox1.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(179, 58);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Nro. RUC:";
             // 
             // groupBox2
             // 
@@ -453,9 +430,7 @@ namespace NS_WinFormsApps
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolTip ttMensaje;
-        private System.Windows.Forms.ComboBox cbTipo_Documento;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.GroupBox groupBox1;
