@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="ClsDAC_Categoria.cs" />
     <Compile Include="ClsDAC_CatProds.cs" />
+    <Compile Include="ClsDAC_Detalle_Pedido.cs" />
     <Compile Include="ClsDAC_MenuPrincipal.cs" />
     <Compile Include="ClsDAC_Pedidos.cs" />
     <Compile Include="ClsDAC_Productos.cs" />

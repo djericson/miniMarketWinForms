@@ -107,7 +107,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="FormMain.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
@@ -126,7 +128,7 @@
     <Compile Include="FrmPedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPedido.designer.cs">
+    <Compile Include="FrmPedido.Designer.cs">
       <DependentUpon>FrmPedido.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmProveedores.cs">
@@ -134,6 +136,12 @@
     </Compile>
     <Compile Include="FrmProveedores.Designer.cs">
       <DependentUpon>FrmProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVistaProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVistaProveedor.Designer.cs">
+      <DependentUpon>FrmVistaProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="gestion_productos.cs">
       <SubType>Form</SubType>
@@ -147,7 +155,9 @@
     <Compile Include="login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="MasDeUnRol.cs" />
+    <Compile Include="MasDeUnRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MasDeUnRol.Designer.cs">
       <DependentUpon>MasDeUnRol.cs</DependentUpon>
     </Compile>
@@ -232,14 +242,17 @@
     <EmbeddedResource Include="FrmCategoria.resx">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPedido.resx">
-      <DependentUpon>FrmPedido.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmMenuPrincipal.resx">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmPedido.resx">
+      <DependentUpon>FrmPedido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmProveedores.resx">
       <DependentUpon>FrmProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVistaProveedor.resx">
+      <DependentUpon>FrmVistaProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gestion_productos.resx">
       <DependentUpon>gestion_productos.cs</DependentUpon>
