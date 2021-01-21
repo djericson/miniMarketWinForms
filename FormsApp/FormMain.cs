@@ -22,10 +22,10 @@ namespace FormsApp
         gestion_productos _gestion_Productos = new gestion_productos();
         FrmProveedores _FrmProveedores = new FrmProveedores();
         FrmPedido _FrmPedido = new FrmPedido();
-        //Rol_Usuario rol_Usuario = new Rol_Usuario();
         FrmUsrs frmUsrs = new FrmUsrs();
 
-
+        public static int ID_Rol = 0;
+        public static string Form_For_Adm = "";
         public static DataTable dataTable = new DataTable();
         SrvRef_UsrRol.Gestion_User_RolClient objwcf = new SrvRef_UsrRol.Gestion_User_RolClient();
         public FormMain()
@@ -43,7 +43,6 @@ namespace FormsApp
 
             StringReader sr = new StringReader(DataTable);
             Newtonsoft.Json.JsonTextReader reader = new JsonTextReader(sr);
-            //object result = json.Deserialize(reader, valueType);
             var result = json.Deserialize(reader, type1);
             reader.Close();
 
@@ -51,28 +50,21 @@ namespace FormsApp
         }
         private void FormMain_Load(object sender, EventArgs e)
         {
-            ID_usuario.Text = login.ID_Usuario.ToString();
+            ID_Rol = 0;
+            ID_usuario.Text = "ID_Usuario: " + login.ID_Usuario;
             Usuario.Text = login.Usuario;
-            if (login.Rol != "")
+            if (login.Name_Rol != "" && login.ID_Rol != 0)
             {
-                Rol.Text = login.Rol;
+                Rol.Text = login.Name_Rol;
+                ID_Rol = login.ID_Rol;
+                //MessageBox.Show("1: "+ID_Rol);
             }
             else
             {
                 Rol.Text = MasDeUnRol.Name_Rol;
-
+                ID_Rol = MasDeUnRol.ID_Rol;
+                //MessageBox.Show("2: " + ID_Rol);
             }
-            //MessageBox.Show("" + Rol.Text);
-
-            //Type type = dataTable.GetType();
-
-
-            //var data = objwcf.Forms_For_User(login.Rol);
-
-            //var data = objwcf.Forms_For_User(MasDeUnRol.ID_ROL);
-            //dataTable = Deserialize(data, type);
-
-
         }
 
 
@@ -92,15 +84,23 @@ namespace FormsApp
 
         public Boolean  Acceso(string Butto_Form)
         {
-
-            foreach (DataRow dataRow in dataTable.Rows)
+            try
             {
-                if (Butto_Form == dataRow["Nombre"].ToString())
+                MessageBox.Show("datatable.count: "+dataTable.Rows.Count.ToString());
+                foreach (DataRow dataRow in dataTable.Rows)
                 {
-                    return true;
+                    if (Butto_Form == dataRow["Nombre"].ToString())
+                    {
+                        return true;
+                    }
                 }
+                return false;
             }
-            return false;
+            catch(Exception ex )
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
         }
         private void Provedores_Click(object sender, EventArgs e)
         {
@@ -167,6 +167,7 @@ namespace FormsApp
             
             if (Acceso(Usuarios.Name.ToString()))
             {
+
                 MessageBox.Show("Form Usuarios");
 
                 //frmUsrs.Show();
@@ -182,6 +183,8 @@ namespace FormsApp
         {
             if (Acceso(Roles_Usuario.Name.ToString()))
             {
+                Form_For_Adm = Roles_Usuario.Name.ToString();
+
                 Gestion_Roles_User gestion_Roles_User = new Gestion_Roles_User();
                 gestion_Roles_User.Show();
                 this.Hide();

@@ -64,9 +64,8 @@
             this.Usuario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Usuario.Location = new System.Drawing.Point(117, 23);
             this.Usuario.Name = "Usuario";
-            this.Usuario.Size = new System.Drawing.Size(47, 17);
+            this.Usuario.Size = new System.Drawing.Size(0, 17);
             this.Usuario.TabIndex = 2;
-            this.Usuario.Text = "label1";
             // 
             // Provedores
             // 
@@ -87,9 +86,8 @@
             this.Rol.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Rol.Location = new System.Drawing.Point(117, 62);
             this.Rol.Name = "Rol";
-            this.Rol.Size = new System.Drawing.Size(47, 17);
+            this.Rol.Size = new System.Drawing.Size(0, 17);
             this.Rol.TabIndex = 4;
-            this.Rol.Text = "label1";
             // 
             // groupBox1
             // 
@@ -102,7 +100,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(35, 103);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(693, 273);
+            this.groupBox1.Size = new System.Drawing.Size(693, 342);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Forms";
@@ -161,7 +159,7 @@
             this.Atras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Atras.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Atras.Image = global::FormsApp.Properties.Resources.Webp_net_resizeimage__15_;
-            this.Atras.Location = new System.Drawing.Point(185, 426);
+            this.Atras.Location = new System.Drawing.Point(179, 468);
             this.Atras.Name = "Atras";
             this.Atras.Size = new System.Drawing.Size(93, 41);
             this.Atras.TabIndex = 81;
@@ -173,7 +171,7 @@
             this.exit.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exit.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exit.Location = new System.Drawing.Point(309, 426);
+            this.exit.Location = new System.Drawing.Point(452, 467);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(96, 41);
             this.exit.TabIndex = 6;
@@ -206,17 +204,16 @@
             // ID_usuario
             // 
             this.ID_usuario.AutoSize = true;
-            this.ID_usuario.Location = new System.Drawing.Point(368, 71);
+            this.ID_usuario.Location = new System.Drawing.Point(237, 27);
             this.ID_usuario.Name = "ID_usuario";
-            this.ID_usuario.Size = new System.Drawing.Size(35, 13);
+            this.ID_usuario.Size = new System.Drawing.Size(0, 13);
             this.ID_usuario.TabIndex = 84;
-            this.ID_usuario.Text = "label3";
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(790, 517);
+            this.ClientSize = new System.Drawing.Size(785, 551);
             this.Controls.Add(this.ID_usuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

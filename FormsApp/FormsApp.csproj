@@ -92,7 +92,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="FormMain.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
@@ -132,7 +134,9 @@
     <Compile Include="login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="MasDeUnRol.cs" />
+    <Compile Include="MasDeUnRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MasDeUnRol.Designer.cs">
       <DependentUpon>MasDeUnRol.cs</DependentUpon>
     </Compile>
@@ -273,6 +277,9 @@
     <None Include="Connected Services\SrvRefProveedor\ServiceProveedor.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\SrvRef_UsrRol\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\SrvRef_UsrRol\service.wsdl" />
     <None Include="Connected Services\SrvRef_UsrRol\service.xsd">
       <SubType>Designer</SubType>
@@ -330,12 +337,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Connected Services\SrvRef_UsrRol\configuration91.svcinfo" />
-    <None Include="Connected Services\SrvRef_UsrRol\configuration.svcinfo" />
-    <None Include="Connected Services\SrvRef_UsrRol\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -343,6 +344,12 @@
     <None Include="Resources\Webp.net-resizeimage %2812%29.png" />
     <None Include="Resources\Webp.net-resizeimage %2813%29.png" />
     <None Include="Resources\Webp.net-resizeimage %2814%29.png" />
+    <None Include="Connected Services\SrvRef_UsrRol\configuration91.svcinfo" />
+    <None Include="Connected Services\SrvRef_UsrRol\configuration.svcinfo" />
+    <None Include="Connected Services\SrvRef_UsrRol\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="UserControl_for_gestion_productos\check.png" />
   </ItemGroup>
   <ItemGroup>
