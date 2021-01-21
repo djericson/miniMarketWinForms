@@ -51,7 +51,7 @@ namespace FormsApp
         private void FormMain_Load(object sender, EventArgs e)
         {
             ID_Rol = 0;
-            ID_usuario.Text = "ID_Usuario: " + login.ID_Usuario;
+            ID_usuario.Text = "COdigo_Usuario: " + login.ID_Usuario;
             Usuario.Text = login.Usuario;
             if (login.Name_Rol != "" && login.ID_Rol != 0)
             {
