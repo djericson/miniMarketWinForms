@@ -113,14 +113,14 @@ namespace WcfService
         public List<List<string>> Login(string user, string pasword)
         {
 
-            ClsBL_Usr BL = new ClsBL_Usr();
+            BL_Login BL = new BL_Login();
             var data = BL.Login(user, pasword);
             return data;
         }
 
         public string Forms_For_User(int ID_Rol)
         {
-            ClsBL_Usr BL = new ClsBL_Usr();
+            BL_Login BL = new BL_Login();
             var data_Table = BL.Forms_For_User(ID_Rol);
             Newtonsoft.Json.JsonSerializer json = new Newtonsoft.Json.JsonSerializer();
             json.NullValueHandling = NullValueHandling.Ignore;
