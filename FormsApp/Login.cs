@@ -21,8 +21,7 @@ namespace FormsApp
         public static int richTextlent = 1;
 
         SrvRef_UsrRol.Gestion_User_RolClient objwcf = new SrvRef_UsrRol.Gestion_User_RolClient();
-        gestion_productos _gestion_productos = new gestion_productos();
-         FormMain _FormMain = new FormMain();
+        
 
 
          
