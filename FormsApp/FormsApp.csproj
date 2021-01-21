@@ -149,6 +149,30 @@
     <Compile Include="gestion_productos.Designer.cs">
       <DependentUpon>gestion_productos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gestion_Roles_User\Creacion_Rol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion_Roles_User\Creacion_Rol.designer.cs">
+      <DependentUpon>Creacion_Rol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion_Roles_User\Forms_Rol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion_Roles_User\Forms_Rol.Designer.cs">
+      <DependentUpon>Forms_Rol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion_Roles_User\Gestion_Roles_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion_Roles_User\Gestion_Roles_User.designer.cs">
+      <DependentUpon>Gestion_Roles_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion_Roles_User\Rol_Usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion_Roles_User\Rol_Usuario.designer.cs">
+      <DependentUpon>Rol_Usuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,18 +197,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="UserControl_for_gestion_productos\Update_product.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl_for_gestion_productos\Update_product.Designer.cs">
-      <DependentUpon>Update_product.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl_for_gestion_productos\product_det.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl_for_gestion_productos\product_det.Designer.cs">
-      <DependentUpon>product_det.cs</DependentUpon>
-    </Compile>
     <Compile Include="Ventas-pagos\Pagos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,18 +209,6 @@
     <Compile Include="Ventas-pagos\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
-    <Compile Include="WinForms_AccesosRolesUsrs\Creacion_Rol.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WinForms_AccesosRolesUsrs\Creacion_Rol.designer.cs">
-      <DependentUpon>Creacion_Rol.cs</DependentUpon>
-    </Compile>
-    <Compile Include="WinForms_AccesosRolesUsrs\Forms_Rol.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WinForms_AccesosRolesUsrs\Forms_Rol.Designer.cs">
-      <DependentUpon>Forms_Rol.cs</DependentUpon>
-    </Compile>
     <Compile Include="WinForms_AccesosRolesUsrs\FrmUsr.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,18 +220,6 @@
     </Compile>
     <Compile Include="WinForms_AccesosRolesUsrs\FrmVentanasMenus.Designer.cs">
       <DependentUpon>FrmVentanasMenus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="WinForms_AccesosRolesUsrs\Gestion_Roles_User.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WinForms_AccesosRolesUsrs\Gestion_Roles_User.designer.cs">
-      <DependentUpon>Gestion_Roles_User.cs</DependentUpon>
-    </Compile>
-    <Compile Include="WinForms_AccesosRolesUsrs\Rol_Usuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WinForms_AccesosRolesUsrs\Rol_Usuario.designer.cs">
-      <DependentUpon>Rol_Usuario.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Busqueda.resx">
       <DependentUpon>Busqueda.cs</DependentUpon>
@@ -257,6 +245,18 @@
     <EmbeddedResource Include="gestion_productos.resx">
       <DependentUpon>gestion_productos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gestion_Roles_User\Creacion_Rol.resx">
+      <DependentUpon>Creacion_Rol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion_Roles_User\Forms_Rol.resx">
+      <DependentUpon>Forms_Rol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion_Roles_User\Gestion_Roles_User.resx">
+      <DependentUpon>Gestion_Roles_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion_Roles_User\Rol_Usuario.resx">
+      <DependentUpon>Rol_Usuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -268,29 +268,11 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl_for_gestion_productos\Update_product.resx">
-      <DependentUpon>Update_product.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControl_for_gestion_productos\product_det.resx">
-      <DependentUpon>product_det.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Ventas-pagos\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WinForms_AccesosRolesUsrs\Creacion_Rol.resx">
-      <DependentUpon>Creacion_Rol.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="WinForms_AccesosRolesUsrs\Forms_Rol.resx">
-      <DependentUpon>Forms_Rol.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="WinForms_AccesosRolesUsrs\FrmUsr.resx">
       <DependentUpon>FrmUsr.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="WinForms_AccesosRolesUsrs\Gestion_Roles_User.resx">
-      <DependentUpon>Gestion_Roles_User.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="WinForms_AccesosRolesUsrs\Rol_Usuario.resx">
-      <DependentUpon>Rol_Usuario.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Connected Services\SrvRefProveedor\service.wsdl" />
     <None Include="Connected Services\SrvRefProveedor\service.xsd">
@@ -413,7 +395,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="UserControl_for_gestion_productos\check.png" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

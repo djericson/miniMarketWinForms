@@ -54,6 +54,7 @@
     <Compile Include="ClsDAC_Usrs.cs" />
     <Compile Include="ClsDAC_Ventas.cs" />
     <Compile Include="Gestion_Rol_Usuario.cs" />
+    <Compile Include="DAC_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

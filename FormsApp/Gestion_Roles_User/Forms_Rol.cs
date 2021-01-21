@@ -46,8 +46,9 @@ namespace FormsApp.WinForms_AccesosRolesUsrs
                 //list_Form_rol.DataSource = dataset.Tables["list_Roles_forms"];
                 if (list_Form_rol.Columns.Count != 0)
                 {
-                    list_Form_rol.Columns[0].Visible = false;
-                    list_Form_rol.CurrentCell = list_Form_rol.Rows[0].Cells[1];
+                    list_Form_rol.Columns["codigo_rol"].Visible = false;
+                    list_Form_rol.Columns["id_Form"].Visible = false;
+                    list_Form_rol.CurrentCell = list_Form_rol.Rows[0].Cells["Name_Rol"];
 
                 }
             }
@@ -78,24 +79,47 @@ namespace FormsApp.WinForms_AccesosRolesUsrs
 
         private void delete_Forms_rol_Click(object sender, EventArgs e)
         {
-            if (list_Form_rol.Columns.Count != 0 && Forms.Items.Count != 0)
+            if (list_Form_rol.Columns.Count != 0 )
             {
-                var id_form = Convert.ToInt32(Forms.SelectedValue.ToString());
-                var id_rol = Convert.ToInt32(list_Form_rol.CurrentRow.Cells[0].Value);
-                objWcf.delete_Forms_rol(id_rol, id_form);
-                load_forms_rol();
+                //var id_form = Convert.ToInt32(Forms.SelectedValue.ToString());
+                var id_rol = Convert.ToInt32(list_Form_rol.CurrentRow.Cells["codigo_rol"].Value);
+
+
+
+                var id_form = list_Form_rol.CurrentRow.Cells["id_Form"].Value.ToString();
+                if (id_form != "")
+                {
+                    var ID_Form = Convert.ToInt32(id_form);
+                    var Name_Form = list_Form_rol.CurrentRow.Cells["Name_Form"].Value.ToString();
+                    if (FormMain.ID_Rol == id_rol && Name_Form == FormMain.Form_For_Adm)
+                    {
+                        MessageBox.Show("seras direccionado a la ventana de login");
+                        objWcf.delete_Forms_rol(id_rol, ID_Form);
+                        this.Hide();
+                        login _login = new login();
+                        _login.Show();
+                        _login.Login(login.Name_Usuario, login.Pasword);
+                        
+                    }
+                    else
+                    {
+                        objWcf.delete_Forms_rol(id_rol, ID_Form);
+                        load_forms_rol();
+                    }
+
+                }
+
+               
+               
             }
         }
 
         private void list_Form_rol_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (list_Form_rol.Columns.Count > 2 && Forms.Items.Count != 0)
+             
+            if (list_Form_rol.Columns.Count > 3)
             {
-
-            }
-            if (list_Form_rol.Columns.Count > 2 && Forms.Items.Count != 0)
-            {
-                var data = list_Form_rol.CurrentRow.Cells[2].Value.ToString();
+                var data = list_Form_rol.CurrentRow.Cells["Name_Form"].Value.ToString();
                 Forms.Text = data;
             }
         }
