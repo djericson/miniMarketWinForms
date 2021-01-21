@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace FormsApp
 {
-    public partial class Gestion_Roles_User : Form
+    public partial class Gestion_RolesFormsUser : Form
     {
-        public Gestion_Roles_User()
+        public Gestion_RolesFormsUser()
         {
             InitializeComponent();
         }

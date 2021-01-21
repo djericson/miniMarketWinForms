@@ -51,7 +51,7 @@ namespace FormsApp
         private void FormMain_Load(object sender, EventArgs e)
         {
             ID_Rol = 0;
-            ID_usuario.Text = "COdigo_Usuario: " + login.ID_Usuario;
+            ID_usuario.Text = "C0digo_Usuario: " + login.ID_Usuario;
             Usuario.Text = login.Usuario;
             if (login.Name_Rol != "" && login.ID_Rol != 0)
             {
@@ -113,7 +113,7 @@ namespace FormsApp
 
         private void Atras_Click(object sender, EventArgs e)
         {
-            dataTable.Clear();
+            //dataTable.Clear();
             login _login = new login();
             _login.Show();
             this.Close();
@@ -179,7 +179,7 @@ namespace FormsApp
             {
                 Form_For_Adm = GestionRolesUser.Name.ToString();
 
-                Gestion_Roles_User gestion_Roles_User = new Gestion_Roles_User();
+                Gestion_RolesFormsUser gestion_Roles_User = new Gestion_RolesFormsUser();
                 gestion_Roles_User.Show();
                 this.Hide();
             }

@@ -133,7 +133,7 @@ namespace FormsApp
 
         private void Atras_Click_1(object sender, EventArgs e)
         {
-            Gestion_Roles_User _Gestion_Roles_User = new Gestion_Roles_User();
+            Gestion_RolesFormsUser _Gestion_Roles_User = new Gestion_RolesFormsUser();
             _Gestion_Roles_User.Show();
             this.Close();
         }
