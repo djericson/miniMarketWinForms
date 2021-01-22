@@ -30,7 +30,7 @@ namespace NS_WinFormsApps
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.delete = new System.Windows.Forms.Button();
             this.add_producto = new System.Windows.Forms.Button();
             this.BtnAyuda = new System.Windows.Forms.Button();
@@ -55,7 +55,6 @@ namespace NS_WinFormsApps
             this.label12 = new System.Windows.Forms.Label();
             this.marca = new System.Windows.Forms.RichTextBox();
             this.descripcion = new System.Windows.Forms.RichTextBox();
-            this.unidad_produc = new System.Windows.Forms.RichTextBox();
             this.cantida_total = new System.Windows.Forms.RichTextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -66,6 +65,9 @@ namespace NS_WinFormsApps
             this.label1 = new System.Windows.Forms.Label();
             this.numero_producto = new System.Windows.Forms.RichTextBox();
             this.Atras = new System.Windows.Forms.Button();
+            this.Vista_Producto_det = new System.Windows.Forms.Button();
+            this.unidad_produc = new System.Windows.Forms.ComboBox();
+            this.Vista_Todos_los_Productos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.list_productos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presio_promed_dpt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presio_promdio)).BeginInit();
@@ -80,7 +82,7 @@ namespace NS_WinFormsApps
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(83, 28);
             this.delete.TabIndex = 13;
-            this.delete.Text = "delete";
+            this.delete.Text = "Eliminar";
             this.delete.UseVisualStyleBackColor = true;
             this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
@@ -93,7 +95,7 @@ namespace NS_WinFormsApps
             this.add_producto.Name = "add_producto";
             this.add_producto.Size = new System.Drawing.Size(89, 28);
             this.add_producto.TabIndex = 15;
-            this.add_producto.Text = "Insert";
+            this.add_producto.Text = "insertar";
             this.add_producto.UseVisualStyleBackColor = true;
             this.add_producto.Click += new System.EventHandler(this.add_producto_Click);
             // 
@@ -102,6 +104,7 @@ namespace NS_WinFormsApps
             this.BtnAyuda.BackColor = System.Drawing.Color.White;
             this.BtnAyuda.FlatAppearance.BorderSize = 0;
             this.BtnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAyuda.Image = global::FormsApp.Properties.Resources.Webp_net_resizeimage__14_;
             this.BtnAyuda.Location = new System.Drawing.Point(314, 81);
             this.BtnAyuda.Name = "BtnAyuda";
             this.BtnAyuda.Size = new System.Drawing.Size(30, 26);
@@ -129,7 +132,7 @@ namespace NS_WinFormsApps
             this.update.Name = "update";
             this.update.Size = new System.Drawing.Size(88, 28);
             this.update.TabIndex = 22;
-            this.update.Text = "update";
+            this.update.Text = "Actualizar";
             this.update.UseVisualStyleBackColor = true;
             this.update.Click += new System.EventHandler(this.update_Click);
             // 
@@ -145,15 +148,15 @@ namespace NS_WinFormsApps
             this.list_productos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.list_productos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.list_productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.NullValue = null;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.list_productos.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.list_productos.DefaultCellStyle = dataGridViewCellStyle2;
             this.list_productos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.list_productos.Location = new System.Drawing.Point(23, 370);
             this.list_productos.Name = "list_productos";
@@ -174,7 +177,7 @@ namespace NS_WinFormsApps
             this.agregar_datagridview.Name = "agregar_datagridview";
             this.agregar_datagridview.Size = new System.Drawing.Size(61, 28);
             this.agregar_datagridview.TabIndex = 45;
-            this.agregar_datagridview.Text = "add";
+            this.agregar_datagridview.Text = "Agregar";
             this.agregar_datagridview.UseVisualStyleBackColor = true;
             this.agregar_datagridview.Click += new System.EventHandler(this.agregar_datagridview_Click);
             // 
@@ -187,7 +190,7 @@ namespace NS_WinFormsApps
             this.delete_datagridview.Name = "delete_datagridview";
             this.delete_datagridview.Size = new System.Drawing.Size(61, 28);
             this.delete_datagridview.TabIndex = 46;
-            this.delete_datagridview.Text = "delete";
+            this.delete_datagridview.Text = "Eliminar";
             this.delete_datagridview.UseVisualStyleBackColor = true;
             this.delete_datagridview.Click += new System.EventHandler(this.delete_datagridview_Click);
             // 
@@ -200,7 +203,7 @@ namespace NS_WinFormsApps
             this.update_datagridview.Name = "update_datagridview";
             this.update_datagridview.Size = new System.Drawing.Size(60, 28);
             this.update_datagridview.TabIndex = 47;
-            this.update_datagridview.Text = "update";
+            this.update_datagridview.Text = "Actualizar";
             this.update_datagridview.UseVisualStyleBackColor = true;
             this.update_datagridview.Click += new System.EventHandler(this.update_datagridview_Click);
             // 
@@ -372,17 +375,6 @@ namespace NS_WinFormsApps
             this.descripcion.TabIndex = 89;
             this.descripcion.Text = "";
             // 
-            // unidad_produc
-            // 
-            this.unidad_produc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.unidad_produc.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unidad_produc.Location = new System.Drawing.Point(212, 326);
-            this.unidad_produc.Multiline = false;
-            this.unidad_produc.Name = "unidad_produc";
-            this.unidad_produc.Size = new System.Drawing.Size(132, 27);
-            this.unidad_produc.TabIndex = 88;
-            this.unidad_produc.Text = "";
-            // 
             // cantida_total
             // 
             this.cantida_total.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -478,6 +470,7 @@ namespace NS_WinFormsApps
             this.numero_producto.Location = new System.Drawing.Point(212, 37);
             this.numero_producto.Multiline = false;
             this.numero_producto.Name = "numero_producto";
+            this.numero_producto.ReadOnly = true;
             this.numero_producto.Size = new System.Drawing.Size(132, 28);
             this.numero_producto.TabIndex = 96;
             this.numero_producto.Text = "";
@@ -495,11 +488,60 @@ namespace NS_WinFormsApps
             this.Atras.UseVisualStyleBackColor = true;
             this.Atras.Click += new System.EventHandler(this.Atras_Click);
             // 
+            // Vista_Producto_det
+            // 
+            this.Vista_Producto_det.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.Vista_Producto_det.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Vista_Producto_det.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Vista_Producto_det.Location = new System.Drawing.Point(399, 325);
+            this.Vista_Producto_det.Name = "Vista_Producto_det";
+            this.Vista_Producto_det.Size = new System.Drawing.Size(128, 28);
+            this.Vista_Producto_det.TabIndex = 98;
+            this.Vista_Producto_det.Text = "Vista Producto det";
+            this.Vista_Producto_det.UseVisualStyleBackColor = true;
+            this.Vista_Producto_det.Click += new System.EventHandler(this.Vista_Producto_det_Click);
+            // 
+            // unidad_produc
+            // 
+            this.unidad_produc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.unidad_produc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.unidad_produc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.unidad_produc.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unidad_produc.FormattingEnabled = true;
+            this.unidad_produc.Items.AddRange(new object[] {
+            "docena",
+            "media_docena",
+            "cuarto_docena",
+            "gramos",
+            "Kilogramos",
+            "paquetex12",
+            "und"});
+            this.unidad_produc.Location = new System.Drawing.Point(212, 325);
+            this.unidad_produc.Name = "unidad_produc";
+            this.unidad_produc.Size = new System.Drawing.Size(132, 25);
+            this.unidad_produc.TabIndex = 100;
+            // 
+            // Vista_Todos_los_Productos
+            // 
+            this.Vista_Todos_los_Productos.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.Vista_Todos_los_Productos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Vista_Todos_los_Productos.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Vista_Todos_los_Productos.Location = new System.Drawing.Point(533, 325);
+            this.Vista_Todos_los_Productos.Name = "Vista_Todos_los_Productos";
+            this.Vista_Todos_los_Productos.Size = new System.Drawing.Size(154, 28);
+            this.Vista_Todos_los_Productos.TabIndex = 101;
+            this.Vista_Todos_los_Productos.Text = "Vista Todos los Productos";
+            this.Vista_Todos_los_Productos.UseVisualStyleBackColor = true;
+            this.Vista_Todos_los_Productos.Click += new System.EventHandler(this.Vista_Todos_los_Productos_Click);
+            // 
             // gestion_productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 609);
+            this.Controls.Add(this.Vista_Todos_los_Productos);
+            this.Controls.Add(this.unidad_produc);
+            this.Controls.Add(this.Vista_Producto_det);
             this.Controls.Add(this.Atras);
             this.Controls.Add(this.numero_producto);
             this.Controls.Add(this.label1);
@@ -508,7 +550,6 @@ namespace NS_WinFormsApps
             this.Controls.Add(this.label12);
             this.Controls.Add(this.marca);
             this.Controls.Add(this.descripcion);
-            this.Controls.Add(this.unidad_produc);
             this.Controls.Add(this.cantida_total);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -575,7 +616,6 @@ namespace NS_WinFormsApps
         private System.Windows.Forms.Label label12;
         public System.Windows.Forms.RichTextBox marca;
         public System.Windows.Forms.RichTextBox descripcion;
-        public System.Windows.Forms.RichTextBox unidad_produc;
         public System.Windows.Forms.RichTextBox cantida_total;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -586,5 +626,8 @@ namespace NS_WinFormsApps
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox numero_producto;
         private System.Windows.Forms.Button Atras;
+        private System.Windows.Forms.Button Vista_Producto_det;
+        public System.Windows.Forms.ComboBox unidad_produc;
+        private System.Windows.Forms.Button Vista_Todos_los_Productos;
     }
 }
