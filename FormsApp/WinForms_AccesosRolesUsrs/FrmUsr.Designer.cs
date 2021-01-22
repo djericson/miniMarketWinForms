@@ -58,10 +58,6 @@
             this.lbl_VerRolUsr = new System.Windows.Forms.Label();
             this.dgv_listaUsrs = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btn_borrarFiltroBusqueda = new System.Windows.Forms.Button();
-            this.btn_findByNickDniNoms = new System.Windows.Forms.Button();
-            this.txt_findByNickDniNoms = new System.Windows.Forms.TextBox();
-            this.lbl_findByNickDniNoms = new System.Windows.Forms.Label();
             this.btn_limpiarCampos = new System.Windows.Forms.Button();
             this.btn_borrarUsr = new System.Windows.Forms.Button();
             this.btn_updUsr = new System.Windows.Forms.Button();
@@ -361,13 +357,10 @@
             this.dgv_listaUsrs.Name = "dgv_listaUsrs";
             this.dgv_listaUsrs.Size = new System.Drawing.Size(580, 117);
             this.dgv_listaUsrs.TabIndex = 5;
+            this.dgv_listaUsrs.DoubleClick += new System.EventHandler(this.dgv_listaUsrs_DoubleClick);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btn_borrarFiltroBusqueda);
-            this.groupBox2.Controls.Add(this.btn_findByNickDniNoms);
-            this.groupBox2.Controls.Add(this.txt_findByNickDniNoms);
-            this.groupBox2.Controls.Add(this.lbl_findByNickDniNoms);
             this.groupBox2.Controls.Add(this.btn_limpiarCampos);
             this.groupBox2.Controls.Add(this.btn_borrarUsr);
             this.groupBox2.Controls.Add(this.btn_updUsr);
@@ -380,49 +373,9 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lista de Usuarios";
             // 
-            // btn_borrarFiltroBusqueda
-            // 
-            this.btn_borrarFiltroBusqueda.Location = new System.Drawing.Point(511, 10);
-            this.btn_borrarFiltroBusqueda.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_borrarFiltroBusqueda.Name = "btn_borrarFiltroBusqueda";
-            this.btn_borrarFiltroBusqueda.Size = new System.Drawing.Size(73, 25);
-            this.btn_borrarFiltroBusqueda.TabIndex = 18;
-            this.btn_borrarFiltroBusqueda.Text = "Borrar Filtro";
-            this.btn_borrarFiltroBusqueda.UseVisualStyleBackColor = true;
-            // 
-            // btn_findByNickDniNoms
-            // 
-            this.btn_findByNickDniNoms.Location = new System.Drawing.Point(445, 10);
-            this.btn_findByNickDniNoms.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_findByNickDniNoms.Name = "btn_findByNickDniNoms";
-            this.btn_findByNickDniNoms.Size = new System.Drawing.Size(53, 25);
-            this.btn_findByNickDniNoms.TabIndex = 17;
-            this.btn_findByNickDniNoms.Text = "Buscar";
-            this.btn_findByNickDniNoms.UseVisualStyleBackColor = true;
-            // 
-            // txt_findByNickDniNoms
-            // 
-            this.txt_findByNickDniNoms.AccessibleDescription = "df";
-            this.txt_findByNickDniNoms.AccessibleName = "ssd";
-            this.txt_findByNickDniNoms.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.txt_findByNickDniNoms.Location = new System.Drawing.Point(210, 13);
-            this.txt_findByNickDniNoms.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_findByNickDniNoms.Name = "txt_findByNickDniNoms";
-            this.txt_findByNickDniNoms.Size = new System.Drawing.Size(219, 20);
-            this.txt_findByNickDniNoms.TabIndex = 16;
-            // 
-            // lbl_findByNickDniNoms
-            // 
-            this.lbl_findByNickDniNoms.AutoSize = true;
-            this.lbl_findByNickDniNoms.Location = new System.Drawing.Point(8, 16);
-            this.lbl_findByNickDniNoms.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_findByNickDniNoms.Name = "lbl_findByNickDniNoms";
-            this.lbl_findByNickDniNoms.Size = new System.Drawing.Size(198, 13);
-            this.lbl_findByNickDniNoms.TabIndex = 16;
-            this.lbl_findByNickDniNoms.Text = "Buscar Usuario por nick, dni, o nombres:";
-            // 
             // btn_limpiarCampos
             // 
+            this.btn_limpiarCampos.Enabled = false;
             this.btn_limpiarCampos.Location = new System.Drawing.Point(23, 162);
             this.btn_limpiarCampos.Margin = new System.Windows.Forms.Padding(2);
             this.btn_limpiarCampos.Name = "btn_limpiarCampos";
@@ -433,6 +386,7 @@
             // 
             // btn_borrarUsr
             // 
+            this.btn_borrarUsr.Enabled = false;
             this.btn_borrarUsr.Location = new System.Drawing.Point(439, 162);
             this.btn_borrarUsr.Margin = new System.Windows.Forms.Padding(2);
             this.btn_borrarUsr.Name = "btn_borrarUsr";
@@ -443,6 +397,7 @@
             // 
             // btn_updUsr
             // 
+            this.btn_updUsr.Enabled = false;
             this.btn_updUsr.Location = new System.Drawing.Point(292, 162);
             this.btn_updUsr.Margin = new System.Windows.Forms.Padding(2);
             this.btn_updUsr.Name = "btn_updUsr";
@@ -466,7 +421,6 @@
             this.grpB_datosUsr.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaUsrs)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -502,11 +456,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btn_borrarUsr;
         private System.Windows.Forms.Button btn_updUsr;
-        private System.Windows.Forms.TextBox txt_findByNickDniNoms;
-        private System.Windows.Forms.Label lbl_findByNickDniNoms;
         private System.Windows.Forms.Button btn_limpiarCampos;
-        private System.Windows.Forms.Button btn_findByNickDniNoms;
-        private System.Windows.Forms.Button btn_borrarFiltroBusqueda;
         private System.Windows.Forms.TextBox txt_usrRuc;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmb_tipoDoc;

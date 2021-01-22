@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using Utilitarios;
 
 namespace WcfService
 {
@@ -13,23 +15,13 @@ namespace WcfService
         [OperationContract]
         void insUsr(Object[] objUsr);
         [OperationContract]
-        void update(int id, string name);
+        void updUsr(Object[] objUsr);
         [OperationContract]
-        void delete(int id);
+        void delUsr(int idUsr);
 
         [OperationContract]
-        void insert_rol_user(int rol, int user);
+        int get_id_nom_roles(int idUsr);
         [OperationContract]
-        void delete_rol_user(int rol, int user);
-        [OperationContract]
-        int get_id_rol(string rol);
-        [OperationContract]
-        void insert_Forms_rol(int rol, int form);
-        [OperationContract]
-        void delete_Forms_rol(int rol, int form);
-        [OperationContract]
-        int get_id_form(string form);
-
-
+        List<Object[]> getListUsrs();
     }
 }

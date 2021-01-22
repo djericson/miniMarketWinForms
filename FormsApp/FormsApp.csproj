@@ -328,6 +328,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Properties\DataSources\WcfService.CompositeType.datasource" />
   </ItemGroup>
   <ItemGroup>

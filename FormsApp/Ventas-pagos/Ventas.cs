@@ -79,6 +79,7 @@ namespace NS_WinFormsApps.Ventas_pagos
         {
             using (var busqueda = new NS_Busqueda.Busqueda())
             {
+                /*
                 busqueda.objTabla = _objUsr.getUsrCliente("");
                 busqueda.ShowDialog();
                 if (busqueda.objRow != null)
@@ -87,6 +88,7 @@ namespace NS_WinFormsApps.Ventas_pagos
                     txtCliente.Text = busqueda.objRow.Cells["Nombre"].Value.ToString();
                 }
                 busqueda.objTabla.Clear();
+                */
             }
         }
 

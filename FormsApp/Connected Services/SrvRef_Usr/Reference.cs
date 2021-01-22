@@ -17,66 +17,41 @@ namespace FormsApp.SrvRef_Usr {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insUsr", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insUsrResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[][]))]
         void insUsr(object[] objUsr);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insUsr", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insUsrResponse")]
         System.Threading.Tasks.Task insUsrAsync(object[] objUsr);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/update", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/updateResponse")]
-        void update(int id, string name);
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/updUsr", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/updUsrResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[][]))]
+        void updUsr(object[] objUsr);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/update", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/updateResponse")]
-        System.Threading.Tasks.Task updateAsync(int id, string name);
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/updUsr", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/updUsrResponse")]
+        System.Threading.Tasks.Task updUsrAsync(object[] objUsr);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/delete", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/deleteResponse")]
-        void delete(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/delUsr", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/delUsrResponse")]
+        void delUsr(int idUsr);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/delete", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/deleteResponse")]
-        System.Threading.Tasks.Task deleteAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/delUsr", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/delUsrResponse")]
+        System.Threading.Tasks.Task delUsrAsync(int idUsr);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insert_rol_user", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insert_rol_userResponse" +
-            "")]
-        void insert_rol_user(int rol, int user);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insert_rol_user", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insert_rol_userResponse" +
-            "")]
-        System.Threading.Tasks.Task insert_rol_userAsync(int rol, int user);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/delete_rol_user", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/delete_rol_userResponse" +
-            "")]
-        void delete_rol_user(int rol, int user);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/delete_rol_user", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/delete_rol_userResponse" +
-            "")]
-        System.Threading.Tasks.Task delete_rol_userAsync(int rol, int user);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/get_id_rol", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/get_id_rolResponse")]
-        int get_id_rol(string rol);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/get_id_rol", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/get_id_rolResponse")]
-        System.Threading.Tasks.Task<int> get_id_rolAsync(string rol);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insert_Forms_rol", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insert_Forms_rolRespons" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/get_id_nom_roles", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/get_id_nom_rolesRespons" +
             "e")]
-        void insert_Forms_rol(int rol, int form);
+        int get_id_nom_roles(int idUsr);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insert_Forms_rol", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insert_Forms_rolRespons" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/get_id_nom_roles", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/get_id_nom_rolesRespons" +
             "e")]
-        System.Threading.Tasks.Task insert_Forms_rolAsync(int rol, int form);
+        System.Threading.Tasks.Task<int> get_id_nom_rolesAsync(int idUsr);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/delete_Forms_rol", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/delete_Forms_rolRespons" +
-            "e")]
-        void delete_Forms_rol(int rol, int form);
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/getListUsrs", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/getListUsrsResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[][]))]
+        object[][] getListUsrs();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/delete_Forms_rol", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/delete_Forms_rolRespons" +
-            "e")]
-        System.Threading.Tasks.Task delete_Forms_rolAsync(int rol, int form);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/get_id_form", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/get_id_formResponse")]
-        int get_id_form(string form);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/get_id_form", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/get_id_formResponse")]
-        System.Threading.Tasks.Task<int> get_id_formAsync(string form);
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/getListUsrs", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/getListUsrsResponse")]
+        System.Threading.Tasks.Task<object[][]> getListUsrsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -114,68 +89,36 @@ namespace FormsApp.SrvRef_Usr {
             return base.Channel.insUsrAsync(objUsr);
         }
         
-        public void update(int id, string name) {
-            base.Channel.update(id, name);
+        public void updUsr(object[] objUsr) {
+            base.Channel.updUsr(objUsr);
         }
         
-        public System.Threading.Tasks.Task updateAsync(int id, string name) {
-            return base.Channel.updateAsync(id, name);
+        public System.Threading.Tasks.Task updUsrAsync(object[] objUsr) {
+            return base.Channel.updUsrAsync(objUsr);
         }
         
-        public void delete(int id) {
-            base.Channel.delete(id);
+        public void delUsr(int idUsr) {
+            base.Channel.delUsr(idUsr);
         }
         
-        public System.Threading.Tasks.Task deleteAsync(int id) {
-            return base.Channel.deleteAsync(id);
+        public System.Threading.Tasks.Task delUsrAsync(int idUsr) {
+            return base.Channel.delUsrAsync(idUsr);
         }
         
-        public void insert_rol_user(int rol, int user) {
-            base.Channel.insert_rol_user(rol, user);
+        public int get_id_nom_roles(int idUsr) {
+            return base.Channel.get_id_nom_roles(idUsr);
         }
         
-        public System.Threading.Tasks.Task insert_rol_userAsync(int rol, int user) {
-            return base.Channel.insert_rol_userAsync(rol, user);
+        public System.Threading.Tasks.Task<int> get_id_nom_rolesAsync(int idUsr) {
+            return base.Channel.get_id_nom_rolesAsync(idUsr);
         }
         
-        public void delete_rol_user(int rol, int user) {
-            base.Channel.delete_rol_user(rol, user);
+        public object[][] getListUsrs() {
+            return base.Channel.getListUsrs();
         }
         
-        public System.Threading.Tasks.Task delete_rol_userAsync(int rol, int user) {
-            return base.Channel.delete_rol_userAsync(rol, user);
-        }
-        
-        public int get_id_rol(string rol) {
-            return base.Channel.get_id_rol(rol);
-        }
-        
-        public System.Threading.Tasks.Task<int> get_id_rolAsync(string rol) {
-            return base.Channel.get_id_rolAsync(rol);
-        }
-        
-        public void insert_Forms_rol(int rol, int form) {
-            base.Channel.insert_Forms_rol(rol, form);
-        }
-        
-        public System.Threading.Tasks.Task insert_Forms_rolAsync(int rol, int form) {
-            return base.Channel.insert_Forms_rolAsync(rol, form);
-        }
-        
-        public void delete_Forms_rol(int rol, int form) {
-            base.Channel.delete_Forms_rol(rol, form);
-        }
-        
-        public System.Threading.Tasks.Task delete_Forms_rolAsync(int rol, int form) {
-            return base.Channel.delete_Forms_rolAsync(rol, form);
-        }
-        
-        public int get_id_form(string form) {
-            return base.Channel.get_id_form(form);
-        }
-        
-        public System.Threading.Tasks.Task<int> get_id_formAsync(string form) {
-            return base.Channel.get_id_formAsync(form);
+        public System.Threading.Tasks.Task<object[][]> getListUsrsAsync() {
+            return base.Channel.getListUsrsAsync();
         }
     }
 }

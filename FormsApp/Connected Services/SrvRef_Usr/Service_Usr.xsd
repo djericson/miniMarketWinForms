@@ -13,108 +13,53 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="update">
+  <xs:element name="updUsr">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="id" type="xs:int" />
-        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objUsr" nillable="true" type="q2:ArrayOfanyType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="updateResponse">
+  <xs:element name="updUsrResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="delete">
+  <xs:element name="delUsr">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="idUsr" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="deleteResponse">
+  <xs:element name="delUsrResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="insert_rol_user">
+  <xs:element name="get_id_nom_roles">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="rol" type="xs:int" />
-        <xs:element minOccurs="0" name="user" type="xs:int" />
+        <xs:element minOccurs="0" name="idUsr" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="insert_rol_userResponse">
+  <xs:element name="get_id_nom_rolesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="get_id_nom_rolesResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getListUsrs">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="delete_rol_user">
+  <xs:element name="getListUsrsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="rol" type="xs:int" />
-        <xs:element minOccurs="0" name="user" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="delete_rol_userResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="get_id_rol">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="rol" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="get_id_rolResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="get_id_rolResult" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="insert_Forms_rol">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="rol" type="xs:int" />
-        <xs:element minOccurs="0" name="form" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="insert_Forms_rolResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="delete_Forms_rol">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="rol" type="xs:int" />
-        <xs:element minOccurs="0" name="form" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="delete_Forms_rolResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="get_id_form">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="form" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="get_id_formResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="get_id_formResult" type="xs:int" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="getListUsrsResult" nillable="true" type="q3:ArrayOfArrayOfanyType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

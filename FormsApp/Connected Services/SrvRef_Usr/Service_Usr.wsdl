@@ -14,90 +14,50 @@
   <wsdl:message name="IService_Usr_insUsr_OutputMessage">
     <wsdl:part name="parameters" element="tns:insUsrResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_Usr_update_InputMessage">
-    <wsdl:part name="parameters" element="tns:update" />
+  <wsdl:message name="IService_Usr_updUsr_InputMessage">
+    <wsdl:part name="parameters" element="tns:updUsr" />
   </wsdl:message>
-  <wsdl:message name="IService_Usr_update_OutputMessage">
-    <wsdl:part name="parameters" element="tns:updateResponse" />
+  <wsdl:message name="IService_Usr_updUsr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updUsrResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_Usr_delete_InputMessage">
-    <wsdl:part name="parameters" element="tns:delete" />
+  <wsdl:message name="IService_Usr_delUsr_InputMessage">
+    <wsdl:part name="parameters" element="tns:delUsr" />
   </wsdl:message>
-  <wsdl:message name="IService_Usr_delete_OutputMessage">
-    <wsdl:part name="parameters" element="tns:deleteResponse" />
+  <wsdl:message name="IService_Usr_delUsr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:delUsrResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_Usr_insert_rol_user_InputMessage">
-    <wsdl:part name="parameters" element="tns:insert_rol_user" />
+  <wsdl:message name="IService_Usr_get_id_nom_roles_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_id_nom_roles" />
   </wsdl:message>
-  <wsdl:message name="IService_Usr_insert_rol_user_OutputMessage">
-    <wsdl:part name="parameters" element="tns:insert_rol_userResponse" />
+  <wsdl:message name="IService_Usr_get_id_nom_roles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_id_nom_rolesResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_Usr_delete_rol_user_InputMessage">
-    <wsdl:part name="parameters" element="tns:delete_rol_user" />
+  <wsdl:message name="IService_Usr_getListUsrs_InputMessage">
+    <wsdl:part name="parameters" element="tns:getListUsrs" />
   </wsdl:message>
-  <wsdl:message name="IService_Usr_delete_rol_user_OutputMessage">
-    <wsdl:part name="parameters" element="tns:delete_rol_userResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_Usr_get_id_rol_InputMessage">
-    <wsdl:part name="parameters" element="tns:get_id_rol" />
-  </wsdl:message>
-  <wsdl:message name="IService_Usr_get_id_rol_OutputMessage">
-    <wsdl:part name="parameters" element="tns:get_id_rolResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_Usr_insert_Forms_rol_InputMessage">
-    <wsdl:part name="parameters" element="tns:insert_Forms_rol" />
-  </wsdl:message>
-  <wsdl:message name="IService_Usr_insert_Forms_rol_OutputMessage">
-    <wsdl:part name="parameters" element="tns:insert_Forms_rolResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_Usr_delete_Forms_rol_InputMessage">
-    <wsdl:part name="parameters" element="tns:delete_Forms_rol" />
-  </wsdl:message>
-  <wsdl:message name="IService_Usr_delete_Forms_rol_OutputMessage">
-    <wsdl:part name="parameters" element="tns:delete_Forms_rolResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_Usr_get_id_form_InputMessage">
-    <wsdl:part name="parameters" element="tns:get_id_form" />
-  </wsdl:message>
-  <wsdl:message name="IService_Usr_get_id_form_OutputMessage">
-    <wsdl:part name="parameters" element="tns:get_id_formResponse" />
+  <wsdl:message name="IService_Usr_getListUsrs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getListUsrsResponse" />
   </wsdl:message>
   <wsdl:portType name="IService_Usr">
     <wsdl:operation name="insUsr">
       <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insUsr" message="tns:IService_Usr_insUsr_InputMessage" />
       <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insUsrResponse" message="tns:IService_Usr_insUsr_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="update">
-      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/update" message="tns:IService_Usr_update_InputMessage" />
-      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/updateResponse" message="tns:IService_Usr_update_OutputMessage" />
+    <wsdl:operation name="updUsr">
+      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/updUsr" message="tns:IService_Usr_updUsr_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/updUsrResponse" message="tns:IService_Usr_updUsr_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="delete">
-      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/delete" message="tns:IService_Usr_delete_InputMessage" />
-      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/deleteResponse" message="tns:IService_Usr_delete_OutputMessage" />
+    <wsdl:operation name="delUsr">
+      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/delUsr" message="tns:IService_Usr_delUsr_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/delUsrResponse" message="tns:IService_Usr_delUsr_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="insert_rol_user">
-      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insert_rol_user" message="tns:IService_Usr_insert_rol_user_InputMessage" />
-      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insert_rol_userResponse" message="tns:IService_Usr_insert_rol_user_OutputMessage" />
+    <wsdl:operation name="get_id_nom_roles">
+      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/get_id_nom_roles" message="tns:IService_Usr_get_id_nom_roles_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/get_id_nom_rolesResponse" message="tns:IService_Usr_get_id_nom_roles_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="delete_rol_user">
-      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/delete_rol_user" message="tns:IService_Usr_delete_rol_user_InputMessage" />
-      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/delete_rol_userResponse" message="tns:IService_Usr_delete_rol_user_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="get_id_rol">
-      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/get_id_rol" message="tns:IService_Usr_get_id_rol_InputMessage" />
-      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/get_id_rolResponse" message="tns:IService_Usr_get_id_rol_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="insert_Forms_rol">
-      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insert_Forms_rol" message="tns:IService_Usr_insert_Forms_rol_InputMessage" />
-      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insert_Forms_rolResponse" message="tns:IService_Usr_insert_Forms_rol_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="delete_Forms_rol">
-      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/delete_Forms_rol" message="tns:IService_Usr_delete_Forms_rol_InputMessage" />
-      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/delete_Forms_rolResponse" message="tns:IService_Usr_delete_Forms_rol_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="get_id_form">
-      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/get_id_form" message="tns:IService_Usr_get_id_form_InputMessage" />
-      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/get_id_formResponse" message="tns:IService_Usr_get_id_form_OutputMessage" />
+    <wsdl:operation name="getListUsrs">
+      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/getListUsrs" message="tns:IService_Usr_getListUsrs_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/getListUsrsResponse" message="tns:IService_Usr_getListUsrs_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:service name="Service_Usr">
