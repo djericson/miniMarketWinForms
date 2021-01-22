@@ -18,7 +18,7 @@ namespace NS_WinFormsApps.WinForms_AccesosRolesUsrs
         {
             FormsApp.SrvRef_Usr.Service_UsrClient xwcf = new FormsApp.SrvRef_Usr.Service_UsrClient();
 
-            //xwcf.insUsr( new Object(txt_usrNick.Text, txt_usrPass.Text, cmb_tipoDoc.SelectedValue, txt_nroDoc.Text, "_") );
+            //xwcf.insUsr( new Object() { txt_usrNick.Text, txt_usrPass.Text, cmb_tipoDoc.SelectedValue, txt_nroDoc.Text, "_" } );
 
         }
 
