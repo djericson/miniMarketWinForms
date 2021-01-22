@@ -33,22 +33,7 @@ namespace FormsApp
             dataGrid_Roles.DataSource = dataset.Tables["list_roles"];
             Column = dataGrid_Roles.Columns.Count;
         }
-        //private void delete_rol_Click(object sender, EventArgs e)
-        //{
-        //    if (Column > 0)
-        //    {
-        //        var id = Convert.ToInt32(dataGrid_Roles.CurrentRow.Cells[0].Value);
-        //        //objWcf.delete(id);
-        //        load_list_roles();
-        //        //var data = objWcf.List_User_rol();
-        //        Type type = dataSet.GetType();
-        //        //var dataset = Deserialize(data, type);
-        //        //dataGrid_Roles.DataSource = dataset.Tables["list_roles"];
-
-        //    }
-           
-
-        //}
+      
         DataSet Deserialize(string DataTable, Type type1)
         {
             Newtonsoft.Json.JsonSerializer json = new Newtonsoft.Json.JsonSerializer();
@@ -111,11 +96,25 @@ namespace FormsApp
 
         private void delete_rol_Click_1(object sender, EventArgs e)
         {
+            
             if (Column > 0)
             {
                 var id = Convert.ToInt32(dataGrid_Roles.CurrentRow.Cells[0].Value);
-                objWcf.delete(id);
-                load_list_roles();
+                if (FormMain.ID_Rol == id)
+                {
+                    MessageBox.Show("seras direccionado a la ventana de login");
+                    objWcf.delete(id);
+                    login _login = new login();
+                    _login.Login(login.Name_Usuario, login.Pasword);
+                    this.Hide();
+                }
+                else
+                {
+                    objWcf.delete(id);
+                    load_list_roles();
+                }
+               
+                
                 //var data = objWcf.List_User_rol();
                 //Type type = dataSet.GetType();
                 //var dataset = Deserialize(data, type);
@@ -129,11 +128,12 @@ namespace FormsApp
         private void Creacion_Rol_Load_1(object sender, EventArgs e)
         {
             load_list_roles();
+           
         }
 
         private void Atras_Click_1(object sender, EventArgs e)
         {
-            Gestion_Roles_User _Gestion_Roles_User = new Gestion_Roles_User();
+            Gestion_RolesFormsUser _Gestion_Roles_User = new Gestion_RolesFormsUser();
             _Gestion_Roles_User.Show();
             this.Close();
         }

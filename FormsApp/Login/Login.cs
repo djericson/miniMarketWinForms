@@ -20,9 +20,8 @@ namespace FormsApp
         public static string Pasword = "";
         public static int richTextlent = 1;
 
-        SrvRef_UsrRol.Gestion_User_RolClient objwcf;
-        //gestion_productos _gestion_productos = new gestion_productos();
-         //FormMain _FormMain = new FormMain();
+        SrvRef_UsrRol.Gestion_User_RolClient objwcf = new SrvRef_UsrRol.Gestion_User_RolClient();
+        
 
 
          
@@ -30,8 +29,9 @@ namespace FormsApp
         public static string[][] DatosUsuario = new string[10][];
         public static string Usuario = "";
         public static int ID_Usuario = 0;
-        public static string Rol = "";
-        public static int ic_Rol = 0;
+        public static string Name_Rol = "";
+        public static string Name_Usuario = "";
+        public static int ID_Rol = 0;
         DataTable Datatable = new DataTable();
         
         public login()
@@ -56,81 +56,61 @@ namespace FormsApp
             richTextlent = pasword.Text.Length + 1;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        public void Login(string name, string pasword)
         {
-
-            objwcf = new SrvRef_UsrRol.Gestion_User_RolClient();
-            FormMain.dataTable.Clear();
             try
             {
-                  DatosUsuario = objwcf.Login(user_name.Text, Pasword);
-                  Usuario = DatosUsuario[0][1].ToString();
-                  ID_Usuario = Convert.ToInt32(DatosUsuario[0][0].ToString());
-                //MessageBox.Show("userID:" + DatosUsuario[0][0].ToString() + "name" + DatosUsuario[0][1].ToString());
-                //MessageBox.Show("DatosUsuario.Count(): "+DatosUsuario.Count());
-                if (DatosUsuario.Count() > 0 )
+               
+                DatosUsuario = objwcf.Login(name, pasword);
+                Usuario = DatosUsuario[0][1].ToString();
+                ID_Usuario = Convert.ToInt32(DatosUsuario[0][0].ToString());
+                if (DatosUsuario.Count() > 0)
                 {
 
                     if (DatosUsuario.Count() >= 2)
                     {
-                         
+
                         if (DatosUsuario.Count() == 2)
                         {
 
-                            //var id_rol = DatosUsuario[1][0].ToString();
-                             Rol = DatosUsuario[1][1].ToString();
-                             ic_Rol = Convert.ToInt32(DatosUsuario[1][0].ToString());
-                            //MessageBox.Show("userID:" + DatosUsuario[0][0].ToString() + "name" + DatosUsuario[0][1].ToString());
-
+                            Name_Rol = DatosUsuario[1][1].ToString();
+                            ID_Rol = Convert.ToInt32(DatosUsuario[1][0].ToString());
                             Type type = Datatable.GetType();
-                            var data = objwcf.Forms_For_User(ic_Rol);
+                            var data = objwcf.Forms_For_User(ID_Rol);
                             FormMain.dataTable = Deserialize(data, type);
-                            FormMain formMain = new FormMain();
-                            formMain.Show();
-                            this.Hide();
+                            if (FormMain.dataTable != null)
+                            {
+                                FormMain formMain = new FormMain();
+                                formMain.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El Rol de "+ Name_Rol+" no tiene asociado Forms");
+                            }
+
                         }
                         else
                         {
-                            ////MessageBox.Show("DatosUsuario.Count(): " + DatosUsuario.Count());
-                            //foreach (string[] subList in DatosUsuario)
-                            //{
-                            //    foreach (string data in subList)
-                            //    {
-                            //        MessageBox.Show(data);
-                            //    }
-                            //}
-                            //MessageBox.Show("userID: " + DatosUsuario[0][0].ToString() + "name: " + DatosUsuario[1][0].ToString());
                             MasDeUnRol _MasDeUnRol = new MasDeUnRol();
                             _MasDeUnRol.Show();
                             this.Hide();
                         }
-                        
+
                     }
                     else
                     {
                         MessageBox.Show("El Usuario no tiene Roles");
+                        
                     }
-                    //MessageBox.Show("DatosUsuario.Count(): " + DatosUsuario.Count());
-                   
+
 
                 }
                 else
                 {
-                    MessageBox.Show("NO encontrado");
+                    MessageBox.Show("No encontrado");
                 }
 
-
-                //this.Hide();
-                //string Rol_User = xwcf.Login(user_name.Text, Pasword);
-                //MessageBox.Show("Login Successful!");
-                //for (int x= 0; x < listForm.Count(); x++)
-                //{
-                //    if (x == Rol_User)
-                //    {
-                //        listForm[x].Show();
-                //    }
-                //}
-                 
             }
             catch (Exception ex)
             {
@@ -138,14 +118,22 @@ namespace FormsApp
                 MessageBox.Show(ex.Message);
             }
             DatosUsuario = null;
+
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Name_Usuario = user_name.Text;
+            Login(Name_Usuario, Pasword);
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
+         
+            FormMain.dataTable = null;
             Usuario = "";
-            ic_Rol = 0;
+            ID_Rol = 0;
 
-
+            //MessageBox.Show(""+ Name_Usuaio + ""+ Pasword);
 
         }
         public DataTable Deserialize(string DataTable, Type type1)

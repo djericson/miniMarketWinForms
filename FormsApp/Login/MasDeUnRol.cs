@@ -20,7 +20,7 @@ namespace FormsApp
         public static int x = 50;
         public static int y = 25;
         public static int index_rol = 1;
-        public static int ID_ROL = 0;
+        public static int ID_Rol = 0;
         public static string Name_Rol = "";
 
         SrvRef_UsrRol.Gestion_User_RolClient objwcf = new SrvRef_UsrRol.Gestion_User_RolClient();
@@ -73,27 +73,27 @@ namespace FormsApp
             {
                 if (listbutton[q].GetHashCode().ToString() == action.GetHashCode().ToString())
                 {
-                    ID_ROL = Convert.ToInt32(listbutton[q].Name.ToString());
+                    ID_Rol = Convert.ToInt32(listbutton[q].Name.ToString());
                     Name_Rol = listbutton[q].Text.ToString();
                     //FormMain formMain = new FormMain();
                     //formMain.Show();
                     //this.Hide();
 
                     Type type = dataTable2.GetType();
-                    var data = objwcf.Forms_For_User(ID_ROL);
+                    var data = objwcf.Forms_For_User(ID_Rol);
                     FormMain.dataTable = Deserialize(data, type);
                     if (FormMain.dataTable != null)
                     {
                         FormMain formMain = new FormMain();
                         formMain.Show();
-                        this.Hide();
+                        this.Close();
                     }
                     else
                     {
                         MessageBox.Show("Rol no tiene Forms");
                     }
 
-                    //MessageBox.Show("data" + ID_ROL);
+                    //MessageBox.Show("data" + ID_Rol);
                     break;
                 }
             }
@@ -104,7 +104,7 @@ namespace FormsApp
             x = 70;
             y = 25;
             index_rol = 1;
-            ID_ROL = 0;
+            ID_Rol = 0;
             Name_Rol = "";
             groupBox1.Controls.Clear();
             listbutton.Clear();

@@ -38,7 +38,7 @@
             this.Atras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Atras.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Atras.Image = global::FormsApp.Properties.Resources.Webp_net_resizeimage__15_;
-            this.Atras.Location = new System.Drawing.Point(77, 278);
+            this.Atras.Location = new System.Drawing.Point(75, 316);
             this.Atras.Name = "Atras";
             this.Atras.Size = new System.Drawing.Size(100, 41);
             this.Atras.TabIndex = 82;
@@ -49,7 +49,7 @@
             // 
             this.groupBox1.Location = new System.Drawing.Point(25, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(207, 237);
+            this.groupBox1.Size = new System.Drawing.Size(207, 282);
             this.groupBox1.TabIndex = 83;
             this.groupBox1.TabStop = false;
             // 
@@ -57,7 +57,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(274, 331);
+            this.ClientSize = new System.Drawing.Size(271, 405);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Atras);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

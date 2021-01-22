@@ -57,22 +57,40 @@ namespace NS_WinFormsApps.WinForms_AccesosRolesUsrs
 
             list_user_rol.DataSource = dataset.Tables["list_User"];
             column = list_user_rol.Columns.Count;
-            //list_user_rol.Columns[0].Visible = false;
+            list_user_rol.Columns["id_rol"].Visible = false;
         }
 
         private void update_rol_user_Click(object sender, EventArgs e)
         {
             if (column > 1)
             {
+                 
+                    //var id_rol = Convert.ToInt32(roles.SelectedValue.ToString());
+                   var id_rol = list_user_rol.CurrentRow.Cells["id_rol"].Value.ToString();
+                   var id_user = Convert.ToInt32(list_user_rol.CurrentRow.Cells["codigo_User"].Value);
+                   if (id_rol != "")
+                   {
+                       var ID_Rol =  Convert.ToInt32(id_rol);
+                   
+                       if (FormMain.ID_Rol == ID_Rol && login.ID_Usuario == id_user)
+                       {
+                           MessageBox.Show("seras direccionado a la ventana de login");
+                           objWcf.delete_rol_user(ID_Rol, id_user);
+                           this.Hide();
+                           login _login = new login();
+                           _login.Show();
+                           _login.Login(login.Name_Usuario, login.Pasword);
+                         
 
-                if (roles.Items.Count != 0)
-                {
-                    var id_rol = Convert.ToInt32(roles.SelectedValue.ToString());
-                    var id_user = Convert.ToInt32(list_user_rol.CurrentRow.Cells[0].Value);
-                    objWcf.delete_rol_user(id_rol, id_user);
-                    loadlist_Roles_user();
-                }
 
+                       }
+                       else
+                       {
+                           objWcf.delete_rol_user(ID_Rol, id_user);
+                           loadlist_Roles_user();
+                       }
+                   
+                   }
             }
         }
 
@@ -103,7 +121,7 @@ namespace NS_WinFormsApps.WinForms_AccesosRolesUsrs
         {
             if (list_user_rol.Columns.Count > 3)
             {
-                var _roles = list_user_rol.CurrentRow.Cells[2].Value.ToString();
+                var _roles = list_user_rol.CurrentRow.Cells["Rol_name"].Value.ToString();
                 roles.Text = _roles;
             }
         }
@@ -115,9 +133,11 @@ namespace NS_WinFormsApps.WinForms_AccesosRolesUsrs
 
         private void Atras_Click(object sender, EventArgs e)
         {
-            Gestion_Roles_User _Gestion_Roles_User = new Gestion_Roles_User();
+            Gestion_RolesFormsUser _Gestion_Roles_User = new Gestion_RolesFormsUser();
             _Gestion_Roles_User.Show();
             this.Close();
         }
+
+        
     }
 }

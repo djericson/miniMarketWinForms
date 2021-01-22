@@ -1,6 +1,6 @@
 ﻿namespace FormsApp
 {
-    partial class Gestion_Roles_User
+    partial class Gestion_RolesFormsUser
     {
         /// <summary>
         /// Required designer variable.
