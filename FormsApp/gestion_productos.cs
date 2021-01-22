@@ -121,19 +121,19 @@ namespace NS_WinFormsApps
                     categoria.Text = Table_producto.Rows[0]["categoria"].ToString();
                     marca.Text =  Table_producto.Rows[0]["marca"].ToString();
                     presio_promdio.Value = Convert.ToDecimal(Table_producto.Rows[0]["precio_promedio"].ToString());
-                    cantida_total.Text =  Table_producto.Rows[0]["cantidad_total"].ToString();
+
+                   cantida_total.Text =  Table_producto.Rows[0]["cantidad_total"].ToString();
                     descripcion.Text = Table_producto.Rows[0]["descripcion"].ToString();
                     unidad_produc.Text = Table_producto.Rows[0]["und_prod"].ToString();
- 
-                     
+
+
                     try
                     {
                         foreach (DataRow dataRow in Table_detalle.Rows)
                         {
                             if (dataRow != null)
                             {
-                                list_productos.Rows.Add(dataRow["id_det_prod"], dataRow["precio_prod"], dataRow["cant_prods_vta"], dataRow["fch_ingr_stock"], dataRow["fch_fab_prod"], dataRow["fch_Vec_prod"]);
-
+                                list_productos.Rows.Add(dataRow["id_det_prod"], Convert.ToDecimal(dataRow["precio_prod"].ToString()), dataRow["cant_prods_vta"], dataRow["fch_ingr_stock"], dataRow["fch_fab_prod"], dataRow["fch_Vec_prod"]);
                             }
                         }
                     }
@@ -315,11 +315,11 @@ namespace NS_WinFormsApps
             foreach (DataGridViewRow DataRow in list_productos.Rows)
             {
 
-                XmlPut = XmlPut + "<row precio_prod=\"" + DataRow.Cells["precio_prod"].Value +
+               XmlPut = XmlPut + "<row precio_prod=\"" + Convert.ToDecimal(DataRow.Cells["precio_prod"].Value) +
                                   "\" cant_prods_vta=\"" + DataRow.Cells["cant_prods_vta"].Value +
-                                  "\" fch_ingr_stock=\"" + Convert.ToDateTime(DataRow.Cells["fch_ingr_stock"].Value).ToString("yyyy-M-dd hh:mm:ss") +
-                                  "\" fch_fab_prod=\"" + Convert.ToDateTime(DataRow.Cells["fch_fab_prod"].Value).ToString("yyyy-M-dd hh:mm:ss") +
-                                  "\" fch_Vec_prod=\"" + Convert.ToDateTime(DataRow.Cells["fch_Vec_prod"].Value).ToString("yyyy-M-dd hh:mm:ss") + "\"></row>\n";
+                                  "\" fch_ingr_stock=\"" + Convert.ToDateTime(DataRow.Cells["fch_ingr_stock"].Value).ToString("yyyy-M-dd ") +
+                                  "\" fch_fab_prod=\"" + Convert.ToDateTime(DataRow.Cells["fch_fab_prod"].Value).ToString("yyyy-M-dd ") +
+                                  "\" fch_Vec_prod=\"" + Convert.ToDateTime(DataRow.Cells["fch_Vec_prod"].Value).ToString("yyyy-M-dd ") + "\"></row>\n";
 
             }
 
@@ -355,11 +355,11 @@ namespace NS_WinFormsApps
             foreach (DataGridViewRow DataRow in list_productos.Rows)
             {
                
-                XmlPut = XmlPut + "<row precio_prod=\"" + DataRow.Cells["precio_prod"].Value +
+                XmlPut = XmlPut + "<row precio_prod=\"" + Convert.ToDecimal(DataRow.Cells["precio_prod"].Value) +
                                   "\" cant_prods_vta=\"" + DataRow.Cells["cant_prods_vta"].Value +
-                                  "\" fch_ingr_stock=\"" + Convert.ToDateTime(DataRow.Cells["fch_ingr_stock"].Value.ToString()).ToString("yyyy-M-dd hh:mm:ss") +
-                                  "\" fch_fab_prod=\"" + Convert.ToDateTime(DataRow.Cells["fch_fab_prod"].Value.ToString()).ToString("yyyy-M-dd hh:mm:ss") +
-                                  "\" fch_Vec_prod=\"" + Convert.ToDateTime(DataRow.Cells["fch_Vec_prod"].Value.ToString()).ToString("yyyy-M-dd hh:mm:ss") + "\"></row>\n";
+                                  "\" fch_ingr_stock=\"" + Convert.ToDateTime(DataRow.Cells["fch_ingr_stock"].Value.ToString()).ToString("yyyy-M-dd") +
+                                  "\" fch_fab_prod=\"" + Convert.ToDateTime(DataRow.Cells["fch_fab_prod"].Value.ToString()).ToString("yyyy-M-dd") +
+                                  "\" fch_Vec_prod=\"" + Convert.ToDateTime(DataRow.Cells["fch_Vec_prod"].Value.ToString()).ToString("yyyy-M-dd") + "\"></row>\n";
               
             }
 
@@ -402,9 +402,9 @@ namespace NS_WinFormsApps
 
         private void list_productos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            MessageBox.Show("stock_ent"+ Convert.ToDecimal(list_productos.CurrentRow.Cells["precio_prod"].Value));
 
-            presio_promed_dpt.Value = Convert.ToDecimal(list_productos.CurrentRow.Cells["precio_prod"].Value);
+           presio_promed_dpt.Value = Convert.ToDecimal(list_productos.CurrentRow.Cells["precio_prod"].Value);
             cantida_produ_venta.Text = list_productos.CurrentRow.Cells["cant_prods_vta"].Value.ToString();
             fecha_ingreso_stock.Value = (DateTime)list_productos.CurrentRow.Cells["fch_ingr_stock"].Value ;
             fecha_fabricacion.Value = (DateTime)list_productos.CurrentRow.Cells["fch_fab_prod"].Value;
@@ -429,15 +429,15 @@ namespace NS_WinFormsApps
         }
 
 
-        //private void producto_Click(object sender, EventArgs e)
-        //{
-        //    update_product2.BringToFront();
-        //}
+        private void Vista_Todos_los_Productos_Click(object sender, EventArgs e)
+        {
 
-        //private void producto_det_Click(object sender, EventArgs e)
-        //{
-        //    product_det1.BringToFront();
-        //}
+        }
+
+        private void Vista_Producto_det_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
