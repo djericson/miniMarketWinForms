@@ -1,5 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://localhost:8733/WcfService/Service_Usr" elementFormDefault="qualified" targetNamespace="http://localhost:8733/WcfService/Service_Usr" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="insUsr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objUsr" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insUsrResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="update">
     <xs:complexType>
       <xs:sequence>

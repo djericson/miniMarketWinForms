@@ -10,13 +10,7 @@ namespace WcfService
     [ServiceContract(Namespace = "http://localhost:8733/WcfService/Service_Usr")]
     public interface IService_Usr
     {
-        /*
         [OperationContract]
-        string List_Forms_rol();
-        [OperationContract]
-        string List_User_rol();
-        [OperationContract]
-        */
         void insUsr(object objUsr);
         [OperationContract]
         void update(int id, string name);

@@ -39,7 +39,8 @@
             this.txt_usrApePat = new System.Windows.Forms.TextBox();
             this.lbl_email = new System.Windows.Forms.Label();
             this.txt_usrEmail = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpB_datosUsr = new System.Windows.Forms.GroupBox();
+            this.cmb_tipoDoc = new System.Windows.Forms.ComboBox();
             this.txt_usrRuc = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_usrDir = new System.Windows.Forms.TextBox();
@@ -49,7 +50,7 @@
             this.txt_confirmPass = new System.Windows.Forms.TextBox();
             this.lbl_confirmarPass = new System.Windows.Forms.Label();
             this.lbl_ruc = new System.Windows.Forms.Label();
-            this.txt_pass = new System.Windows.Forms.TextBox();
+            this.txt_usrPass = new System.Windows.Forms.TextBox();
             this.txt_usrApeMat = new System.Windows.Forms.TextBox();
             this.lbl_nickUsr = new System.Windows.Forms.Label();
             this.lbl_apMat = new System.Windows.Forms.Label();
@@ -64,8 +65,7 @@
             this.btn_limpiarCampos = new System.Windows.Forms.Button();
             this.btn_borrarUsr = new System.Windows.Forms.Button();
             this.btn_updUsr = new System.Windows.Forms.Button();
-            this.cmb_tipoDoc = new System.Windows.Forms.ComboBox();
-            this.groupBox1.SuspendLayout();
+            this.grpB_datosUsr.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaUsrs)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -171,40 +171,48 @@
             this.txt_usrEmail.Size = new System.Drawing.Size(263, 20);
             this.txt_usrEmail.TabIndex = 3;
             // 
-            // groupBox1
+            // grpB_datosUsr
             // 
-            this.groupBox1.Controls.Add(this.cmb_tipoDoc);
-            this.groupBox1.Controls.Add(this.txt_usrRuc);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txt_usrDir);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txt_usrTlf);
-            this.groupBox1.Controls.Add(this.lbl_tlf);
-            this.groupBox1.Controls.Add(this.txt_confirmPass);
-            this.groupBox1.Controls.Add(this.lbl_confirmarPass);
-            this.groupBox1.Controls.Add(this.lbl_ruc);
-            this.groupBox1.Controls.Add(this.lbl_nroDoc);
-            this.groupBox1.Controls.Add(this.txt_pass);
-            this.groupBox1.Controls.Add(this.txt_usrApeMat);
-            this.groupBox1.Controls.Add(this.lbl_nickUsr);
-            this.groupBox1.Controls.Add(this.txt_usrNick);
-            this.groupBox1.Controls.Add(this.lbl_apMat);
-            this.groupBox1.Controls.Add(this.cb_verRolesUsr);
-            this.groupBox1.Controls.Add(this.lbl_VerRolUsr);
-            this.groupBox1.Controls.Add(this.txt_usrEmail);
-            this.groupBox1.Controls.Add(this.lbl_pass);
-            this.groupBox1.Controls.Add(this.txt_nroDoc);
-            this.groupBox1.Controls.Add(this.lbl_nomUsr);
-            this.groupBox1.Controls.Add(this.lbl_email);
-            this.groupBox1.Controls.Add(this.txt_usrNom);
-            this.groupBox1.Controls.Add(this.txt_usrApePat);
-            this.groupBox1.Controls.Add(this.lbl_apPat);
-            this.groupBox1.Location = new System.Drawing.Point(5, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(592, 193);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos de Usuario";
+            this.grpB_datosUsr.Controls.Add(this.cmb_tipoDoc);
+            this.grpB_datosUsr.Controls.Add(this.txt_usrRuc);
+            this.grpB_datosUsr.Controls.Add(this.label2);
+            this.grpB_datosUsr.Controls.Add(this.txt_usrDir);
+            this.grpB_datosUsr.Controls.Add(this.label1);
+            this.grpB_datosUsr.Controls.Add(this.txt_usrTlf);
+            this.grpB_datosUsr.Controls.Add(this.lbl_tlf);
+            this.grpB_datosUsr.Controls.Add(this.txt_confirmPass);
+            this.grpB_datosUsr.Controls.Add(this.lbl_confirmarPass);
+            this.grpB_datosUsr.Controls.Add(this.lbl_ruc);
+            this.grpB_datosUsr.Controls.Add(this.lbl_nroDoc);
+            this.grpB_datosUsr.Controls.Add(this.txt_usrPass);
+            this.grpB_datosUsr.Controls.Add(this.txt_usrApeMat);
+            this.grpB_datosUsr.Controls.Add(this.lbl_nickUsr);
+            this.grpB_datosUsr.Controls.Add(this.txt_usrNick);
+            this.grpB_datosUsr.Controls.Add(this.lbl_apMat);
+            this.grpB_datosUsr.Controls.Add(this.cb_verRolesUsr);
+            this.grpB_datosUsr.Controls.Add(this.lbl_VerRolUsr);
+            this.grpB_datosUsr.Controls.Add(this.txt_usrEmail);
+            this.grpB_datosUsr.Controls.Add(this.lbl_pass);
+            this.grpB_datosUsr.Controls.Add(this.txt_nroDoc);
+            this.grpB_datosUsr.Controls.Add(this.lbl_nomUsr);
+            this.grpB_datosUsr.Controls.Add(this.lbl_email);
+            this.grpB_datosUsr.Controls.Add(this.txt_usrNom);
+            this.grpB_datosUsr.Controls.Add(this.txt_usrApePat);
+            this.grpB_datosUsr.Controls.Add(this.lbl_apPat);
+            this.grpB_datosUsr.Location = new System.Drawing.Point(5, 6);
+            this.grpB_datosUsr.Name = "grpB_datosUsr";
+            this.grpB_datosUsr.Size = new System.Drawing.Size(592, 193);
+            this.grpB_datosUsr.TabIndex = 4;
+            this.grpB_datosUsr.TabStop = false;
+            this.grpB_datosUsr.Text = "Datos de Usuario";
+            // 
+            // cmb_tipoDoc
+            // 
+            this.cmb_tipoDoc.FormattingEnabled = true;
+            this.cmb_tipoDoc.Location = new System.Drawing.Point(114, 116);
+            this.cmb_tipoDoc.Name = "cmb_tipoDoc";
+            this.cmb_tipoDoc.Size = new System.Drawing.Size(115, 21);
+            this.cmb_tipoDoc.TabIndex = 18;
             // 
             // txt_usrRuc
             // 
@@ -290,13 +298,13 @@
             this.lbl_ruc.TabIndex = 8;
             this.lbl_ruc.Text = "Tipo Documento:";
             // 
-            // txt_pass
+            // txt_usrPass
             // 
-            this.txt_pass.Location = new System.Drawing.Point(114, 68);
-            this.txt_pass.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_pass.Name = "txt_pass";
-            this.txt_pass.Size = new System.Drawing.Size(115, 20);
-            this.txt_pass.TabIndex = 6;
+            this.txt_usrPass.Location = new System.Drawing.Point(114, 68);
+            this.txt_usrPass.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_usrPass.Name = "txt_usrPass";
+            this.txt_usrPass.Size = new System.Drawing.Size(115, 20);
+            this.txt_usrPass.TabIndex = 6;
             // 
             // txt_usrApeMat
             // 
@@ -329,6 +337,8 @@
             // cb_verRolesUsr
             // 
             this.cb_verRolesUsr.FormattingEnabled = true;
+            this.cb_verRolesUsr.Items.AddRange(new object[] {
+            "Aun no hay rol(es) asignados\\n,ir a ventana de roles para ello"});
             this.cb_verRolesUsr.Location = new System.Drawing.Point(114, 17);
             this.cb_verRolesUsr.Name = "cb_verRolesUsr";
             this.cb_verRolesUsr.Size = new System.Drawing.Size(115, 21);
@@ -441,26 +451,19 @@
             this.btn_updUsr.Text = "Actualizar";
             this.btn_updUsr.UseVisualStyleBackColor = true;
             // 
-            // cmb_tipoDoc
-            // 
-            this.cmb_tipoDoc.FormattingEnabled = true;
-            this.cmb_tipoDoc.Location = new System.Drawing.Point(114, 116);
-            this.cmb_tipoDoc.Name = "cmb_tipoDoc";
-            this.cmb_tipoDoc.Size = new System.Drawing.Size(115, 21);
-            this.cmb_tipoDoc.TabIndex = 18;
-            // 
             // FrmUsrs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 404);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpB_datosUsr);
             this.Controls.Add(this.groupBox2);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmUsrs";
             this.Text = "Gestion de Usuarios";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Load += new System.EventHandler(this.FrmUsrs_Load);
+            this.grpB_datosUsr.ResumeLayout(false);
+            this.grpB_datosUsr.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaUsrs)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -481,11 +484,11 @@
         private System.Windows.Forms.TextBox txt_usrApePat;
         private System.Windows.Forms.Label lbl_email;
         private System.Windows.Forms.TextBox txt_usrEmail;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpB_datosUsr;
         private System.Windows.Forms.TextBox txt_confirmPass;
         private System.Windows.Forms.Label lbl_confirmarPass;
         private System.Windows.Forms.Label lbl_ruc;
-        private System.Windows.Forms.TextBox txt_pass;
+        private System.Windows.Forms.TextBox txt_usrPass;
         private System.Windows.Forms.TextBox txt_usrApeMat;
         private System.Windows.Forms.Label lbl_nickUsr;
         private System.Windows.Forms.Label lbl_apMat;
