@@ -17,7 +17,7 @@ namespace BL
         {
             dac_usr.insertar(xobj);
         }
-        
+
         //public DataTable search_(string richTextBox1 , string _DataRow)
         //{
         //    var _DataTable = dac_usr.search_(richTextBox1);
@@ -28,7 +28,10 @@ namespace BL
         //    return null;
         //}
 
-        
+        public DataTable getUsrCliente(string nombre)
+        {
+            return dac_usr.getUsrCliente(nombre);
+        }
 
     }
 

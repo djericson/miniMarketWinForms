@@ -13,7 +13,7 @@ namespace DAC
 {
     public class ClsDAC_Usuarios
     {
-        SqlConnection cn = new SqlConnection();
+        SqlConnection cn = new SqlConnection("Data Source=srv-bd-sql-server.database.windows.net;Initial Catalog=miniMarket;User ID=wilber;Password=$W012345");
         SqlCommand cmd;
         
         public List<ClsUsuario> lista()
@@ -43,7 +43,30 @@ namespace DAC
         {
 
         }
- 
+
+        public DataTable getUsrCliente(string nombre)
+        {
+            DataTable schemaTable = new DataTable();
+            SqlDataReader loDataReader;
+            cmd = new SqlCommand("buscar_cliente", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@usr_nom", nombre);
+            cn.Open();
+            loDataReader = cmd.ExecuteReader();
+            schemaTable.Load(loDataReader, LoadOption.OverwriteChanges);
+            if (schemaTable.Rows.Count == 0)
+            {
+                cn.Close();
+                return null;
+            }
+
+            cn.Close();
+
+            return schemaTable;
+
+        }
+
 
 
     }
