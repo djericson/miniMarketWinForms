@@ -30,7 +30,7 @@ namespace NS_WinFormsApps
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.delete = new System.Windows.Forms.Button();
             this.add_producto = new System.Windows.Forms.Button();
             this.BtnAyuda = new System.Windows.Forms.Button();
@@ -148,15 +148,15 @@ namespace NS_WinFormsApps
             this.list_productos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.list_productos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.list_productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle2.NullValue = null;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.list_productos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.NullValue = null;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.list_productos.DefaultCellStyle = dataGridViewCellStyle1;
             this.list_productos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.list_productos.Location = new System.Drawing.Point(23, 370);
             this.list_productos.Name = "list_productos";
@@ -278,9 +278,9 @@ namespace NS_WinFormsApps
             this.presio_prome.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.presio_prome.Location = new System.Drawing.Point(391, 44);
             this.presio_prome.Name = "presio_prome";
-            this.presio_prome.Size = new System.Drawing.Size(155, 17);
+            this.presio_prome.Size = new System.Drawing.Size(113, 17);
             this.presio_prome.TabIndex = 73;
-            this.presio_prome.Text = "1- presio promedio det";
+            this.presio_prome.Text = "1- Precio Unidad";
             // 
             // label3
             // 
@@ -349,9 +349,9 @@ namespace NS_WinFormsApps
             this.label12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(41, 204);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(132, 17);
+            this.label12.Size = new System.Drawing.Size(122, 17);
             this.label12.TabIndex = 91;
-            this.label12.Text = "4- presio_promedio";
+            this.label12.Text = "4- Precio Paquete";
             // 
             // marca
             // 
@@ -426,9 +426,9 @@ namespace NS_WinFormsApps
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(34, 332);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(134, 17);
+            this.label7.Size = new System.Drawing.Size(146, 17);
             this.label7.TabIndex = 82;
-            this.label7.Text = "6- unidad producto";
+            this.label7.Text = "6- Producto Paquete ";
             // 
             // label2
             // 
@@ -508,14 +508,6 @@ namespace NS_WinFormsApps
             this.unidad_produc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.unidad_produc.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unidad_produc.FormattingEnabled = true;
-            this.unidad_produc.Items.AddRange(new object[] {
-            "docena",
-            "media_docena",
-            "cuarto_docena",
-            "gramos",
-            "Kilogramos",
-            "paquetex12",
-            "und"});
             this.unidad_produc.Location = new System.Drawing.Point(212, 325);
             this.unidad_produc.Name = "unidad_produc";
             this.unidad_produc.Size = new System.Drawing.Size(132, 25);
