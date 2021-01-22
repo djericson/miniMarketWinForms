@@ -52,7 +52,7 @@ namespace FormsApp
         private void FormMain_Load(object sender, EventArgs e)
         {
             ID_Rol = 0;
-            ID_usuario.Text = "C0digo_Usuario: " + login.ID_Usuario;
+            //ID_usuario.Text = "C0digo_Usuario: " + login.ID_Usuario;
             Usuario.Text = login.Usuario;
             if (login.Name_Rol != "" && login.ID_Rol != 0)
             {
@@ -145,11 +145,11 @@ namespace FormsApp
 
         private void pedidos_Click(object sender, EventArgs e)
         {
-            if (Acceso(pedidos.Name.ToString()))
+            if (Acceso(Pedidos.Name.ToString()))
             {
                 MessageBox.Show("Form pedidos");
-                //_gestion_Productos.Show();
-                //this.Hide();
+                _FrmPedido.Show();
+                this.Hide();
             }
             else
             {

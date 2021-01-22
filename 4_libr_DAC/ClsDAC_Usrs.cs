@@ -28,7 +28,7 @@ namespace DAC
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Clear();
 
-            cmd.Parameters.AddWithValue("@usr_nick", objClsUsr.nick_usr );
+            cmd.Parameters.AddWithValue("@usr_nick", objClsUsr.nick_usr);
             cmd.Parameters.AddWithValue("@usr_pass", objClsUsr.pass_usr);
             cmd.Parameters.AddWithValue("@usr_tipo_doc", objClsUsr.tipoDoc_usr);
             cmd.Parameters.AddWithValue("@usr_numDoc", objClsUsr.nroDoc_usr);

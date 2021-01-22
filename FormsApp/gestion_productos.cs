@@ -438,15 +438,7 @@ namespace NS_WinFormsApps
         }
 
 
-        private void Vista_Todos_los_Productos_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Vista_Producto_det_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 
 

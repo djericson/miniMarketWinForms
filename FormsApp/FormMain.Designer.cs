@@ -35,13 +35,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.GestionRolesUser = new System.Windows.Forms.Button();
             this.Usuarios = new System.Windows.Forms.Button();
-            this.pedidos = new System.Windows.Forms.Button();
+            this.Pedidos = new System.Windows.Forms.Button();
             this.Ventas = new System.Windows.Forms.Button();
             this.Atras = new System.Windows.Forms.Button();
             this.exit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.ID_usuario = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,7 +92,7 @@
             // 
             this.groupBox1.Controls.Add(this.GestionRolesUser);
             this.groupBox1.Controls.Add(this.Usuarios);
-            this.groupBox1.Controls.Add(this.pedidos);
+            this.groupBox1.Controls.Add(this.Pedidos);
             this.groupBox1.Controls.Add(this.Ventas);
             this.groupBox1.Controls.Add(this.Productos);
             this.groupBox1.Controls.Add(this.Provedores);
@@ -129,17 +128,17 @@
             this.Usuarios.UseVisualStyleBackColor = true;
             this.Usuarios.Click += new System.EventHandler(this.Usuarios_Click);
             // 
-            // pedidos
+            // Pedidos
             // 
-            this.pedidos.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.pedidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pedidos.Location = new System.Drawing.Point(45, 135);
-            this.pedidos.Name = "pedidos";
-            this.pedidos.Size = new System.Drawing.Size(172, 56);
-            this.pedidos.TabIndex = 5;
-            this.pedidos.Text = "pedidos";
-            this.pedidos.UseVisualStyleBackColor = true;
-            this.pedidos.Click += new System.EventHandler(this.pedidos_Click);
+            this.Pedidos.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.Pedidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Pedidos.Location = new System.Drawing.Point(45, 135);
+            this.Pedidos.Name = "Pedidos";
+            this.Pedidos.Size = new System.Drawing.Size(172, 56);
+            this.Pedidos.TabIndex = 5;
+            this.Pedidos.Text = "pedidos";
+            this.Pedidos.UseVisualStyleBackColor = true;
+            this.Pedidos.Click += new System.EventHandler(this.pedidos_Click);
             // 
             // Ventas
             // 
@@ -201,20 +200,11 @@
             this.label2.TabIndex = 83;
             this.label2.Text = "Rol:";
             // 
-            // ID_usuario
-            // 
-            this.ID_usuario.AutoSize = true;
-            this.ID_usuario.Location = new System.Drawing.Point(237, 27);
-            this.ID_usuario.Name = "ID_usuario";
-            this.ID_usuario.Size = new System.Drawing.Size(0, 13);
-            this.ID_usuario.TabIndex = 84;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 551);
-            this.Controls.Add(this.ID_usuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.exit);
@@ -241,13 +231,12 @@
         private System.Windows.Forms.Label Rol;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button Ventas;
-        private System.Windows.Forms.Button pedidos;
+        private System.Windows.Forms.Button Pedidos;
         private System.Windows.Forms.Button Atras;
         private System.Windows.Forms.Button GestionRolesUser;
         private System.Windows.Forms.Button Usuarios;
         private System.Windows.Forms.Button exit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label ID_usuario;
     }
 }
