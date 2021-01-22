@@ -165,8 +165,8 @@ namespace FormsApp
 
                 MessageBox.Show("Form Usuarios");
 
-                //frmUsrs.Show();
-                //this.Hide();
+                frmUsrs.Show();
+                this.Hide();
             }
             else
             {
