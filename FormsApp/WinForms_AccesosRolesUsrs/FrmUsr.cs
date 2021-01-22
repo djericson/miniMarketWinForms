@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FormsApp;
+using System;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
@@ -45,7 +46,9 @@ namespace NS_WinFormsApps.WinForms_AccesosRolesUsrs
             cmb_tipoDoc.ValueMember = "value";
         }
 
-        private void FrmUsrs_FormClosed(object sender, FormClosedEventArgs e)
+        
+
+        private void FrmUsrs_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = (e.CloseReason == CloseReason.UserClosing);
             FormMain formMain = new FormMain();

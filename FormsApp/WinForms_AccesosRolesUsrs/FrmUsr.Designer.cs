@@ -461,7 +461,8 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmUsrs";
             this.Text = "Gestion de Usuarios";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmUsrs_FormClosed);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmUsrs_FormClosing);
+            //this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmUsrs_FormClosed);
             this.Load += new System.EventHandler(this.FrmUsrs_Load);
             this.grpB_datosUsr.ResumeLayout(false);
             this.grpB_datosUsr.PerformLayout();
