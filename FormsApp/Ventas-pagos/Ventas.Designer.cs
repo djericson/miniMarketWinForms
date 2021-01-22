@@ -34,6 +34,8 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBuscarProd = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.nudDescuento = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.btnAgregarProd = new System.Windows.Forms.Button();
@@ -68,8 +70,6 @@
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnLimpiar = new System.Windows.Forms.Button();
-            this.btnBuscarProd = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -169,6 +169,25 @@
             this.groupBox1.TabIndex = 69;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalle Venta";
+            // 
+            // btnBuscarProd
+            // 
+            this.btnBuscarProd.Location = new System.Drawing.Point(321, 23);
+            this.btnBuscarProd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscarProd.Name = "btnBuscarProd";
+            this.btnBuscarProd.Size = new System.Drawing.Size(46, 22);
+            this.btnBuscarProd.TabIndex = 65;
+            this.btnBuscarProd.Text = "...";
+            this.btnBuscarProd.UseVisualStyleBackColor = true;
+            this.btnBuscarProd.Click += new System.EventHandler(this.btnBuscarProducto_Click);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(948, 17);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 33);
+            this.btnLimpiar.TabIndex = 10;
+            this.btnLimpiar.UseVisualStyleBackColor = true;
             // 
             // nudDescuento
             // 
@@ -480,25 +499,6 @@
             this.label1.TabIndex = 52;
             this.label1.Text = "Nombre cliente";
             // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Location = new System.Drawing.Point(948, 17);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(75, 33);
-            this.btnLimpiar.TabIndex = 10;
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            // 
-            // btnBuscarProd
-            // 
-            this.btnBuscarProd.Location = new System.Drawing.Point(321, 23);
-            this.btnBuscarProd.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBuscarProd.Name = "btnBuscarProd";
-            this.btnBuscarProd.Size = new System.Drawing.Size(46, 22);
-            this.btnBuscarProd.TabIndex = 65;
-            this.btnBuscarProd.Text = "...";
-            this.btnBuscarProd.UseVisualStyleBackColor = true;
-            this.btnBuscarProd.Click += new System.EventHandler(this.btnBuscarProducto_Click);
-            // 
             // Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -510,6 +510,7 @@
             this.Name = "Ventas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ventas";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Ventas_FormClosing);
             this.Load += new System.EventHandler(this.Ventas_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

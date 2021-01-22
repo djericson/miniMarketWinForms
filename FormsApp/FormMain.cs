@@ -2,6 +2,7 @@
 
 using Newtonsoft.Json;
 using NS_WinFormsApps;
+using NS_WinFormsApps.Ventas_pagos;
 using NS_WinFormsApps.WinForms_AccesosRolesUsrs;
 using System;
 using System.Collections.Generic;
@@ -100,10 +101,10 @@ namespace FormsApp
         {
             if(Acceso(Provedores.Name.ToString()))
             {
-                MessageBox.Show("Form provedores");
+                //MessageBox.Show("Form provedores");
 
-                //_FrmProveedores.Show();
-                //this.Hide();
+                _FrmProveedores.Show();
+                this.Hide();
             }
             else
             {
@@ -130,9 +131,9 @@ namespace FormsApp
 
             if (Acceso(Ventas.Name.ToString()))
             {
-                MessageBox.Show("Form ventas");
-                //_gestion_Productos.Show();
-                //this.Hide();
+                Ventas ventas = new Ventas();
+                ventas.Show();
+                this.Hide();
             }
             else
             {

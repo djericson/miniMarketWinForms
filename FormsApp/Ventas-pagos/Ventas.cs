@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BL;
+using FormsApp;
 
 namespace NS_WinFormsApps.Ventas_pagos
 {
@@ -132,6 +133,14 @@ namespace NS_WinFormsApps.Ventas_pagos
             txtPrecioTotal.Clear();
             id_cliente = 0;
             id_producto = 0;
+        }
+
+        private void Ventas_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = (e.CloseReason == CloseReason.UserClosing);
+            FormMain formMain = new FormMain();
+            formMain.Show();
+            this.Hide();
         }
 
         private void btnIrPago_Click(object sender, EventArgs e)

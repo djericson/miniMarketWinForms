@@ -290,6 +290,7 @@ namespace NS_WinFormsApps
             this.Controls.Add(this.label1);
             this.Name = "FrmCategoria";
             this.Text = "FrmCategoria";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmCategoria_FormClosing);
             this.Load += new System.EventHandler(this.FrmCategoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).EndInit();
             this.groupBox1.ResumeLayout(false);

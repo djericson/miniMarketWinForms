@@ -149,7 +149,7 @@
             this.Ventas.Name = "Ventas";
             this.Ventas.Size = new System.Drawing.Size(172, 56);
             this.Ventas.TabIndex = 4;
-            this.Ventas.Text = "ventas";
+            this.Ventas.Text = "Ventas";
             this.Ventas.UseVisualStyleBackColor = true;
             this.Ventas.Click += new System.EventHandler(this.ventas_Click);
             // 

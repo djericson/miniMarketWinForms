@@ -44,6 +44,14 @@ namespace NS_WinFormsApps.WinForms_AccesosRolesUsrs
             cmb_tipoDoc.DisplayMember = "Description";
             cmb_tipoDoc.ValueMember = "value";
         }
+
+        private void FrmUsrs_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            e.Cancel = (e.CloseReason == CloseReason.UserClosing);
+            FormMain formMain = new FormMain();
+            formMain.Show();
+            this.Hide();
+        }
     }
 
     //enum tipo documento:
