@@ -11,7 +11,7 @@ namespace WcfService
     public interface IService_Usr
     {
         [OperationContract]
-        void insUsr(object objUsr);
+        void insUsr(Object[] objUsr);
         [OperationContract]
         void update(int id, string name);
         [OperationContract]

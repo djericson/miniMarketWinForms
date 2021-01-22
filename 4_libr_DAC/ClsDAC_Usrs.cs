@@ -13,7 +13,7 @@ namespace DAC
 {
     public class ClsDAC_Usuarios
     {
-        SqlConnection cn = new SqlConnection("Data Source=srv-bd-sql-server.database.windows.net;Initial Catalog=miniMarket;User ID=wilber;Password=$W012345");
+        SqlConnection cn = new SqlConnection("Data Source=srv-bd-sql-server.database.windows.net;Initial Catalog=miniMarket;User ID=adm_ea;Password=$Developer");
         SqlCommand cmd;
         
         public List<ClsUsuario> lista()
@@ -22,22 +22,28 @@ namespace DAC
 
             return x;
         }
-        public void insertar(ClsUsuario xobj )
+        public void insUsr(ClsUsuario objClsUsr )
         {
-            cmd = new SqlCommand("[seguridad].[usuario_insert]", cn);
+            cmd = new SqlCommand("[AccesosRolesUsrs_Usr_ins]", cn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Clear();
-            cmd.Parameters.AddWithValue("@usuario",xobj.Usuario );
-            cmd.Parameters.AddWithValue("@clave", xobj.clave);
-            cmd.Parameters.AddWithValue("@nombres", xobj.Nombres);
-            cmd.Parameters.AddWithValue("@apellidos", xobj.Apellidos);
-            cmd.Parameters.AddWithValue("@correo", xobj.Correo);
+
+            cmd.Parameters.AddWithValue("@usr_nick", objClsUsr.nick_usr );
+            cmd.Parameters.AddWithValue("@usr_pass", objClsUsr.pass_usr);
+            cmd.Parameters.AddWithValue("@usr_tipo_doc", objClsUsr.tipoDoc_usr);
+            cmd.Parameters.AddWithValue("@usr_numDoc", objClsUsr.nroDoc_usr);
+            cmd.Parameters.AddWithValue("@usr_ruc", objClsUsr.ruc_usr);
+            cmd.Parameters.AddWithValue("@usr_nom", objClsUsr.nom_usr);
+            cmd.Parameters.AddWithValue("@usr_ap_pater", objClsUsr.apePat_usr);
+            cmd.Parameters.AddWithValue("@usr_ap_mater", objClsUsr.apeMat_usr);
+            cmd.Parameters.AddWithValue("@usr_email", objClsUsr.email_usr);
+            cmd.Parameters.AddWithValue("@usr_dir", objClsUsr.dir_usr);
+            cmd.Parameters.AddWithValue("@usr_tlf", objClsUsr.tlf_usr);
+
             cn.Open();
             cmd.ExecuteNonQuery();
             cn.Close();
         }
-
-         
 
         public void eliminar(ClsUsuario xobj)
         {

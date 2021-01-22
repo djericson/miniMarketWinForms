@@ -15,60 +15,71 @@ namespace WcfService
     [ServiceBehavior(Namespace = "http://localhost:8733/WcfService/Service_Usr")]
     public class Service_Usr : IService_Usr
     {
-        Gestion_User_Rol BL = new Gestion_User_Rol();
+        ClsBL_Usr objBL_Usr = new ClsBL_Usr();
+       
 
-        public void delete(int id)
+        public void insUsr(Object[] objUsr)
         {
-            BL.delete_rol(id);
-        }
-
-        public void insUsr(object objUsr)
-        {
-            //BL.insert_rol(name);
+            //Parametros my_params = (Parametros)objUsr;
+            
+            //objBL_Usr.
+            
+            //Console.WriteLine("Datr", f);
+            //int n_bio = my_params.pos_bio;
+            objBL_Usr.insertUsr(objUsr);
         }
         public void update(int id, string name)
         {
-            BL.update_rol(id, name);
+            //objBL_Usr._(id, name);
+        }
+
+        public void delete(int id)
+        {
+            //objBL_Usr.delete_rol(id);
         }
 
         public void insert_rol_user(int rol, int user)
         {
-            BL.insert_Rol_user(rol, user);
+            //BL.insert_Rol_user(rol, user);
         }
 
       
         public void delete_rol_user(int rol, int user)
         {
-            BL.delete_Rol_user(rol, user);
+            //BL.delete_Rol_user(rol, user);
         }
 
 
 
-        int IService_Usr.get_id_rol(string rol)
+        public int get_id_rol(string rol)
         {
-            var data = BL.get_id_rol(rol);
-            return data;
+            int res = 0;
+            //var data = BL.get_id_rol(rol);
+            return res;
         }
 
         public void insert_Forms_rol(int rol, int form)
         {
-            BL.insert_Forms_rol(rol, form);
+            //BL.insert_Forms_rol(rol, form);
         }
 
         public void delete_Forms_rol(int rol, int form)
         {
-            BL.delete_Forms_rol(rol, form);
+            //BL.delete_Forms_rol(rol, form);
         }
 
         public int get_id_form(string form)
         {
-            var data = BL.get_id_form(form);
-            return data;
+
+            //var data = BL.get_id_form(form);
+            return 0;
         }
 
         public string List_Forms_rol()
         {
-            var data = BL.list_Forms_Rol();
+            string output = "";
+            /*
+            //var data = BL.list_Forms_Rol();
             Type type = data.GetType();
             Newtonsoft.Json.JsonSerializer json = new Newtonsoft.Json.JsonSerializer();
             json.NullValueHandling = NullValueHandling.Ignore;
@@ -85,7 +96,7 @@ namespace WcfService
             string output = sw.ToString();
             writer.Close();
             sw.Close();
-
+            */
             return output;
         }
     }
