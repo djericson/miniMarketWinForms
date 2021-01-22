@@ -17,9 +17,12 @@ namespace NS_WinFormsApps.WinForms_AccesosRolesUsrs
         private void btnInsertar_Click(object sender, EventArgs e)
         {
             FormsApp.SrvRef_Usr.Service_UsrClient xwcf = new FormsApp.SrvRef_Usr.Service_UsrClient();
-
-            //xwcf.insUsr( new Object() { txt_usrNick.Text, txt_usrPass.Text, cmb_tipoDoc.SelectedValue, txt_nroDoc.Text, "_" } );
-
+            //MessageBox.Show( "cmb: "+cmb_tipoDoc.SelectedIndex);
+            //MessageBox.Show("cmb: " + cmb_tipoDoc.SelectedValue);
+            xwcf.insUsr( new Object[]{ txt_usrNick.Text, txt_usrPass.Text, cmb_tipoDoc.SelectedIndex+1, txt_nroDoc.Text, txt_usrRuc.Text, txt_usrNom.Text,
+            txt_usrApePat.Text, txt_usrApeMat.Text, txt_usrEmail.Text, txt_usrTlf.Text, txt_usrDir.Text} );
+            
+           
         }
 
         public void _GetListaUsrs() {
@@ -46,9 +49,9 @@ namespace NS_WinFormsApps.WinForms_AccesosRolesUsrs
     //enum tipo documento:
     public enum Tipo_docIdent
     {
-        [Description("none")]
+        [Description("DNI")]
         DNI = 1,
-        [Description("sewn")]
+        [Description("Pasaporte")]
         PASAPORTE = 2,
 
     }

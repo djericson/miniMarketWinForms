@@ -297,6 +297,9 @@
     <None Include="Connected Services\SrvRef_UsrRol\Service_User_Rol.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\SrvRef_Usr\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\SrvRef_Usr\service.wsdl" />
     <None Include="Connected Services\SrvRef_Usr\service.xsd">
       <SubType>Designer</SubType>
