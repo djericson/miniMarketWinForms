@@ -248,6 +248,13 @@ namespace NS_WinFormsApps
             categoria.DataSource = DataSet_2.Tables["categorias"]; ;
             categoria.DisplayMember = "nombre";
             categoria.ValueMember = "id_categoria";
+
+
+            unidad_produc.DataSource = DataSet_2.Tables["unidad_product"]; ;
+            unidad_produc.DisplayMember = "descripcion";
+            unidad_produc.ValueMember = "id";
+
+
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -402,7 +409,7 @@ namespace NS_WinFormsApps
 
         private void list_productos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show("stock_ent"+ Convert.ToDecimal(list_productos.CurrentRow.Cells["precio_prod"].Value));
+            //MessageBox.Show("stock_ent"+ Convert.ToDecimal(list_productos.CurrentRow.Cells["precio_prod"].Value));
 
            presio_promed_dpt.Value = Convert.ToDecimal(list_productos.CurrentRow.Cells["precio_prod"].Value);
             cantida_produ_venta.Text = list_productos.CurrentRow.Cells["cant_prods_vta"].Value.ToString();
@@ -423,21 +430,15 @@ namespace NS_WinFormsApps
 
         private void Atras_Click(object sender, EventArgs e)
         {
+            //MessageBox.Show("unidad_produc: " + unidad_produc.Text);
+
             FormMain formMain = new FormMain();
             formMain.Show();
             this.Close();
         }
 
 
-        private void Vista_Todos_los_Productos_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Vista_Producto_det_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 
 

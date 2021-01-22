@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FormsApp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -89,6 +90,16 @@ namespace NS_WinFormsApps.WinForms_AccesosRolesUsrs
             txt_usrDir.Text = dgv_listaUsrs.CurrentRow.Cells["tlf_usr"].Value.ToString();
             txt_usrTlf.Text = dgv_listaUsrs.CurrentRow.Cells["dir_usr"].Value.ToString();
             
+        }
+
+        
+
+        private void FrmUsrs_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = (e.CloseReason == CloseReason.UserClosing);
+            FormMain formMain = new FormMain();
+            formMain.Show();
+            this.Hide();
         }
     }
 

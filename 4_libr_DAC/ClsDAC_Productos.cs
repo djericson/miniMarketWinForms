@@ -30,7 +30,7 @@ namespace DAC
                 cn.Open();
                 loDataReader = cmd.ExecuteReader();
                 //schemaTable.Load(loDataReader, LoadOption.OverwriteChanges);
-                dataSet.Load(loDataReader, LoadOption.PreserveChanges, new string[] { "list_productos" });
+                dataSet.Load(loDataReader, LoadOption.OverwriteChanges, new string[] { "list_productos" });
                 if (dataSet.Tables["list_productos"].Rows.Count == 0)
                 {
                     cn.Close();
@@ -50,7 +50,7 @@ namespace DAC
                 cmd.Parameters.AddWithValue("@PROD_ID", _DataRow);
                 cn.Open();
                 loDataReader = cmd.ExecuteReader();
-                dataSet.Load(loDataReader, LoadOption.PreserveChanges, new string[] { "producto", "categorias", "producto_det" });
+                dataSet.Load(loDataReader, LoadOption.OverwriteChanges, new string[] { "producto", "categorias", "producto_det", "unidad_product" });
                 cn.Close();
                 return dataSet;
 

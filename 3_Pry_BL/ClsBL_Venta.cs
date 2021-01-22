@@ -17,7 +17,13 @@ namespace BL
         {
             dac_vta.insertar(xobj);
         }
-       
+
+        public void insertar(Dictionary<string, object> datos_venta,
+            Dictionary<string, object> datos_pago)
+        {
+            dac_vta.insertar(datos_venta, datos_pago);
+        }
+
 
     }
 

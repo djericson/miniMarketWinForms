@@ -2,6 +2,7 @@
 
 using Newtonsoft.Json;
 using NS_WinFormsApps;
+using NS_WinFormsApps.Ventas_pagos;
 using NS_WinFormsApps.WinForms_AccesosRolesUsrs;
 using System;
 using System.Collections.Generic;
@@ -51,7 +52,7 @@ namespace FormsApp
         private void FormMain_Load(object sender, EventArgs e)
         {
             ID_Rol = 0;
-            ID_usuario.Text = "C0digo_Usuario: " + login.ID_Usuario;
+            //ID_usuario.Text = "C0digo_Usuario: " + login.ID_Usuario;
             Usuario.Text = login.Usuario;
             if (login.Name_Rol != "" && login.ID_Rol != 0)
             {
@@ -100,10 +101,10 @@ namespace FormsApp
         {
             if(Acceso(Provedores.Name.ToString()))
             {
-                MessageBox.Show("Form provedores");
+                //MessageBox.Show("Form provedores");
 
-                //_FrmProveedores.Show();
-                //this.Hide();
+                _FrmProveedores.Show();
+                this.Hide();
             }
             else
             {
@@ -130,9 +131,9 @@ namespace FormsApp
 
             if (Acceso(Ventas.Name.ToString()))
             {
-                MessageBox.Show("Form ventas");
-                //_gestion_Productos.Show();
-                //this.Hide();
+                Ventas ventas = new Ventas();
+                ventas.Show();
+                this.Hide();
             }
             else
             {
@@ -144,11 +145,11 @@ namespace FormsApp
 
         private void pedidos_Click(object sender, EventArgs e)
         {
-            if (Acceso(pedidos.Name.ToString()))
+            if (Acceso(Pedidos.Name.ToString()))
             {
                 MessageBox.Show("Form pedidos");
-                //_gestion_Productos.Show();
-                //this.Hide();
+                _FrmPedido.Show();
+                this.Hide();
             }
             else
             {
@@ -164,8 +165,8 @@ namespace FormsApp
 
                 MessageBox.Show("Form Usuarios");
 
-                //frmUsrs.Show();
-                //this.Hide();
+                frmUsrs.Show();
+                this.Hide();
             }
             else
             {

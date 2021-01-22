@@ -415,6 +415,7 @@ namespace NS_WinFormsApps
             this.Controls.Add(this.groupBox2);
             this.Name = "FrmProveedores";
             this.Text = "FrmProveedores";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmProveedores_FormClosing);
             this.Load += new System.EventHandler(this.FrmProveedores_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
  using BL;
+using FormsApp;
 
 namespace NS_WinFormsApps
 {
@@ -281,6 +282,14 @@ namespace NS_WinFormsApps
         private void btnImprimir_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FrmProveedores_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = (e.CloseReason == CloseReason.UserClosing);
+            FormMain formMain = new FormMain();
+            formMain.Show();
+            this.Hide();
         }
     }
 }

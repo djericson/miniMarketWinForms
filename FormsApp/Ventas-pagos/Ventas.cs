@@ -16,7 +16,8 @@ namespace NS_WinFormsApps.Ventas_pagos
         ClsBL_Usr _objUsr;
         ClsBL_Producto _objProducto;
 
-        int id_cliente, id_cajero, id_producto;
+        int id_cliente, id_producto;
+        int id_cajero = 10;
 
         public Ventas()
         {
@@ -38,6 +39,22 @@ namespace NS_WinFormsApps.Ventas_pagos
             _objUsr = new ClsBL_Usr();
             _objProducto = new ClsBL_Producto();
 
+        }
+
+        private bool isDataEmpty()
+        {
+            if (txtCliente.Text.Equals(string.Empty))
+            {
+                errorIcono.SetError(txtCliente,"No ha seleccionado un cliente");
+                return true;
+            }
+
+            if(dgvDetalle.Rows.Count < 1)
+            {
+                MsjError("Error ventas","no hay productos en la grilla");
+            }
+
+            return false;
         }
 
         private void CalcularPrecioTotal()
@@ -92,6 +109,18 @@ namespace NS_WinFormsApps.Ventas_pagos
             }
         }
 
+        private int getTipoComprobante()
+        {
+            if(cmbTipoComprobante.Text == "Factura")
+            {
+                return 1;
+            }
+            else
+            {
+                return 2;
+            }
+        }
+
         private void btnAgregarProd_Click(object sender, EventArgs e)
         {
             if (txtProducto.Text != string.Empty && nudCantidad.Value > 0)
@@ -138,17 +167,29 @@ namespace NS_WinFormsApps.Ventas_pagos
 
         private void btnIrPago_Click(object sender, EventArgs e)
         {
-
-            var datos = new Dictionary<string, object>()
+            if (!isDataEmpty())
+            {
+                var datos = new Dictionary<string, object>()
             {
                 { "id_usuario",id_cliente},
+                { "nombre_cliente",txtCliente.Text},
                 { "id_cajero",id_cajero},
                 { "numero_operacion", txtNumOperacion.Text },
                 { "fecha_venta",dtpFecha.Value },
                 { "precio_total",txtPrecioTotal.Text},
-                { "detalle_venta",getDetalle()}
+                { "detalle_venta",getDetalle()},
+                { "tipo_comprobante",getTipoComprobante()},
+                {"numero_comprobante", txtNumComprobante.Text}
             };
 
+                Pagos pagos = new Pagos(datos);
+                pagos.ShowDialog();
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            dgvDetalle.Rows.Clear();
         }
 
         private void btnBuscarProducto_Click(object sender, EventArgs e)

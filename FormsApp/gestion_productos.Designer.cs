@@ -65,9 +65,7 @@ namespace NS_WinFormsApps
             this.label1 = new System.Windows.Forms.Label();
             this.numero_producto = new System.Windows.Forms.RichTextBox();
             this.Atras = new System.Windows.Forms.Button();
-            this.Vista_Producto_det = new System.Windows.Forms.Button();
             this.unidad_produc = new System.Windows.Forms.ComboBox();
-            this.Vista_Todos_los_Productos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.list_productos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presio_promed_dpt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presio_promdio)).BeginInit();
@@ -105,7 +103,7 @@ namespace NS_WinFormsApps
             this.BtnAyuda.FlatAppearance.BorderSize = 0;
             this.BtnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAyuda.Image = global::FormsApp.Properties.Resources.Webp_net_resizeimage__14_;
-            this.BtnAyuda.Location = new System.Drawing.Point(314, 81);
+            this.BtnAyuda.Location = new System.Drawing.Point(331, 82);
             this.BtnAyuda.Name = "BtnAyuda";
             this.BtnAyuda.Size = new System.Drawing.Size(30, 26);
             this.BtnAyuda.TabIndex = 19;
@@ -119,7 +117,7 @@ namespace NS_WinFormsApps
             this.richTextBox1.Location = new System.Drawing.Point(212, 81);
             this.richTextBox1.Multiline = false;
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(132, 28);
+            this.richTextBox1.Size = new System.Drawing.Size(149, 28);
             this.richTextBox1.TabIndex = 18;
             this.richTextBox1.Text = "";
             // 
@@ -219,7 +217,7 @@ namespace NS_WinFormsApps
             0,
             0});
             this.presio_promed_dpt.Name = "presio_promed_dpt";
-            this.presio_promed_dpt.Size = new System.Drawing.Size(128, 27);
+            this.presio_promed_dpt.Size = new System.Drawing.Size(149, 27);
             this.presio_promed_dpt.TabIndex = 79;
             // 
             // fecha_vencimiento
@@ -228,7 +226,7 @@ namespace NS_WinFormsApps
             this.fecha_vencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fecha_vencimiento.Location = new System.Drawing.Point(569, 198);
             this.fecha_vencimiento.Name = "fecha_vencimiento";
-            this.fecha_vencimiento.Size = new System.Drawing.Size(132, 21);
+            this.fecha_vencimiento.Size = new System.Drawing.Size(149, 21);
             this.fecha_vencimiento.TabIndex = 78;
             // 
             // fecha_fabricacion
@@ -237,7 +235,7 @@ namespace NS_WinFormsApps
             this.fecha_fabricacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fecha_fabricacion.Location = new System.Drawing.Point(569, 157);
             this.fecha_fabricacion.Name = "fecha_fabricacion";
-            this.fecha_fabricacion.Size = new System.Drawing.Size(132, 21);
+            this.fecha_fabricacion.Size = new System.Drawing.Size(149, 21);
             this.fecha_fabricacion.TabIndex = 77;
             // 
             // fecha_ingreso_stock
@@ -246,7 +244,7 @@ namespace NS_WinFormsApps
             this.fecha_ingreso_stock.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fecha_ingreso_stock.Location = new System.Drawing.Point(569, 122);
             this.fecha_ingreso_stock.Name = "fecha_ingreso_stock";
-            this.fecha_ingreso_stock.Size = new System.Drawing.Size(132, 21);
+            this.fecha_ingreso_stock.Size = new System.Drawing.Size(149, 21);
             this.fecha_ingreso_stock.TabIndex = 76;
             // 
             // label6
@@ -267,7 +265,7 @@ namespace NS_WinFormsApps
             this.cantida_produ_venta.Location = new System.Drawing.Point(569, 81);
             this.cantida_produ_venta.Multiline = false;
             this.cantida_produ_venta.Name = "cantida_produ_venta";
-            this.cantida_produ_venta.Size = new System.Drawing.Size(132, 27);
+            this.cantida_produ_venta.Size = new System.Drawing.Size(149, 27);
             this.cantida_produ_venta.TabIndex = 74;
             this.cantida_produ_venta.Text = "";
             // 
@@ -276,11 +274,11 @@ namespace NS_WinFormsApps
             this.presio_prome.AutoSize = true;
             this.presio_prome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.presio_prome.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.presio_prome.Location = new System.Drawing.Point(391, 44);
+            this.presio_prome.Location = new System.Drawing.Point(396, 48);
             this.presio_prome.Name = "presio_prome";
-            this.presio_prome.Size = new System.Drawing.Size(155, 17);
+            this.presio_prome.Size = new System.Drawing.Size(113, 17);
             this.presio_prome.TabIndex = 73;
-            this.presio_prome.Text = "1- presio promedio det";
+            this.presio_prome.Text = "1- Precio Unidad";
             // 
             // label3
             // 
@@ -327,7 +325,7 @@ namespace NS_WinFormsApps
             0,
             0});
             this.presio_promdio.Name = "presio_promdio";
-            this.presio_promdio.Size = new System.Drawing.Size(128, 27);
+            this.presio_promdio.Size = new System.Drawing.Size(149, 27);
             this.presio_promdio.TabIndex = 93;
             // 
             // categoria
@@ -339,7 +337,7 @@ namespace NS_WinFormsApps
             this.categoria.FormattingEnabled = true;
             this.categoria.Location = new System.Drawing.Point(212, 117);
             this.categoria.Name = "categoria";
-            this.categoria.Size = new System.Drawing.Size(132, 25);
+            this.categoria.Size = new System.Drawing.Size(149, 25);
             this.categoria.TabIndex = 92;
             // 
             // label12
@@ -349,9 +347,9 @@ namespace NS_WinFormsApps
             this.label12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(41, 204);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(132, 17);
+            this.label12.Size = new System.Drawing.Size(122, 17);
             this.label12.TabIndex = 91;
-            this.label12.Text = "4- presio_promedio";
+            this.label12.Text = "4- Precio Paquete";
             // 
             // marca
             // 
@@ -360,7 +358,7 @@ namespace NS_WinFormsApps
             this.marca.Location = new System.Drawing.Point(212, 157);
             this.marca.Multiline = false;
             this.marca.Name = "marca";
-            this.marca.Size = new System.Drawing.Size(132, 27);
+            this.marca.Size = new System.Drawing.Size(149, 27);
             this.marca.TabIndex = 90;
             this.marca.Text = "";
             // 
@@ -371,7 +369,7 @@ namespace NS_WinFormsApps
             this.descripcion.Location = new System.Drawing.Point(212, 285);
             this.descripcion.Multiline = false;
             this.descripcion.Name = "descripcion";
-            this.descripcion.Size = new System.Drawing.Size(132, 27);
+            this.descripcion.Size = new System.Drawing.Size(149, 27);
             this.descripcion.TabIndex = 89;
             this.descripcion.Text = "";
             // 
@@ -382,7 +380,7 @@ namespace NS_WinFormsApps
             this.cantida_total.Location = new System.Drawing.Point(212, 243);
             this.cantida_total.Multiline = false;
             this.cantida_total.Name = "cantida_total";
-            this.cantida_total.Size = new System.Drawing.Size(132, 27);
+            this.cantida_total.Size = new System.Drawing.Size(149, 27);
             this.cantida_total.TabIndex = 87;
             this.cantida_total.Text = "";
             // 
@@ -426,9 +424,9 @@ namespace NS_WinFormsApps
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(34, 332);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(134, 17);
+            this.label7.Size = new System.Drawing.Size(146, 17);
             this.label7.TabIndex = 82;
-            this.label7.Text = "6- unidad producto";
+            this.label7.Text = "6- Producto Paquete ";
             // 
             // label2
             // 
@@ -488,19 +486,6 @@ namespace NS_WinFormsApps
             this.Atras.UseVisualStyleBackColor = true;
             this.Atras.Click += new System.EventHandler(this.Atras_Click);
             // 
-            // Vista_Producto_det
-            // 
-            this.Vista_Producto_det.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.Vista_Producto_det.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Vista_Producto_det.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Vista_Producto_det.Location = new System.Drawing.Point(399, 325);
-            this.Vista_Producto_det.Name = "Vista_Producto_det";
-            this.Vista_Producto_det.Size = new System.Drawing.Size(128, 28);
-            this.Vista_Producto_det.TabIndex = 98;
-            this.Vista_Producto_det.Text = "Vista Producto det";
-            this.Vista_Producto_det.UseVisualStyleBackColor = true;
-            this.Vista_Producto_det.Click += new System.EventHandler(this.Vista_Producto_det_Click);
-            // 
             // unidad_produc
             // 
             this.unidad_produc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -508,40 +493,17 @@ namespace NS_WinFormsApps
             this.unidad_produc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.unidad_produc.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unidad_produc.FormattingEnabled = true;
-            this.unidad_produc.Items.AddRange(new object[] {
-            "docena",
-            "media_docena",
-            "cuarto_docena",
-            "gramos",
-            "Kilogramos",
-            "paquetex12",
-            "und"});
             this.unidad_produc.Location = new System.Drawing.Point(212, 325);
             this.unidad_produc.Name = "unidad_produc";
-            this.unidad_produc.Size = new System.Drawing.Size(132, 25);
+            this.unidad_produc.Size = new System.Drawing.Size(149, 25);
             this.unidad_produc.TabIndex = 100;
-            // 
-            // Vista_Todos_los_Productos
-            // 
-            this.Vista_Todos_los_Productos.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.Vista_Todos_los_Productos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Vista_Todos_los_Productos.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Vista_Todos_los_Productos.Location = new System.Drawing.Point(533, 325);
-            this.Vista_Todos_los_Productos.Name = "Vista_Todos_los_Productos";
-            this.Vista_Todos_los_Productos.Size = new System.Drawing.Size(154, 28);
-            this.Vista_Todos_los_Productos.TabIndex = 101;
-            this.Vista_Todos_los_Productos.Text = "Vista Todos los Productos";
-            this.Vista_Todos_los_Productos.UseVisualStyleBackColor = true;
-            this.Vista_Todos_los_Productos.Click += new System.EventHandler(this.Vista_Todos_los_Productos_Click);
             // 
             // gestion_productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 609);
-            this.Controls.Add(this.Vista_Todos_los_Productos);
             this.Controls.Add(this.unidad_produc);
-            this.Controls.Add(this.Vista_Producto_det);
             this.Controls.Add(this.Atras);
             this.Controls.Add(this.numero_producto);
             this.Controls.Add(this.label1);
@@ -626,8 +588,6 @@ namespace NS_WinFormsApps
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox numero_producto;
         private System.Windows.Forms.Button Atras;
-        private System.Windows.Forms.Button Vista_Producto_det;
         public System.Windows.Forms.ComboBox unidad_produc;
-        private System.Windows.Forms.Button Vista_Todos_los_Productos;
     }
 }

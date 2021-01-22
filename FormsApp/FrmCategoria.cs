@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
  using BL;
+using FormsApp;
 
 namespace NS_WinFormsApps
 {
@@ -262,6 +263,14 @@ namespace NS_WinFormsApps
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void FrmCategoria_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = (e.CloseReason == CloseReason.UserClosing);
+            FormMain formMain = new FormMain();
+            formMain.Show();
+            this.Hide();
         }
     }
     
