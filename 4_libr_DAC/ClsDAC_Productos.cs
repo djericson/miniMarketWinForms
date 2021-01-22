@@ -58,7 +58,25 @@ namespace DAC
             return null;
         }
 
-        
+        public DataTable search_product(string nombre)
+        {
+            cmd = new SqlCommand("Ayuda_producto", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@name_product", nombre);
+            cn.Open();
+            loDataReader = cmd.ExecuteReader();
+            schemaTable.Load(loDataReader, LoadOption.OverwriteChanges);
+            if (schemaTable.Rows.Count == 0)
+            {
+                cn.Close();
+                return null;
+            }
+
+            cn.Close();
+            return schemaTable;
+        }
+
 
         public void update_producto(ClsProducto objProducto, string XmlPut)
         {

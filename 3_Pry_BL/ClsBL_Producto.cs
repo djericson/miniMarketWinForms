@@ -26,6 +26,11 @@ namespace BL
             }
             return null;
         }
+        public DataTable search_product(string nombre)
+        {
+            return dac_prods.search_product(nombre);
+        }
+
         public int insert_producto(ClsProducto objProducto , string XmlPut )
         {
             int out_id = dac_prods.insert_producto(objProducto, XmlPut);
