@@ -15,6 +15,12 @@ namespace FormsApp.SrvRef_Usr {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://localhost:8733/WcfService/Service_Usr", ConfigurationName="SrvRef_Usr.IService_Usr")]
     public interface IService_Usr {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insUsr", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insUsrResponse")]
+        void insUsr(object objUsr);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insUsr", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insUsrResponse")]
+        System.Threading.Tasks.Task insUsrAsync(object objUsr);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/update", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/updateResponse")]
         void update(int id, string name);
         
@@ -97,6 +103,14 @@ namespace FormsApp.SrvRef_Usr {
         
         public Service_UsrClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public void insUsr(object objUsr) {
+            base.Channel.insUsr(objUsr);
+        }
+        
+        public System.Threading.Tasks.Task insUsrAsync(object objUsr) {
+            return base.Channel.insUsrAsync(objUsr);
         }
         
         public void update(int id, string name) {

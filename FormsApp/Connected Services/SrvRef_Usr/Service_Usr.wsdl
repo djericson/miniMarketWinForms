@@ -7,6 +7,12 @@
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IService_Usr_insUsr_InputMessage">
+    <wsdl:part name="parameters" element="tns:insUsr" />
+  </wsdl:message>
+  <wsdl:message name="IService_Usr_insUsr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insUsrResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_Usr_update_InputMessage">
     <wsdl:part name="parameters" element="tns:update" />
   </wsdl:message>
@@ -56,6 +62,10 @@
     <wsdl:part name="parameters" element="tns:get_id_formResponse" />
   </wsdl:message>
   <wsdl:portType name="IService_Usr">
+    <wsdl:operation name="insUsr">
+      <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insUsr" message="tns:IService_Usr_insUsr_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insUsrResponse" message="tns:IService_Usr_insUsr_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="update">
       <wsdl:input wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/update" message="tns:IService_Usr_update_InputMessage" />
       <wsdl:output wsaw:Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/updateResponse" message="tns:IService_Usr_update_OutputMessage" />
