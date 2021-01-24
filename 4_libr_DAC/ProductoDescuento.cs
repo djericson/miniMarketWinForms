@@ -18,39 +18,46 @@ namespace DAC
 
         public DataTable lista_ProductoDescuento(string nombre)
         {
+
+            schemaTable.Clear();
             cmd = new SqlCommand("Ayuda_producto", cn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@name_product", nombre);
             cn.Open();
             loDataReader = cmd.ExecuteReader();
-            schemaTable.Load(loDataReader, LoadOption.OverwriteChanges);
+            //schemaTable.Load(loDataReader, LoadOption.OverwriteChanges);
+            dataSet.Load(loDataReader, LoadOption.OverwriteChanges, new string[] { "list_productos", "ProductDescuento" });
+             schemaTable = dataSet.Tables["ProductDescuento"];
             if (schemaTable.Rows.Count == 0)
             {
                 cn.Close();
                 return null;
             }
-
             cn.Close();
             return schemaTable;
         }
 
-        public void insert_ProduDescuento(string name)
+        public void insert_ProduDescuento(int  id_producto,int Porcentaje,DateTime fecha_inicio,DateTime fecha_fin)
         {
-            cmd = new SqlCommand("insert_ProduDescuento", cn);
+            cmd = new SqlCommand("Insert_ProductoDescuento", cn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Clear();
-            cmd.Parameters.AddWithValue("@name_Rol", name);
+            cmd.Parameters.AddWithValue("@id_producto", id_producto);
+            cmd.Parameters.AddWithValue("@Porcentaje", Porcentaje);
+            cmd.Parameters.AddWithValue("@fecha_inicio", fecha_inicio);
+            cmd.Parameters.AddWithValue("@fecha_fin", fecha_fin);
             cn.Open();
             cmd.ExecuteNonQuery();
             cn.Close();
         }
-        public void Delete_ProduDescuento(int id)
+        public void Delete_ProduDescuento(int id_producto, int id_descuento)
         {
-            cmd = new SqlCommand("delete_ProduDescuento", cn);
+            cmd = new SqlCommand("Delete_ProductoDescuento", cn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Clear();
-            cmd.Parameters.AddWithValue("@id_rol", id);
+            cmd.Parameters.AddWithValue("@id_producto", id_producto);
+            cmd.Parameters.AddWithValue("@id_descuento", id_descuento);
             cn.Open();
             cmd.ExecuteNonQuery();
             cn.Close();
