@@ -10,18 +10,16 @@ using System.Windows.Forms;
 using BL;
 using DAC;
 using FormsApp;
-
 namespace FormsApp
 {
     public partial class FrmPedido : Form
     {
-        ClsBL_Pedido oBlPedido = new ClsBL_Pedido();
-        ClsDAC_Pedidos oDacPedido = new ClsDAC_Pedidos();
+        //LOS BOTONES DE BUSCAR TRABAJADOR Y PROVEEDOR NO FUNCIONAN SE LES TIENEN QUE INGRESAR MANUALMENTE
+        //LO QUE HACE AHORA EL BOTON AGREGAR PROVEEDOR ES INSTANCIAR EL FORMULARIO VISTAPROVEEDOR Y LA FILA SELECCIONA SE LE ENVIA AL FORMULARIO
+        //EL DETALLE ES QUE LE LLEGAN LOS DATOS AL FORMULARIO FRMPEDIDO PERO CUANDO SE CIERRA EL FRMVISTAPROVEEDOR, LOS DATOS QUE LE LLEGARON AL FORMULARIO
+        //FRMPEDIDO DESAPARECEN 
+        // TODO EL LO QUE HICE PARA HACER ESTA EN LOS CAMPOS REGION DEL 1-4
 
-        public int IdTrabajador = 1;
-        private bool IsNuevo;
-        private DataTable dtDetallePedido;
-        private decimal totalPagado = 0; 
         #region OBJETO QUE ME HACE REFERENCIA  A LA CLASE FRMPEDIDO        1
         private static FrmPedido _instancia;
         #endregion
@@ -30,102 +28,108 @@ namespace FormsApp
         {
             if (_instancia == null)
             {
-                _instancia = new FrmPedido();
+                _instancia = new FrmPedido();//SOLO SE CREARA CUANDO NO EXISTA NINGUNA INSTANCIA
             }
             return _instancia;
         }
         #endregion
-        public FrmPedido()
+        private void FrmPedido_FormClosing(object sender, FormClosingEventArgs e) ////3
         {
-            InitializeComponent();
-            InitializeComponent();
-            ttMensaje.SetToolTip(txtNombreProveedor, "SELECCIONE EL PROVEEDOR");
-            ttMensaje.SetToolTip(txtStock, "INGRESE LA CANTIDAD");
-            ttMensaje.SetToolTip(txtNombreProducto, "SELECCION EL PRODUCTO");
-            txtId_proveedor.Visible = false;
-            txtId_producto.Visible = false;
-            txtNombreProveedor.ReadOnly = true;
-            txtNombreProducto.ReadOnly = true;
-        }
-
-        private void FrmPedido_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-            e.Cancel = (e.CloseReason == CloseReason.UserClosing);
-            FormMain formMain = new FormMain();
-            formMain.Show();
-            this.Hide();
-
-            _instancia = null; 
+            _instancia = null;
         }
         #region ESTABLECER VALORES DESDE VISTA PROVEEDOR Y VISTA PRODUCTO 4
         public void ControlesProveedor(string idproveedor, string nombre, string categoria, string paginaweb)
-
         {
             txtId_proveedor.Text = idproveedor;
             txtNombreProveedor.Text = nombre;
             txtCategoria.Text = categoria;
-            txtPaginaWeb.Text = paginaweb;
+            txtPaginaWeb.Text = paginaweb;           
         }
+          
 
         public void ControlesProducto(string idproducto, string nombre, string precio, string unidad, string stock,
             string categoria)
-        {
+        {//VALORES DE VISTA ARTICULO
             this.txtId_producto.Text = idproducto;
             this.txtNombreProducto.Text = nombre;
             this.txtPrecioCompra.Text = precio;
             this.txtProdUnidad.Text = unidad;
             this.txtStock.Text = stock;
-            this.txtCategoria.Text = categoria;
+            this.txtCategoria.Text = categoria;            
         }
         #endregion
-        #region region METODO PARA MOSTRAR MENSAJE DE CONFIRMACION
+
+
+
+
+
+        ClsBL_Producto _objProducto;
+        ClsBL_Pedido oBlPedido = new ClsBL_Pedido();
+        ClsDAC_Pedidos oDacPedido = new ClsDAC_Pedidos();
+        public int IdTrabajador = 1;
+        private bool IsNuevo = true;
+        private DataTable dtDetallePedido;
+        private decimal totalPagado = 0; 
+
+        public FrmPedido()
+        {
+            InitializeComponent();
+            ttMensaje.SetToolTip(txtNombreProveedor, "SELECCIONE EL PROVEEDOR");
+            ttMensaje.SetToolTip(txtStock, "INGRESE LA CANTIDAD");
+            ttMensaje.SetToolTip(txtNombreProducto, "SELECCION EL PRODUCTO");
+            //txtId_proveedor.Visible = false;
+            //txtId_producto.Visible = false;
+            //txtNombreProveedor.ReadOnly = true;
+            //txtNombreProducto.ReadOnly = true;
+            //txtPaginaWeb.ReadOnly = true;
+            //txtCategoria.ReadOnly = true;
+        }
+
+
         private void MensajeOk(string mensaje)
         {
-            MessageBox.Show(mensaje, "Sistema de ventas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(mensaje, "Sistema de minimarket", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        #endregion
-        #region METODO PARA MOSTRAR MENSAJE DE ERROR
         private void MensajeError(string mensaje)
         {
-            MessageBox.Show(mensaje, "Sistema de ventas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(mensaje, "Sistema de minimarket", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-        #endregion
-        #region METODO LIMPIAR TODOS LOS CONTROLES DEL FORMULARIO
         private void Limpiar()
         {
-            txtIdPedido.Text = string.Empty;
-            txtId_proveedor.Text = string.Empty;
-            txtPaginaWeb.Text = string.Empty;
-            lblTotal_pagado.Text = "0,0";
-
+            //txtIdPedido.Text = string.Empty;
+            //txtId_proveedor.Text = string.Empty;
+            //txtPaginaWeb.Text = string.Empty;
+            //txtNombreProveedor.Text = string.Empty;
+            //txtCategoria.Text = string.Empty;
+            //lblTotal_pagado.Text = "0,0";
             CrearTabla();
         }
-        #endregion
-        #region LIMPIAR CONTROLES DEL DETALLE //EDITADO
+
+
         private void limpiarDetalle()
         {
-            txtId_producto.Text = string.Empty;
-            txtNombreProducto.Text = string.Empty;
-            txtStock.Text = string.Empty;
-            txtPrecioCompra.Text = string.Empty;
+            //txtId_producto.Text = string.Empty;
+            //txtNombreProducto.Text = string.Empty;
+            //txtStock.Text = string.Empty;
+            //txtPrecioCompra.Text = string.Empty;
+            //txtProdUnidad.Text = string.Empty;
         }
-        #endregion
+
 
         private void HabilitarTxt(bool valor)
         {
-            txtIdPedido.ReadOnly = !valor;
-            dtFecha.Enabled = valor;
-            txtStock.ReadOnly = !valor;
-            txtPrecioCompra.ReadOnly = !valor;
+            //txtIdPedido.ReadOnly = !valor;
+            //txtPrecioCompra.ReadOnly = !valor;
+            //txtProdUnidad.ReadOnly = !valor;
+            //dtFecha.Enabled = valor;
 
-            
-            btnBuscar_producto.Enabled = valor;
-            btnBuscar_proveedor.Enabled = valor;
-            btnAgregar.Enabled = valor;
-            btnQuitar.Enabled = valor;
+
+            //btnBuscar_producto.Enabled = valor;
+            //btnBuscar_proveedor.Enabled = valor;
+            //btnAgregar.Enabled = valor;
+            //btnQuitar.Enabled = valor;
         }
-        #region METODO HABILITAR LOS BOTONES//EDITADO
+
         private void Botones()
         {
             if (IsNuevo)
@@ -143,54 +147,44 @@ namespace FormsApp
                 btnCancelar.Enabled = false;
             }
         }
-        #endregion
-        #region METODO OCULTAR COLUMAS
-        private void OcularColumnas()
+
+
+        private void OcultarColumnas()
         {
             dgvListado.Columns[0].Visible = false;//COLUMNA ELIMINAR(CHECBOX)
             dgvListado.Columns[1].Visible = false;//COLUMNA ID DE PEDIDO
         }
-        #endregion
-        #region MOSTRAR TODOS LOS REGISTROS DE CATEGORIA
-        private void Mostrar()
+        private void Mostrar() //MUESTRA LOS PEDIDOS
         {
             dgvListado.DataSource = ClsBL_Pedido.MOSTRAR();
-            OcularColumnas();
+            OcultarColumnas();
             lblTotal.Text = "Total de registros: " + Convert.ToString(dgvListado.Rows.Count);
         }
-        #endregion
-        #region METODO BUSCAR POR FECHA //NUEVO
         private void BuscarFechas()
         {
             dgvListado.DataSource = oDacPedido.Buscar_fechas(dtFechaA.Value.ToString("dd/MM/yyyy"), dtFechaB.Value.ToString("dd/MM/yyyy"));
-            OcularColumnas();
+            OcultarColumnas();
             lblTotal.Text = "Total de registros " + Convert.ToString(dgvListado.Rows.Count);
         }
-        #endregion
-
-        #region METODO MOSTRAR DETALLE
-        private void MostrarDetalle()
+        private void MostrarDetalle() //MUESTRA LOS DETALLES DE UN UNICO INGRESO
         {
             dgvListado_detalle.DataSource = ClsBL_Pedido.MOSTRAR_DETALLE(txtIdPedido.Text);
         }
-        #endregion
-
         private void FrmPedido_Load(object sender, EventArgs e)
         {
             Top = 0;
             Left = 0;
+            //MostrarDetalle();
             Mostrar();
             HabilitarTxt(true);
-            Botones();
+            //Botones();
             CrearTabla();
         }
-
         private void btnBuscar_proveedor_Click(object sender, EventArgs e)
         {
             FrmVistaProveedor obj = new FrmVistaProveedor();
             obj.ShowDialog();
         }
-
         private void btnBuscar_producto_Click(object sender, EventArgs e)
         {
 
@@ -199,7 +193,6 @@ namespace FormsApp
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             BuscarFechas();
-
         }
 
         private void btnAnular_Click(object sender, EventArgs e)
@@ -220,9 +213,6 @@ namespace FormsApp
                             Codigo = Convert.ToString(row.Cells[1].Value);
                             Rpta = ClsBL_Pedido.ANULAR(Convert.ToInt32(Codigo));
                             ClsBL_Pedido o = new ClsBL_Pedido();
-
-
-
                             if (Rpta.Equals("OK"))
                             {
                                 MensajeOk("SE ANULO CORRECTAMENTE EL ´PEDIDO");
@@ -241,7 +231,6 @@ namespace FormsApp
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
-
         }
 
         private void chkGestion_CheckedChanged(object sender, EventArgs e)
@@ -257,34 +246,34 @@ namespace FormsApp
         }
 
         private void dgvListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
+        {           
             if (e.ColumnIndex == dgvListado.Columns["Eliminar"].Index)
             {
                 DataGridViewCheckBoxCell chkGestion = (DataGridViewCheckBoxCell)dgvListado.Rows[e.RowIndex].Cells["Eliminar"];
                 chkGestion.Value = !Convert.ToBoolean(chkGestion.Value);
             }
         }
-        #region CREAR TABLA   USO: PARA CUANDO AGREGE UN PRODUCTO SE AGREGE  AL GRIDVIEW DETALLES
         private void CrearTabla()
         {
             dtDetallePedido = new DataTable("Detalle");
-            dtDetallePedido.Columns.Add("idproducto", System.Type.GetType("System.Int32"));
-            dtDetallePedido.Columns.Add("producto", System.Type.GetType("System.String"));
-            dtDetallePedido.Columns.Add("precio_compra", System.Type.GetType("System.Decimal"));
-            dtDetallePedido.Columns.Add("cantidad", System.Type.GetType("System.Int32"));
-            dtDetallePedido.Columns.Add("subtotal", System.Type.GetType("System.Decimal"));
+            dtDetallePedido.Columns.Add("Id_Producto", System.Type.GetType("System.Int32"));
+            dtDetallePedido.Columns.Add("Nombre_Proveedor", System.Type.GetType("System.String"));
+            dtDetallePedido.Columns.Add("Nombre_Producto", System.Type.GetType("System.String"));
+            dtDetallePedido.Columns.Add("Cantidad", System.Type.GetType("System.Int32"));
+            dtDetallePedido.Columns.Add("Categoria", System.Type.GetType("System.String"));
+            dtDetallePedido.Columns.Add("Precio_Compra", System.Type.GetType("System.Decimal"));
+            dtDetallePedido.Columns.Add("Unidad_Producto", System.Type.GetType("System.String"));
+            dtDetallePedido.Columns.Add("SubTotal", System.Type.GetType("System.Decimal"));
             dgvListado_detalle.DataSource = dtDetallePedido;
         }
-        #endregion
-
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             IsNuevo = true;
             Botones();
             Limpiar();
-            HabilitarTxt(true); //TODO
-            limpiarDetalle();           
+            HabilitarTxt(true);
+            txtStock.Focus();
+            limpiarDetalle();          // ----PRUEBA
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -293,7 +282,7 @@ namespace FormsApp
             Botones();
             Limpiar();
             HabilitarTxt(false);
-            limpiarDetalle();
+            limpiarDetalle();  //PRUEBA
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -302,36 +291,34 @@ namespace FormsApp
             {
                 string rpta = "";
                 
-                if (txtId_proveedor.Text == string.Empty)
+                if (txtId_proveedor.Text == string.Empty || txtPrecioCompra.Text == string.Empty || txtStock.Text == string.Empty)
                 {
                     MensajeError("Falta ingresar algunos datos");
                     errorIcono.SetError(txtId_proveedor, "Ingrese un Valor");
-
+                    errorIcono.SetError(txtPrecioCompra, "Ingrese un Valor");
+                    errorIcono.SetError(txtStock, "Ingrese un Valor");
                 }
                 else
                 {
                     if (IsNuevo)
                     {
-                        rpta = ClsBL_Pedido.INSERTAR(Convert.ToInt32(txtId_proveedor), IdTrabajador, dtFecha.Value, "EMITIDO",
-                            dtDetallePedido);
+                        rpta = ClsBL_Pedido.INSERTAR(Convert.ToInt32(txtId_proveedor.Text), IdTrabajador, dtFecha.Value, "GENERADO",dtDetallePedido);
                     }
-
                     if (rpta.Equals("OK"))
                     {
                         if (IsNuevo)
                         {
-                            MensajeOk("Se inserto de forma correcta el registro");
+                            MensajeOk("Se inserto de forma correcta el pedido");
                         }
                     }
-
                     else
                     {
                         MensajeError(rpta);
                     }
-                    IsNuevo = false;
+                    IsNuevo = false; 
                     Botones();
                     Limpiar();
-                    limpiarDetalle();
+                    limpiarDetalle();//PRUEBA
                     Mostrar();
                 }
             }
@@ -344,20 +331,20 @@ namespace FormsApp
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
-            {
-                
+            {                
                 if (txtId_producto.Text == string.Empty || txtStock.Text == string.Empty || txtPrecioCompra.Text == string.Empty)
                 {
                     MensajeError("Falta ingresar algunos datos, seran remarcados");
-                    errorIcono.SetError(txtId_proveedor, "Ingrese un Valor");
+                    errorIcono.SetError(txtId_producto, "Ingrese un Valor");
                     errorIcono.SetError(txtStock, "Ingrese un Valor");
+                    errorIcono.SetError(txtPrecioCompra, "Ingrese un Valor");
                 }
                 else
                 {
                     bool registrar = true;
                     foreach (DataRow row in dtDetallePedido.Rows)
                     {
-                        if (Convert.ToInt32(row["idproducto"]) == Convert.ToInt32(txtId_producto.Text))
+                        if (Convert.ToInt32(row["Id_producto"]) == Convert.ToInt32(txtId_producto.Text))
                         {
                             registrar = false;
                             MensajeError("Este producto ya fue agregado a la lista");
@@ -367,25 +354,25 @@ namespace FormsApp
                     {
                         decimal subtotal = Convert.ToDecimal(txtStock.Text) * Convert.ToDecimal(txtPrecioCompra.Text);
                         totalPagado = totalPagado + subtotal;
-                        lblTotal_pagado.Text = Convert.ToString(totalPagado);
-                        
+                        lblTotal_pagado.Text = Convert.ToString(totalPagado);                        
                         DataRow row = dtDetallePedido.NewRow();
-                        row["idproducto"] = Convert.ToInt32(txtId_producto.Text);
-                        row["producto"] = txtNombreProducto.Text;
-                        row["precio_compra"] = Convert.ToDecimal(txtPrecioCompra.Text);
-                        row["cantidad"] = Convert.ToDecimal(txtStock.Text);
-                        row["subtotal"] = Convert.ToDecimal(subtotal);
+                        row["Id_Producto"] = Convert.ToInt32(txtId_producto.Text);
+                        row["Nombre_Proveedor"] =txtNombreProveedor.Text;
+                        row["Nombre_Producto"] =txtNombreProducto.Text;
+                        row["Cantidad"] = Convert.ToInt32(txtStock.Text);
+                        row["Categoria"] =txtCategoria.Text;
+                        row["Precio_Compra"] = Convert.ToDecimal(txtPrecioCompra.Text);
+                        row["Unidad_Producto"] = txtProdUnidad.Text;
+                        row["SubTotal"] = subtotal;
                         dtDetallePedido.Rows.Add(row);
                         limpiarDetalle();
                     }
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + ex.StackTrace); // Nos muestra el posible error.
             }
-
         }
 
         private void btnQuitar_Click(object sender, EventArgs e)
@@ -395,22 +382,26 @@ namespace FormsApp
                 int indiceFila = dgvListado_detalle.CurrentCell.RowIndex; 
                 DataRow row = dtDetallePedido.Rows[indiceFila];
               
-                totalPagado = totalPagado - (Convert.ToDecimal(row["subtotal"].ToString()));
-                lblTotal_pagado.Text = Convert.ToString(totalPagado);
-                                                                    
+                totalPagado = totalPagado - (Convert.ToDecimal(row["SubTotal"].ToString()));
+                lblTotal_pagado.Text = Convert.ToString(totalPagado);                                                                    
                 dtDetallePedido.Rows.Remove(row);
             }
             catch (Exception)
             {
-                MensajeError("No hay fila para remover");
+                MensajeError("La lista esta vacia");
             }
         }
 
         private void dgvListado_detalle_DoubleClick(object sender, EventArgs e)
         {
+
+        }
+
+        private void dgvListado_DoubleClick(object sender, EventArgs e)
+        {
             txtIdPedido.Text = Convert.ToString(dgvListado.CurrentRow.Cells["id_pedido"].Value);
-            txtNombreProveedor.Text = Convert.ToString(dgvListado.CurrentRow.Cells["proveedor"].Value);
-            dtFecha.Value = Convert.ToDateTime(dgvListado.CurrentRow.Cells["fecha pedido"].Value);
+            txtNombreProveedor.Text = Convert.ToString(dgvListado.CurrentRow.Cells["PROVEEDOR"].Value);
+            dtFecha.Value = Convert.ToDateTime(dgvListado.CurrentRow.Cells["FECHA_PEDIDO"].Value);
             lblTotal_pagado.Text = Convert.ToString(dgvListado.CurrentRow.Cells["total"].Value);
             MostrarDetalle();
         }
