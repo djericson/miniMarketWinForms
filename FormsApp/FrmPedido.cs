@@ -14,12 +14,6 @@ namespace FormsApp
 {
     public partial class FrmPedido : Form
     {
-        //LOS BOTONES DE BUSCAR TRABAJADOR Y PROVEEDOR NO FUNCIONAN SE LES TIENEN QUE INGRESAR MANUALMENTE
-        //LO QUE HACE AHORA EL BOTON AGREGAR PROVEEDOR ES INSTANCIAR EL FORMULARIO VISTAPROVEEDOR Y LA FILA SELECCIONA SE LE ENVIA AL FORMULARIO
-        //EL DETALLE ES QUE LE LLEGAN LOS DATOS AL FORMULARIO FRMPEDIDO PERO CUANDO SE CIERRA EL FRMVISTAPROVEEDOR, LOS DATOS QUE LE LLEGARON AL FORMULARIO
-        //FRMPEDIDO DESAPARECEN 
-        // TODO EL LO QUE HICE PARA HACER ESTA EN LOS CAMPOS REGION DEL 1-4
-
         #region OBJETO QUE ME HACE REFERENCIA  A LA CLASE FRMPEDIDO        1
         private static FrmPedido _instancia;
         #endregion
@@ -59,14 +53,10 @@ namespace FormsApp
         }
         #endregion
 
-
-
-
-
         ClsBL_Producto _objProducto;
         ClsBL_Pedido oBlPedido = new ClsBL_Pedido();
         ClsDAC_Pedidos oDacPedido = new ClsDAC_Pedidos();
-        public int IdTrabajador = 1;
+        public int IdTrabajador = 4;
         private bool IsNuevo = true;
         private DataTable dtDetallePedido;
         private decimal totalPagado = 0; 

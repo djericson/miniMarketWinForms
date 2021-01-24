@@ -64,20 +64,20 @@ namespace FormsApp
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.txtCategoria = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.txtPaginaWeb = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtNombreProveedor = new System.Windows.Forms.TextBox();
             this.txtId_proveedor = new System.Windows.Forms.TextBox();
             this.txtIdPedido = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.lblTotal_pagado = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtNombreProveedor = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtPaginaWeb = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtCategoria = new System.Windows.Forms.TextBox();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado_detalle)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -391,7 +391,7 @@ namespace FormsApp
             // 
             this.btnBuscar_proveedor.Location = new System.Drawing.Point(424, 11);
             this.btnBuscar_proveedor.Name = "btnBuscar_proveedor";
-            this.btnBuscar_proveedor.Size = new System.Drawing.Size(34, 23);
+            this.btnBuscar_proveedor.Size = new System.Drawing.Size(92, 23);
             this.btnBuscar_proveedor.TabIndex = 3;
             this.btnBuscar_proveedor.Text = "Buscar";
             this.btnBuscar_proveedor.UseVisualStyleBackColor = true;
@@ -444,6 +444,24 @@ namespace FormsApp
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // txtCategoria
+            // 
+            this.txtCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.txtCategoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCategoria.Location = new System.Drawing.Point(293, 53);
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.Size = new System.Drawing.Size(117, 20);
+            this.txtCategoria.TabIndex = 1;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(215, 55);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(52, 13);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Categoria";
+            // 
             // btnNuevo
             // 
             this.btnNuevo.Location = new System.Drawing.Point(441, 304);
@@ -453,6 +471,33 @@ namespace FormsApp
             this.btnNuevo.Text = "&Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // txtPaginaWeb
+            // 
+            this.txtPaginaWeb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.txtPaginaWeb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPaginaWeb.Location = new System.Drawing.Point(491, 53);
+            this.txtPaginaWeb.Name = "txtPaginaWeb";
+            this.txtPaginaWeb.Size = new System.Drawing.Size(219, 20);
+            this.txtPaginaWeb.TabIndex = 1;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(426, 57);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(69, 13);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Pagina Web:";
+            // 
+            // txtNombreProveedor
+            // 
+            this.txtNombreProveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.txtNombreProveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNombreProveedor.Location = new System.Drawing.Point(84, 53);
+            this.txtNombreProveedor.Name = "txtNombreProveedor";
+            this.txtNombreProveedor.Size = new System.Drawing.Size(120, 20);
+            this.txtNombreProveedor.TabIndex = 1;
             // 
             // txtId_proveedor
             // 
@@ -480,6 +525,15 @@ namespace FormsApp
             this.label8.Size = new System.Drawing.Size(37, 13);
             this.label8.TabIndex = 0;
             this.label8.Text = "Fecha";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(13, 56);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Proveedor";
             // 
             // lblTotal_pagado
             // 
@@ -511,60 +565,6 @@ namespace FormsApp
             // errorIcono
             // 
             this.errorIcono.ContainerControl = this;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 56);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Proveedor";
-            // 
-            // txtNombreProveedor
-            // 
-            this.txtNombreProveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.txtNombreProveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombreProveedor.Location = new System.Drawing.Point(84, 53);
-            this.txtNombreProveedor.Name = "txtNombreProveedor";
-            this.txtNombreProveedor.Size = new System.Drawing.Size(120, 20);
-            this.txtNombreProveedor.TabIndex = 1;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(426, 57);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(69, 13);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Pagina Web:";
-            // 
-            // txtPaginaWeb
-            // 
-            this.txtPaginaWeb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.txtPaginaWeb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPaginaWeb.Location = new System.Drawing.Point(491, 53);
-            this.txtPaginaWeb.Name = "txtPaginaWeb";
-            this.txtPaginaWeb.Size = new System.Drawing.Size(219, 20);
-            this.txtPaginaWeb.TabIndex = 1;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(215, 55);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(52, 13);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Categoria";
-            // 
-            // txtCategoria
-            // 
-            this.txtCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.txtCategoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCategoria.Location = new System.Drawing.Point(293, 53);
-            this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(117, 20);
-            this.txtCategoria.TabIndex = 1;
             // 
             // FrmPedido
             // 
