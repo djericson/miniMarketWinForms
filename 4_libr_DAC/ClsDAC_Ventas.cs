@@ -42,6 +42,18 @@ namespace DAC
             cn.Close();
         }
 
+        public DataTable search()
+        {
+            cmd = new SqlCommand("listado_ventas", cn);
+            DataTable table = new DataTable();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Clear();
+            cn.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            table.Load(reader, LoadOption.OverwriteChanges);
+            cn.Close();
+            return table;
+        }
         public DataTable search_(string val) 
         {
             return null;

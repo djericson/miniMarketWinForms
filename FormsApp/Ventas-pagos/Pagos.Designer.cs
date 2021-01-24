@@ -39,42 +39,43 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radEfectivo = new System.Windows.Forms.RadioButton();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.radMaster = new System.Windows.Forms.RadioButton();
             this.radVisa = new System.Windows.Forms.RadioButton();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.boxEfectivo = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtVuelto = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtMonto = new System.Windows.Forms.TextBox();
-            this.btnEnterar = new System.Windows.Forms.Button();
-            this.txtTotal = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.pb100 = new System.Windows.Forms.PictureBox();
             this.pb50 = new System.Windows.Forms.PictureBox();
             this.pb20 = new System.Windows.Forms.PictureBox();
             this.pb10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.txtMonto = new System.Windows.Forms.TextBox();
+            this.btnEnterar = new System.Windows.Forms.Button();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.boxEfectivo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb100)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb50)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(417, 470);
+            this.btnCancelar.Location = new System.Drawing.Point(556, 578);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(118, 34);
+            this.btnCancelar.Size = new System.Drawing.Size(157, 42);
             this.btnCancelar.TabIndex = 12;
             this.btnCancelar.Text = "Cancelar pago";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -82,9 +83,10 @@
             // btnEmitir
             // 
             this.btnEmitir.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmitir.Location = new System.Drawing.Point(265, 470);
+            this.btnEmitir.Location = new System.Drawing.Point(353, 578);
+            this.btnEmitir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEmitir.Name = "btnEmitir";
-            this.btnEmitir.Size = new System.Drawing.Size(137, 34);
+            this.btnEmitir.Size = new System.Drawing.Size(183, 42);
             this.btnEmitir.TabIndex = 13;
             this.btnEmitir.Text = "Emitir Comprobante";
             this.btnEmitir.UseVisualStyleBackColor = true;
@@ -102,27 +104,30 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(759, 106);
+            this.panel1.Size = new System.Drawing.Size(1012, 130);
             this.panel1.TabIndex = 14;
             // 
             // txtComprobante
             // 
             this.txtComprobante.BackColor = System.Drawing.SystemColors.Control;
             this.txtComprobante.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtComprobante.Location = new System.Drawing.Point(416, 46);
+            this.txtComprobante.Location = new System.Drawing.Point(555, 57);
+            this.txtComprobante.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtComprobante.Name = "txtComprobante";
             this.txtComprobante.ReadOnly = true;
-            this.txtComprobante.Size = new System.Drawing.Size(188, 15);
+            this.txtComprobante.Size = new System.Drawing.Size(251, 19);
             this.txtComprobante.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(293, 44);
+            this.label3.Location = new System.Drawing.Point(391, 54);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 19);
+            this.label3.Size = new System.Drawing.Size(147, 23);
             this.label3.TabIndex = 3;
             this.label3.Text = "Comprobante";
             // 
@@ -130,28 +135,31 @@
             // 
             this.txtCliente.BackColor = System.Drawing.SystemColors.Control;
             this.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCliente.Location = new System.Drawing.Point(72, 44);
+            this.txtCliente.Location = new System.Drawing.Point(96, 54);
+            this.txtCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.ReadOnly = true;
-            this.txtCliente.Size = new System.Drawing.Size(188, 15);
+            this.txtCliente.Size = new System.Drawing.Size(251, 19);
             this.txtCliente.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(5, 43);
+            this.label2.Location = new System.Drawing.Point(7, 53);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 19);
+            this.label2.Size = new System.Drawing.Size(80, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "Cliente";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(324, 8);
+            this.label1.Location = new System.Drawing.Point(432, 10);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 17);
+            this.label1.Size = new System.Drawing.Size(75, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nº Venta";
             // 
@@ -164,9 +172,11 @@
             this.groupBox1.Controls.Add(this.pictureBox6);
             this.groupBox1.Controls.Add(this.pictureBox5);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(10, 144);
+            this.groupBox1.Location = new System.Drawing.Point(13, 177);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(228, 295);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(304, 363);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Elejir método de pago";
@@ -174,20 +184,33 @@
             // radEfectivo
             // 
             this.radEfectivo.AutoSize = true;
-            this.radEfectivo.Location = new System.Drawing.Point(21, 236);
+            this.radEfectivo.Location = new System.Drawing.Point(28, 290);
+            this.radEfectivo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radEfectivo.Name = "radEfectivo";
-            this.radEfectivo.Size = new System.Drawing.Size(14, 13);
+            this.radEfectivo.Size = new System.Drawing.Size(17, 16);
             this.radEfectivo.TabIndex = 17;
             this.radEfectivo.TabStop = true;
             this.radEfectivo.UseVisualStyleBackColor = true;
             this.radEfectivo.CheckedChanged += new System.EventHandler(this.radEfectivo_CheckedChanged);
             // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::FormsApp.Properties.Resources._100;
+            this.pictureBox7.Location = new System.Drawing.Point(55, 257);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(200, 86);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 16;
+            this.pictureBox7.TabStop = false;
+            // 
             // radMaster
             // 
             this.radMaster.AutoSize = true;
-            this.radMaster.Location = new System.Drawing.Point(21, 146);
+            this.radMaster.Location = new System.Drawing.Point(28, 180);
+            this.radMaster.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radMaster.Name = "radMaster";
-            this.radMaster.Size = new System.Drawing.Size(14, 13);
+            this.radMaster.Size = new System.Drawing.Size(17, 16);
             this.radMaster.TabIndex = 15;
             this.radMaster.TabStop = true;
             this.radMaster.UseVisualStyleBackColor = true;
@@ -195,12 +218,35 @@
             // radVisa
             // 
             this.radVisa.AutoSize = true;
-            this.radVisa.Location = new System.Drawing.Point(21, 61);
+            this.radVisa.Location = new System.Drawing.Point(28, 75);
+            this.radVisa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radVisa.Name = "radVisa";
-            this.radVisa.Size = new System.Drawing.Size(14, 13);
+            this.radVisa.Size = new System.Drawing.Size(17, 16);
             this.radVisa.TabIndex = 14;
             this.radVisa.TabStop = true;
             this.radVisa.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(55, 145);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(200, 86);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 13;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::FormsApp.Properties.Resources.Visa;
+            this.pictureBox5.Location = new System.Drawing.Point(55, 36);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(200, 86);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 12;
+            this.pictureBox5.TabStop = false;
             // 
             // boxEfectivo
             // 
@@ -214,9 +260,11 @@
             this.boxEfectivo.Controls.Add(this.txtMonto);
             this.boxEfectivo.Controls.Add(this.btnEnterar);
             this.boxEfectivo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.boxEfectivo.Location = new System.Drawing.Point(244, 235);
+            this.boxEfectivo.Location = new System.Drawing.Point(325, 289);
+            this.boxEfectivo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.boxEfectivo.Name = "boxEfectivo";
-            this.boxEfectivo.Size = new System.Drawing.Size(503, 204);
+            this.boxEfectivo.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.boxEfectivo.Size = new System.Drawing.Size(671, 251);
             this.boxEfectivo.TabIndex = 16;
             this.boxEfectivo.TabStop = false;
             this.boxEfectivo.Text = "Pago de efectivo";
@@ -225,33 +273,90 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(389, 85);
+            this.label5.Location = new System.Drawing.Point(519, 105);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 17);
+            this.label5.Size = new System.Drawing.Size(57, 20);
             this.label5.TabIndex = 18;
             this.label5.Text = "Vuelto";
             // 
             // txtVuelto
             // 
-            this.txtVuelto.Location = new System.Drawing.Point(339, 103);
+            this.txtVuelto.Location = new System.Drawing.Point(452, 127);
+            this.txtVuelto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtVuelto.Name = "txtVuelto";
-            this.txtVuelto.Size = new System.Drawing.Size(142, 22);
+            this.txtVuelto.Size = new System.Drawing.Size(188, 26);
             this.txtVuelto.TabIndex = 17;
+            this.txtVuelto.Text = "0";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(368, 29);
+            this.label4.Location = new System.Drawing.Point(491, 36);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 17);
+            this.label4.Size = new System.Drawing.Size(123, 20);
             this.label4.TabIndex = 16;
             this.label4.Text = "Monto Efectivo";
             // 
+            // pb100
+            // 
+            this.pb100.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb100.Image = global::FormsApp.Properties.Resources._1001;
+            this.pb100.Location = new System.Drawing.Point(229, 129);
+            this.pb100.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pb100.Name = "pb100";
+            this.pb100.Size = new System.Drawing.Size(200, 98);
+            this.pb100.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb100.TabIndex = 15;
+            this.pb100.TabStop = false;
+            this.pb100.Click += new System.EventHandler(this.pb100_Click);
+            // 
+            // pb50
+            // 
+            this.pb50.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb50.Image = global::FormsApp.Properties.Resources._50;
+            this.pb50.Location = new System.Drawing.Point(28, 129);
+            this.pb50.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pb50.Name = "pb50";
+            this.pb50.Size = new System.Drawing.Size(200, 98);
+            this.pb50.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb50.TabIndex = 14;
+            this.pb50.TabStop = false;
+            this.pb50.Click += new System.EventHandler(this.pb50_Click);
+            // 
+            // pb20
+            // 
+            this.pb20.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb20.Image = global::FormsApp.Properties.Resources._20;
+            this.pb20.Location = new System.Drawing.Point(229, 32);
+            this.pb20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pb20.Name = "pb20";
+            this.pb20.Size = new System.Drawing.Size(200, 98);
+            this.pb20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb20.TabIndex = 13;
+            this.pb20.TabStop = false;
+            this.pb20.Click += new System.EventHandler(this.pb20_Click);
+            // 
+            // pb10
+            // 
+            this.pb10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb10.Image = global::FormsApp.Properties.Resources._10;
+            this.pb10.Location = new System.Drawing.Point(28, 31);
+            this.pb10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pb10.Name = "pb10";
+            this.pb10.Size = new System.Drawing.Size(200, 98);
+            this.pb10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb10.TabIndex = 12;
+            this.pb10.TabStop = false;
+            this.pb10.Click += new System.EventHandler(this.pb10_Click);
+            // 
             // txtMonto
             // 
-            this.txtMonto.Location = new System.Drawing.Point(340, 47);
+            this.txtMonto.Location = new System.Drawing.Point(453, 58);
+            this.txtMonto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMonto.Name = "txtMonto";
-            this.txtMonto.Size = new System.Drawing.Size(142, 22);
+            this.txtMonto.Size = new System.Drawing.Size(188, 26);
             this.txtMonto.TabIndex = 11;
             this.txtMonto.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.txtMonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
@@ -259,9 +364,10 @@
             // btnEnterar
             // 
             this.btnEnterar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnterar.Location = new System.Drawing.Point(340, 136);
+            this.btnEnterar.Location = new System.Drawing.Point(453, 167);
+            this.btnEnterar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEnterar.Name = "btnEnterar";
-            this.btnEnterar.Size = new System.Drawing.Size(141, 52);
+            this.btnEnterar.Size = new System.Drawing.Size(188, 64);
             this.btnEnterar.TabIndex = 10;
             this.btnEnterar.Text = "Enterar Efectivo";
             this.btnEnterar.UseVisualStyleBackColor = true;
@@ -272,107 +378,31 @@
             this.txtTotal.BackColor = System.Drawing.SystemColors.Control;
             this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTotal.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(475, 181);
+            this.txtTotal.Location = new System.Drawing.Point(633, 223);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(188, 33);
+            this.txtTotal.Size = new System.Drawing.Size(250, 40);
             this.txtTotal.TabIndex = 20;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(323, 184);
+            this.label6.Location = new System.Drawing.Point(431, 226);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(152, 25);
+            this.label6.Size = new System.Drawing.Size(195, 32);
             this.label6.TabIndex = 19;
             this.label6.Text = "Total a Pagar:";
-            // 
-            // pb100
-            // 
-            this.pb100.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb100.Image = global::FormsApp.Properties.Resources._1001;
-            this.pb100.Location = new System.Drawing.Point(172, 105);
-            this.pb100.Name = "pb100";
-            this.pb100.Size = new System.Drawing.Size(150, 80);
-            this.pb100.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb100.TabIndex = 15;
-            this.pb100.TabStop = false;
-            this.pb100.Click += new System.EventHandler(this.pb100_Click);
-            // 
-            // pb50
-            // 
-            this.pb50.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb50.Image = global::FormsApp.Properties.Resources._50;
-            this.pb50.Location = new System.Drawing.Point(21, 105);
-            this.pb50.Name = "pb50";
-            this.pb50.Size = new System.Drawing.Size(150, 80);
-            this.pb50.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb50.TabIndex = 14;
-            this.pb50.TabStop = false;
-            this.pb50.Click += new System.EventHandler(this.pb50_Click);
-            // 
-            // pb20
-            // 
-            this.pb20.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb20.Image = global::FormsApp.Properties.Resources._20;
-            this.pb20.Location = new System.Drawing.Point(172, 26);
-            this.pb20.Name = "pb20";
-            this.pb20.Size = new System.Drawing.Size(150, 80);
-            this.pb20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb20.TabIndex = 13;
-            this.pb20.TabStop = false;
-            this.pb20.Click += new System.EventHandler(this.pb20_Click);
-            // 
-            // pb10
-            // 
-            this.pb10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb10.Image = global::FormsApp.Properties.Resources._10;
-            this.pb10.Location = new System.Drawing.Point(21, 25);
-            this.pb10.Name = "pb10";
-            this.pb10.Size = new System.Drawing.Size(150, 80);
-            this.pb10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb10.TabIndex = 12;
-            this.pb10.TabStop = false;
-            this.pb10.Click += new System.EventHandler(this.pb10_Click);
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::FormsApp.Properties.Resources._100;
-            this.pictureBox7.Location = new System.Drawing.Point(41, 209);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(150, 70);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 16;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(41, 118);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(150, 70);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 13;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::FormsApp.Properties.Resources.Visa;
-            this.pictureBox5.Location = new System.Drawing.Point(41, 29);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(150, 70);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 12;
-            this.pictureBox5.TabStop = false;
             // 
             // Pagos
             // 
             this.AcceptButton = this.btnEmitir;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(759, 542);
+            this.ClientSize = new System.Drawing.Size(1012, 667);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.boxEfectivo);
@@ -380,6 +410,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnEmitir);
             this.Controls.Add(this.btnCancelar);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Pagos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pagos";
@@ -388,15 +419,15 @@
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.boxEfectivo.ResumeLayout(false);
             this.boxEfectivo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb100)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb50)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

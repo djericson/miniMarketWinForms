@@ -15,6 +15,7 @@ namespace NS_WinFormsApps.Ventas_pagos
     {
         ClsBL_Usr _objUsr;
         ClsBL_Producto _objProducto;
+        ClsBL_Vta _objVta;
 
         int id_cliente, id_producto;
         int id_cajero = 10;
@@ -38,6 +39,8 @@ namespace NS_WinFormsApps.Ventas_pagos
         {
             _objUsr = new ClsBL_Usr();
             _objProducto = new ClsBL_Producto();
+            _objVta = new ClsBL_Vta();
+            dgvVentas.DataSource = _objVta.search();
 
         }
 
