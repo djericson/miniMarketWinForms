@@ -173,6 +173,12 @@
     <Compile Include="Login\MasDeUnRol.Designer.cs">
       <DependentUpon>MasDeUnRol.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductoDescuento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductoDescuento.Designer.cs">
+      <DependentUpon>ProductoDescuento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -250,6 +256,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login\MasDeUnRol.resx">
       <DependentUpon>MasDeUnRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductoDescuento.resx">
+      <DependentUpon>ProductoDescuento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <SubType>Designer</SubType>

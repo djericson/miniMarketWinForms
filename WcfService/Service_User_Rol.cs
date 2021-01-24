@@ -26,10 +26,10 @@ namespace WcfService
         {
             BL.insert_rol(name);
         }
-        public void update(int id, string name)
-        {
-            BL.update_rol(id, name);
-        }
+        //public void update(int id, string name)
+        //{
+        //    BL.update_rol(id, name);
+        //}
 
         public void insert_rol_user(int rol, int user)
         {
@@ -65,11 +65,11 @@ namespace WcfService
              return output;
           
         }
-        public int get_id_rol(string rol)
-        {
-            var data = BL.get_id_rol(rol);
-            return data;
-        }
+        //public int get_id_rol(string rol)
+        //{
+        //    //var data = BL.get_id_rol(rol);
+        //    //return data;
+        //}
 
         public void insert_Forms_rol(int rol, int form)
         {
@@ -81,11 +81,11 @@ namespace WcfService
             BL.delete_Forms_rol(rol, form);
         }
 
-        public int get_id_form(string form)
-        {
-            var data = BL.get_id_form(form);
-            return data;
-        }
+        //public int get_id_form(string form)
+        //{
+        //    //var data = BL.get_id_form(form);
+        //    //return data;
+        //}
 
         public string List_Forms_rol()
         {

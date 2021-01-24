@@ -33,7 +33,6 @@ namespace NS_WinFormsApps
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.delete = new System.Windows.Forms.Button();
             this.add_producto = new System.Windows.Forms.Button();
-            this.BtnAyuda = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.update = new System.Windows.Forms.Button();
             this.list_productos = new System.Windows.Forms.DataGridView();
@@ -43,7 +42,6 @@ namespace NS_WinFormsApps
             this.presio_promed_dpt = new System.Windows.Forms.NumericUpDown();
             this.fecha_vencimiento = new System.Windows.Forms.DateTimePicker();
             this.fecha_fabricacion = new System.Windows.Forms.DateTimePicker();
-            this.fecha_ingreso_stock = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.cantida_produ_venta = new System.Windows.Forms.RichTextBox();
             this.presio_prome = new System.Windows.Forms.Label();
@@ -64,8 +62,10 @@ namespace NS_WinFormsApps
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.numero_producto = new System.Windows.Forms.RichTextBox();
-            this.Atras = new System.Windows.Forms.Button();
             this.unidad_produc = new System.Windows.Forms.ComboBox();
+            this.Atras = new System.Windows.Forms.Button();
+            this.BtnAyuda = new System.Windows.Forms.Button();
+            this.fecha_ingreso_stock = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.list_productos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presio_promed_dpt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presio_promdio)).BeginInit();
@@ -96,19 +96,6 @@ namespace NS_WinFormsApps
             this.add_producto.Text = "insertar";
             this.add_producto.UseVisualStyleBackColor = true;
             this.add_producto.Click += new System.EventHandler(this.add_producto_Click);
-            // 
-            // BtnAyuda
-            // 
-            this.BtnAyuda.BackColor = System.Drawing.Color.White;
-            this.BtnAyuda.FlatAppearance.BorderSize = 0;
-            this.BtnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAyuda.Image = global::FormsApp.Properties.Resources.Webp_net_resizeimage__14_;
-            this.BtnAyuda.Location = new System.Drawing.Point(331, 82);
-            this.BtnAyuda.Name = "BtnAyuda";
-            this.BtnAyuda.Size = new System.Drawing.Size(30, 26);
-            this.BtnAyuda.TabIndex = 19;
-            this.BtnAyuda.UseVisualStyleBackColor = false;
-            this.BtnAyuda.Click += new System.EventHandler(this.BtnAyuda_Click);
             // 
             // richTextBox1
             // 
@@ -237,15 +224,6 @@ namespace NS_WinFormsApps
             this.fecha_fabricacion.Name = "fecha_fabricacion";
             this.fecha_fabricacion.Size = new System.Drawing.Size(149, 21);
             this.fecha_fabricacion.TabIndex = 77;
-            // 
-            // fecha_ingreso_stock
-            // 
-            this.fecha_ingreso_stock.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fecha_ingreso_stock.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fecha_ingreso_stock.Location = new System.Drawing.Point(569, 122);
-            this.fecha_ingreso_stock.Name = "fecha_ingreso_stock";
-            this.fecha_ingreso_stock.Size = new System.Drawing.Size(149, 21);
-            this.fecha_ingreso_stock.TabIndex = 76;
             // 
             // label6
             // 
@@ -473,6 +451,18 @@ namespace NS_WinFormsApps
             this.numero_producto.TabIndex = 96;
             this.numero_producto.Text = "";
             // 
+            // unidad_produc
+            // 
+            this.unidad_produc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.unidad_produc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.unidad_produc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.unidad_produc.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unidad_produc.FormattingEnabled = true;
+            this.unidad_produc.Location = new System.Drawing.Point(212, 325);
+            this.unidad_produc.Name = "unidad_produc";
+            this.unidad_produc.Size = new System.Drawing.Size(149, 25);
+            this.unidad_produc.TabIndex = 100;
+            // 
             // Atras
             // 
             this.Atras.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
@@ -486,17 +476,27 @@ namespace NS_WinFormsApps
             this.Atras.UseVisualStyleBackColor = true;
             this.Atras.Click += new System.EventHandler(this.Atras_Click);
             // 
-            // unidad_produc
+            // BtnAyuda
             // 
-            this.unidad_produc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.unidad_produc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.unidad_produc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.unidad_produc.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unidad_produc.FormattingEnabled = true;
-            this.unidad_produc.Location = new System.Drawing.Point(212, 325);
-            this.unidad_produc.Name = "unidad_produc";
-            this.unidad_produc.Size = new System.Drawing.Size(149, 25);
-            this.unidad_produc.TabIndex = 100;
+            this.BtnAyuda.BackColor = System.Drawing.Color.White;
+            this.BtnAyuda.FlatAppearance.BorderSize = 0;
+            this.BtnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAyuda.Image = global::FormsApp.Properties.Resources.Webp_net_resizeimage__14_;
+            this.BtnAyuda.Location = new System.Drawing.Point(331, 82);
+            this.BtnAyuda.Name = "BtnAyuda";
+            this.BtnAyuda.Size = new System.Drawing.Size(30, 26);
+            this.BtnAyuda.TabIndex = 19;
+            this.BtnAyuda.UseVisualStyleBackColor = false;
+            this.BtnAyuda.Click += new System.EventHandler(this.BtnAyuda_Click);
+            // 
+            // fecha_ingreso_stock
+            // 
+            this.fecha_ingreso_stock.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fecha_ingreso_stock.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fecha_ingreso_stock.Location = new System.Drawing.Point(569, 122);
+            this.fecha_ingreso_stock.Name = "fecha_ingreso_stock";
+            this.fecha_ingreso_stock.Size = new System.Drawing.Size(149, 21);
+            this.fecha_ingreso_stock.TabIndex = 76;
             // 
             // gestion_productos
             // 
@@ -566,7 +566,6 @@ namespace NS_WinFormsApps
         public System.Windows.Forms.NumericUpDown presio_promed_dpt;
         public System.Windows.Forms.DateTimePicker fecha_vencimiento;
         public System.Windows.Forms.DateTimePicker fecha_fabricacion;
-        public System.Windows.Forms.DateTimePicker fecha_ingreso_stock;
         public System.Windows.Forms.Label label6;
         public System.Windows.Forms.RichTextBox cantida_produ_venta;
         public System.Windows.Forms.Label presio_prome;
@@ -589,5 +588,6 @@ namespace NS_WinFormsApps
         private System.Windows.Forms.RichTextBox numero_producto;
         private System.Windows.Forms.Button Atras;
         public System.Windows.Forms.ComboBox unidad_produc;
+        public System.Windows.Forms.DateTimePicker fecha_ingreso_stock;
     }
 }
