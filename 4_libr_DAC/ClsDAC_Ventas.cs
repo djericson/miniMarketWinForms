@@ -13,7 +13,7 @@ namespace DAC
     public class ClsDAC_Ventas
     {
 
-        SqlConnection cn = new SqlConnection("Data Source=srv-bd-sql-server.database.windows.net;Initial Catalog=miniMarket;User ID=katheryne;Password=$K012345");
+        SqlConnection cn = new SqlConnection("Data Source = sql-srv2.database.windows.net;Initial Catalog=miniMarket;User ID=katheryne;Password=$K012345");
         SqlCommand cmd;
 
         public void insertar(ClsVenta xobj)
@@ -28,7 +28,6 @@ namespace DAC
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@id_usuario", datos_venta["id_usuario"].ToString());
             cmd.Parameters.AddWithValue("@id_cajero", datos_venta["id_cajero"].ToString());
-            cmd.Parameters.AddWithValue("@id_ayudante", null);
             cmd.Parameters.AddWithValue("@numero_operacion", datos_venta["numero_operacion"].ToString());
             cmd.Parameters.AddWithValue("@numero_comprobante", datos_venta["numero_comprobante"].ToString());
             cmd.Parameters.AddWithValue("@tipo_comprobante", datos_venta["tipo_comprobante"].ToString());
@@ -57,6 +56,46 @@ namespace DAC
         public DataTable search_(string val) 
         {
             return null;
+        }
+
+        public DataTable search_product(string nombre)
+        {
+            DataTable schemaTable = new DataTable();
+            cmd = new SqlCommand("Producto_Venta", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Clear();
+            //cmd.Parameters.AddWithValue("@name_product", nombre);
+            cn.Open();
+            SqlDataReader loDataReader = cmd.ExecuteReader();
+            schemaTable.Load(loDataReader, LoadOption.OverwriteChanges);
+            if (schemaTable.Rows.Count == 0)
+            {
+                cn.Close();
+                return null;
+            }
+
+            cn.Close();
+            return schemaTable;
+        }
+
+        public DataTable search_client(string nombre)
+        {
+            DataTable schemaTable = new DataTable();
+            cmd = new SqlCommand("buscar_cliente", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@usr_nom", nombre);
+            cn.Open();
+            SqlDataReader loDataReader = cmd.ExecuteReader();
+            schemaTable.Load(loDataReader, LoadOption.OverwriteChanges);
+            if (schemaTable.Rows.Count == 0)
+            {
+                cn.Close();
+                return null;
+            }
+
+            cn.Close();
+            return schemaTable;
         }
 
     }

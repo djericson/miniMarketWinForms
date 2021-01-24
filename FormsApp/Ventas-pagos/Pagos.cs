@@ -83,15 +83,15 @@ namespace NS_WinFormsApps.Ventas_pagos
             };
 
             bl_venta.insertar(_datos, datos_pago);
-            MessageBox.Show("Venta realizada", "La venta se ha registrado con exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            MessageBox.Show("Venta realizada", "La venta se ha registrado con exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private bool MontoMayor()
         {
             if (txtMonto.Text.Length > 0)
             {
-                int monto = int.Parse(txtMonto.Text);
-                int total = int.Parse(txtTotal.Text);
+                double monto = double.Parse(txtMonto.Text);
+                double total = double.Parse(txtTotal.Text);
                 return monto > total;
             }
             return false;
@@ -122,10 +122,10 @@ namespace NS_WinFormsApps.Ventas_pagos
         {
             if (MontoMayor())
             {
-                int monto = int.Parse(txtMonto.Text);
-                int total = int.Parse(txtTotal.Text);
-                int vuelto = monto - total;
-                txtVuelto.Text = vuelto.ToString();
+                double monto = double.Parse(txtMonto.Text);
+                double total = double.Parse(txtTotal.Text);
+                double vuelto = monto - total;
+                txtVuelto.Text = Math.Round(vuelto,2).ToString();
             }
             else
             {
@@ -149,7 +149,7 @@ namespace NS_WinFormsApps.Ventas_pagos
         private void btnEmitir_Click(object sender, EventArgs e)
         {
             GuardarVenta();
-           
+            this.Close();
         }
 
         private void pb10_Click(object sender, EventArgs e)

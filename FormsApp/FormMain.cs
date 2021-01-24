@@ -140,7 +140,7 @@ namespace FormsApp
 
             if (Acceso(Ventas.Name.ToString()))
             {
-                Ventas ventas = new Ventas();
+                Ventas ventas = new Ventas(login.ID_Usuario,login.Name_Usuario);
                 ventas.Show();
                 this.Hide();
             }
