@@ -27,10 +27,10 @@ namespace FormsApp
 
 
 
-        public static int ID_Usuario = 0;
-        public static string NameUsuario = "";
-        public static string NameRol = "";
-        public static int ID_Rol = 0;
+        public static int ID_Usuario;
+        public static string NameUsuario;
+        public static string NameRol;
+        public static int ID_Rol;
 
 
         public static string Form_For_Adm = "";
