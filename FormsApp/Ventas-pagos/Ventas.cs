@@ -199,7 +199,6 @@ namespace NS_WinFormsApps.Ventas_pagos
         {
             using (var busqueda = new NS_Busqueda.Busqueda())
             {
-
                 busqueda.objTabla = _objProducto.search_product(txtProducto.Text);
 
                 busqueda.objTabla = _objProducto.search_product("");

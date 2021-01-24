@@ -26,8 +26,8 @@ namespace BL
             foreach (DataRow row in dtdetalles.Rows)
             {       
                 ClsDetallePedido detalle = new ClsDetallePedido();
-                detalle.Id_detalle_pedido = Convert.ToInt32(row["Id_detalle_pedido"].ToString());
-                detalle.Id_pedido = Convert.ToInt32(row["Id_pedido"].ToString());
+                //detalle.Id_detalle_pedido = Convert.ToInt32(row["Id_pedido"].ToString());
+                //detalle.Id_pedido = Convert.ToInt32(row["Id_pedido"].ToString());
                 detalle.Id_producto = Convert.ToInt32(row["Id_producto"].ToString());
                 detalle.Cantidad = Convert.ToInt32(row["cantidad"].ToString());
                 detalle.Precio_compra = Convert.ToDecimal(row["Precio_compra"].ToString());

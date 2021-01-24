@@ -29,6 +29,7 @@ namespace DAC
                 cmd.CommandType = CommandType.StoredProcedure;
                
                 SqlParameter parIdPedido_detalle = new SqlParameter();
+
                 parIdPedido_detalle.ParameterName = "@id_pedido_detalle";
                 parIdPedido_detalle.SqlDbType = SqlDbType.Int;
                 parIdPedido_detalle.Direction = ParameterDirection.Output;

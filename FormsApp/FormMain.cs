@@ -1,6 +1,4 @@
-﻿ 
-
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using NS_WinFormsApps;
 using NS_WinFormsApps.Ventas_pagos;
 using NS_WinFormsApps.WinForms_AccesosRolesUsrs;
@@ -20,9 +18,9 @@ namespace FormsApp
 {
     public partial class FormMain : Form
     {
-        gestion_productos _gestion_Productos = new gestion_productos();
         FrmProveedores _FrmProveedores = new FrmProveedores();
-        FrmPedido _FrmPedido = new FrmPedido();
+        FrmPedido _FrmPedido = FrmPedido.GetInstancia();        
+        gestion_productos _gestion_Productos = new gestion_productos();
         FrmUsrs frmUsrs = new FrmUsrs();
 
 
