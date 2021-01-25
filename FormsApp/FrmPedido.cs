@@ -19,14 +19,6 @@ namespace FormsApp
         string StockMax="";
 
 
-        
-
-        public int ID_Usuario = FormMain.ID_Usuario;
-        public string NameUsuario = FormMain.NameUsuario;
-        public string NameRol = FormMain.NameRol;
-        public int ID_Rol = FormMain.ID_Rol;
-
-
         #region OBJETO QUE ME HACE REFERENCIA  A LA CLASE FRMPEDIDO        1
         private static FrmPedido _instancia;
         #endregion
@@ -42,6 +34,10 @@ namespace FormsApp
         #endregion
         private void FrmPedido_FormClosing(object sender, FormClosingEventArgs e) ////3
         {
+            e.Cancel = (e.CloseReason == CloseReason.UserClosing);
+            FormMain formMain = new FormMain();
+            formMain.Show();
+            this.Hide();
             _instancia = null;
         }
         #region ESTABLECER VALORES DESDE VISTA PROVEEDOR Y VISTA PRODUCTO 4
