@@ -25,6 +25,11 @@ namespace FormsApp
             list_productos.DataSource = productDescuento.search_product("");
             list_productos.Columns["id_descuento"].Visible = false;
             list_productos.Columns["id_prod"].Visible = false;
+            if (list_productos.Columns.Count > 0)
+            {
+                list_productos.CurrentCell = list_productos.Rows[0].Cells[1];
+
+            }
         }
         private void ProductoDescuento_Load(object sender, EventArgs e)
         {
@@ -33,16 +38,30 @@ namespace FormsApp
 
         private void agregar_Click(object sender, EventArgs e)
         {
-            if(list_productos.Columns.Count >1)
+            try
             {
-                var id_prod = Convert.ToInt32(list_productos.CurrentRow.Cells["id_prod"].Value);
-                var porcentaje = Convert.ToInt32(Descuento.Text);
-                var fecha_inicio = Convert.ToDateTime(Fecha_Inicio.Value.ToString()).ToString("yyyy-M-dd");
-                var fecha_fin = Convert.ToDateTime(Fecha_Fin.Value.ToString()).ToString("yyyy-M-dd");
+                if (list_productos.Columns.Count > 1)
+                {
+                    if (list_productos.CurrentRow.Cells["porcentaje"].Value == DBNull.Value)
+                    {
+                        var id_prod = Convert.ToInt32(list_productos.CurrentRow.Cells["id_prod"].Value);
+                        var porcentaje = Convert.ToInt32(Descuento.Text);
+                        var fecha_inicio = Convert.ToDateTime(Fecha_Inicio.Value.ToString()).ToString("yyyy-M-dd");
+                        var fecha_fin = Convert.ToDateTime(Fecha_Fin.Value.ToString()).ToString("yyyy-M-dd");
 
-                productDescuento.insert_ProduDescuento(id_prod, porcentaje, Convert.ToDateTime(fecha_inicio), Convert.ToDateTime(fecha_fin));
-                list_productDescuent();
+                        productDescuento.insert_ProduDescuento(id_prod, porcentaje, Convert.ToDateTime(fecha_inicio), Convert.ToDateTime(fecha_fin));
+                        list_productDescuent();
+                    }
+
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+
+           
         }
 
         private void eliminar_Click(object sender, EventArgs e)
