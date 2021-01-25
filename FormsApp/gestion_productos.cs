@@ -437,8 +437,10 @@ namespace NS_WinFormsApps
             this.Close();
         }
 
+        private void todos_productos_Click(object sender, EventArgs e)
+        {
 
-      
+        }
     }
 
 
