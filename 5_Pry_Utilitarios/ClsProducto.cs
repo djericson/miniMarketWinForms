@@ -22,9 +22,10 @@ namespace Utilitarios
         public DateTime stock_entry_date { get; set; }
         public DateTime fabrication_date { get; set; }
         public DateTime expiration_date { get; set; }
-        
+        public string Textobuscar { get; set; }
+
         public ClsProducto() { }
-        public ClsProducto(int id, string name, int id_categoria, string marca, object presio_prome, string descripcion , int cantida_total , string unida_product , int  id_producto_detalle  , object presio_prome_detalle , int cantidad_producto_venta , DateTime stock_entry_date , DateTime fabrication_date , DateTime expiration_date)
+        public ClsProducto(int id, string name, int id_categoria, string marca, object presio_prome, string descripcion , int cantida_total , string unida_product , int  id_producto_detalle  , object presio_prome_detalle , int cantidad_producto_venta , DateTime stock_entry_date , DateTime fabrication_date , DateTime expiration_date, string textobuscar)
         {
             this.id = id; 
             this.name = name; 
@@ -40,6 +41,7 @@ namespace Utilitarios
             this.stock_entry_date = stock_entry_date;
             this.fabrication_date = fabrication_date;
             this.expiration_date = expiration_date;
+            this.Textobuscar = Textobuscar;
         }
 
     }

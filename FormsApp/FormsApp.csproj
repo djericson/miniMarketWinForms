@@ -137,6 +137,12 @@
     <Compile Include="FrmProveedores.Designer.cs">
       <DependentUpon>FrmProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmVistaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVistaProducto.Designer.cs">
+      <DependentUpon>FrmVistaProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmVistaProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,27 +155,39 @@
     <Compile Include="gestion_productos.Designer.cs">
       <DependentUpon>gestion_productos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gestion_RolesFormsUser\Creacion_Rol.cs" />
+    <Compile Include="Gestion_RolesFormsUser\Creacion_Rol.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Gestion_RolesFormsUser\Creacion_Rol.designer.cs">
       <DependentUpon>Creacion_Rol.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gestion_RolesFormsUser\Forms_Rol.cs" />
+    <Compile Include="Gestion_RolesFormsUser\Forms_Rol.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Gestion_RolesFormsUser\Forms_Rol.Designer.cs">
       <DependentUpon>Forms_Rol.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gestion_RolesFormsUser\Gestion_RolesFormsUser.cs" />
+    <Compile Include="Gestion_RolesFormsUser\Gestion_RolesFormsUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Gestion_RolesFormsUser\Gestion_RolesFormsUser.designer.cs">
       <DependentUpon>Gestion_RolesFormsUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gestion_RolesFormsUser\Rol_Usuario.cs" />
+    <Compile Include="Gestion_RolesFormsUser\Rol_Usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Gestion_RolesFormsUser\Rol_Usuario.designer.cs">
       <DependentUpon>Rol_Usuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login\Login.cs" />
+    <Compile Include="Login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Login\login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login\MasDeUnRol.cs" />
+    <Compile Include="Login\MasDeUnRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Login\MasDeUnRol.Designer.cs">
       <DependentUpon>MasDeUnRol.cs</DependentUpon>
     </Compile>
@@ -232,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProveedores.resx">
       <DependentUpon>FrmProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVistaProducto.resx">
+      <DependentUpon>FrmVistaProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVistaProveedor.resx">
       <DependentUpon>FrmVistaProveedor.cs</DependentUpon>

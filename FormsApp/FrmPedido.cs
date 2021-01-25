@@ -14,6 +14,9 @@ namespace FormsApp
 {
     public partial class FrmPedido : Form
     {
+        string cantidad_total="";
+        string StockMIn="";
+        string StockMax="";
         #region OBJETO QUE ME HACE REFERENCIA  A LA CLASE FRMPEDIDO        1
         private static FrmPedido _instancia;
         #endregion
@@ -37,19 +40,21 @@ namespace FormsApp
             txtId_proveedor.Text = idproveedor;
             txtNombreProveedor.Text = nombre;
             txtCategoria.Text = categoria;
-            txtPaginaWeb.Text = paginaweb;           
+            txtPaginaWeb.Text = paginaweb;
         }
-          
 
-        public void ControlesProducto(string idproducto, string nombre, string precio, string unidad, string stock,
-            string categoria)
-        {//VALORES DE VISTA ARTICULO
+
+        public void ControlesProducto(string idproducto, string StockmIn, string Stockmax, string nombre, string marca,
+           string cantidadtotal, string unidadProducto )
+        {
             this.txtId_producto.Text = idproducto;
+            this.StockMIn = StockmIn;
+            this.StockMax = Stockmax;
             this.txtNombreProducto.Text = nombre;
-            this.txtPrecioCompra.Text = precio;
-            this.txtProdUnidad.Text = unidad;
-            this.txtStock.Text = stock;
-            this.txtCategoria.Text = categoria;            
+            this.txtMarca.Text = marca;
+            this.cantidad_total = cantidadtotal;
+            this.txtProdUnidad.Text = unidadProducto;
+            txtTotalProducto.Text = cantidadtotal;
         }
         #endregion
 
@@ -177,7 +182,8 @@ namespace FormsApp
         }
         private void btnBuscar_producto_Click(object sender, EventArgs e)
         {
-
+            FrmVistaProducto obj = new FrmVistaProducto();
+            obj.ShowDialog();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

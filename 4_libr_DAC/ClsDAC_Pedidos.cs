@@ -13,8 +13,7 @@ namespace DAC
 {
     public class ClsDAC_Pedidos
     {
-        SqlConnection cnn = new SqlConnection("Data Source=srv-bd-sql-server.database.windows.net;Initial Catalog=miniMarket;User ID=wilber;Password=$W012345");
-
+        SqlConnection cnn = new SqlConnection("Data Source=sql-srv2.database.windows.net;Initial Catalog=miniMarket;User ID=wilber;Password=$W012345");
 
         #region ......................METODO INSERTAR LOS INGRESOS Y LOS DETALES DE INGRESO A LA MISMA VEZ
         public string Insertar_pedido(ClsPedido Pedido, List<ClsDetallePedido> Detalle)
