@@ -198,5 +198,21 @@ namespace FormsApp
                 MessageBox.Show("No tienes acceso");
             }
         }
+
+        private void ProductosDescuento_Click(object sender, EventArgs e)
+        {
+            if (Acceso(ProductosDescuento.Name.ToString()))
+            {
+
+
+                ProductoDescuento _ProductoDescuento = new ProductoDescuento();
+                _ProductoDescuento.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("No tienes acceso");
+            }
+        }
     }
 }

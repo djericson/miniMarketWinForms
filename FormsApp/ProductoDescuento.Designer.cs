@@ -165,6 +165,7 @@
             this.Controls.Add(this.Descuento);
             this.Controls.Add(this.label2);
             this.Name = "ProductoDescuento";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProductoDescuento_FormClosing);
             this.Load += new System.EventHandler(this.ProductoDescuento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.list_productos)).EndInit();
             this.ResumeLayout(false);

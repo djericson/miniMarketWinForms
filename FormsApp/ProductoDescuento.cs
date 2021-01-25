@@ -59,5 +59,13 @@ namespace FormsApp
                
             }
         }
+
+        private void ProductoDescuento_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = (e.CloseReason == CloseReason.UserClosing);
+            FormMain formMain = new FormMain();
+            formMain.Show();
+            this.Hide();
+        }
     }
 }
