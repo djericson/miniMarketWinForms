@@ -13,23 +13,31 @@ using Utilitarios;
 
 namespace WcfService
 {
-    [ServiceBehavior(Namespace = "http://localhost:8733/WcfService/Service_Usr")]
+    [ServiceBehavior(Namespace = "http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/")]
+    //[ServiceBehavior(Namespace = "http://localhost:8733/WcfService/Service_Usr")]
     public class Service_Usr : IService_Usr
     {
         ClsBL_Usr objBL_Usr = new ClsBL_Usr();
+
+        public List<Object[]> getListUsrs()
+        {
+            //List<ClsUsuario> lstUsrs = new List<ClsUsuario>;
+            return objBL_Usr.getListUsrs();
+        }
 
         public void insUsr(Object[] objUsr)
         {
             objBL_Usr.insertUsr(objUsr);
         }
+
         public void updUsr(Object[] objUsr)
         {
-            //objBL_Usr.updUsr(id, name);
+            objBL_Usr.updUsr(objUsr);
         }
 
         public void delUsr(int idUsr)
         {
-            //objBL_Usr.delUsr(idUsr);
+            objBL_Usr.delUsr(idUsr);
         }
 
         public int get_id_nom_roles(int idUsr)
@@ -39,12 +47,6 @@ namespace WcfService
             return res;
         }
 
-        public List<Object[]> getListUsrs()
-        {
-            //string output = "";
-            //List<ClsUsuario> lstUsrs = new List<ClsUsuario>;
-
-            return objBL_Usr.getListUsrs();
-        }
+        
     }
 }

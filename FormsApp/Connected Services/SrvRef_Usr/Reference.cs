@@ -12,45 +12,63 @@ namespace FormsApp.SrvRef_Usr {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://localhost:8733/WcfService/Service_Usr", ConfigurationName="SrvRef_Usr.IService_Usr")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/", ConfigurationName="SrvRef_Usr.IService_Usr")]
     public interface IService_Usr {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insUsr", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insUsrResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/i" +
+            "nsUsr", ReplyAction="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/i" +
+            "nsUsrResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[][]))]
         void insUsr(object[] objUsr);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insUsr", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/insUsrResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/i" +
+            "nsUsr", ReplyAction="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/i" +
+            "nsUsrResponse")]
         System.Threading.Tasks.Task insUsrAsync(object[] objUsr);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/updUsr", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/updUsrResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/u" +
+            "pdUsr", ReplyAction="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/u" +
+            "pdUsrResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[][]))]
         void updUsr(object[] objUsr);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/updUsr", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/updUsrResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/u" +
+            "pdUsr", ReplyAction="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/u" +
+            "pdUsrResponse")]
         System.Threading.Tasks.Task updUsrAsync(object[] objUsr);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/delUsr", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/delUsrResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/d" +
+            "elUsr", ReplyAction="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/d" +
+            "elUsrResponse")]
         void delUsr(int idUsr);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/delUsr", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/delUsrResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/d" +
+            "elUsr", ReplyAction="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/d" +
+            "elUsrResponse")]
         System.Threading.Tasks.Task delUsrAsync(int idUsr);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/get_id_nom_roles", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/get_id_nom_rolesRespons" +
-            "e")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/g" +
+            "et_id_nom_roles", ReplyAction="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/g" +
+            "et_id_nom_rolesResponse")]
         int get_id_nom_roles(int idUsr);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/get_id_nom_roles", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/get_id_nom_rolesRespons" +
-            "e")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/g" +
+            "et_id_nom_roles", ReplyAction="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/g" +
+            "et_id_nom_rolesResponse")]
         System.Threading.Tasks.Task<int> get_id_nom_rolesAsync(int idUsr);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/getListUsrs", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/getListUsrsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/g" +
+            "etListUsrs", ReplyAction="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/g" +
+            "etListUsrsResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[][]))]
         object[][] getListUsrs();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/WcfService/Service_Usr/IService_Usr/getListUsrs", ReplyAction="http://localhost:8733/WcfService/Service_Usr/IService_Usr/getListUsrsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/g" +
+            "etListUsrs", ReplyAction="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/g" +
+            "etListUsrsResponse")]
         System.Threading.Tasks.Task<object[][]> getListUsrsAsync();
     }
     
