@@ -30,7 +30,7 @@ namespace NS_WinFormsApps
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.delete = new System.Windows.Forms.Button();
             this.add_producto = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -66,7 +66,10 @@ namespace NS_WinFormsApps
             this.Atras = new System.Windows.Forms.Button();
             this.BtnAyuda = new System.Windows.Forms.Button();
             this.fecha_ingreso_stock = new System.Windows.Forms.DateTimePicker();
-            this.todos_productos = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.Stock_minimo = new System.Windows.Forms.TextBox();
+            this.Stock_maximo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.list_productos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presio_promed_dpt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presio_promdio)).BeginInit();
@@ -134,15 +137,15 @@ namespace NS_WinFormsApps
             this.list_productos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.list_productos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.list_productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.NullValue = null;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.list_productos.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.list_productos.DefaultCellStyle = dataGridViewCellStyle2;
             this.list_productos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.list_productos.Location = new System.Drawing.Point(23, 370);
             this.list_productos.Name = "list_productos";
@@ -499,25 +502,51 @@ namespace NS_WinFormsApps
             this.fecha_ingreso_stock.Size = new System.Drawing.Size(149, 21);
             this.fecha_ingreso_stock.TabIndex = 76;
             // 
-            // todos_productos
+            // label13
             // 
-            this.todos_productos.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.todos_productos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.todos_productos.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.todos_productos.Location = new System.Drawing.Point(487, 321);
-            this.todos_productos.Name = "todos_productos";
-            this.todos_productos.Size = new System.Drawing.Size(196, 28);
-            this.todos_productos.TabIndex = 101;
-            this.todos_productos.Text = "Lista de todos los productos";
-            this.todos_productos.UseVisualStyleBackColor = true;
-            this.todos_productos.Click += new System.EventHandler(this.todos_productos_Click);
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(396, 233);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(110, 17);
+            this.label13.TabIndex = 102;
+            this.label13.Text = "7- stock minimo";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(396, 274);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(114, 17);
+            this.label14.TabIndex = 103;
+            this.label14.Text = "8- stock maximo";
+            // 
+            // Stock_minimo
+            // 
+            this.Stock_minimo.Location = new System.Drawing.Point(569, 233);
+            this.Stock_minimo.Name = "Stock_minimo";
+            this.Stock_minimo.Size = new System.Drawing.Size(149, 20);
+            this.Stock_minimo.TabIndex = 105;
+            // 
+            // Stock_maximo
+            // 
+            this.Stock_maximo.Location = new System.Drawing.Point(569, 274);
+            this.Stock_maximo.Name = "Stock_maximo";
+            this.Stock_maximo.Size = new System.Drawing.Size(149, 20);
+            this.Stock_maximo.TabIndex = 106;
             // 
             // gestion_productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 609);
-            this.Controls.Add(this.todos_productos);
+            this.Controls.Add(this.Stock_maximo);
+            this.Controls.Add(this.Stock_minimo);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.unidad_produc);
             this.Controls.Add(this.Atras);
             this.Controls.Add(this.numero_producto);
@@ -604,6 +633,9 @@ namespace NS_WinFormsApps
         private System.Windows.Forms.Button Atras;
         public System.Windows.Forms.ComboBox unidad_produc;
         public System.Windows.Forms.DateTimePicker fecha_ingreso_stock;
-        private System.Windows.Forms.Button todos_productos;
+        public System.Windows.Forms.Label label13;
+        public System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox Stock_minimo;
+        private System.Windows.Forms.TextBox Stock_maximo;
     }
 }
