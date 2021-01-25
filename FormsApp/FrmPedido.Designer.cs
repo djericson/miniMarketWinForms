@@ -31,11 +31,8 @@ namespace FormsApp
         {
             this.components = new System.ComponentModel.Container();
             this.txtProdUnidad = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnAnular = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.txtPrecioCompra = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -60,10 +57,7 @@ namespace FormsApp
             this.label11 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dtFechaB = new System.Windows.Forms.DateTimePicker();
-            this.dtFechaA = new System.Windows.Forms.DateTimePicker();
             this.dgvListado = new System.Windows.Forms.DataGridView();
-            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnBuscar_proveedor = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -81,6 +75,12 @@ namespace FormsApp
             this.lblTotal_pagado = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Gestionar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtFechaA = new System.Windows.Forms.DateTimePicker();
+            this.dtFechaB = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado_detalle)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -99,29 +99,10 @@ namespace FormsApp
             this.txtProdUnidad.Size = new System.Drawing.Size(100, 20);
             this.txtProdUnidad.TabIndex = 1;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(114, 20);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Fecha fin";
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(210, 48);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 2;
-            this.btnBuscar.Text = "&Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(691, 61);
+            this.lblTotal.Location = new System.Drawing.Point(696, 42);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(34, 13);
             this.lblTotal.TabIndex = 0;
@@ -129,26 +110,17 @@ namespace FormsApp
             // 
             // btnAnular
             // 
-            this.btnAnular.Location = new System.Drawing.Point(318, 48);
+            this.btnAnular.Location = new System.Drawing.Point(58, 32);
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Size = new System.Drawing.Size(75, 23);
             this.btnAnular.TabIndex = 2;
-            this.btnAnular.Text = "&Anular";
+            this.btnAnular.Text = "Recibido";
             this.btnAnular.UseVisualStyleBackColor = true;
             this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Fecha inicio";
-            // 
             // btnImprimir
             // 
-            this.btnImprimir.Location = new System.Drawing.Point(424, 48);
+            this.btnImprimir.Location = new System.Drawing.Point(782, 19);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 23);
             this.btnImprimir.TabIndex = 2;
@@ -184,7 +156,7 @@ namespace FormsApp
             // chkGestion
             // 
             this.chkGestion.AutoSize = true;
-            this.chkGestion.Location = new System.Drawing.Point(11, 61);
+            this.chkGestion.Location = new System.Drawing.Point(-330, 61);
             this.chkGestion.Name = "chkGestion";
             this.chkGestion.Size = new System.Drawing.Size(59, 17);
             this.chkGestion.TabIndex = 3;
@@ -255,7 +227,7 @@ namespace FormsApp
             // 
             this.txtNombreProducto.BackColor = System.Drawing.Color.DarkGray;
             this.txtNombreProducto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombreProducto.Location = new System.Drawing.Point(80, 10);
+            this.txtNombreProducto.Location = new System.Drawing.Point(55, 10);
             this.txtNombreProducto.Name = "txtNombreProducto";
             this.txtNombreProducto.Size = new System.Drawing.Size(121, 20);
             this.txtNombreProducto.TabIndex = 1;
@@ -263,7 +235,7 @@ namespace FormsApp
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 13);
+            this.label5.Location = new System.Drawing.Point(-1, 13);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 13);
             this.label5.TabIndex = 0;
@@ -280,7 +252,7 @@ namespace FormsApp
             // 
             // btnBuscar_producto
             // 
-            this.btnBuscar_producto.Location = new System.Drawing.Point(211, 7);
+            this.btnBuscar_producto.Location = new System.Drawing.Point(201, 31);
             this.btnBuscar_producto.Name = "btnBuscar_producto";
             this.btnBuscar_producto.Size = new System.Drawing.Size(56, 23);
             this.btnBuscar_producto.TabIndex = 3;
@@ -290,7 +262,7 @@ namespace FormsApp
             // 
             // btnQuitar
             // 
-            this.btnQuitar.Location = new System.Drawing.Point(663, 44);
+            this.btnQuitar.Location = new System.Drawing.Point(547, 62);
             this.btnQuitar.Name = "btnQuitar";
             this.btnQuitar.Size = new System.Drawing.Size(56, 23);
             this.btnQuitar.TabIndex = 3;
@@ -300,7 +272,7 @@ namespace FormsApp
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(662, 15);
+            this.btnAgregar.Location = new System.Drawing.Point(472, 62);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(56, 23);
             this.btnAgregar.TabIndex = 3;
@@ -312,7 +284,7 @@ namespace FormsApp
             // 
             this.txtTotalProducto.BackColor = System.Drawing.Color.DarkGray;
             this.txtTotalProducto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTotalProducto.Location = new System.Drawing.Point(417, 47);
+            this.txtTotalProducto.Location = new System.Drawing.Point(795, 47);
             this.txtTotalProducto.Name = "txtTotalProducto";
             this.txtTotalProducto.Size = new System.Drawing.Size(56, 20);
             this.txtTotalProducto.TabIndex = 1;
@@ -320,7 +292,7 @@ namespace FormsApp
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(378, 52);
+            this.label9.Location = new System.Drawing.Point(756, 52);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(35, 13);
             this.label9.TabIndex = 0;
@@ -330,15 +302,15 @@ namespace FormsApp
             // 
             this.txtMarca.BackColor = System.Drawing.Color.DarkGray;
             this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMarca.Location = new System.Drawing.Point(228, 47);
+            this.txtMarca.Location = new System.Drawing.Point(52, 47);
             this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(111, 20);
+            this.txtMarca.Size = new System.Drawing.Size(122, 20);
             this.txtMarca.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(189, 52);
+            this.label4.Location = new System.Drawing.Point(5, 52);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 0;
@@ -348,7 +320,7 @@ namespace FormsApp
             // 
             this.txtStock.BackColor = System.Drawing.Color.DarkGray;
             this.txtStock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtStock.Location = new System.Drawing.Point(58, 50);
+            this.txtStock.Location = new System.Drawing.Point(338, 53);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(111, 20);
             this.txtStock.TabIndex = 1;
@@ -356,7 +328,7 @@ namespace FormsApp
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 52);
+            this.label11.Location = new System.Drawing.Point(286, 55);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(52, 13);
             this.label11.TabIndex = 0;
@@ -390,22 +362,6 @@ namespace FormsApp
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "LISTA DE PEDIDOS";
             // 
-            // dtFechaB
-            // 
-            this.dtFechaB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFechaB.Location = new System.Drawing.Point(104, 39);
-            this.dtFechaB.Name = "dtFechaB";
-            this.dtFechaB.Size = new System.Drawing.Size(78, 20);
-            this.dtFechaB.TabIndex = 5;
-            // 
-            // dtFechaA
-            // 
-            this.dtFechaA.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFechaA.Location = new System.Drawing.Point(9, 38);
-            this.dtFechaA.Name = "dtFechaA";
-            this.dtFechaA.Size = new System.Drawing.Size(78, 20);
-            this.dtFechaA.TabIndex = 5;
-            // 
             // dgvListado
             // 
             this.dgvListado.AllowUserToAddRows = false;
@@ -413,28 +369,22 @@ namespace FormsApp
             this.dgvListado.AllowUserToOrderColumns = true;
             this.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Eliminar});
-            this.dgvListado.Location = new System.Drawing.Point(2, 77);
+            this.Gestionar});
+            this.dgvListado.Location = new System.Drawing.Point(60, 61);
             this.dgvListado.MultiSelect = false;
             this.dgvListado.Name = "dgvListado";
             this.dgvListado.ReadOnly = true;
             this.dgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListado.Size = new System.Drawing.Size(763, 97);
+            this.dgvListado.Size = new System.Drawing.Size(626, 113);
             this.dgvListado.TabIndex = 4;
             this.dgvListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListado_CellContentClick);
             this.dgvListado.DoubleClick += new System.EventHandler(this.dgvListado_DoubleClick);
             // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            // 
             // btnBuscar_proveedor
             // 
-            this.btnBuscar_proveedor.Location = new System.Drawing.Point(388, 19);
+            this.btnBuscar_proveedor.Location = new System.Drawing.Point(388, 45);
             this.btnBuscar_proveedor.Name = "btnBuscar_proveedor";
-            this.btnBuscar_proveedor.Size = new System.Drawing.Size(92, 23);
+            this.btnBuscar_proveedor.Size = new System.Drawing.Size(65, 23);
             this.btnBuscar_proveedor.TabIndex = 3;
             this.btnBuscar_proveedor.Text = "Buscar";
             this.btnBuscar_proveedor.UseVisualStyleBackColor = true;
@@ -490,7 +440,7 @@ namespace FormsApp
             // 
             this.txtCategoria.BackColor = System.Drawing.Color.DarkGray;
             this.txtCategoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCategoria.Location = new System.Drawing.Point(276, 50);
+            this.txtCategoria.Location = new System.Drawing.Point(256, 48);
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.Size = new System.Drawing.Size(117, 20);
             this.txtCategoria.TabIndex = 1;
@@ -498,7 +448,7 @@ namespace FormsApp
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(215, 55);
+            this.label13.Location = new System.Drawing.Point(195, 53);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(55, 13);
             this.label13.TabIndex = 0;
@@ -518,7 +468,7 @@ namespace FormsApp
             // 
             this.txtPaginaWeb.BackColor = System.Drawing.Color.DarkGray;
             this.txtPaginaWeb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPaginaWeb.Location = new System.Drawing.Point(491, 53);
+            this.txtPaginaWeb.Location = new System.Drawing.Point(531, 49);
             this.txtPaginaWeb.Name = "txtPaginaWeb";
             this.txtPaginaWeb.Size = new System.Drawing.Size(219, 20);
             this.txtPaginaWeb.TabIndex = 1;
@@ -526,7 +476,7 @@ namespace FormsApp
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(426, 57);
+            this.label17.Location = new System.Drawing.Point(466, 53);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(69, 13);
             this.label17.TabIndex = 0;
@@ -536,7 +486,7 @@ namespace FormsApp
             // 
             this.txtNombreProveedor.BackColor = System.Drawing.Color.DarkGray;
             this.txtNombreProveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombreProveedor.Location = new System.Drawing.Point(72, 53);
+            this.txtNombreProveedor.Location = new System.Drawing.Point(66, 48);
             this.txtNombreProveedor.Name = "txtNombreProveedor";
             this.txtNombreProveedor.Size = new System.Drawing.Size(120, 20);
             this.txtNombreProveedor.TabIndex = 1;
@@ -571,7 +521,7 @@ namespace FormsApp
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 56);
+            this.label7.Location = new System.Drawing.Point(7, 51);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 13);
             this.label7.TabIndex = 0;
@@ -598,6 +548,56 @@ namespace FormsApp
             // errorIcono
             // 
             this.errorIcono.ContainerControl = this;
+            // 
+            // Gestionar
+            // 
+            this.Gestionar.HeaderText = "Gestionar";
+            this.Gestionar.Name = "Gestionar";
+            this.Gestionar.ReadOnly = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(-324, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Fecha inicio";
+            // 
+            // dtFechaA
+            // 
+            this.dtFechaA.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFechaA.Location = new System.Drawing.Point(-332, 38);
+            this.dtFechaA.Name = "dtFechaA";
+            this.dtFechaA.Size = new System.Drawing.Size(78, 20);
+            this.dtFechaA.TabIndex = 5;
+            // 
+            // dtFechaB
+            // 
+            this.dtFechaB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFechaB.Location = new System.Drawing.Point(-237, 39);
+            this.dtFechaB.Name = "dtFechaB";
+            this.dtFechaB.Size = new System.Drawing.Size(78, 20);
+            this.dtFechaB.TabIndex = 5;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(-227, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(51, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Fecha fin";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(-131, 48);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.Text = "&Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // FrmPedido
             // 
@@ -628,11 +628,8 @@ namespace FormsApp
 
         #endregion
         private System.Windows.Forms.TextBox txtProdUnidad;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Button btnAnular;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.TextBox txtPrecioCompra;
         private System.Windows.Forms.Label label12;
@@ -653,10 +650,7 @@ namespace FormsApp
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.DateTimePicker dtFechaB;
-        private System.Windows.Forms.DateTimePicker dtFechaA;
         private System.Windows.Forms.DataGridView dgvListado;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
         private System.Windows.Forms.Button btnBuscar_proveedor;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnCancelar;
@@ -678,5 +672,11 @@ namespace FormsApp
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gestionar;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker dtFechaB;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.DateTimePicker dtFechaA;
+        private System.Windows.Forms.Label label2;
     }
 }
