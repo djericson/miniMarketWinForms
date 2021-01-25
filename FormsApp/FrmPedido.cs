@@ -17,6 +17,16 @@ namespace FormsApp
         string cantidad_total="";
         string StockMIn="";
         string StockMax="";
+
+
+        
+
+        public int ID_Usuario = FormMain.ID_Usuario;
+        public string NameUsuario = FormMain.NameUsuario;
+        public string NameRol = FormMain.NameRol;
+        public int ID_Rol = FormMain.ID_Rol;
+
+
         #region OBJETO QUE ME HACE REFERENCIA  A LA CLASE FRMPEDIDO        1
         private static FrmPedido _instancia;
         #endregion
