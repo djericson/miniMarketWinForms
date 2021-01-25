@@ -131,7 +131,7 @@ namespace DAC
                 obj_cmd.CommandType = CommandType.StoredProcedure;
                 obj_cmd.Parameters.Clear();
 
-                obj_cmd.Parameters.AddWithValue("@usr_id", id_usr);
+                obj_cmd.Parameters.AddWithValue("@id_usr", id_usr);
 
                 objConn.Open();
                 obj_cmd.ExecuteNonQuery();
