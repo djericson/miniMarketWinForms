@@ -77,7 +77,6 @@ namespace DAC
             return schemaTable;
         }
 
-
         public void update_producto(ClsProducto objProducto, string XmlPut)
         {
             cmd = new SqlCommand("update_producto", cn);
@@ -113,9 +112,6 @@ namespace DAC
             cn.Open();
             cmd.ExecuteNonQuery();
             cn.Close();
-
-
-
             return 0;
 
         }
@@ -130,5 +126,47 @@ namespace DAC
             cmd.ExecuteNonQuery();
             cn.Close();
         }
+        public DataTable Mostrar()
+        {
+            DataTable dtResultado = new DataTable("producto");
+            try
+            {
+                cmd = new SqlCommand("mostra_producto", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter dtAdapter = new SqlDataAdapter(cmd);
+                dtAdapter.Fill(dtResultado);
+            }
+            catch (Exception ex)
+            {
+                dtResultado = null;
+            }
+            return dtResultado;
+        }
+
+        public DataTable BuscarNombre(ClsProducto Producto)
+        {
+            DataTable dtResultado = new DataTable("producto");
+            try
+            {
+                cmd = new SqlCommand("buscar_producto_nombre", cn);
+                cmd.CommandType = CommandType.StoredProcedure;            
+                SqlParameter parTextoBuscar = new SqlParameter();
+                parTextoBuscar.ParameterName = "@textobuscar";
+                parTextoBuscar.SqlDbType = SqlDbType.VarChar;
+                parTextoBuscar.Size = 50;
+                parTextoBuscar.Value = Producto.Textobuscar;
+                cmd.Parameters.Add(parTextoBuscar);
+                SqlDataAdapter datAdapter = new SqlDataAdapter(cmd);
+                datAdapter.Fill(dtResultado);
+            }
+            catch (Exception ex)
+            {
+                dtResultado = null;
+            }
+
+            return dtResultado;
+        }
+
+
     }
 }

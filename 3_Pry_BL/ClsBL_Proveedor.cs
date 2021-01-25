@@ -18,7 +18,7 @@ namespace BL
         {
             ClsDAC_Proveedores obj = new ClsDAC_Proveedores();
             ClsProveedor obj_insertar = new ClsProveedor();
-            obj_insertar.Razon_social = razon_proveedor;
+            obj_insertar.Id_usr = razon_proveedor;
             obj_insertar.Categoria = categoria;
             obj_insertar.Tipo_documento = tipo_documento;
             obj_insertar.Num_documento = num_documento;
@@ -37,7 +37,7 @@ namespace BL
             ClsDAC_Proveedores obj = new ClsDAC_Proveedores();
             ClsProveedor obj_editar = new ClsProveedor();
             obj_editar.Id_proveedor = id_proveedor;
-            obj_editar.Razon_social = razon_proveedor;
+            obj_editar.Id_usr = razon_proveedor;
             obj_editar.Categoria = categoria;
             obj_editar.Tipo_documento = tipo_documento;
             obj_editar.Num_documento = num_documento;

@@ -30,6 +30,7 @@ namespace FormsApp
 
         private void Mostrar()
         {
+
             dgvListado.DataSource = ClsBLProveedor.MOSTRAR();
             //OcularColumnas();
         }

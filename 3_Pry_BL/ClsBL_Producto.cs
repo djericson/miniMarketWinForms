@@ -44,6 +44,17 @@ namespace BL
         {
             dac_prods.delete_producto(objProducto);
         }
+        public DataTable MOSTRAR()
+        {
+          return new ClsDAC_Productos().Mostrar();
+        }
+        public DataTable BUSCAR_NOMBRE(string textoBuscar)
+        {
+            ClsDAC_Productos x = new ClsDAC_Productos();
+            ClsProducto obj = new ClsProducto();
+            obj.Textobuscar = textoBuscar;
+           return  x.BuscarNombre(obj);
+        }
 
     }
 

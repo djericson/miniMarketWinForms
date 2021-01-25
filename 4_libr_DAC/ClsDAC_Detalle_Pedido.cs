@@ -11,7 +11,8 @@ namespace DAC
 {
     class ClsDAC_Detalle_Pedido
     {
-        SqlConnection cnn = new SqlConnection("Data Source=srv-bd-sql-server.database.windows.net;Initial Catalog=miniMarket;User ID=wilber;Password=$W012345");
+        SqlConnection cnn = new SqlConnection("Data Source=sql-srv2.database.windows.net;Initial Catalog=miniMarket;User ID=wilber;Password=$W012345");
+
 
 
         #region ......................METODO INSERTAR

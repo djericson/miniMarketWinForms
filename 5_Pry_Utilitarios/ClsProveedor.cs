@@ -9,7 +9,7 @@ namespace Utilitarios
     public class ClsProveedor
     {
         public int Id_proveedor { get; set; }
-        public string Razon_social { get; set; }
+        public string Id_usr { get; set; }
         public string Categoria { get; set; }
         public string Tipo_documento { get; set; }
         public string Num_documento { get; set; }
@@ -25,7 +25,7 @@ namespace Utilitarios
             string email, string pagina_web, string texto_buscar)
         {
             Id_proveedor = id_proveedor;
-            Razon_social = razon_social;
+            Id_usr = razon_social;
             Categoria = categoria;
             Tipo_documento = tipo_documento;
             Num_documento = num_documento;
@@ -39,7 +39,7 @@ namespace Utilitarios
             string tipo_documento, string num_documento, string direccion,
             string telefono, string email, string pagina_web)
         {
-            Razon_social = razon_social;
+            Id_usr = razon_social;
             Categoria = categoria;
             Tipo_documento = tipo_documento;
             Num_documento = num_documento;
