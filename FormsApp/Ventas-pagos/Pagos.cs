@@ -59,7 +59,7 @@ namespace NS_WinFormsApps.Ventas_pagos
 
         private bool CamposCorrectos()
         {
-            if (!radEfectivo.Checked || !radMaster.Checked || !radEfectivo.Checked)
+            if (!radVisa.Checked && !radMaster.Checked && !radEfectivo.Checked)
             {
                 MsjError("Metodo de pago no especificado","No ha elegido el metodo de pago con el que desea efectuar la venta");
                 return false;
@@ -68,6 +68,12 @@ namespace NS_WinFormsApps.Ventas_pagos
             if(radEfectivo.Checked && txtMonto.Text.Equals(string.Empty))
             {
                 MsjError("Monto inválido", "No ha especificado el monto a pagar");
+                return false;
+            }
+
+            if(radEfectivo.Checked && double.Parse(txtMonto.Text) < double.Parse(txtTotal.Text))
+            {
+                MsjError("Monto insuficiente", "El monto es insuficiente");
                 return false;
             }
 
@@ -148,8 +154,12 @@ namespace NS_WinFormsApps.Ventas_pagos
 
         private void btnEmitir_Click(object sender, EventArgs e)
         {
-            GuardarVenta();
-            this.Close();
+            if (CamposCorrectos())
+            {
+                this.DialogResult = DialogResult.OK;
+                GuardarVenta();
+                this.Close();
+            }
         }
 
         private void pb10_Click(object sender, EventArgs e)

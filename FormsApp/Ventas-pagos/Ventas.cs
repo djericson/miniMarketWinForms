@@ -46,7 +46,8 @@ namespace NS_WinFormsApps.Ventas_pagos
             _objProducto = new ClsBL_Producto();
             _objVta = new ClsBL_Vta();
             dgvVentas.DataSource = _objVta.search();
-
+            txtNumOperacion.Text = (_objVta.getNumeroOperacion() + 1).ToString();
+            txtNumComprobante.Text = txtNumOperacion.Text;
         }
 
         private bool isDataEmpty()
@@ -180,16 +181,24 @@ namespace NS_WinFormsApps.Ventas_pagos
             }
         }
 
-        private void btnNuevaVenta_Click(object sender, EventArgs e)
+        private void LimpiarTodo()
         {
-
             txtCliente.Clear();
             txtProducto.Clear();
             txtPrecio.Clear();
             dgvDetalle.Rows.Clear();
             txtPrecioTotal.Clear();
+            txtStock.Clear();
+            txtDescuento.Clear();
             id_cliente = 0;
             id_producto = 0;
+        }
+
+        private void btnNuevaVenta_Click(object sender, EventArgs e)
+        {
+            LimpiarTodo();
+            txtNumOperacion.Text = (int.Parse(txtNumOperacion.Text) + 1).ToString();
+            txtNumComprobante.Text = txtNumOperacion.Text;
         }
 
         private void btnIrPago_Click(object sender, EventArgs e)
@@ -210,11 +219,12 @@ namespace NS_WinFormsApps.Ventas_pagos
             };
 
                 Pagos pagos = new Pagos(datos);
-                pagos.ShowDialog();
-                DialogResult dialog = pagos.DialogResult;
+                DialogResult dialog = pagos.ShowDialog(this); 
                 if(dialog == DialogResult.OK)
                 {
-                    btnLimpiar_Click(sender, e);
+                    LimpiarTodo();
+                    txtNumOperacion.Text = (int.Parse(txtNumOperacion.Text) + 1).ToString();
+                    txtNumComprobante.Text = txtNumOperacion.Text;
                 }
             }
         }

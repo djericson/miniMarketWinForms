@@ -112,6 +112,7 @@
             this.txt_nroDoc.Name = "txt_nroDoc";
             this.txt_nroDoc.Size = new System.Drawing.Size(115, 20);
             this.txt_nroDoc.TabIndex = 2;
+            this.txt_nroDoc.TextChanged += new System.EventHandler(this.txt_nroDoc_TextChanged);
             // 
             // lbl_nomUsr
             // 
@@ -217,6 +218,7 @@
             this.txt_usrRuc.Name = "txt_usrRuc";
             this.txt_usrRuc.Size = new System.Drawing.Size(115, 20);
             this.txt_usrRuc.TabIndex = 17;
+            this.txt_usrRuc.TextChanged += new System.EventHandler(this.txt_usrRuc_TextChanged);
             // 
             // label2
             // 
@@ -255,6 +257,7 @@
             this.txt_usrTlf.Name = "txt_usrTlf";
             this.txt_usrTlf.Size = new System.Drawing.Size(263, 20);
             this.txt_usrTlf.TabIndex = 13;
+            this.txt_usrTlf.TextChanged += new System.EventHandler(this.txt_usrTlf_TextChanged);
             // 
             // lbl_tlf
             // 
@@ -375,7 +378,6 @@
             // 
             // btn_limpiarCampos
             // 
-            this.btn_limpiarCampos.Enabled = false;
             this.btn_limpiarCampos.Location = new System.Drawing.Point(23, 162);
             this.btn_limpiarCampos.Margin = new System.Windows.Forms.Padding(2);
             this.btn_limpiarCampos.Name = "btn_limpiarCampos";
@@ -383,6 +385,7 @@
             this.btn_limpiarCampos.TabIndex = 7;
             this.btn_limpiarCampos.Text = "Nuevo";
             this.btn_limpiarCampos.UseVisualStyleBackColor = true;
+            this.btn_limpiarCampos.Click += new System.EventHandler(this.btn_limpiarCampos_Click);
             // 
             // btn_borrarUsr
             // 
@@ -394,10 +397,10 @@
             this.btn_borrarUsr.TabIndex = 6;
             this.btn_borrarUsr.Text = "Eliminar";
             this.btn_borrarUsr.UseVisualStyleBackColor = true;
+            this.btn_borrarUsr.Click += new System.EventHandler(this.btn_borrarUsr_Click);
             // 
             // btn_updUsr
             // 
-            this.btn_updUsr.Enabled = false;
             this.btn_updUsr.Location = new System.Drawing.Point(292, 162);
             this.btn_updUsr.Margin = new System.Windows.Forms.Padding(2);
             this.btn_updUsr.Name = "btn_updUsr";
@@ -405,6 +408,7 @@
             this.btn_updUsr.TabIndex = 1;
             this.btn_updUsr.Text = "Actualizar";
             this.btn_updUsr.UseVisualStyleBackColor = true;
+            this.btn_updUsr.Click += new System.EventHandler(this.btn_updUsr_Click);
             // 
             // FrmUsrs
             // 
@@ -417,7 +421,6 @@
             this.Name = "FrmUsrs";
             this.Text = "Gestion de Usuarios";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmUsrs_FormClosing);
-            //this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmUsrs_FormClosed);
             this.Load += new System.EventHandler(this.FrmUsrs_Load);
             this.grpB_datosUsr.ResumeLayout(false);
             this.grpB_datosUsr.PerformLayout();

@@ -22,9 +22,9 @@
     <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Service_Usr.wsdl" MetadataType="Wsdl" ID="5f440629-0a72-4d2e-ac83-9bbafd5e7375" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/mex" />
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="6387bb3e-138d-40a2-8471-ea8bc23e3368" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/mex" />
     <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="067f72c4-1ab1-4442-beab-b8375e713774" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/mex" />
-    <MetadataFile FileName="Service_Usr.xsd" MetadataType="Schema" ID="688bbefe-34e7-4487-97be-b3591c460eed" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="7a8b792d-2c6a-4982-89ed-adc402b44d90" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/mex" />
     <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="7edbf9c2-64a3-4374-a4e4-93d17a7048f2" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/mex" />
     <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="cc784f68-8f0f-455b-b14f-1b4f58774684" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/mex" />
   </Metadata>
