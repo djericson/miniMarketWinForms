@@ -34,7 +34,7 @@ namespace DAC
                 parRazon_Social.ParameterName = "@razon_social";
                 parRazon_Social.SqlDbType = SqlDbType.VarChar;
                 parRazon_Social.Size = 150;
-                parRazon_Social.Value = Proveedor.Razon_social;
+                parRazon_Social.Value = Proveedor.Id_usr;
                 cmd.Parameters.Add(parRazon_Social);
 
                 SqlParameter parSectorComercial = new SqlParameter();
@@ -115,7 +115,7 @@ namespace DAC
                 parRazon_Social.ParameterName = "@razon_social";
                 parRazon_Social.SqlDbType = SqlDbType.VarChar;
                 parRazon_Social.Size = 150;
-                parRazon_Social.Value = Proveedor.Razon_social;
+                parRazon_Social.Value = Proveedor.Id_usr;
                 cmd.Parameters.Add(parRazon_Social);
 
                 SqlParameter parSectorComercial = new SqlParameter();

@@ -13,15 +13,22 @@ namespace NS_WinFormsApps.Ventas_pagos
 {
     public partial class Ventas : Form
     {
-        ClsBL_Usr _objUsr;
         ClsBL_Producto _objProducto;
+        ClsBL_Vta _objVta;
 
         int id_cliente, id_producto;
-        int id_cajero = 10;
+        int id_cajero = 3;
 
         public Ventas()
         {
             InitializeComponent();
+        }
+
+        public Ventas(int idCajero, string usuario)
+        {
+            InitializeComponent();
+            id_cajero = idCajero;
+            txtCajero.Text = usuario;
         }
 
         private void MsjError(string caption, string mensaje)
@@ -36,8 +43,9 @@ namespace NS_WinFormsApps.Ventas_pagos
 
         private void Ventas_Load(object sender, EventArgs e)
         {
-            _objUsr = new ClsBL_Usr();
             _objProducto = new ClsBL_Producto();
+            _objVta = new ClsBL_Vta();
+            dgvVentas.DataSource = _objVta.search();
 
         }
 
@@ -96,8 +104,8 @@ namespace NS_WinFormsApps.Ventas_pagos
         {
             using (var busqueda = new NS_Busqueda.Busqueda())
             {
-                /*
-                busqueda.objTabla = _objUsr.getUsrCliente("");
+
+                busqueda.objTabla = _objVta.search_client("");
                 busqueda.ShowDialog();
                 if (busqueda.objRow != null)
                 {
@@ -105,7 +113,7 @@ namespace NS_WinFormsApps.Ventas_pagos
                     txtCliente.Text = busqueda.objRow.Cells["Nombre"].Value.ToString();
                 }
                 busqueda.objTabla.Clear();
-                */
+
             }
         }
 
@@ -121,20 +129,39 @@ namespace NS_WinFormsApps.Ventas_pagos
             }
         }
 
+        private bool existeProductoEnGrilla()
+        {
+            foreach(DataGridViewRow row in dgvDetalle.Rows)
+            {
+                if((int)row.Cells["Codigo"].Value == id_producto)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         private void btnAgregarProd_Click(object sender, EventArgs e)
         {
-            if (txtProducto.Text != string.Empty && nudCantidad.Value > 0)
+            if (txtProducto.Text != string.Empty && !existeProductoEnGrilla())
             {
-
-                double total = double.Parse(txtPrecio.Text) * double.Parse(nudCantidad.Value.ToString()) *
-                  (1 - (double.Parse(nudDescuento.Value.ToString())) / 100);
-                dgvDetalle.Rows.Add(id_producto, txtProducto.Text, txtPrecio.Text, nudCantidad.Value, nudDescuento.Value, total);
-                CalcularPrecioTotal();
+                if(int.Parse(txtStock.Text) >= nudCantidad.Value  && nudCantidad.Value > 0)
+                {
+                    double total = double.Parse(txtPrecio.Text) * double.Parse(nudCantidad.Value.ToString()) *
+                    (1 - (double.Parse(txtDescuento.Text.ToString())) / 100);
+                    dgvDetalle.Rows.Add(id_producto, txtProducto.Text, txtPrecio.Text, nudCantidad.Value, txtDescuento.Text, total);
+                    CalcularPrecioTotal();
+                }
+                else
+                {
+                    errorIcono.SetError(nudCantidad, "La cantidad definida es mayor al stock actual o es menor a 1");
+                }
 
             }
             else
             {
-                MsjError("Error ventas", "No ha seleccionado un producto o no ha especificado la cantidad que desea vender del producto");
+                MsjError("Error ventas", "No ha seleccionado un producto o ya existe en la tabla");
             }
         }
 
@@ -184,6 +211,11 @@ namespace NS_WinFormsApps.Ventas_pagos
 
                 Pagos pagos = new Pagos(datos);
                 pagos.ShowDialog();
+                DialogResult dialog = pagos.DialogResult;
+                if(dialog == DialogResult.OK)
+                {
+                    btnLimpiar_Click(sender, e);
+                }
             }
         }
 
@@ -192,14 +224,28 @@ namespace NS_WinFormsApps.Ventas_pagos
             dgvDetalle.Rows.Clear();
         }
 
+        private void nudCantidad_ValueChanged(object sender, EventArgs e)
+        {
+            if (!txtStock.Text.Equals(string.Empty) && int.Parse(txtStock.Text) >= nudCantidad.Value)
+            {
+                nudCantidad.ForeColor = Color.Green;
+            }
+            else
+            {
+                nudCantidad.ForeColor = Color.Red;
+            }
+        }
+
+        private void btnRefrescar_Click(object sender, EventArgs e)
+        {
+            dgvVentas.DataSource = _objVta.search();
+        }
+
         private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
             using (var busqueda = new NS_Busqueda.Busqueda())
             {
-
-                busqueda.objTabla = _objProducto.search_product(txtProducto.Text);
-
-                busqueda.objTabla = _objProducto.search_product("");
+                busqueda.objTabla = _objVta.search_product("");
 
                 busqueda.ShowDialog();
                 if (busqueda.objRow != null)
@@ -207,6 +253,8 @@ namespace NS_WinFormsApps.Ventas_pagos
                     id_producto = (int)busqueda.objRow.Cells["codigo"].Value;
                     txtProducto.Text = busqueda.objRow.Cells["nombre"].Value.ToString();
                     txtPrecio.Text = busqueda.objRow.Cells["precio"].Value.ToString();
+                    txtStock.Text = busqueda.objRow.Cells["stock"].Value.ToString();
+                    txtDescuento.Text = busqueda.objRow.Cells["descuento"].Value.ToString();
                 }
                 busqueda.objTabla.Clear();
             }

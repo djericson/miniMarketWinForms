@@ -33,6 +33,7 @@
             this.Provedores = new System.Windows.Forms.Button();
             this.Rol = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ProductosDescuento = new System.Windows.Forms.Button();
             this.GestionRolesUser = new System.Windows.Forms.Button();
             this.Usuarios = new System.Windows.Forms.Button();
             this.Pedidos = new System.Windows.Forms.Button();
@@ -90,6 +91,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ProductosDescuento);
             this.groupBox1.Controls.Add(this.GestionRolesUser);
             this.groupBox1.Controls.Add(this.Usuarios);
             this.groupBox1.Controls.Add(this.Pedidos);
@@ -103,6 +105,18 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Forms";
+            // 
+            // ProductosDescuento
+            // 
+            this.ProductosDescuento.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.ProductosDescuento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ProductosDescuento.Location = new System.Drawing.Point(45, 218);
+            this.ProductosDescuento.Name = "ProductosDescuento";
+            this.ProductosDescuento.Size = new System.Drawing.Size(172, 56);
+            this.ProductosDescuento.TabIndex = 8;
+            this.ProductosDescuento.Text = "ProductosDescuento";
+            this.ProductosDescuento.UseVisualStyleBackColor = true;
+            this.ProductosDescuento.Click += new System.EventHandler(this.ProductosDescuento_Click);
             // 
             // GestionRolesUser
             // 
@@ -238,5 +252,6 @@
         private System.Windows.Forms.Button exit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button ProductosDescuento;
     }
 }

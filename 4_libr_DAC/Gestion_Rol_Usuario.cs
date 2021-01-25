@@ -11,7 +11,7 @@ namespace DAC
 {
     public class DacGestion_Rol_Usuario
     {
-        SqlConnection cn = new SqlConnection("Data Source=srv-bd-sql-server.database.windows.net; User ID =edgar; Password =$E012345; Initial Catalog=miniMarket");
+        SqlConnection cn = new SqlConnection("Data Source= sql-srv2.database.windows.net; User ID =edgar; Password =$E012345; Initial Catalog=miniMarket");
         SqlCommand cmd;
         SqlDataReader loDataReader;
         DataTable schemaTable = new DataTable();
@@ -51,17 +51,17 @@ namespace DAC
             cmd.ExecuteNonQuery();
             cn.Close();
         }
-        public void update_Rol(int id, string name)
-        {
-            cmd = new SqlCommand("update_rol", cn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Clear();
-            cmd.Parameters.AddWithValue("@id_rol", id);
-            cmd.Parameters.AddWithValue("@name_rol", name);
-            cn.Open();
-            cmd.ExecuteNonQuery();
-            cn.Close();
-        }
+        //public void update_Rol(int id, string name)
+        //{
+        //    cmd = new SqlCommand("update_rol", cn);
+        //    cmd.CommandType = CommandType.StoredProcedure;
+        //    cmd.Parameters.Clear();
+        //    cmd.Parameters.AddWithValue("@id_rol", id);
+        //    cmd.Parameters.AddWithValue("@name_rol", name);
+        //    cn.Open();
+        //    cmd.ExecuteNonQuery();
+        //    cn.Close();
+        //}
         public void delete_Rol(int id)
         {
             cmd = new SqlCommand("delete_rol", cn);
@@ -104,18 +104,18 @@ namespace DAC
             cn.Close();
         }
 
-        public int get_id_rol(string rol)
-        {
-            schemaTable.Clear();
-            cmd = new SqlCommand("select id from roles where nombre = '"+ rol+"'", cn);
-            cn.Open();
-            loDataReader = cmd.ExecuteReader();
-            schemaTable.Load(loDataReader, LoadOption.OverwriteChanges);
-            cn.Close();
-            int id_rol = Convert.ToInt32(schemaTable.Rows[0]["id"].ToString());
-            //schemaTable.Rows[0].Field();
-            return id_rol;
-        }
+        //public int get_id_rol(string rol)
+        //{
+        //    schemaTable.Clear();
+        //    cmd = new SqlCommand("select id from roles where nombre = '"+ rol+"'", cn);
+        //    cn.Open();
+        //    loDataReader = cmd.ExecuteReader();
+        //    schemaTable.Load(loDataReader, LoadOption.OverwriteChanges);
+        //    cn.Close();
+        //    int id_rol = Convert.ToInt32(schemaTable.Rows[0]["id"].ToString());
+        //    //schemaTable.Rows[0].Field();
+        //    return id_rol;
+        //}
 
         public void insert_Forms_rol(int rol, int form)
         {
@@ -147,17 +147,17 @@ namespace DAC
             cmd.ExecuteNonQuery();
             cn.Close();
         }
-        public int get_id_Form(string form)
-        {
-            schemaTable.Clear();
-            cmd = new SqlCommand("select id from forms where nombre = '" + form + "'", cn);
-            cn.Open();
-            loDataReader = cmd.ExecuteReader();
-            schemaTable.Load(loDataReader, LoadOption.OverwriteChanges);
-            cn.Close();
-            int id_rol = Convert.ToInt32(schemaTable.Rows[0]["id"].ToString());
-            return id_rol;
-        }
+        //public int get_id_Form(string form)
+        //{
+        //    schemaTable.Clear();
+        //    cmd = new SqlCommand("select id from forms where nombre = '" + form + "'", cn);
+        //    cn.Open();
+        //    loDataReader = cmd.ExecuteReader();
+        //    schemaTable.Load(loDataReader, LoadOption.OverwriteChanges);
+        //    cn.Close();
+        //    int id_rol = Convert.ToInt32(schemaTable.Rows[0]["id"].ToString());
+        //    return id_rol;
+        //}
 
 
     }

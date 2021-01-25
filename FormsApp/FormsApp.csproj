@@ -137,6 +137,12 @@
     <Compile Include="FrmProveedores.Designer.cs">
       <DependentUpon>FrmProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmVistaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVistaProducto.Designer.cs">
+      <DependentUpon>FrmVistaProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmVistaProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,12 @@
     </Compile>
     <Compile Include="Login\MasDeUnRol.Designer.cs">
       <DependentUpon>MasDeUnRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductoDescuento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductoDescuento.Designer.cs">
+      <DependentUpon>ProductoDescuento.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -239,6 +251,9 @@
     <EmbeddedResource Include="FrmProveedores.resx">
       <DependentUpon>FrmProveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmVistaProducto.resx">
+      <DependentUpon>FrmVistaProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmVistaProveedor.resx">
       <DependentUpon>FrmVistaProveedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -262,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login\MasDeUnRol.resx">
       <DependentUpon>MasDeUnRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductoDescuento.resx">
+      <DependentUpon>ProductoDescuento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <SubType>Designer</SubType>

@@ -1,6 +1,4 @@
-﻿ 
-
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using NS_WinFormsApps;
 using NS_WinFormsApps.Ventas_pagos;
 using NS_WinFormsApps.WinForms_AccesosRolesUsrs;
@@ -20,12 +18,21 @@ namespace FormsApp
 {
     public partial class FormMain : Form
     {
-        gestion_productos _gestion_Productos = new gestion_productos();
+
+        public static int ID_Usuario;
+        public static string NameUsuario;
+        public static string NameRol;
+        public static int ID_Rol;
+
         FrmProveedores _FrmProveedores = new FrmProveedores();
-        FrmPedido _FrmPedido = new FrmPedido();
+        FrmPedido _FrmPedido = FrmPedido.GetInstancia();        
+        gestion_productos _gestion_Productos = new gestion_productos();
         FrmUsrs frmUsrs = new FrmUsrs();
 
-        public static int ID_Rol = 0;
+ 
+       
+
+
         public static string Form_For_Adm = "";
         public static DataTable dataTable = new DataTable();
         SrvRef_UsrRol.Gestion_User_RolClient objwcf = new SrvRef_UsrRol.Gestion_User_RolClient();
@@ -52,20 +59,24 @@ namespace FormsApp
         private void FormMain_Load(object sender, EventArgs e)
         {
             ID_Rol = 0;
-            //ID_usuario.Text = "C0digo_Usuario: " + login.ID_Usuario;
+
+            ID_Usuario =  login.ID_Usuario;
             Usuario.Text = login.Usuario;
+            NameUsuario = login.Usuario;
             if (login.Name_Rol != "" && login.ID_Rol != 0)
             {
+                NameRol = login.Name_Rol;
                 Rol.Text = login.Name_Rol;
                 ID_Rol = login.ID_Rol;
-                //MessageBox.Show("1: "+ID_Rol);
             }
             else
             {
+                NameRol = MasDeUnRol.Name_Rol;
                 Rol.Text = MasDeUnRol.Name_Rol;
                 ID_Rol = MasDeUnRol.ID_Rol;
-                //MessageBox.Show("2: " + ID_Rol);
             }
+
+             
         }
 
 
@@ -131,7 +142,7 @@ namespace FormsApp
 
             if (Acceso(Ventas.Name.ToString()))
             {
-                Ventas ventas = new Ventas();
+                Ventas ventas = new Ventas(login.ID_Usuario,login.Name_Usuario);
                 ventas.Show();
                 this.Hide();
             }
@@ -182,6 +193,22 @@ namespace FormsApp
 
                 Gestion_RolesFormsUser gestion_Roles_User = new Gestion_RolesFormsUser();
                 gestion_Roles_User.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("No tienes acceso");
+            }
+        }
+
+        private void ProductosDescuento_Click(object sender, EventArgs e)
+        {
+            if (Acceso(ProductosDescuento.Name.ToString()))
+            {
+
+
+                ProductoDescuento _ProductoDescuento = new ProductoDescuento();
+                _ProductoDescuento.Show();
                 this.Hide();
             }
             else

@@ -11,7 +11,7 @@ namespace DAC
 {
     public class DAC_Login
     {
-        SqlConnection cn = new SqlConnection("Data Source=srv-bd-sql-server.database.windows.net; User ID =edgar; Password =$E012345; Initial Catalog=miniMarket");
+        SqlConnection cn = new SqlConnection("Data Source= sql-srv2.database.windows.net; User ID =edgar; Password =$E012345; Initial Catalog=miniMarket");
         SqlCommand cmd;
         SqlDataReader loDataReader;
         DataTable schemaTable = new DataTable();

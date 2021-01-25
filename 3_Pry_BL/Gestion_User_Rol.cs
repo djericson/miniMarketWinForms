@@ -31,12 +31,12 @@ namespace BL
            
 
         }
-        public void update_rol(int id ,string name)
-        {
-            dac_gestion_user_rol.update_Rol(id, name);
+        //public void update_rol(int id ,string name)
+        //{
+        //    dac_gestion_user_rol.update_Rol(id, name);
 
 
-        }
+        //}
         public void delete_rol(int id)
         {
             dac_gestion_user_rol.delete_Rol(id);
@@ -55,12 +55,12 @@ namespace BL
 
 
         }
-        public int get_id_rol(string rol)
-        {
-            var data = dac_gestion_user_rol.get_id_rol(rol);
+        //public int get_id_rol(string rol)
+        //{
+        //    var data = dac_gestion_user_rol.get_id_rol(rol);
 
-            return data;
-        }
+        //    return data;
+        //}
 
         public void insert_Forms_rol(int rol, int form)
         {
@@ -74,12 +74,12 @@ namespace BL
 
 
         }
-        public int get_id_form(string form)
-        {
-            var data = dac_gestion_user_rol.get_id_Form(form);
+        //public int get_id_form(string form)
+        //{
+        //    var data = dac_gestion_user_rol.get_id_Form(form);
 
-            return data;
-        }
+        //    return data;
+        //}
 
 
     }

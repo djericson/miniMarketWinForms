@@ -24,6 +24,23 @@ namespace BL
             dac_vta.insertar(datos_venta, datos_pago);
         }
 
+        public DataTable search()
+        {
+            return dac_vta.search();
+        }
+
+        public DataTable search_product(string nombre)
+        {
+            return dac_vta.search_product(nombre);
+        }
+
+        public DataTable search_client(string nombre)
+        {
+            return dac_vta.search_client(nombre);
+        }
+
+
+
 
     }
 

@@ -11,7 +11,8 @@ namespace DAC
 {
     class ClsDAC_Detalle_Pedido
     {
-        SqlConnection cnn = new SqlConnection("Data Source=srv-bd-sql-server.database.windows.net;Initial Catalog=miniMarket;User ID=wilber;Password=$W012345");
+        SqlConnection cnn = new SqlConnection("Data Source=sql-srv2.database.windows.net;Initial Catalog=miniMarket;User ID=wilber;Password=$W012345");
+
 
 
         #region ......................METODO INSERTAR
@@ -29,6 +30,7 @@ namespace DAC
                 cmd.CommandType = CommandType.StoredProcedure;
                
                 SqlParameter parIdPedido_detalle = new SqlParameter();
+
                 parIdPedido_detalle.ParameterName = "@id_pedido_detalle";
                 parIdPedido_detalle.SqlDbType = SqlDbType.Int;
                 parIdPedido_detalle.Direction = ParameterDirection.Output;

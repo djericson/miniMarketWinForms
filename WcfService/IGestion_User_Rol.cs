@@ -17,8 +17,8 @@ namespace WcfService
         string List_User_rol();
         [OperationContract]
         void insert(string name);
-        [OperationContract]
-        void update(int id, string name);
+        //[OperationContract]
+        //void update(int id, string name);
         [OperationContract]
         void delete(int id);
 
@@ -26,14 +26,14 @@ namespace WcfService
         void insert_rol_user(int rol, int user);
         [OperationContract]
         void delete_rol_user(int rol, int user);
-        [OperationContract]
-        int get_id_rol(string rol);
+        //[OperationContract]
+        //int get_id_rol(string rol);
         [OperationContract]
         void insert_Forms_rol(int rol, int form);
         [OperationContract]
         void delete_Forms_rol(int rol, int form);
-        [OperationContract]
-        int get_id_form(string form); 
+        //[OperationContract]
+        //int get_id_form(string form); 
         [OperationContract]
         List<List<string>> Login(string user,string pasword); 
         [OperationContract]

@@ -52,6 +52,7 @@
     <Compile Include="ClsBL_Venta.cs" />
     <Compile Include="Gestion_User_Rol.cs" />
     <Compile Include="BL_Login.cs" />
+    <Compile Include="ProductDescuento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

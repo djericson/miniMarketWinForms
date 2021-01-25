@@ -33,7 +33,6 @@ namespace NS_WinFormsApps
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.delete = new System.Windows.Forms.Button();
             this.add_producto = new System.Windows.Forms.Button();
-            this.BtnAyuda = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.update = new System.Windows.Forms.Button();
             this.list_productos = new System.Windows.Forms.DataGridView();
@@ -43,7 +42,6 @@ namespace NS_WinFormsApps
             this.presio_promed_dpt = new System.Windows.Forms.NumericUpDown();
             this.fecha_vencimiento = new System.Windows.Forms.DateTimePicker();
             this.fecha_fabricacion = new System.Windows.Forms.DateTimePicker();
-            this.fecha_ingreso_stock = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.cantida_produ_venta = new System.Windows.Forms.RichTextBox();
             this.presio_prome = new System.Windows.Forms.Label();
@@ -64,8 +62,14 @@ namespace NS_WinFormsApps
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.numero_producto = new System.Windows.Forms.RichTextBox();
-            this.Atras = new System.Windows.Forms.Button();
             this.unidad_produc = new System.Windows.Forms.ComboBox();
+            this.Atras = new System.Windows.Forms.Button();
+            this.BtnAyuda = new System.Windows.Forms.Button();
+            this.fecha_ingreso_stock = new System.Windows.Forms.DateTimePicker();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.Stock_minimo = new System.Windows.Forms.TextBox();
+            this.Stock_maximo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.list_productos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presio_promed_dpt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presio_promdio)).BeginInit();
@@ -96,19 +100,6 @@ namespace NS_WinFormsApps
             this.add_producto.Text = "insertar";
             this.add_producto.UseVisualStyleBackColor = true;
             this.add_producto.Click += new System.EventHandler(this.add_producto_Click);
-            // 
-            // BtnAyuda
-            // 
-            this.BtnAyuda.BackColor = System.Drawing.Color.White;
-            this.BtnAyuda.FlatAppearance.BorderSize = 0;
-            this.BtnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAyuda.Image = global::FormsApp.Properties.Resources.Webp_net_resizeimage__14_;
-            this.BtnAyuda.Location = new System.Drawing.Point(331, 82);
-            this.BtnAyuda.Name = "BtnAyuda";
-            this.BtnAyuda.Size = new System.Drawing.Size(30, 26);
-            this.BtnAyuda.TabIndex = 19;
-            this.BtnAyuda.UseVisualStyleBackColor = false;
-            this.BtnAyuda.Click += new System.EventHandler(this.BtnAyuda_Click);
             // 
             // richTextBox1
             // 
@@ -238,19 +229,10 @@ namespace NS_WinFormsApps
             this.fecha_fabricacion.Size = new System.Drawing.Size(149, 21);
             this.fecha_fabricacion.TabIndex = 77;
             // 
-            // fecha_ingreso_stock
-            // 
-            this.fecha_ingreso_stock.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fecha_ingreso_stock.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fecha_ingreso_stock.Location = new System.Drawing.Point(569, 122);
-            this.fecha_ingreso_stock.Name = "fecha_ingreso_stock";
-            this.fecha_ingreso_stock.Size = new System.Drawing.Size(149, 21);
-            this.fecha_ingreso_stock.TabIndex = 76;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(396, 201);
             this.label6.Name = "label6";
@@ -272,7 +254,7 @@ namespace NS_WinFormsApps
             // presio_prome
             // 
             this.presio_prome.AutoSize = true;
-            this.presio_prome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.presio_prome.BackColor = System.Drawing.Color.Transparent;
             this.presio_prome.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.presio_prome.Location = new System.Drawing.Point(396, 48);
             this.presio_prome.Name = "presio_prome";
@@ -283,7 +265,7 @@ namespace NS_WinFormsApps
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(391, 81);
             this.label3.Name = "label3";
@@ -294,7 +276,7 @@ namespace NS_WinFormsApps
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(393, 118);
             this.label4.Name = "label4";
@@ -305,7 +287,7 @@ namespace NS_WinFormsApps
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(396, 160);
             this.label5.Name = "label5";
@@ -343,7 +325,7 @@ namespace NS_WinFormsApps
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(41, 204);
             this.label12.Name = "label12";
@@ -387,7 +369,7 @@ namespace NS_WinFormsApps
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(44, 163);
             this.label11.Name = "label11";
@@ -398,7 +380,7 @@ namespace NS_WinFormsApps
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(37, 291);
             this.label10.Name = "label10";
@@ -409,7 +391,7 @@ namespace NS_WinFormsApps
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(37, 249);
             this.label8.Name = "label8";
@@ -420,7 +402,7 @@ namespace NS_WinFormsApps
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(34, 332);
             this.label7.Name = "label7";
@@ -431,7 +413,7 @@ namespace NS_WinFormsApps
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(41, 117);
             this.label2.Name = "label2";
@@ -442,7 +424,7 @@ namespace NS_WinFormsApps
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(41, 79);
             this.label9.Name = "label9";
@@ -453,7 +435,7 @@ namespace NS_WinFormsApps
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(41, 41);
             this.label1.Name = "label1";
@@ -473,6 +455,18 @@ namespace NS_WinFormsApps
             this.numero_producto.TabIndex = 96;
             this.numero_producto.Text = "";
             // 
+            // unidad_produc
+            // 
+            this.unidad_produc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.unidad_produc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.unidad_produc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.unidad_produc.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unidad_produc.FormattingEnabled = true;
+            this.unidad_produc.Location = new System.Drawing.Point(212, 325);
+            this.unidad_produc.Name = "unidad_produc";
+            this.unidad_produc.Size = new System.Drawing.Size(149, 25);
+            this.unidad_produc.TabIndex = 100;
+            // 
             // Atras
             // 
             this.Atras.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
@@ -486,23 +480,73 @@ namespace NS_WinFormsApps
             this.Atras.UseVisualStyleBackColor = true;
             this.Atras.Click += new System.EventHandler(this.Atras_Click);
             // 
-            // unidad_produc
+            // BtnAyuda
             // 
-            this.unidad_produc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.unidad_produc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.unidad_produc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.unidad_produc.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unidad_produc.FormattingEnabled = true;
-            this.unidad_produc.Location = new System.Drawing.Point(212, 325);
-            this.unidad_produc.Name = "unidad_produc";
-            this.unidad_produc.Size = new System.Drawing.Size(149, 25);
-            this.unidad_produc.TabIndex = 100;
+            this.BtnAyuda.BackColor = System.Drawing.Color.White;
+            this.BtnAyuda.FlatAppearance.BorderSize = 0;
+            this.BtnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAyuda.Image = global::FormsApp.Properties.Resources.Webp_net_resizeimage__14_;
+            this.BtnAyuda.Location = new System.Drawing.Point(331, 82);
+            this.BtnAyuda.Name = "BtnAyuda";
+            this.BtnAyuda.Size = new System.Drawing.Size(30, 26);
+            this.BtnAyuda.TabIndex = 19;
+            this.BtnAyuda.UseVisualStyleBackColor = false;
+            this.BtnAyuda.Click += new System.EventHandler(this.BtnAyuda_Click);
+            // 
+            // fecha_ingreso_stock
+            // 
+            this.fecha_ingreso_stock.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fecha_ingreso_stock.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fecha_ingreso_stock.Location = new System.Drawing.Point(569, 122);
+            this.fecha_ingreso_stock.Name = "fecha_ingreso_stock";
+            this.fecha_ingreso_stock.Size = new System.Drawing.Size(149, 21);
+            this.fecha_ingreso_stock.TabIndex = 76;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(396, 233);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(110, 17);
+            this.label13.TabIndex = 102;
+            this.label13.Text = "7- stock minimo";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(396, 274);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(114, 17);
+            this.label14.TabIndex = 103;
+            this.label14.Text = "8- stock maximo";
+            // 
+            // Stock_minimo
+            // 
+            this.Stock_minimo.Location = new System.Drawing.Point(569, 233);
+            this.Stock_minimo.Name = "Stock_minimo";
+            this.Stock_minimo.Size = new System.Drawing.Size(149, 20);
+            this.Stock_minimo.TabIndex = 105;
+            // 
+            // Stock_maximo
+            // 
+            this.Stock_maximo.Location = new System.Drawing.Point(569, 274);
+            this.Stock_maximo.Name = "Stock_maximo";
+            this.Stock_maximo.Size = new System.Drawing.Size(149, 20);
+            this.Stock_maximo.TabIndex = 106;
             // 
             // gestion_productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 609);
+            this.Controls.Add(this.Stock_maximo);
+            this.Controls.Add(this.Stock_minimo);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.unidad_produc);
             this.Controls.Add(this.Atras);
             this.Controls.Add(this.numero_producto);
@@ -566,7 +610,6 @@ namespace NS_WinFormsApps
         public System.Windows.Forms.NumericUpDown presio_promed_dpt;
         public System.Windows.Forms.DateTimePicker fecha_vencimiento;
         public System.Windows.Forms.DateTimePicker fecha_fabricacion;
-        public System.Windows.Forms.DateTimePicker fecha_ingreso_stock;
         public System.Windows.Forms.Label label6;
         public System.Windows.Forms.RichTextBox cantida_produ_venta;
         public System.Windows.Forms.Label presio_prome;
@@ -589,5 +632,10 @@ namespace NS_WinFormsApps
         private System.Windows.Forms.RichTextBox numero_producto;
         private System.Windows.Forms.Button Atras;
         public System.Windows.Forms.ComboBox unidad_produc;
+        public System.Windows.Forms.DateTimePicker fecha_ingreso_stock;
+        public System.Windows.Forms.Label label13;
+        public System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox Stock_minimo;
+        private System.Windows.Forms.TextBox Stock_maximo;
     }
 }

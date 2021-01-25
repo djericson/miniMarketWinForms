@@ -133,7 +133,7 @@ namespace NS_WinFormsApps
                         {
                             if (dataRow != null)
                             {
-                                list_productos.Rows.Add(dataRow["id_det_prod"], Convert.ToDecimal(dataRow["precio_prod"].ToString()), dataRow["cant_prods_vta"], dataRow["fch_ingr_stock"], dataRow["fch_fab_prod"], dataRow["fch_Vec_prod"]);
+                                list_productos.Rows.Add(dataRow["id_det_prod"], Convert.ToDecimal(dataRow["precio_prod"].ToString()), dataRow["cant_prods_vta"], dataRow["fch_ingr_stock"], dataRow["fch_fab_prod"], dataRow["fch_Vec_prod"], dataRow["Stock_Minimo"], dataRow["Stock_Maximo"]);
                             }
                         }
                     }
@@ -233,11 +233,13 @@ namespace NS_WinFormsApps
         {
             list_productos.Columns.Clear();
             list_productos.Columns.Add("id_det_prod", "Codigo det"); 
-            list_productos.Columns.Add("precio_prod", "presio promedio det");
+            list_productos.Columns.Add("precio_prod", "precio promedio det");
             list_productos.Columns.Add("cant_prods_vta", "cantidad prod venta");
             list_productos.Columns.Add("fch_ingr_stock", "fecha ingreso stock");
             list_productos.Columns.Add("fch_fab_prod", "fecha fabricacion");
             list_productos.Columns.Add("fch_Vec_prod", "fecha vencimiento");
+            list_productos.Columns.Add("Stock_Minimo", "Stock Minimo");
+            list_productos.Columns.Add("Stock_Maximo", "Stock Maximo");
             list_productos.Rows.Clear();
 
              
@@ -326,8 +328,9 @@ namespace NS_WinFormsApps
                                   "\" cant_prods_vta=\"" + DataRow.Cells["cant_prods_vta"].Value +
                                   "\" fch_ingr_stock=\"" + Convert.ToDateTime(DataRow.Cells["fch_ingr_stock"].Value).ToString("yyyy-M-dd ") +
                                   "\" fch_fab_prod=\"" + Convert.ToDateTime(DataRow.Cells["fch_fab_prod"].Value).ToString("yyyy-M-dd ") +
-                                  "\" fch_Vec_prod=\"" + Convert.ToDateTime(DataRow.Cells["fch_Vec_prod"].Value).ToString("yyyy-M-dd ") + "\"></row>\n";
-
+                                  "\" fch_Vec_prod=\"" + Convert.ToDateTime(DataRow.Cells["fch_Vec_prod"].Value).ToString("yyyy-M-dd ") +
+                                  "\" Stock_Minimo=\"" + Convert.ToInt32(DataRow.Cells["Stock_Minimo"].Value) +
+                                  "\" Stock_Maximo=\"" + Convert.ToInt32(DataRow.Cells["Stock_Maximo"].Value) + "\"></row>\n";
             }
 
 
@@ -366,8 +369,9 @@ namespace NS_WinFormsApps
                                   "\" cant_prods_vta=\"" + DataRow.Cells["cant_prods_vta"].Value +
                                   "\" fch_ingr_stock=\"" + Convert.ToDateTime(DataRow.Cells["fch_ingr_stock"].Value.ToString()).ToString("yyyy-M-dd") +
                                   "\" fch_fab_prod=\"" + Convert.ToDateTime(DataRow.Cells["fch_fab_prod"].Value.ToString()).ToString("yyyy-M-dd") +
-                                  "\" fch_Vec_prod=\"" + Convert.ToDateTime(DataRow.Cells["fch_Vec_prod"].Value.ToString()).ToString("yyyy-M-dd") + "\"></row>\n";
-              
+                                  "\" fch_Vec_prod=\"" + Convert.ToDateTime(DataRow.Cells["fch_Vec_prod"].Value.ToString()).ToString("yyyy-M-dd") +
+                                   "\" Stock_Minimo=\"" + Convert.ToInt32(DataRow.Cells["Stock_Minimo"].Value) +
+                                  "\" Stock_Maximo=\"" + Convert.ToInt32(DataRow.Cells["Stock_Maximo"].Value) + "\"></row>\n";
             }
 
             //MessageBox.Show("stock_entry_date: " + Convert.ToDateTime(list_productos.CurrentRow.Cells["stock_entry_date"].Value).ToString("dd/M/yyyy", CultureInfo.InvariantCulture));
@@ -390,7 +394,7 @@ namespace NS_WinFormsApps
         private void agregar_datagridview_Click(object sender, EventArgs e)
         {
 
-            list_productos.Rows.Add("",presio_promed_dpt.Value, cantida_produ_venta.Text, fecha_ingreso_stock.Value, fecha_fabricacion.Value, fecha_vencimiento.Value);
+            list_productos.Rows.Add("",presio_promed_dpt.Value, cantida_produ_venta.Text, fecha_ingreso_stock.Value, fecha_fabricacion.Value, fecha_vencimiento.Value, Stock_minimo.Text, Stock_maximo.Text);
         }
 
         private void update_datagridview_Click(object sender, EventArgs e)
@@ -400,6 +404,8 @@ namespace NS_WinFormsApps
             list_productos.CurrentRow.Cells["fch_ingr_stock"].Value = fecha_ingreso_stock.Value;
             list_productos.CurrentRow.Cells["fch_fab_prod"].Value = fecha_fabricacion.Value;
             list_productos.CurrentRow.Cells["fch_Vec_prod"].Value = fecha_vencimiento.Value;
+            list_productos.CurrentRow.Cells["Stock_Maximo"].Value = Stock_maximo.Text; 
+            list_productos.CurrentRow.Cells["Stock_Minimo"].Value = Stock_minimo.Text;
         }
 
         private void delete_datagridview_Click(object sender, EventArgs e)
@@ -416,6 +422,8 @@ namespace NS_WinFormsApps
             fecha_ingreso_stock.Value = (DateTime)list_productos.CurrentRow.Cells["fch_ingr_stock"].Value ;
             fecha_fabricacion.Value = (DateTime)list_productos.CurrentRow.Cells["fch_fab_prod"].Value;
             fecha_vencimiento.Value = (DateTime)list_productos.CurrentRow.Cells["fch_Vec_prod"].Value;
+            Stock_maximo.Text  = list_productos.CurrentRow.Cells["Stock_Maximo"].Value.ToString();
+            Stock_minimo.Text = list_productos.CurrentRow.Cells["Stock_Minimo"].Value.ToString();
 
         }
 
@@ -437,8 +445,10 @@ namespace NS_WinFormsApps
             this.Close();
         }
 
+        private void todos_productos_Click(object sender, EventArgs e)
+        {
 
-      
+        }
     }
 
 

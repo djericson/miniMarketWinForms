@@ -83,7 +83,7 @@ namespace NS_WinFormsApps
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 149);
+            this.label9.Location = new System.Drawing.Point(12, 125);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(52, 13);
             this.label9.TabIndex = 5;
@@ -102,7 +102,7 @@ namespace NS_WinFormsApps
             // 
             this.txtTelefono.BackColor = System.Drawing.Color.DarkGray;
             this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTelefono.Location = new System.Drawing.Point(112, 147);
+            this.txtTelefono.Location = new System.Drawing.Point(112, 123);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
             this.txtTelefono.TabIndex = 4;
@@ -110,8 +110,6 @@ namespace NS_WinFormsApps
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.label2);
@@ -130,7 +128,7 @@ namespace NS_WinFormsApps
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Location = new System.Drawing.Point(99, 37);
+            this.groupBox1.Location = new System.Drawing.Point(19, 38);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(682, 212);
             this.groupBox1.TabIndex = 10;
@@ -150,7 +148,7 @@ namespace NS_WinFormsApps
             // 
             this.textBox1.BackColor = System.Drawing.Color.DarkGray;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(112, 85);
+            this.textBox1.Location = new System.Drawing.Point(721, 11);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(450, 20);
             this.textBox1.TabIndex = 8;
@@ -158,7 +156,7 @@ namespace NS_WinFormsApps
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 87);
+            this.label3.Location = new System.Drawing.Point(619, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 13);
             this.label3.TabIndex = 7;
@@ -241,7 +239,7 @@ namespace NS_WinFormsApps
             // 
             this.txtDireccion.BackColor = System.Drawing.Color.DarkGray;
             this.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDireccion.Location = new System.Drawing.Point(112, 112);
+            this.txtDireccion.Location = new System.Drawing.Point(112, 88);
             this.txtDireccion.Multiline = true;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -252,7 +250,7 @@ namespace NS_WinFormsApps
             // 
             this.txtEmail.BackColor = System.Drawing.Color.DarkGray;
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmail.Location = new System.Drawing.Point(112, 173);
+            this.txtEmail.Location = new System.Drawing.Point(112, 149);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(334, 20);
             this.txtEmail.TabIndex = 1;
@@ -261,7 +259,7 @@ namespace NS_WinFormsApps
             // 
             this.txtUrl.BackColor = System.Drawing.Color.DarkGray;
             this.txtUrl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUrl.Location = new System.Drawing.Point(260, 147);
+            this.txtUrl.Location = new System.Drawing.Point(260, 123);
             this.txtUrl.Name = "txtUrl";
             this.txtUrl.Size = new System.Drawing.Size(302, 20);
             this.txtUrl.TabIndex = 1;
@@ -278,7 +276,7 @@ namespace NS_WinFormsApps
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(219, 149);
+            this.label11.Location = new System.Drawing.Point(219, 125);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(35, 13);
             this.label11.TabIndex = 0;
@@ -287,7 +285,7 @@ namespace NS_WinFormsApps
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 114);
+            this.label5.Location = new System.Drawing.Point(12, 90);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 13);
             this.label5.TabIndex = 0;
@@ -296,7 +294,7 @@ namespace NS_WinFormsApps
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 175);
+            this.label10.Location = new System.Drawing.Point(12, 151);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(66, 13);
             this.label10.TabIndex = 0;
@@ -410,7 +408,9 @@ namespace NS_WinFormsApps
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(863, 545);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvListado);
             this.Controls.Add(this.groupBox2);
             this.Name = "FrmProveedores";

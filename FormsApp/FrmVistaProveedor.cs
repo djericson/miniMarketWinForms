@@ -20,41 +20,40 @@ namespace FormsApp
         public FrmVistaProveedor()
         {
             InitializeComponent();
-        }
-        #region METODO OCULTAR COLUMAS
+        } 
         private void OcularColumnas()
         {
             dgvListado.Columns[0].Visible = false;
             dgvListado.Columns[1].Visible = false;
         }
-        #endregion
-        #region MOSTRAR TODOS LOS REGISTROS DE PROVEEDORES
+
+
         private void Mostrar()
         {
+
             dgvListado.DataSource = ClsBLProveedor.MOSTRAR();
-            OcularColumnas();
+            //OcularColumnas();
         }
-        #endregion
-        #region METODO BUSCAR POR RAZON SOCIAL
+
+
         private void BuscarRazon_Social()
         {
             dgvListado.DataSource = obj_BL_Proveedor.BUSCAR_RAZON_SOCIAL(txtBuscar.Text);
             OcularColumnas();
         }
-        #endregion
-        #region METODO BUSCAR POR NUMERO DE DOCUMENTO
+
+  
         private void BuscarNum_Documento()
         {
             dgvListado.DataSource = obj_BL_Proveedor.BUSCAR_NUM_DOCUMENTO(txtBuscar.Text);
             OcularColumnas();
         }
-        #endregion
+
 
         private void FrmVistaProveedor_Load(object sender, EventArgs e)
         {
             Mostrar();
         }
-
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             if (cbBuscar.Text.Equals("Razon Social"))
@@ -70,13 +69,11 @@ namespace FormsApp
         private void dgvListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             FrmPedido frm = FrmPedido.GetInstancia();
-
             string par1, par2, par3, par4;
             par1 = Convert.ToString(dgvListado.CurrentRow.Cells["id_proveedor"].Value);
             par2 = Convert.ToString(dgvListado.CurrentRow.Cells["nombre_comercial"].Value);
             par3 = Convert.ToString(dgvListado.CurrentRow.Cells["Categoria"].Value);
             par4 = Convert.ToString(dgvListado.CurrentRow.Cells[4].Value);
-
             frm.ControlesProveedor(par1, par2, par3, par4);
             Hide();
         }
