@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Utilitarios;
 using System.Data;
 using System.Data.SqlClient;
+using System.Transactions;
 
 namespace DAC
 {
@@ -21,24 +22,52 @@ namespace DAC
 
         }
 
-        public void insertar(Dictionary<string, object> datos_venta, Dictionary<string, object> datos_pago)
+        public int insertar(Dictionary<string, object> datos_venta, Dictionary<string, object> datos_pago)
         {
-            cmd = new SqlCommand("insert_venta", cn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Clear();
-            cmd.Parameters.AddWithValue("@id_usuario", datos_venta["id_usuario"].ToString());
-            cmd.Parameters.AddWithValue("@id_cajero", datos_venta["id_cajero"].ToString());
-            cmd.Parameters.AddWithValue("@numero_operacion", datos_venta["numero_operacion"].ToString());
-            cmd.Parameters.AddWithValue("@numero_comprobante", datos_venta["numero_comprobante"].ToString());
-            cmd.Parameters.AddWithValue("@tipo_comprobante", datos_venta["tipo_comprobante"].ToString());
-            cmd.Parameters.AddWithValue("@fecha_venta", datos_venta["fecha_venta"]);
-            cmd.Parameters.AddWithValue("@precio", datos_venta["precio_total"].ToString());
-            cmd.Parameters.AddWithValue("@tipo_pago", datos_pago["tipo_pago"].ToString());
-            cmd.Parameters.AddWithValue("@monto_pago", datos_pago["monto_pago"].ToString());
-            cmd.Parameters.AddWithValue("@detalle_venta", datos_venta["detalle_venta"].ToString());
             cn.Open();
-            cmd.ExecuteNonQuery();
-            cn.Close();
+            SqlTransaction ObjTran = cn.BeginTransaction();
+            try {
+                cmd = new SqlCommand("insert_venta", cn);
+                cmd.Transaction = ObjTran;
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id_usuario", datos_venta["id_usuario"].ToString());
+                cmd.Parameters.AddWithValue("@id_cajero", datos_venta["id_cajero"].ToString());
+                cmd.Parameters.AddWithValue("@numero_operacion", datos_venta["numero_operacion"].ToString());
+                cmd.Parameters.AddWithValue("@numero_comprobante", datos_venta["numero_comprobante"].ToString());
+                cmd.Parameters.AddWithValue("@tipo_comprobante", datos_venta["tipo_comprobante"].ToString());
+                cmd.Parameters.AddWithValue("@fecha_venta", datos_venta["fecha_venta"]);
+                cmd.Parameters.AddWithValue("@precio", datos_venta["precio_total"].ToString());
+                cmd.Parameters.AddWithValue("@tipo_pago", datos_pago["tipo_pago"].ToString());
+                cmd.Parameters.AddWithValue("@monto_pago", datos_pago["monto_pago"].ToString());
+                cmd.Parameters.AddWithValue("@detalle_venta", datos_venta["detalle_venta"].ToString());
+                cmd.Parameters.AddWithValue("@VersionTimestam", datos_venta["timeStamp_prod"]);
+
+                SqlParameter pVta_id = new SqlParameter("@output", SqlDbType.Int);
+                pVta_id.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(pVta_id);
+
+                //cn.Open();
+                cmd.ExecuteNonQuery();
+                ObjTran.Commit();
+
+                int li_pVta_id = Convert.ToInt32(cmd.Parameters["@output"].Value);
+                return li_pVta_id;
+            }
+            catch (SqlException sqlex) {
+                ObjTran.Rollback();
+                cn.Close();
+                return -1;
+            }
+            catch (Exception ex) {
+                return -1;
+                //MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            finally { cn.Close(); }
+
+            
+
         }
 
         public DataTable search()
@@ -68,14 +97,32 @@ namespace DAC
             cn.Open();
             SqlDataReader loDataReader = cmd.ExecuteReader();
             schemaTable.Load(loDataReader, LoadOption.OverwriteChanges);
-            if (schemaTable.Rows.Count == 0)
-            {
+            if (schemaTable.Rows.Count == 0) {
                 cn.Close();
                 return null;
             }
 
             cn.Close();
             return schemaTable;
+        }
+
+        public object selectUnProd(int id_prod)
+        {
+            object ts_Res = null;
+            cmd = new SqlCommand("[Vta_buscar_prod_ts]", cn);
+            
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@id_prod", id_prod);
+            cn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows) {
+                dr.Read();
+                ts_Res = dr.GetValue(dr.GetOrdinal("timestam"));
+            }
+            cn.Close();
+
+            return ts_Res;
         }
 
         public DataTable search_client(string nombre)

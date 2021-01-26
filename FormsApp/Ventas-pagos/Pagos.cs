@@ -1,13 +1,8 @@
-﻿using System;
+﻿using BL;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BL;
 
 namespace NS_WinFormsApps.Ventas_pagos
 {
@@ -20,7 +15,7 @@ namespace NS_WinFormsApps.Ventas_pagos
             InitializeComponent();
         }
 
-        public Pagos(Dictionary<string,object> datos)
+        public Pagos(Dictionary<string, object> datos)
         {
             InitializeComponent();
             _datos = datos;
@@ -41,7 +36,7 @@ namespace NS_WinFormsApps.Ventas_pagos
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -53,7 +48,7 @@ namespace NS_WinFormsApps.Ventas_pagos
             {
                 return 1;
             }
-           
+
             return 2;
         }
 
@@ -61,17 +56,17 @@ namespace NS_WinFormsApps.Ventas_pagos
         {
             if (!radVisa.Checked && !radMaster.Checked && !radEfectivo.Checked)
             {
-                MsjError("Metodo de pago no especificado","No ha elegido el metodo de pago con el que desea efectuar la venta");
+                MsjError("Metodo de pago no especificado", "No ha elegido el metodo de pago con el que desea efectuar la venta");
                 return false;
             }
 
-            if(radEfectivo.Checked && txtMonto.Text.Equals(string.Empty))
+            if (radEfectivo.Checked && txtMonto.Text.Equals(string.Empty))
             {
                 MsjError("Monto inválido", "No ha especificado el monto a pagar");
                 return false;
             }
 
-            if(radEfectivo.Checked && double.Parse(txtMonto.Text) < double.Parse(txtTotal.Text))
+            if (radEfectivo.Checked && double.Parse(txtMonto.Text) < double.Parse(txtTotal.Text))
             {
                 MsjError("Monto insuficiente", "El monto es insuficiente");
                 return false;
@@ -82,16 +77,18 @@ namespace NS_WinFormsApps.Ventas_pagos
 
         private void GuardarVenta()
         {
-            var datos_pago = new Dictionary<string, object>()
-            {
+            var datos_pago = new Dictionary<string, object>() {
                 {"tipo_pago", getTipoPago()},
-                {"monto_pago",txtTotal.Text }
+                {"monto_pago",txtTotal.Text }, 
             };
 
-            bl_venta.insertar(_datos, datos_pago);
-            MessageBox.Show("Venta realizada", "La venta se ha registrado con exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            int vta_id_out = bl_venta.insertar(_datos, datos_pago);
+            if(vta_id_out == 2 )
+                MessageBox.Show("Venta realizada", "La venta se ha registrado con exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (vta_id_out == -1)
+                MessageBox.Show("Venta no hecha por que no hubo stock en producto", "_", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
-
+        
         private bool MontoMayor()
         {
             if (txtMonto.Text.Length > 0)
@@ -105,14 +102,14 @@ namespace NS_WinFormsApps.Ventas_pagos
 
         private void MsjError(string caption, string mensaje)
         {
-            MessageBox.Show(mensaje,caption,MessageBoxButtons.OK,MessageBoxIcon.Error);
+            MessageBox.Show(mensaje, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if(txtMonto.Text.Length > 0)
+            if (txtMonto.Text.Length > 0)
             {
-               
+
                 if (MontoMayor())
                 {
                     txtMonto.ForeColor = Color.Green;
@@ -131,11 +128,11 @@ namespace NS_WinFormsApps.Ventas_pagos
                 double monto = double.Parse(txtMonto.Text);
                 double total = double.Parse(txtTotal.Text);
                 double vuelto = monto - total;
-                txtVuelto.Text = Math.Round(vuelto,2).ToString();
+                txtVuelto.Text = Math.Round(vuelto, 2).ToString();
             }
             else
             {
-                MsjError("Error de pago","El monto es insuficiente para realizar la venta");
+                MsjError("Error de pago", "El monto es insuficiente para realizar la venta");
             }
         }
 
@@ -154,8 +151,7 @@ namespace NS_WinFormsApps.Ventas_pagos
 
         private void btnEmitir_Click(object sender, EventArgs e)
         {
-            if (CamposCorrectos())
-            {
+            if (CamposCorrectos()) {
                 this.DialogResult = DialogResult.OK;
                 GuardarVenta();
                 this.Close();

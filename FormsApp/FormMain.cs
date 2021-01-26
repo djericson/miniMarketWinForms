@@ -140,7 +140,7 @@ namespace FormsApp
             {
                 Ventas ventas = new Ventas(login.ID_Usuario,login.Name_Usuario);
                 ventas.Show();
-                this.Hide();
+                //this.Hide();
             }
             else
             {
