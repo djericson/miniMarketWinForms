@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Utilitarios;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace DAC
 {
@@ -21,7 +22,7 @@ namespace DAC
 
         }
 
-        public void insertar(Dictionary<string, object> datos_venta, Dictionary<string, object> datos_pago)
+        public int  insertar(Dictionary<string, object> datos_venta, Dictionary<string, object> datos_pago)
         {
             cmd = new SqlCommand("insert_venta", cn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -36,9 +37,17 @@ namespace DAC
             cmd.Parameters.AddWithValue("@tipo_pago", datos_pago["tipo_pago"].ToString());
             cmd.Parameters.AddWithValue("@monto_pago", datos_pago["monto_pago"].ToString());
             cmd.Parameters.AddWithValue("@detalle_venta", datos_venta["detalle_venta"].ToString());
+
+            SqlParameter Validacion = new SqlParameter("@Validacion", SqlDbType.Int);
+            Validacion.Direction = ParameterDirection.Output;
+            cmd.Parameters.Add(Validacion);
+
             cn.Open();
             cmd.ExecuteNonQuery();
+            int validacion = Convert.ToInt32(cmd.Parameters["@Validacion"].Value);
             cn.Close();
+
+            return validacion;
         }
 
         public DataTable search()
@@ -57,7 +66,16 @@ namespace DAC
         {
             return null;
         }
+        public static object Column(this DataRow source, string columnName)
+        {
+            var c = source.Table.Columns[columnName];
+            if (c != null)
+            {
+                return source.ItemArray[c.Ordinal];
+            }
 
+            return null;
+        }
         public DataTable search_product(string nombre)
         {
             DataTable schemaTable = new DataTable();
@@ -67,7 +85,10 @@ namespace DAC
             //cmd.Parameters.AddWithValue("@name_product", nombre);
             cn.Open();
             SqlDataReader loDataReader = cmd.ExecuteReader();
+            //Object timestam = loDataReader.GetValue(loDataReader.GetOrdinal("timestam"));
             schemaTable.Load(loDataReader, LoadOption.OverwriteChanges);
+            var d = schemaTable.Rows[0].Table.Columns["timestam"].Ordinal;
+            MessageBox.Show(d.ToString());
             if (schemaTable.Rows.Count == 0)
             {
                 cn.Close();

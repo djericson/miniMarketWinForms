@@ -88,8 +88,16 @@ namespace NS_WinFormsApps.Ventas_pagos
                 {"monto_pago",txtTotal.Text }
             };
 
-            bl_venta.insertar(_datos, datos_pago);
-            MessageBox.Show("Venta realizada", "La venta se ha registrado con exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            var validacion = bl_venta.insertar(_datos, datos_pago);
+            if(validacion == 1)
+            {
+                MessageBox.Show("Venta realizada", "La venta se ha registrado con exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Venta no realizada");
+            }    
+            
         }
 
         private bool MontoMayor()

@@ -18,7 +18,7 @@ namespace NS_WinFormsApps.Ventas_pagos
 
         int id_cliente, id_producto;
         int id_cajero = 3;
-
+        Object timestamp;
         public Ventas()
         {
             InitializeComponent();
@@ -265,6 +265,8 @@ namespace NS_WinFormsApps.Ventas_pagos
                     txtPrecio.Text = busqueda.objRow.Cells["precio"].Value.ToString();
                     txtStock.Text = busqueda.objRow.Cells["stock"].Value.ToString();
                     txtDescuento.Text = busqueda.objRow.Cells["descuento"].Value.ToString();
+                    //MessageBox.Show(busqueda.objRow.Cells["timestam"].Value.ToString());
+                    //MessageBox.Show(timestamp.ToString());
                 }
                 busqueda.objTabla.Clear();
             }
