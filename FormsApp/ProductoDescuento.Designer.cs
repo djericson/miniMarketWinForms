@@ -79,13 +79,13 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.list_productos.DefaultCellStyle = dataGridViewCellStyle1;
             this.list_productos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.list_productos.Location = new System.Drawing.Point(19, 264);
+            this.list_productos.Location = new System.Drawing.Point(31, 270);
             this.list_productos.Name = "list_productos";
             this.list_productos.ReadOnly = true;
             this.list_productos.RowHeadersWidth = 30;
             this.list_productos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.list_productos.ShowEditingIcon = false;
-            this.list_productos.Size = new System.Drawing.Size(445, 182);
+            this.list_productos.Size = new System.Drawing.Size(613, 182);
             this.list_productos.TabIndex = 88;
             // 
             // agregar
@@ -93,7 +93,7 @@
             this.agregar.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.agregar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.agregar.Location = new System.Drawing.Point(31, 210);
+            this.agregar.Location = new System.Drawing.Point(32, 214);
             this.agregar.Name = "agregar";
             this.agregar.Size = new System.Drawing.Size(61, 28);
             this.agregar.TabIndex = 89;
@@ -106,7 +106,7 @@
             this.eliminar.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eliminar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eliminar.Location = new System.Drawing.Point(282, 210);
+            this.eliminar.Location = new System.Drawing.Point(135, 214);
             this.eliminar.Name = "eliminar";
             this.eliminar.Size = new System.Drawing.Size(61, 28);
             this.eliminar.TabIndex = 90;
@@ -154,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 509);
+            this.ClientSize = new System.Drawing.Size(665, 509);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Fecha_Fin);

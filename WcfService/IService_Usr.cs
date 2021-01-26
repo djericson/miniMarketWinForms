@@ -9,7 +9,8 @@ using Utilitarios;
 
 namespace WcfService
 {
-    [ServiceContract(Namespace = "http://localhost:8733/WcfService/Service_Usr")]
+    [ServiceContract(Namespace = "http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/")]
+    //[ServiceContract(Namespace = "http://localhost:8733/WcfService/Service_Usr")]
     public interface IService_Usr
     {
         [OperationContract]

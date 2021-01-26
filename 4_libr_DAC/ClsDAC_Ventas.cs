@@ -98,5 +98,25 @@ namespace DAC
             return schemaTable;
         }
 
+        public int getNumeroOperacion()
+        {
+            int numero = 0;
+            cmd = new SqlCommand("obtener_numero", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Clear();
+            cn.Open();
+            SqlDataReader loDataReader = cmd.ExecuteReader();
+            if (loDataReader.HasRows)
+            {
+                loDataReader.Read();
+                numero = (int)loDataReader["Numero"];
+                cn.Close();
+                return numero;
+            }
+
+            return 0;
+            cn.Close();
+        }
+
     }
 }

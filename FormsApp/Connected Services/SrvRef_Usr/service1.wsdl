@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://tempuri.org/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service_Usr" targetNamespace="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/Imports">
+      <xsd:import namespace="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_Usr_insUsr_InputMessage">
+    <wsdl:part name="parameters" element="tns:insUsr" />
+  </wsdl:message>
+  <wsdl:message name="IService_Usr_insUsr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insUsrResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Usr_updUsr_InputMessage">
+    <wsdl:part name="parameters" element="tns:updUsr" />
+  </wsdl:message>
+  <wsdl:message name="IService_Usr_updUsr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updUsrResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Usr_delUsr_InputMessage">
+    <wsdl:part name="parameters" element="tns:delUsr" />
+  </wsdl:message>
+  <wsdl:message name="IService_Usr_delUsr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:delUsrResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Usr_get_id_nom_roles_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_id_nom_roles" />
+  </wsdl:message>
+  <wsdl:message name="IService_Usr_get_id_nom_roles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_id_nom_rolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Usr_getListUsrs_InputMessage">
+    <wsdl:part name="parameters" element="tns:getListUsrs" />
+  </wsdl:message>
+  <wsdl:message name="IService_Usr_getListUsrs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getListUsrsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService_Usr">
+    <wsdl:operation name="insUsr">
+      <wsdl:input wsaw:Action="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/insUsr" message="tns:IService_Usr_insUsr_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/insUsrResponse" message="tns:IService_Usr_insUsr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updUsr">
+      <wsdl:input wsaw:Action="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/updUsr" message="tns:IService_Usr_updUsr_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/updUsrResponse" message="tns:IService_Usr_updUsr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delUsr">
+      <wsdl:input wsaw:Action="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/delUsr" message="tns:IService_Usr_delUsr_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/delUsrResponse" message="tns:IService_Usr_delUsr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_id_nom_roles">
+      <wsdl:input wsaw:Action="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/get_id_nom_roles" message="tns:IService_Usr_get_id_nom_roles_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/get_id_nom_rolesResponse" message="tns:IService_Usr_get_id_nom_roles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getListUsrs">
+      <wsdl:input wsaw:Action="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/getListUsrs" message="tns:IService_Usr_getListUsrs_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/IService_Usr/getListUsrsResponse" message="tns:IService_Usr_getListUsrs_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="Service_Usr">
+    <wsdl:port name="BasicHttpBinding_IService_Usr" binding="i0:BasicHttpBinding_IService_Usr">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/WcfService/Service_Usr/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

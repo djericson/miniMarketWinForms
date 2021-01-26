@@ -33,6 +33,7 @@
             this.Provedores = new System.Windows.Forms.Button();
             this.Rol = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ProductosDescuento = new System.Windows.Forms.Button();
             this.GestionRolesUser = new System.Windows.Forms.Button();
             this.Usuarios = new System.Windows.Forms.Button();
             this.Pedidos = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@
             this.exit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.ProductosDescuento = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,6 +105,18 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Forms";
+            // 
+            // ProductosDescuento
+            // 
+            this.ProductosDescuento.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.ProductosDescuento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ProductosDescuento.Location = new System.Drawing.Point(45, 218);
+            this.ProductosDescuento.Name = "ProductosDescuento";
+            this.ProductosDescuento.Size = new System.Drawing.Size(172, 56);
+            this.ProductosDescuento.TabIndex = 8;
+            this.ProductosDescuento.Text = "ProductosDescuento";
+            this.ProductosDescuento.UseVisualStyleBackColor = true;
+            this.ProductosDescuento.Click += new System.EventHandler(this.ProductosDescuento_Click);
             // 
             // GestionRolesUser
             // 
@@ -201,18 +213,6 @@
             this.label2.Size = new System.Drawing.Size(32, 17);
             this.label2.TabIndex = 83;
             this.label2.Text = "Rol:";
-            // 
-            // ProductosDescuento
-            // 
-            this.ProductosDescuento.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.ProductosDescuento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ProductosDescuento.Location = new System.Drawing.Point(45, 218);
-            this.ProductosDescuento.Name = "ProductosDescuento";
-            this.ProductosDescuento.Size = new System.Drawing.Size(172, 56);
-            this.ProductosDescuento.TabIndex = 8;
-            this.ProductosDescuento.Text = "ProductosDescuento";
-            this.ProductosDescuento.UseVisualStyleBackColor = true;
-            this.ProductosDescuento.Click += new System.EventHandler(this.ProductosDescuento_Click);
             // 
             // FormMain
             // 

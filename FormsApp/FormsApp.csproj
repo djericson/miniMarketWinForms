@@ -337,8 +337,8 @@
     <None Include="Connected Services\SrvRef_Usr\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\SrvRef_Usr\Service_Usr.wsdl" />
-    <None Include="Connected Services\SrvRef_Usr\Service_Usr.xsd">
+    <None Include="Connected Services\SrvRef_Usr\service1.wsdl" />
+    <None Include="Connected Services\SrvRef_Usr\service1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\SrvRef_Ventas\service.wsdl" />
