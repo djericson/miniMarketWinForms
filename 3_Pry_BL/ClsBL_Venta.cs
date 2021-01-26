@@ -39,6 +39,11 @@ namespace BL
             return dac_vta.search_client(nombre);
         }
 
+        public int getNumeroOperacion()
+        {
+            return dac_vta.getNumeroOperacion();
+        }
+
 
 
 
