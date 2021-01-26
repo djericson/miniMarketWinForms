@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,9 +17,10 @@ namespace NS_WinFormsApps.Ventas_pagos
         ClsBL_Producto _objProducto;
         ClsBL_Vta _objVta;
 
+        Object timeStamp_prod;
         int id_cliente, id_producto;
         int id_cajero = 3;
-        Object timestamp;
+
         public Ventas()
         {
             InitializeComponent();
@@ -203,25 +205,25 @@ namespace NS_WinFormsApps.Ventas_pagos
 
         private void btnIrPago_Click(object sender, EventArgs e)
         {
-            if (!isDataEmpty())
-            {
-                var datos = new Dictionary<string, object>()
-            {
-                { "id_usuario",id_cliente},
-                { "nombre_cliente",txtCliente.Text},
-                { "id_cajero",id_cajero},
-                { "numero_operacion", txtNumOperacion.Text },
-                { "fecha_venta",dtpFecha.Value },
-                { "precio_total",txtPrecioTotal.Text},
-                { "detalle_venta",getDetalle()},
-                { "tipo_comprobante",getTipoComprobante()},
-                {"numero_comprobante", txtNumComprobante.Text}
-            };
+            //MessageBox.Show("timeStamp_prod"+timeStamp_prod);
+            if (!isDataEmpty()) {
+                var datos = new Dictionary<string, Object>() {
+                    { "id_usuario",id_cliente},
+                    { "nombre_cliente",txtCliente.Text},
+                    { "id_cajero",id_cajero},
+                    { "numero_operacion", txtNumOperacion.Text },
+                    { "fecha_venta",dtpFecha.Value },
+                    { "precio_total",txtPrecioTotal.Text},
+                    { "detalle_venta",getDetalle()},
+                    { "tipo_comprobante",getTipoComprobante()},
+                    {"numero_comprobante", txtNumComprobante.Text},
+                    {"timeStamp_prod", timeStamp_prod}
+
+                };
 
                 Pagos pagos = new Pagos(datos);
                 DialogResult dialog = pagos.ShowDialog(this); 
-                if(dialog == DialogResult.OK)
-                {
+                if(dialog == DialogResult.OK) {
                     LimpiarTodo();
                     txtNumOperacion.Text = (int.Parse(txtNumOperacion.Text) + 1).ToString();
                     txtNumComprobante.Text = txtNumOperacion.Text;
@@ -253,20 +255,21 @@ namespace NS_WinFormsApps.Ventas_pagos
 
         private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
-            using (var busqueda = new NS_Busqueda.Busqueda())
-            {
+                using (var busqueda = new NS_Busqueda.Busqueda()) {
                 busqueda.objTabla = _objVta.search_product("");
 
                 busqueda.ShowDialog();
-                if (busqueda.objRow != null)
-                {
+                if (busqueda.objRow != null) {
                     id_producto = (int)busqueda.objRow.Cells["codigo"].Value;
+
+                    ClsBL_Vta tmp_BL_vta = new ClsBL_Vta();
+                    timeStamp_prod = tmp_BL_vta.selectUnProd(id_producto);
+                    
                     txtProducto.Text = busqueda.objRow.Cells["nombre"].Value.ToString();
                     txtPrecio.Text = busqueda.objRow.Cells["precio"].Value.ToString();
                     txtStock.Text = busqueda.objRow.Cells["stock"].Value.ToString();
                     txtDescuento.Text = busqueda.objRow.Cells["descuento"].Value.ToString();
-                    //MessageBox.Show(busqueda.objRow.Cells["timestam"].Value.ToString());
-                    //MessageBox.Show(timestamp.ToString());
+                    //timestamp = busqueda.objRow.Cells["ts_prod_Version"].Value.ToString();
                 }
                 busqueda.objTabla.Clear();
             }

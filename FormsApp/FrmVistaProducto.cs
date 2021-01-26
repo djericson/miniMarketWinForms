@@ -23,7 +23,6 @@ namespace FormsApp
         private void OcultarColumnas()
         {
 
-            //dgvListado.Columns[0].Visible = false;
             dgvListado.Columns[0].Visible = false;
             dgvListado.Columns[1].Visible = false;
             dgvListado.Columns[2].Visible = false;
@@ -54,7 +53,7 @@ namespace FormsApp
             par4 = Convert.ToString( dgvListado.CurrentRow.Cells["NOMBRE_PRODUCTO"].Value);
             par5 = Convert.ToString( dgvListado.CurrentRow.Cells["MARCA"].Value);
             par6 = Convert.ToString( dgvListado.CurrentRow.Cells["cant_Total"].Value);
-            par7 = Convert.ToString( dgvListado.CurrentRow.Cells["descripcion"].Value);
+            par7 = Convert.ToString( dgvListado.CurrentRow.Cells["und_prod"].Value);
             form.ControlesProducto(par1, par2, par3, par4, par5, par6, par7);
             Hide();
         }

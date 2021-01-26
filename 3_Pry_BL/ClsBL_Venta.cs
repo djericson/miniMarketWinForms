@@ -21,8 +21,7 @@ namespace BL
         public int insertar(Dictionary<string, object> datos_venta,
             Dictionary<string, object> datos_pago)
         {
-            var validacion = dac_vta.insertar(datos_venta, datos_pago);
-            return validacion;
+            return dac_vta.insertar(datos_venta, datos_pago);
         }
 
         public DataTable search()
@@ -33,6 +32,11 @@ namespace BL
         public DataTable search_product(string nombre)
         {
             return dac_vta.search_product(nombre);
+        }
+
+        public object selectUnProd(int id_prod)
+        {
+            return dac_vta.selectUnProd(id_prod);
         }
 
         public DataTable search_client(string nombre)
