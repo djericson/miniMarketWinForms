@@ -43,6 +43,10 @@ namespace FormsApp
         #endregion
         private void FrmPedido_FormClosing(object sender, FormClosingEventArgs e) ////3
         {
+            e.Cancel = (e.CloseReason == CloseReason.UserClosing);
+            FormMain formMain = new FormMain();
+            formMain.Show();
+            this.Hide();
             _instancia = null;
         }
         #region ESTABLECER VALORES DESDE VISTA PROVEEDOR Y VISTA PRODUCTO 4
