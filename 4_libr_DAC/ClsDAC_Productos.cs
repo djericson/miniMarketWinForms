@@ -113,7 +113,6 @@ namespace DAC
             cmd.ExecuteNonQuery();
             cn.Close();
             return 0;
-
         }
 
         public void delete_producto(ClsProducto objProducto)

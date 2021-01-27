@@ -18,19 +18,15 @@ namespace FormsApp
 {
     public partial class FormMain : Form
     {
+        FrmProveedores _FrmProveedores = new FrmProveedores();
+        FrmPedido _FrmPedido = FrmPedido.GetInstancia();
+        gestion_productos _gestion_Productos = new gestion_productos();
+        FrmUsrs frmUsrs = new FrmUsrs();
 
         public static int ID_Usuario;
         public static string NameUsuario;
         public static string NameRol;
         public static int ID_Rol;
-
-        FrmProveedores _FrmProveedores = new FrmProveedores();
-        FrmPedido _FrmPedido = FrmPedido.GetInstancia();        
-        gestion_productos _gestion_Productos = new gestion_productos();
-        FrmUsrs frmUsrs = new FrmUsrs();
-
- 
-       
 
 
         public static string Form_For_Adm = "";
