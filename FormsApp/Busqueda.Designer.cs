@@ -110,9 +110,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.Button BtnAceptar;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }

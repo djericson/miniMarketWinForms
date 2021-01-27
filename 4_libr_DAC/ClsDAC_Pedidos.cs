@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 using Utilitarios;
 using System.Data.SqlClient;
-
+//using 
 
 namespace DAC
 {
@@ -15,17 +15,54 @@ namespace DAC
     {
         SqlConnection cnn = new SqlConnection("Data Source=sql-srv2.database.windows.net;Initial Catalog=miniMarket;User ID=wilber;Password=$W012345");
 
+        public int comprobarStock(int id_prod, int cantApedir, object _timestamp)
+        {
+            cnn.Open();
+            SqlTransaction ObjTran = cnn.BeginTransaction();
+            try {
+                SqlCommand cmd = new SqlCommand("ped_comparar_ts_cant", cnn);
+                cmd.Transaction = ObjTran;
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id_prod", id_prod);
+                cmd.Parameters.AddWithValue("@cantApedir", cantApedir);
+                cmd.Parameters.AddWithValue("@VersionTimestam", _timestamp);
+
+                SqlParameter pRes = new SqlParameter("@output", SqlDbType.Int);
+                pRes.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(pRes);
+
+                //cn.Open();
+                cmd.ExecuteNonQuery();
+                ObjTran.Commit();
+
+                int li_pRes = Convert.ToInt32(cmd.Parameters["@output"].Value);
+                return li_pRes;
+            }
+            catch (SqlException sqlex) {
+                ObjTran.Rollback();
+                cnn.Close();
+                return -1;
+            }
+            catch (Exception ex) {
+                return -2;
+                //MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            finally { cnn.Close(); }
+
+        }
+
         #region ......................METODO INSERTAR LOS INGRESOS Y LOS DETALES DE INGRESO A LA MISMA VEZ
         public string Insertar_pedido(ClsPedido Pedido, List<ClsDetallePedido> Detalle)
         {                                               
             string rpta = "";
-            try
-            {   
-                cnn.Open();                
-                SqlTransaction SqlTra = cnn.BeginTransaction();             
+            cnn.Open();
+            SqlTransaction SqlTra = cnn.BeginTransaction();
+            try {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cnn;
-                cmd.Transaction = SqlTra; 
+                cmd.Transaction = SqlTra;
                 cmd.CommandText = "insertar_pedido";
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlParameter parIdpedido = new SqlParameter();
@@ -40,37 +77,38 @@ namespace DAC
                 cmd.Parameters.AddWithValue("@estado_pedido", Pedido.Estado_pedido);              
               
                 rpta = cmd.ExecuteNonQuery() == 1 ? "OK" : "No se ingreso el registro";//INSERTAMOS EL INGRESO       
-                if (rpta.Equals("OK"))
-                {        
+                if (rpta.Equals("OK"))  {        
 
                     Pedido.Id_pedido = Convert.ToInt32(cmd.Parameters["@id_pedido"].Value);
 
-                    foreach (ClsDetallePedido det in Detalle)
-                    {
+                    foreach (ClsDetallePedido det in Detalle) {
                         ClsDAC_Detalle_Pedido x = new ClsDAC_Detalle_Pedido();
                         det.Id_pedido = Pedido.Id_pedido;                        
                         rpta = x.InsertarDetallePedido(det, ref cnn, ref SqlTra);
-                        if (!rpta.Equals("OK"))
-                        {
+                        if (!rpta.Equals("OK")) {
                             break;
                         }
                     }
                 }
-                if (rpta.Equals("OK"))
-                {
+                if (rpta.Equals("OK")) {
                     SqlTra.Commit();
                 }
-                else
-                {
+                else {
                     SqlTra.Rollback();
                 }
+                return rpta;
             }
-            catch (Exception ex)
-            {
+            catch (SqlException sqlex) {
+                SqlTra.Rollback();
+                cnn.Close();
+                return "-1";
+            }
+            catch (Exception ex) {
                 rpta = ex.Message;
+                return rpta; 
             }
-            cnn.Close();
-            return rpta;
+            finally { cnn.Close(); }
+            
         }
         #endregion
         #region .............................METODO ANULAR INGRESO

@@ -66,8 +66,6 @@ namespace DAC
             }
             finally { cn.Close(); }
 
-            
-
         }
 
         public DataTable search()

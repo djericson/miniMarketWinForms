@@ -12,7 +12,7 @@ namespace BL
 {
     public class ClsBL_Pedido
     {
-        public static string INSERTAR(int idproveedor, int idadmin, DateTime fechaPedido, string estadoPedido, DataTable dtdetalles)
+        public static string INSERTAR(int idproveedor, int idadmin, DateTime fechaPedido, string estadoPedido, DataTable dtdetalles, object _timeStamp)
         {
             ClsDAC_Pedidos obj = new ClsDAC_Pedidos();
             ClsPedido obj_pedido = new ClsPedido();
@@ -20,11 +20,9 @@ namespace BL
             obj_pedido.Id_usr_logued = idadmin;
             obj_pedido.Fecha_pedido = fechaPedido;
             obj_pedido.Estado_pedido = estadoPedido;
-
-
+            obj_pedido.timeStamp = _timeStamp;
             List<ClsDetallePedido> detalles = new List<ClsDetallePedido>();
-            foreach (DataRow row in dtdetalles.Rows)
-            {       
+            foreach (DataRow row in dtdetalles.Rows) {       
                 ClsDetallePedido detalle = new ClsDetallePedido();
                 //detalle.Id_detalle_pedido = Convert.ToInt32(row["Id_pedido"].ToString());
                 //detalle.Id_pedido = Convert.ToInt32(row["Id_pedido"].ToString());
@@ -34,6 +32,13 @@ namespace BL
                 detalles.Add(detalle);
             }
             return obj.Insertar_pedido(obj_pedido, detalles);  
+        }
+
+        public int ComprobarStock(int id_prod, int cantApedir, object _timestamp)
+        {
+            ClsDAC_Pedidos obj = new ClsDAC_Pedidos();
+
+            return obj.comprobarStock(id_prod, cantApedir, _timestamp);
         }
 
         #region ...........................METODO ANULAR

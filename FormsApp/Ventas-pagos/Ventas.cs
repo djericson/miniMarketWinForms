@@ -257,7 +257,7 @@ namespace NS_WinFormsApps.Ventas_pagos
         {
                 using (var busqueda = new NS_Busqueda.Busqueda()) {
                 busqueda.objTabla = _objVta.search_product("");
-
+                busqueda.dataGridView1.Columns["timestam"].Visible = false;
                 busqueda.ShowDialog();
                 if (busqueda.objRow != null) {
                     id_producto = (int)busqueda.objRow.Cells["codigo"].Value;

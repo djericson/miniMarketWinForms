@@ -129,8 +129,7 @@ namespace DAC
         public DataTable Mostrar()
         {
             DataTable dtResultado = new DataTable("producto");
-            try
-            {
+            try {
                 cmd = new SqlCommand("mostra_producto", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter dtAdapter = new SqlDataAdapter(cmd);

@@ -15,6 +15,8 @@ namespace Utilitarios
         public DateTime Fecha_pedido { get; set; }
         public string Estado_pedido { get; set; }
 
+        public object timeStamp { get; set; }
+        
         public ClsPedido() { }
         public ClsPedido(int id_pedido, int id_proveedor, int id_admin, string pedido_descripcion,
             DateTime fecha_pedido, string estado_pedido)

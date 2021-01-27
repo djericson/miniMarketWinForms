@@ -18,6 +18,7 @@ namespace FormsApp
         string StockMIn="";
         string StockMax="";
 
+        Object _timeStamp;
 
         #region OBJETO QUE ME HACE REFERENCIA  A LA CLASE FRMPEDIDO        1
         private static FrmPedido _instancia;
@@ -25,10 +26,11 @@ namespace FormsApp
         #region METODO PARA CREAR INSTANCIA A FRMINGRESO                   2
         public static FrmPedido GetInstancia()
         {
-            if (_instancia == null)
-            {
+            if (_instancia == null) {
+
                 _instancia = new FrmPedido();//SOLO SE CREARA CUANDO NO EXISTA NINGUNA INSTANCIA
             }
+            
             return _instancia;
         }
         #endregion
@@ -51,16 +53,18 @@ namespace FormsApp
 
 
         public void ControlesProducto(string idproducto, string StockmIn, string Stockmax, string nombre, string marca,
-           string cantidadtotal, string unidadProducto )
+           string cantidadtotal, string unidadProducto, object __timeStamp)
         {
             this.txtId_producto.Text = idproducto;
             this.StockMIn = StockmIn;
             this.StockMax = Stockmax;
+            txtStock.Text = Stockmax;
             this.txtNombreProducto.Text = nombre;
             this.txtMarca.Text = marca;
             this.cantidad_total = cantidadtotal;
             this.txtProdUnidad.Text = unidadProducto;
             txtTotalProducto.Text = cantidadtotal;
+            _timeStamp = __timeStamp;
         }
         #endregion
 
@@ -289,22 +293,19 @@ namespace FormsApp
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            try
-            {
+            try {
                 string rpta = "";
-                
-                if (txtId_proveedor.Text == string.Empty || txtPrecioCompra.Text == string.Empty || txtStock.Text == string.Empty)
-                {
+
+                if (txtId_proveedor.Text == string.Empty || txtPrecioCompra.Text == string.Empty || txtStock.Text == string.Empty) {
                     MensajeError("Falta ingresar algunos datos");
                     errorIcono.SetError(txtId_proveedor, "Ingrese un Valor");
                     errorIcono.SetError(txtPrecioCompra, "Ingrese un Valor");
                     errorIcono.SetError(txtStock, "Ingrese un Valor");
                 }
-                else
-                {
-                    if (IsNuevo)
-                    {
-                        rpta = ClsBL_Pedido.INSERTAR(Convert.ToInt32(txtId_proveedor.Text), IdTrabajador, dtFecha.Value, "GENERADO",dtDetallePedido);
+                else {
+                    if (IsNuevo) {
+                        rpta = ClsBL_Pedido.INSERTAR(Convert.ToInt32(txtId_proveedor.Text), IdTrabajador, dtFecha.Value, "GENERADO",dtDetallePedido,
+                            _timeStamp);
                     }
                     if (rpta.Equals("OK"))
                     {
@@ -334,40 +335,46 @@ namespace FormsApp
         {
             try
             {                
-                if (txtId_producto.Text == string.Empty || txtStock.Text == string.Empty || txtPrecioCompra.Text == string.Empty)
-                {
+                if (txtId_producto.Text == string.Empty || txtStock.Text == string.Empty || txtPrecioCompra.Text == string.Empty) {
                     MensajeError("Falta ingresar algunos datos, seran remarcados");
-                    errorIcono.SetError(txtId_producto, "Ingrese un Valor");
-                    errorIcono.SetError(txtStock, "Ingrese un Valor");
-                    errorIcono.SetError(txtPrecioCompra, "Ingrese un Valor");
+                    //errorIcono.SetError(txtId_producto, "Ingrese un Valor");
+                    //errorIcono.SetError(txtStock, "Ingrese un Valor");
+                    //errorIcono.SetError(txtPrecioCompra, "Ingrese un Valor");
                 }
-                else
-                {
+                else {
                     bool registrar = true;
-                    foreach (DataRow row in dtDetallePedido.Rows)
-                    {
-                        if (Convert.ToInt32(row["Id_producto"]) == Convert.ToInt32(txtId_producto.Text))
-                        {
+                    foreach (DataRow row in dtDetallePedido.Rows) {
+                        if (Convert.ToInt32(row["Id_producto"]) == Convert.ToInt32(txtId_producto.Text)) {
                             registrar = false;
                             MensajeError("Este producto ya fue agregado a la lista");
                         }
                     }
-                    if (registrar)
-                    {
-                        decimal subtotal = Convert.ToDecimal(txtStock.Text) * Convert.ToDecimal(txtPrecioCompra.Text);
-                        totalPagado = totalPagado + subtotal;
-                        lblTotal_pagado.Text = Convert.ToString(totalPagado);                        
-                        DataRow row = dtDetallePedido.NewRow();
-                        row["Id_Producto"] = Convert.ToInt32(txtId_producto.Text);
-                        row["Nombre_Proveedor"] =txtNombreProveedor.Text;
-                        row["Nombre_Producto"] =txtNombreProducto.Text;
-                        row["Cantidad"] = Convert.ToInt32(txtStock.Text);
-                        row["Categoria"] =txtCategoria.Text;
-                        row["Precio_Compra"] = Convert.ToDecimal(txtPrecioCompra.Text);
-                        row["Unidad_Producto"] = txtProdUnidad.Text;
-                        row["SubTotal"] = subtotal;
-                        dtDetallePedido.Rows.Add(row);
+                    if (registrar) {
+
+                        int resComprobarCantStock = oBlPedido.ComprobarStock(int.Parse(txtId_producto.Text), Convert.ToInt32(txt_cantApedir.Text), _timeStamp);
+                        if (resComprobarCantStock == 0) {
+                            decimal subtotal = Convert.ToDecimal(txtStock.Text) * Convert.ToDecimal(txtPrecioCompra.Text);
+                            totalPagado = totalPagado + subtotal;
+                            lblTotal_pagado.Text = Convert.ToString(totalPagado);
+                            DataRow row = dtDetallePedido.NewRow();
+                            row["Id_Producto"] = Convert.ToInt32(txtId_producto.Text);
+                            row["Nombre_Proveedor"] = txtNombreProveedor.Text;
+                            row["Nombre_Producto"] = txtNombreProducto.Text;
+                            row["Cantidad"] = Convert.ToInt32(txtStock.Text);
+                            row["Categoria"] = txtCategoria.Text;
+                            row["Precio_Compra"] = Convert.ToDecimal(txtPrecioCompra.Text);
+                            row["Unidad_Producto"] = txtProdUnidad.Text;
+                            row["SubTotal"] = subtotal;
+                            dtDetallePedido.Rows.Add(row);
+
+                            MessageBox.Show("agregado producto a grilla pedido", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }   
+                        if (resComprobarCantStock == -1) {
+                            MessageBox.Show("Cant. a pedir es mayor al Stock maximoo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                        }
                         limpiarDetalle();
+
                     }
                 }
             }
@@ -406,6 +413,20 @@ namespace FormsApp
             dtFecha.Value = Convert.ToDateTime(dgvListado.CurrentRow.Cells["FECHA_PEDIDO"].Value);
             lblTotal_pagado.Text = Convert.ToString(dgvListado.CurrentRow.Cells["total"].Value);
             MostrarDetalle();
+        }
+
+        private void txt_cantApedir_TextChanged(object sender, EventArgs e)
+        {
+            try {
+                var data = Convert.ToInt32(txt_cantApedir.Text);
+                if(data >= Convert.ToInt32(txtStock.Text) ) {
+                    MessageBox.Show("La cant. a pedir es mayor al Stock!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+            }
+            catch(Exception ex) {
+                MessageBox.Show("debe ingresar un nro.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }
